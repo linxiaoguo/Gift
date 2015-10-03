@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="IncomeCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="utt-9z-NrN" userLabel="Image View图标">
+                        <rect key="frame" x="28" y="18" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="1zN-df-m9J"/>
+                            <constraint firstAttribute="height" constant="40" id="G4J-55-uC4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未提现金额（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfa-MD-AKg">
+                        <rect key="frame" x="78" y="28" width="136" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="136" id="5c9-9Q-7Va"/>
+                            <constraint firstAttribute="height" constant="21" id="fBK-uS-qYC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psO-BN-21P">
+                        <rect key="frame" x="23" y="68" width="200" height="65"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="65" id="MTG-Zt-gfy"/>
+                            <constraint firstAttribute="width" constant="200" id="mkm-jx-UQm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mrK-Rc-s7O" userLabel="Image View箭头">
+                        <rect key="frame" x="277" y="72" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Puv-UD-Lac"/>
+                            <constraint firstAttribute="width" constant="20" id="Wj9-RE-xW5"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="mrK-Rc-s7O" secondAttribute="trailing" constant="15" id="5r8-fu-dNJ"/>
+                    <constraint firstAttribute="centerY" secondItem="mrK-Rc-s7O" secondAttribute="centerY" id="DAB-k3-Sl5"/>
+                    <constraint firstItem="mfa-MD-AKg" firstAttribute="leading" secondItem="utt-9z-NrN" secondAttribute="trailing" constant="10" id="JbG-sS-oC9"/>
+                    <constraint firstItem="psO-BN-21P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="cXe-9V-hcY"/>
+                    <constraint firstItem="psO-BN-21P" firstAttribute="top" secondItem="utt-9z-NrN" secondAttribute="bottom" constant="10" id="fWm-lg-UWe"/>
+                    <constraint firstItem="utt-9z-NrN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="k1p-23-dhR"/>
+                    <constraint firstItem="utt-9z-NrN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="nmX-ze-wpm"/>
+                    <constraint firstItem="utt-9z-NrN" firstAttribute="centerY" secondItem="mfa-MD-AKg" secondAttribute="centerY" id="xeE-kj-hkd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imvArrow" destination="mrK-Rc-s7O" id="ZwB-go-Hcx"/>
+                <outlet property="imvIcon" destination="utt-9z-NrN" id="a4T-ap-2Sd"/>
+                <outlet property="lblFee" destination="psO-BN-21P" id="AnW-UC-g77"/>
+                <outlet property="lblTitle" destination="mfa-MD-AKg" id="X6n-CD-Url"/>
+            </connections>
+            <point key="canvasLocation" x="309" y="429.5"/>
+        </tableViewCell>
+    </objects>
+</document>

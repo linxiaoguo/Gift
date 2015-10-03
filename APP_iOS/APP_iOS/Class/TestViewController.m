@@ -7,6 +7,8 @@
 //
 
 #import "TestViewController.h"
+#import "OrderViewCtr.h"
+#import "IncomeViewCtr.h"
 
 @interface TestViewController ()
 
@@ -20,12 +22,17 @@
     
     self.title = @"hello";
 
+    kWEAKSELF;
     [self setLeftBarButtonWithTitle:@"喔喔哦" withBlock:^(NSInteger tag) {
         NSLog(@"heloo");
+        OrderViewCtr *vc = [[OrderViewCtr alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 
     [self setRightBarButtonWithTitle:@"喔喔哦" withBlock:^(NSInteger tag) {
         NSLog(@"heloo");
+        IncomeViewCtr *vc = [[IncomeViewCtr alloc] init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
 }
 

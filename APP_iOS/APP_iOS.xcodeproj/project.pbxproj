@@ -136,6 +136,16 @@
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
 		5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */; };
+		53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */; };
+		53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */; };
+		53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4857C1BBFC9690064ACE7 /* OrderCell.m */; };
+		53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4857D1BBFC9690064ACE7 /* OrderCell.xib */; };
+		53E485821BBFCAEE0064ACE7 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485811BBFCAEE0064ACE7 /* CustomView.m */; };
+		53E485861BBFFC580064ACE7 /* IncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485841BBFFC580064ACE7 /* IncomeCell.m */; };
+		53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485851BBFFC580064ACE7 /* IncomeCell.xib */; };
+		53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485891BC000CC0064ACE7 /* UITableView+Separator.m */; };
+		53E4858E1BC002AA0064ACE7 /* BindBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* BindBankCell.m */; };
+		53E4858F1BC002AA0064ACE7 /* BindBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -400,6 +410,22 @@
 		536692961BBF2A3A00060A1A /* IncomeViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewCtr.h; sourceTree = "<group>"; };
 		536692971BBF2A3A00060A1A /* IncomeViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewCtr.m; sourceTree = "<group>"; };
 		536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeViewCtr.xib; sourceTree = "<group>"; };
+		53E485761BBFC6E80064ACE7 /* OrderHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeadCell.h; sourceTree = "<group>"; };
+		53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeadCell.m; sourceTree = "<group>"; };
+		53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHeadCell.xib; sourceTree = "<group>"; };
+		53E4857B1BBFC9690064ACE7 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		53E4857C1BBFC9690064ACE7 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		53E4857D1BBFC9690064ACE7 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		53E485801BBFCAEE0064ACE7 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		53E485811BBFCAEE0064ACE7 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		53E485831BBFFC580064ACE7 /* IncomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeCell.h; sourceTree = "<group>"; };
+		53E485841BBFFC580064ACE7 /* IncomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeCell.m; sourceTree = "<group>"; };
+		53E485851BBFFC580064ACE7 /* IncomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeCell.xib; sourceTree = "<group>"; };
+		53E485881BC000CC0064ACE7 /* UITableView+Separator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Separator.h"; sourceTree = "<group>"; };
+		53E485891BC000CC0064ACE7 /* UITableView+Separator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Separator.m"; sourceTree = "<group>"; };
+		53E4858B1BC002AA0064ACE7 /* BindBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindBankCell.h; sourceTree = "<group>"; };
+		53E4858C1BC002AA0064ACE7 /* BindBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindBankCell.m; sourceTree = "<group>"; };
+		53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindBankCell.xib; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -463,6 +489,7 @@
 				0BB606D81B798F8000D42A16 /* Model */,
 				0BB606D91B798F8000D42A16 /* Request */,
 				0BB606DA1B798F8000D42A16 /* Vendors */,
+				53E485751BBFC6CE0064ACE7 /* View */,
 				0BB606D61B798F8000D42A16 /* Class */,
 			);
 			path = APP_iOS;
@@ -1006,6 +1033,8 @@
 			children = (
 				0BB607B41B799EA200D42A16 /* UITableView+FDTemplateLayoutCell.h */,
 				0BB607B51B799EA200D42A16 /* UITableView+FDTemplateLayoutCell.m */,
+				53E485881BC000CC0064ACE7 /* UITableView+Separator.h */,
+				53E485891BC000CC0064ACE7 /* UITableView+Separator.m */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -1233,6 +1262,27 @@
 			name = "设置";
 			sourceTree = "<group>";
 		};
+		53E485751BBFC6CE0064ACE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53E485801BBFCAEE0064ACE7 /* CustomView.h */,
+				53E485811BBFCAEE0064ACE7 /* CustomView.m */,
+				53E485761BBFC6E80064ACE7 /* OrderHeadCell.h */,
+				53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */,
+				53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */,
+				53E4857B1BBFC9690064ACE7 /* OrderCell.h */,
+				53E4857C1BBFC9690064ACE7 /* OrderCell.m */,
+				53E4857D1BBFC9690064ACE7 /* OrderCell.xib */,
+				53E485831BBFFC580064ACE7 /* IncomeCell.h */,
+				53E485841BBFFC580064ACE7 /* IncomeCell.m */,
+				53E485851BBFFC580064ACE7 /* IncomeCell.xib */,
+				53E4858B1BC002AA0064ACE7 /* BindBankCell.h */,
+				53E4858C1BC002AA0064ACE7 /* BindBankCell.m */,
+				53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE224116631EE3C7C924B4F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,9 +1353,13 @@
 			files = (
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
+				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
 				0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */,
+				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				0BB608781B79E9C100D42A16 /* TestViewController.xib in Resources */,
+				53E4858F1BC002AA0064ACE7 /* BindBankCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
+				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1370,6 +1424,7 @@
 				0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */,
 				0BB6086B1B79CBBE00D42A16 /* CoreStatus.m in Sources */,
 				0BB6083C1B799EA300D42A16 /* UITextView+margin.m in Sources */,
+				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
 				0BB608121B799EA200D42A16 /* NSTimer+Addition.m in Sources */,
 				0BB608111B799EA200D42A16 /* NSString+UUID.m in Sources */,
 				0BB607EF1B799EA200D42A16 /* NSDate+Extension.m in Sources */,
@@ -1378,6 +1433,7 @@
 				0BB608201B799EA200D42A16 /* UIColor+Web.m in Sources */,
 				0BB608161B799EA200D42A16 /* UIBezierPath+BasicShapes.m in Sources */,
 				0BB608301B799EA200D42A16 /* UINavigationBar+Awesome.m in Sources */,
+				53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */,
 				0BB6080F1B799EA200D42A16 /* NSString+Trims.m in Sources */,
 				0BB608441B799EA300D42A16 /* UIView+Screenshot.m in Sources */,
 				0BB608421B799EA300D42A16 /* UIView+Frame.m in Sources */,
@@ -1395,6 +1451,7 @@
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
 				0BB607F71B799EA200D42A16 /* NSException+Trace.m in Sources */,
 				0BB6081F1B799EA200D42A16 /* UIColor+Random.m in Sources */,
+				53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */,
 				0BB607EB1B799EA200D42A16 /* NSBundle+AppIcon.m in Sources */,
 				0BB608151B799EA200D42A16 /* MKMapView+ZoomLevel.m in Sources */,
 				0BB607ED1B799EA200D42A16 /* NSData+Encrypt.m in Sources */,
@@ -1407,6 +1464,7 @@
 				0BB608341B799EA200D42A16 /* UIResponder+Chain.m in Sources */,
 				0BB6084A1B799EA300D42A16 /* UIWebView+Blocks.m in Sources */,
 				0BB6086C1B79CBBE00D42A16 /* Reachability.m in Sources */,
+				53E485861BBFFC580064ACE7 /* IncomeCell.m in Sources */,
 				0BB6081A1B799EA200D42A16 /* UIButton+CountDown.m in Sources */,
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
@@ -1414,6 +1472,7 @@
 				0BB6085F1B79A8D600D42A16 /* UIView+WZLBadge.m in Sources */,
 				0BB608431B799EA300D42A16 /* UIView+Nib.m in Sources */,
 				0BB607F61B799EA200D42A16 /* NSDictionary+SafeAccess.m in Sources */,
+				53E4858E1BC002AA0064ACE7 /* BindBankCell.m in Sources */,
 				0BB607FF1B799EA200D42A16 /* NSObject+AddProperty.m in Sources */,
 				0BB6083A1B799EA300D42A16 /* UITableViewCell+NIB.m in Sources */,
 				0BB6080C1B799EA200D42A16 /* NSString+PJR.m in Sources */,
@@ -1443,6 +1502,7 @@
 				0BB607EA1B799EA200D42A16 /* NSArray+SafeAccess.m in Sources */,
 				0BB6081E1B799EA200D42A16 /* UIColor+Modify.m in Sources */,
 				0BB607F51B799EA200D42A16 /* NSDictionary+Merge.m in Sources */,
+				53E485821BBFCAEE0064ACE7 /* CustomView.m in Sources */,
 				0BB6081C1B799EA200D42A16 /* UIColor+Gradient.m in Sources */,
 				0BB607F11B799EA200D42A16 /* NSDate+Utilities.m in Sources */,
 				0BB608101B799EA200D42A16 /* NSString+UrlEncode.m in Sources */,

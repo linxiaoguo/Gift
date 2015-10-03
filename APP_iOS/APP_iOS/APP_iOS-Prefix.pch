@@ -24,5 +24,6 @@
 #import "MJExtension.h"
 #import "SVProgressHUD.h"
 #import "LHttpRequest.h"
+#import "CustomView.h"
 
 #endif
