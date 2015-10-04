@@ -8,8 +8,10 @@
 
 #import "IncomeViewCtr.h"
 #import "IncomeCell.h"
-#import "BindBankCell.h"
+#import "IncomeBindCell.h"
 #import "UITableView+Separator.h"
+#import "BindBankViewCtr.h"
+#import "BonusViewCtr.h"
 
 @interface IncomeViewCtr ()
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
@@ -95,11 +97,10 @@
         
         return cell;
     } else {
-        static NSString *identifier=@"BindBankCell";
-        BindBankCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
+        static NSString *identifier=@"IncomeBindCell";
+        IncomeBindCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
-            cell = [CustomView viewWithNibName:@"BindBankCell"];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell = [CustomView viewWithNibName:@"IncomeBindCell"];
         }
         return cell;
     }
@@ -107,6 +108,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+    if (indexPath.section == 1) {
+        BindBankViewCtr *vc = [[BindBankViewCtr alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            BonusViewCtr *vc = [[BonusViewCtr alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

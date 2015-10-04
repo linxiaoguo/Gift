@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BindBankViewCtr">
+            <connections>
+                <outlet property="btnConfirm" destination="Ui4-4u-goj" id="MOW-nZ-WJo"/>
+                <outlet property="lblBottomTips" destination="3Ck-ab-BZJ" id="UAU-0m-efJ"/>
+                <outlet property="lblTopTips" destination="nrx-zd-FmC" id="Eor-4N-fRl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bat-Fg-aVY">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="HPT-ll-uT7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所填的姓名、身份证、银行卡开户人必须为同一人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-zd-FmC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nrx-zd-FmC" firstAttribute="leading" secondItem="HPT-ll-uT7" secondAttribute="leading" id="2Fd-ft-FRi"/>
+                            <constraint firstAttribute="trailing" secondItem="nrx-zd-FmC" secondAttribute="trailing" id="HVl-mn-u1c"/>
+                            <constraint firstAttribute="bottom" secondItem="nrx-zd-FmC" secondAttribute="bottom" id="hmz-Hw-ESn"/>
+                            <constraint firstItem="nrx-zd-FmC" firstAttribute="top" secondItem="HPT-ll-uT7" secondAttribute="top" id="oA0-Zz-Fr6"/>
+                        </constraints>
+                    </view>
+                    <view key="tableFooterView" contentMode="scaleToFill" id="Brt-u2-alr">
+                        <rect key="frame" x="0.0" y="249" width="600" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui4-4u-goj">
+                                <rect key="frame" x="210" y="10" width="180" height="40"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.40784313725490196" blue="0.71372549019607845" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="itk-W6-hQY"/>
+                                    <constraint firstAttribute="width" constant="180" id="rP7-gc-w5S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="立即保存">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-ab-BZJ">
+                                <rect key="frame" x="15" y="55" width="570" height="135"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ui4-4u-goj" firstAttribute="top" secondItem="Brt-u2-alr" secondAttribute="top" constant="10" id="PUQ-OL-rt1"/>
+                            <constraint firstItem="3Ck-ab-BZJ" firstAttribute="leading" secondItem="Brt-u2-alr" secondAttribute="leading" constant="15" id="QAz-0g-OrW"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ck-ab-BZJ" secondAttribute="trailing" constant="15" id="Vvu-AM-Nk8"/>
+                            <constraint firstAttribute="centerX" secondItem="Ui4-4u-goj" secondAttribute="centerX" id="WXG-Vw-vZu"/>
+                            <constraint firstItem="3Ck-ab-BZJ" firstAttribute="top" secondItem="Ui4-4u-goj" secondAttribute="bottom" constant="5" id="jNK-QU-uER"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ck-ab-BZJ" secondAttribute="bottom" constant="10" id="jgi-od-ejR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="96K-vh-a5n"/>
+                        <outlet property="delegate" destination="-1" id="E4v-Qe-7Pk"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bat-Fg-aVY" secondAttribute="trailing" id="70e-be-k0v"/>
+                <constraint firstAttribute="bottom" secondItem="Bat-Fg-aVY" secondAttribute="bottom" id="Cml-03-HSK"/>
+                <constraint firstItem="Bat-Fg-aVY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fAr-2b-5qR"/>
+                <constraint firstItem="Bat-Fg-aVY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wde-k8-AsC"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

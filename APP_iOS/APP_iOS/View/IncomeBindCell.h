@@ -1,5 +1,5 @@
 //
-//  BindBankCell.h
+//  IncomeBindCell.h
 //  APP_iOS
 //
 //  Created by 林小果 on 15/10/3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BindBankCell : UITableViewCell
+@interface IncomeBindCell : UITableViewCell
 
 @property (nonatomic, strong)IBOutlet UIImageView *imvIcon;
 @property (nonatomic, strong)IBOutlet UIImageView *imvArrow;

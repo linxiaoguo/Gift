@@ -136,6 +136,18 @@
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
 		5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */; };
+		53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAA9A1BC162910008D6E8 /* BindBankViewCtr.m */; };
+		53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAA9B1BC162910008D6E8 /* BindBankViewCtr.xib */; };
+		53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAA9F1BC162AC0008D6E8 /* BingBankCell.m */; };
+		53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAA01BC162AC0008D6E8 /* BingBankCell.xib */; };
+		53DEAAA61BC162DE0008D6E8 /* BindBankSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAAA41BC162DE0008D6E8 /* BindBankSelectCell.m */; };
+		53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAA51BC162DE0008D6E8 /* BindBankSelectCell.xib */; };
+		53DEAAAB1BC171AA0008D6E8 /* BonusViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAAA91BC171AA0008D6E8 /* BonusViewCtr.m */; };
+		53DEAAAC1BC171AA0008D6E8 /* BonusViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAAA1BC171AA0008D6E8 /* BonusViewCtr.xib */; };
+		53DEAAB01BC173FB0008D6E8 /* BonusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAAAE1BC173FB0008D6E8 /* BonusCell.m */; };
+		53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAAF1BC173FB0008D6E8 /* BonusCell.xib */; };
+		53DEAAB51BC1768D0008D6E8 /* BonusTotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */; };
+		53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */; };
 		53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */; };
 		53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */; };
 		53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4857C1BBFC9690064ACE7 /* OrderCell.m */; };
@@ -144,8 +156,8 @@
 		53E485861BBFFC580064ACE7 /* IncomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485841BBFFC580064ACE7 /* IncomeCell.m */; };
 		53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485851BBFFC580064ACE7 /* IncomeCell.xib */; };
 		53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485891BC000CC0064ACE7 /* UITableView+Separator.m */; };
-		53E4858E1BC002AA0064ACE7 /* BindBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* BindBankCell.m */; };
-		53E4858F1BC002AA0064ACE7 /* BindBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */; };
+		53E4858E1BC002AA0064ACE7 /* IncomeBindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */; };
+		53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -410,6 +422,24 @@
 		536692961BBF2A3A00060A1A /* IncomeViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewCtr.h; sourceTree = "<group>"; };
 		536692971BBF2A3A00060A1A /* IncomeViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewCtr.m; sourceTree = "<group>"; };
 		536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeViewCtr.xib; sourceTree = "<group>"; };
+		53DEAA991BC162910008D6E8 /* BindBankViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindBankViewCtr.h; sourceTree = "<group>"; };
+		53DEAA9A1BC162910008D6E8 /* BindBankViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindBankViewCtr.m; sourceTree = "<group>"; };
+		53DEAA9B1BC162910008D6E8 /* BindBankViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindBankViewCtr.xib; sourceTree = "<group>"; };
+		53DEAA9E1BC162AC0008D6E8 /* BingBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingBankCell.h; sourceTree = "<group>"; };
+		53DEAA9F1BC162AC0008D6E8 /* BingBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingBankCell.m; sourceTree = "<group>"; };
+		53DEAAA01BC162AC0008D6E8 /* BingBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BingBankCell.xib; sourceTree = "<group>"; };
+		53DEAAA31BC162DE0008D6E8 /* BindBankSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindBankSelectCell.h; sourceTree = "<group>"; };
+		53DEAAA41BC162DE0008D6E8 /* BindBankSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindBankSelectCell.m; sourceTree = "<group>"; };
+		53DEAAA51BC162DE0008D6E8 /* BindBankSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindBankSelectCell.xib; sourceTree = "<group>"; };
+		53DEAAA81BC171AA0008D6E8 /* BonusViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusViewCtr.h; sourceTree = "<group>"; };
+		53DEAAA91BC171AA0008D6E8 /* BonusViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusViewCtr.m; sourceTree = "<group>"; };
+		53DEAAAA1BC171AA0008D6E8 /* BonusViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusViewCtr.xib; sourceTree = "<group>"; };
+		53DEAAAD1BC173FB0008D6E8 /* BonusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusCell.h; sourceTree = "<group>"; };
+		53DEAAAE1BC173FB0008D6E8 /* BonusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusCell.m; sourceTree = "<group>"; };
+		53DEAAAF1BC173FB0008D6E8 /* BonusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusCell.xib; sourceTree = "<group>"; };
+		53DEAAB21BC1768D0008D6E8 /* BonusTotalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusTotalCell.h; sourceTree = "<group>"; };
+		53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusTotalCell.m; sourceTree = "<group>"; };
+		53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusTotalCell.xib; sourceTree = "<group>"; };
 		53E485761BBFC6E80064ACE7 /* OrderHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeadCell.h; sourceTree = "<group>"; };
 		53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeadCell.m; sourceTree = "<group>"; };
 		53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHeadCell.xib; sourceTree = "<group>"; };
@@ -423,9 +453,9 @@
 		53E485851BBFFC580064ACE7 /* IncomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeCell.xib; sourceTree = "<group>"; };
 		53E485881BC000CC0064ACE7 /* UITableView+Separator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Separator.h"; sourceTree = "<group>"; };
 		53E485891BC000CC0064ACE7 /* UITableView+Separator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Separator.m"; sourceTree = "<group>"; };
-		53E4858B1BC002AA0064ACE7 /* BindBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindBankCell.h; sourceTree = "<group>"; };
-		53E4858C1BC002AA0064ACE7 /* BindBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindBankCell.m; sourceTree = "<group>"; };
-		53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindBankCell.xib; sourceTree = "<group>"; };
+		53E4858B1BC002AA0064ACE7 /* IncomeBindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeBindCell.h; sourceTree = "<group>"; };
+		53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBindCell.m; sourceTree = "<group>"; };
+		53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeBindCell.xib; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1237,6 +1267,12 @@
 				536692961BBF2A3A00060A1A /* IncomeViewCtr.h */,
 				536692971BBF2A3A00060A1A /* IncomeViewCtr.m */,
 				536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */,
+				53DEAA991BC162910008D6E8 /* BindBankViewCtr.h */,
+				53DEAA9A1BC162910008D6E8 /* BindBankViewCtr.m */,
+				53DEAA9B1BC162910008D6E8 /* BindBankViewCtr.xib */,
+				53DEAAA81BC171AA0008D6E8 /* BonusViewCtr.h */,
+				53DEAAA91BC171AA0008D6E8 /* BonusViewCtr.m */,
+				53DEAAAA1BC171AA0008D6E8 /* BonusViewCtr.xib */,
 			);
 			name = "收入";
 			sourceTree = "<group>";
@@ -1276,9 +1312,21 @@
 				53E485831BBFFC580064ACE7 /* IncomeCell.h */,
 				53E485841BBFFC580064ACE7 /* IncomeCell.m */,
 				53E485851BBFFC580064ACE7 /* IncomeCell.xib */,
-				53E4858B1BC002AA0064ACE7 /* BindBankCell.h */,
-				53E4858C1BC002AA0064ACE7 /* BindBankCell.m */,
-				53E4858D1BC002AA0064ACE7 /* BindBankCell.xib */,
+				53E4858B1BC002AA0064ACE7 /* IncomeBindCell.h */,
+				53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */,
+				53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */,
+				53DEAA9E1BC162AC0008D6E8 /* BingBankCell.h */,
+				53DEAA9F1BC162AC0008D6E8 /* BingBankCell.m */,
+				53DEAAA01BC162AC0008D6E8 /* BingBankCell.xib */,
+				53DEAAA31BC162DE0008D6E8 /* BindBankSelectCell.h */,
+				53DEAAA41BC162DE0008D6E8 /* BindBankSelectCell.m */,
+				53DEAAA51BC162DE0008D6E8 /* BindBankSelectCell.xib */,
+				53DEAAAD1BC173FB0008D6E8 /* BonusCell.h */,
+				53DEAAAE1BC173FB0008D6E8 /* BonusCell.m */,
+				53DEAAAF1BC173FB0008D6E8 /* BonusCell.xib */,
+				53DEAAB21BC1768D0008D6E8 /* BonusTotalCell.h */,
+				53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */,
+				53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1354,12 +1402,18 @@
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
+				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
 				0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */,
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				0BB608781B79E9C100D42A16 /* TestViewController.xib in Resources */,
-				53E4858F1BC002AA0064ACE7 /* BindBankCell.xib in Resources */,
+				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
+				53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
+				53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */,
+				53DEAAAC1BC171AA0008D6E8 /* BonusViewCtr.xib in Resources */,
+				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
+				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1419,6 +1473,7 @@
 				0BB606F41B799D0600D42A16 /* ShareFunction.m in Sources */,
 				0BB608291B799EA200D42A16 /* UIImage+Orientation.m in Sources */,
 				0BB6082D1B799EA200D42A16 /* UIImageView+Addition.m in Sources */,
+				53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */,
 				0BB607FA1B799EA200D42A16 /* NSManagedObjectContext+Fetching.m in Sources */,
 				0BB608451B799EA300D42A16 /* UIView+Toast.m in Sources */,
 				0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */,
@@ -1451,6 +1506,7 @@
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
 				0BB607F71B799EA200D42A16 /* NSException+Trace.m in Sources */,
 				0BB6081F1B799EA200D42A16 /* UIColor+Random.m in Sources */,
+				53DEAAA61BC162DE0008D6E8 /* BindBankSelectCell.m in Sources */,
 				53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */,
 				0BB607EB1B799EA200D42A16 /* NSBundle+AppIcon.m in Sources */,
 				0BB608151B799EA200D42A16 /* MKMapView+ZoomLevel.m in Sources */,
@@ -1469,10 +1525,11 @@
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
 				0BB6082A1B799EA200D42A16 /* UIImage+RemoteSize.m in Sources */,
+				53DEAAB01BC173FB0008D6E8 /* BonusCell.m in Sources */,
 				0BB6085F1B79A8D600D42A16 /* UIView+WZLBadge.m in Sources */,
 				0BB608431B799EA300D42A16 /* UIView+Nib.m in Sources */,
 				0BB607F61B799EA200D42A16 /* NSDictionary+SafeAccess.m in Sources */,
-				53E4858E1BC002AA0064ACE7 /* BindBankCell.m in Sources */,
+				53E4858E1BC002AA0064ACE7 /* IncomeBindCell.m in Sources */,
 				0BB607FF1B799EA200D42A16 /* NSObject+AddProperty.m in Sources */,
 				0BB6083A1B799EA300D42A16 /* UITableViewCell+NIB.m in Sources */,
 				0BB6080C1B799EA200D42A16 /* NSString+PJR.m in Sources */,
@@ -1503,6 +1560,7 @@
 				0BB6081E1B799EA200D42A16 /* UIColor+Modify.m in Sources */,
 				0BB607F51B799EA200D42A16 /* NSDictionary+Merge.m in Sources */,
 				53E485821BBFCAEE0064ACE7 /* CustomView.m in Sources */,
+				53DEAAAB1BC171AA0008D6E8 /* BonusViewCtr.m in Sources */,
 				0BB6081C1B799EA200D42A16 /* UIColor+Gradient.m in Sources */,
 				0BB607F11B799EA200D42A16 /* NSDate+Utilities.m in Sources */,
 				0BB608101B799EA200D42A16 /* NSString+UrlEncode.m in Sources */,
@@ -1522,6 +1580,7 @@
 				0BB607FD1B799EA200D42A16 /* NSNull+OVNatural.m in Sources */,
 				0BB6080B1B799EA200D42A16 /* NSString+Hash.m in Sources */,
 				0BB6081B1B799EA200D42A16 /* UIButton+Indicator.m in Sources */,
+				53DEAAB51BC1768D0008D6E8 /* BonusTotalCell.m in Sources */,
 				0BB608221B799EA200D42A16 /* UIImage+Alpha.m in Sources */,
 				0BB608031B799EA200D42A16 /* NSObject+GCD.m in Sources */,
 				0BB6083F1B799EA300D42A16 /* UIView+BlockGesture.m in Sources */,
@@ -1529,6 +1588,7 @@
 				0BB6084E1B799EA300D42A16 /* UIWebView+Style.m in Sources */,
 				0BB608281B799EA200D42A16 /* UIImage+Merge.m in Sources */,
 				0BB608771B79E9C100D42A16 /* TestViewController.m in Sources */,
+				53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */,
 				0BB607FB1B799EA200D42A16 /* NSManagedObjectContext+FetchRequestsConstructors.m in Sources */,
 				0BB608731B79D6E500D42A16 /* NullSafe.m in Sources */,
 				0BB608321B799EA200D42A16 /* UINavigationController+KeyboardFix.m in Sources */,

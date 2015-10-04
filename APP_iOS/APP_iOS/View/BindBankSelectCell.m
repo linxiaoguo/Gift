@@ -1,14 +1,14 @@
 //
-//  BindBankCell.m
+//  BindBankSelectCell.m
 //  APP_iOS
 //
-//  Created by 林小果 on 15/10/3.
+//  Created by 林小果 on 15/10/4.
 //  Copyright (c) 2015年 Li. All rights reserved.
 //
 
-#import "BindBankCell.h"
+#import "BindBankSelectCell.h"
 
-@implementation BindBankCell
+@implementation BindBankSelectCell
 
 - (void)awakeFromNib {
     // Initialization code
