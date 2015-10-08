@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
+		0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0BB606B21B7989B400D42A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B11B7989B400D42A16 /* main.m */; };
 		0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B41B7989B400D42A16 /* AppDelegate.m */; };
 		0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB606BC1B7989B400D42A16 /* Images.xcassets */; };
@@ -166,6 +170,12 @@
 		0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0B2D1D8F1B7B292300F55DD5 /* BaseHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpResponse.h; sourceTree = "<group>"; };
 		0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpResponse.m; sourceTree = "<group>"; };
+		0B59A8191BC6528E008C8CD1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		0BB606AC1B7989B400D42A16 /* APP_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APP_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB606B01B7989B400D42A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB606B11B7989B400D42A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -559,6 +569,9 @@
 				0BB608741B79E9C100D42A16 /* TestViewController.h */,
 				0BB608751B79E9C100D42A16 /* TestViewController.m */,
 				0BB608761B79E9C100D42A16 /* TestViewController.xib */,
+				0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */,
+				0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */,
+				0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1287,6 +1300,9 @@
 		5366928F1BBF286200060A1A /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
+				0B59A8191BC6528E008C8CD1 /* LoginViewController.h */,
+				0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */,
+				0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */,
 			);
 			name = "登录";
 			sourceTree = "<group>";
@@ -1368,7 +1384,7 @@
 		0BB606A41B7989B400D42A16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Li;
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
@@ -1407,10 +1423,12 @@
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				0BB608781B79E9C100D42A16 /* TestViewController.xib in Resources */,
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
+				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
 				53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
 				53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */,
 				53DEAAAC1BC171AA0008D6E8 /* BonusViewCtr.xib in Resources */,
+				0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */,
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
 				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
@@ -1458,6 +1476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */,
 				0BB6082E1B799EA200D42A16 /* UILabel+ESAdjustableLabel.m in Sources */,
 				0BB6080E1B799EA200D42A16 /* NSString+Score.m in Sources */,
 				0BB6084B1B799EA300D42A16 /* UIWebView+Canvas.m in Sources */,
@@ -1482,6 +1501,7 @@
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
 				0BB608121B799EA200D42A16 /* NSTimer+Addition.m in Sources */,
 				0BB608111B799EA200D42A16 /* NSString+UUID.m in Sources */,
+				0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */,
 				0BB607EF1B799EA200D42A16 /* NSDate+Extension.m in Sources */,
 				0BB608051B799EA200D42A16 /* NSObject+Runtime.m in Sources */,
 				0BB608381B799EA300D42A16 /* UISearchBar+Blocks.m in Sources */,
@@ -1620,6 +1640,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1690,6 +1711,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1710,6 +1732,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

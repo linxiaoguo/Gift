@@ -37,7 +37,8 @@
     // Do any additional setup after loading the view from its nib.
     
     [self.view setBackgroundColor:[UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:248.0f/255.0f alpha:1.0f]];
-    
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+
     if (!_hideNavBar) {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
