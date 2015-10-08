@@ -12,6 +12,7 @@
 #import "TestViewController.h"
 #import "UIImage+Color.h"
 #import "KeyboardManager.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +25,6 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
@@ -33,7 +33,7 @@
 
     [self customizeInterface];
     
-    TestViewController *vc = [TestViewController new];
+    LoginViewController *vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     InteractivePopNavigationController *nav = [[InteractivePopNavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
