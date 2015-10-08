@@ -136,6 +136,10 @@
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
 		5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */; };
+		53DE4F501BC6879500D1ADC5 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F491BC6879500D1ADC5 /* AESCrypt.m */; };
+		53DE4F521BC6879500D1ADC5 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F4D1BC6879500D1ADC5 /* NSData+CommonCrypto.m */; };
+		53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F551BC6899400D1ADC5 /* NSData+Base64Additions.m */; };
+		53DE4F591BC6899400D1ADC5 /* NSString+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F571BC6899400D1ADC5 /* NSString+Base64Additions.m */; };
 		53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAA9A1BC162910008D6E8 /* BindBankViewCtr.m */; };
 		53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAA9B1BC162910008D6E8 /* BindBankViewCtr.xib */; };
 		53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAA9F1BC162AC0008D6E8 /* BingBankCell.m */; };
@@ -422,6 +426,14 @@
 		536692961BBF2A3A00060A1A /* IncomeViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewCtr.h; sourceTree = "<group>"; };
 		536692971BBF2A3A00060A1A /* IncomeViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewCtr.m; sourceTree = "<group>"; };
 		536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeViewCtr.xib; sourceTree = "<group>"; };
+		53DE4F481BC6879500D1ADC5 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		53DE4F491BC6879500D1ADC5 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		53DE4F4C1BC6879500D1ADC5 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		53DE4F4D1BC6879500D1ADC5 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		53DE4F541BC6899400D1ADC5 /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		53DE4F551BC6899400D1ADC5 /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		53DE4F561BC6899400D1ADC5 /* NSString+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64Additions.h"; sourceTree = "<group>"; };
+		53DE4F571BC6899400D1ADC5 /* NSString+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64Additions.m"; sourceTree = "<group>"; };
 		53DEAA991BC162910008D6E8 /* BindBankViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindBankViewCtr.h; sourceTree = "<group>"; };
 		53DEAA9A1BC162910008D6E8 /* BindBankViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindBankViewCtr.m; sourceTree = "<group>"; };
 		53DEAA9B1BC162910008D6E8 /* BindBankViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindBankViewCtr.xib; sourceTree = "<group>"; };
@@ -595,6 +607,7 @@
 		0BB606DA1B798F8000D42A16 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				53DE4F471BC6879500D1ADC5 /* AESCrypt-ObjC */,
 				0BB608711B79D6E500D42A16 /* NullSafe */,
 				0BB608601B79CBBE00D42A16 /* CoreStatus */,
 				0BB608551B79A8D600D42A16 /* UIView+WZLBadge */,
@@ -1298,6 +1311,21 @@
 			name = "设置";
 			sourceTree = "<group>";
 		};
+		53DE4F471BC6879500D1ADC5 /* AESCrypt-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				53DE4F541BC6899400D1ADC5 /* NSData+Base64Additions.h */,
+				53DE4F551BC6899400D1ADC5 /* NSData+Base64Additions.m */,
+				53DE4F561BC6899400D1ADC5 /* NSString+Base64Additions.h */,
+				53DE4F571BC6899400D1ADC5 /* NSString+Base64Additions.m */,
+				53DE4F481BC6879500D1ADC5 /* AESCrypt.h */,
+				53DE4F491BC6879500D1ADC5 /* AESCrypt.m */,
+				53DE4F4C1BC6879500D1ADC5 /* NSData+CommonCrypto.h */,
+				53DE4F4D1BC6879500D1ADC5 /* NSData+CommonCrypto.m */,
+			);
+			path = "AESCrypt-ObjC";
+			sourceTree = "<group>";
+		};
 		53E485751BBFC6CE0064ACE7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1459,6 +1487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB6082E1B799EA200D42A16 /* UILabel+ESAdjustableLabel.m in Sources */,
+				53DE4F591BC6899400D1ADC5 /* NSString+Base64Additions.m in Sources */,
 				0BB6080E1B799EA200D42A16 /* NSString+Score.m in Sources */,
 				0BB6084B1B799EA300D42A16 /* UIWebView+Canvas.m in Sources */,
 				0BB6081D1B799EA200D42A16 /* UIColor+HEX.m in Sources */,
@@ -1499,6 +1528,7 @@
 				536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */,
 				0BB608231B799EA200D42A16 /* UIImage+animatedGIF.m in Sources */,
 				0BB608391B799EA300D42A16 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */,
 				0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */,
 				0BB606E51B799B5300D42A16 /* InteractivePopNavigationController.m in Sources */,
 				0BB608141B799EA200D42A16 /* NSURL+Param.m in Sources */,
@@ -1567,6 +1597,7 @@
 				0BB608211B799EA200D42A16 /* UIDevice+Hardware.m in Sources */,
 				0BB6083D1B799EA300D42A16 /* UITextView+PlaceHolder.m in Sources */,
 				0BB606E11B799B1500D42A16 /* CoreAleetViewManagerVC.m in Sources */,
+				53DE4F521BC6879500D1ADC5 /* NSData+CommonCrypto.m in Sources */,
 				0BB608491B799EA300D42A16 /* UIWebView+Alert.m in Sources */,
 				0BB608191B799EA200D42A16 /* UIButton+Block.m in Sources */,
 				0BB608361B799EA300D42A16 /* UIScrollView+Addition.m in Sources */,
@@ -1586,6 +1617,7 @@
 				0BB6083F1B799EA300D42A16 /* UIView+BlockGesture.m in Sources */,
 				0BB607F81B799EA200D42A16 /* NSFileManager+Paths.m in Sources */,
 				0BB6084E1B799EA300D42A16 /* UIWebView+Style.m in Sources */,
+				53DE4F501BC6879500D1ADC5 /* AESCrypt.m in Sources */,
 				0BB608281B799EA200D42A16 /* UIImage+Merge.m in Sources */,
 				0BB608771B79E9C100D42A16 /* TestViewController.m in Sources */,
 				53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */,
