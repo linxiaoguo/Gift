@@ -9,10 +9,10 @@
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "InteractivePopNavigationController.h"
-#import "TestViewController.h"
 #import "UIImage+Color.h"
 #import "KeyboardManager.h"
 #import "LoginViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
