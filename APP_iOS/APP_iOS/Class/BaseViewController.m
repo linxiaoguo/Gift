@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "NSDate+Addition.h"
+#import "UINavigationController+StatusBar.h"
 
 #define kNavBarHeight 44
 
@@ -31,17 +32,17 @@
     return self;
 }
 
+//设置状态栏的白色
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self.view setBackgroundColor:[UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:248.0f/255.0f alpha:1.0f]];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-
-    if (!_hideNavBar) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
     
     if (self.navigationController.viewControllers.count > 1) {
         [self setLeftBarButton];
@@ -79,9 +80,12 @@
 #pragma mark - methods
 
 - (void)setLeftBarButton {
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 13, 20)];
-    [backButton setImage:[UIImage imageNamed:@"navBack"] forState:UIControlStateNormal];
-    [backButton addTarget:self.navigationController action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    UIImage *backImage = [UIImage imageNamed:@"navBack"];
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
+    [backButton setImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
@@ -89,7 +93,7 @@
 
 - (void)setLeftBarButtonWithTitle:(NSString *)title withBlock:(TouchedBlock)block {
     UIButton *leftBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBarButton.frame = CGRectMake(0, 0, kNavBarHeight, kNavBarHeight);
+    leftBarButton.frame = CGRectMake(0, 0, kNavBarHeight + 20, kNavBarHeight);
     leftBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [leftBarButton setTitle:title forState:UIControlStateNormal];
     leftBarButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -117,7 +121,7 @@
 
 - (void)setRightBarButtonWithTitle:(NSString *)title withBlock:(TouchedBlock)block {
     UIButton *rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightBarButton.frame = CGRectMake(0, 0, kNavBarHeight, kNavBarHeight);
+    rightBarButton.frame = CGRectMake(0, 0, kNavBarHeight + 20, kNavBarHeight);
     rightBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [rightBarButton setTitle:title forState:UIControlStateNormal];
     rightBarButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -138,7 +142,7 @@
     [rightBarButton addActionHandler:^(NSInteger tag) {
         block(tag);
     }];
-
+    
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBarButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }

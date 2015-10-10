@@ -13,9 +13,7 @@ typedef void (^TouchedBlock)(NSInteger tag);
 
 @interface BaseViewController : UIViewController
 
-@property (nonatomic, assign) BOOL hideNavBar;
 @property (nonatomic, copy) NSMutableArray *dataSource;
-
 
 - (void)setLeftBarButton;
 

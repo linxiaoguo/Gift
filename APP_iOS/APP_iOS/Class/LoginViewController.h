@@ -10,4 +10,9 @@
 
 @interface LoginViewController : BaseViewController
 
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UITextField *nickNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @end

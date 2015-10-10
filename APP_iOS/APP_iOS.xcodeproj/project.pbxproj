@@ -13,6 +13,7 @@
 		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; settings = {ASSET_TAGS = (); }; };
 		0BB606B21B7989B400D42A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B11B7989B400D42A16 /* main.m */; };
 		0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B41B7989B400D42A16 /* AppDelegate.m */; };
 		0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB606BC1B7989B400D42A16 /* Images.xcassets */; };
@@ -178,6 +179,8 @@
 		0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0B8594591BC8A2E5002B42B8 /* UINavigationController+StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBar.h"; sourceTree = "<group>"; };
+		0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBar.m"; sourceTree = "<group>"; };
 		0BB606AC1B7989B400D42A16 /* APP_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APP_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB606B01B7989B400D42A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB606B11B7989B400D42A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -555,6 +558,8 @@
 		0BB606D51B798F8000D42A16 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0B8594591BC8A2E5002B42B8 /* UINavigationController+StatusBar.h */,
+				0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */,
 				0BB606F51B799EA200D42A16 /* Foundation */,
 				0BB6075D1B799EA200D42A16 /* UIKit */,
 			);
@@ -1513,6 +1518,7 @@
 				0BB608291B799EA200D42A16 /* UIImage+Orientation.m in Sources */,
 				0BB6082D1B799EA200D42A16 /* UIImageView+Addition.m in Sources */,
 				53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */,
+				0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */,
 				0BB607FA1B799EA200D42A16 /* NSManagedObjectContext+Fetching.m in Sources */,
 				0BB608451B799EA300D42A16 /* UIView+Toast.m in Sources */,
 				0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */,
