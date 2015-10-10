@@ -21,6 +21,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IG3-fV-Ec9">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                             <animations/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980392156861" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDH-6u-39q">
                             <rect key="frame" x="0.0" y="159" width="320" height="100"/>
@@ -92,6 +93,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="150"/>
                                     <animations/>
                                     <state key="normal" image="main_ic1"/>
+                                    <connections>
+                                        <action selector="myShopAction:" destination="-1" eventType="touchUpInside" id="vyb-mc-8bd"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql0-0O-Rte">
                                     <rect key="frame" x="107" y="0.0" width="106" height="150"/>

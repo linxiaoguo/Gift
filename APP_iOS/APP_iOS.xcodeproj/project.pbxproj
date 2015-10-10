@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
+		0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -173,6 +177,12 @@
 		0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0B2D1D8F1B7B292300F55DD5 /* BaseHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpResponse.h; sourceTree = "<group>"; };
 		0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpResponse.m; sourceTree = "<group>"; };
+		0B42B61C1BC90B8200BEBB90 /* MyShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopViewController.h; sourceTree = "<group>"; };
+		0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShopViewController.m; sourceTree = "<group>"; };
+		0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyShopViewController.xib; sourceTree = "<group>"; };
+		0B42B6211BC90B8E00BEBB90 /* ShopInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfoViewController.h; sourceTree = "<group>"; };
+		0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfoViewController.m; sourceTree = "<group>"; };
+		0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopInfoViewController.xib; sourceTree = "<group>"; };
 		0B59A8191BC6528E008C8CD1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -1280,6 +1290,12 @@
 		5366928C1BBF283B00060A1A /* 店铺 */ = {
 			isa = PBXGroup;
 			children = (
+				0B42B61C1BC90B8200BEBB90 /* MyShopViewController.h */,
+				0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */,
+				0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */,
+				0B42B6211BC90B8E00BEBB90 /* ShopInfoViewController.h */,
+				0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */,
+				0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */,
 			);
 			name = "店铺";
 			sourceTree = "<group>";
@@ -1444,6 +1460,7 @@
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
 				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
+				0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */,
 				0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */,
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
@@ -1455,6 +1472,7 @@
 				0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */,
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
+				0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */,
 				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
 			);
@@ -1510,6 +1528,7 @@
 				0BB608071B799EA200D42A16 /* NSString+Base64.m in Sources */,
 				0BB607EE1B799EA200D42A16 /* NSDate+Addition.m in Sources */,
 				0BB606F11B799BD100D42A16 /* SvUDIDTools.m in Sources */,
+				0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */,
 				0BB608171B799EA200D42A16 /* UIBezierPath+SVG.m in Sources */,
 				0BB607F91B799EA200D42A16 /* NSIndexPath+Offset.m in Sources */,
 				0BB606EC1B799B6600D42A16 /* LHttpRequest.m in Sources */,
@@ -1544,6 +1563,7 @@
 				0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */,
 				536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */,
 				0BB608231B799EA200D42A16 /* UIImage+animatedGIF.m in Sources */,
+				0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */,
 				0BB608391B799EA300D42A16 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */,
 				0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */,
