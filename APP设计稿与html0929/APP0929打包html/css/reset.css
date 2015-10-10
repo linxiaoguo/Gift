@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* reset */
+html{color:#000;background:#f5f5f5;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td,fieldset{margin:0;padding:0;}
+body{ font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; font-style:normal;
+ line-height:120%}/*fa*/
+img{border:none;}
+em,strong{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+
+
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+
+/* link */
+a{text-decoration:none;}
+a:hover{text-decoration:none}
+.clear{ clear:both;}
+/* CSS Document */
+
+body{ max-width:640px;}
+/*html,body{
+	height:100%;
+}*/
+h1{ font-weight:normal;}
+
+
+#head_search_box {
+width: 100%;
+position: fixed;
+top: 0;
+z-index: 5004;
+overflow: hidden;
+max-width: 640px;
+height:3.75rem;
+background:#007cc2;
+text-align:center;
+line-height:3.75rem;
+color:#fff;
+font-size:1.6rem;
+}
+.header_bg{height:3.75rem
+}
+
+.search_header .back {
+
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 1.7rem;
+    height: 3.75rem;
+    /* padding-left: 2.1rem; */
+    background: url(../images/fh_jc.png) no-repeat center;
+    width: 0.75rem;
+    background-size: 100%;
+}
