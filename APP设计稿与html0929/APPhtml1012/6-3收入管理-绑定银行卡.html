@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>天天好礼登陆</title>
-    <meta name="author" content="xiaoweili" />
+    <title>绑定银行卡</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <script type="text/javascript">
@@ -62,7 +61,7 @@ console.time("test");
   }, false);
 }(window, {
   designWidth: 640, 
-  designFontSize: 20,
+  designFontSize: 24,
   callback: function (argument) {
     console.timeEnd("test")
   }
@@ -70,60 +69,60 @@ console.time("test");
 </script>
 
 <link href="css/reset.css" type="text/css" rel="stylesheet" />
-<link href="css/style.css" type="text/css" rel="stylesheet" />
-
+<link href="css/srgl.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
 <div class="warp">
-<div class="header">
-  <h1>天天好礼</h1>
-  <div class="gg_tb"><a href=""></a></div>
+<header id="head_search_box" dd_name="结果页头部">
+    <div class="search_header"> 
+    <a href="javascript:;" class="back search_back" id="search_back" dd_name="返回"></a>
+      <div class="search">
+        <sapn>绑定银行卡</sapn>
+      </div>
+
+      
+      </div>
+      
+  </header>
+<div class="header_bg"></div>
+ <div class="bdyhk_title">所填的姓名、身份证、银行卡开户人必须为同一人</div>
+<form action="" method="post" >
+
+<div class="bdyhk">
+ <div class="yhkzl">
+ <li><span>真实姓名</span><input type="text" name="mc" data-required="required" placeholder="填写银行卡姓名"></li>
+  <li><span>身份证号</span><input type="text" name="mc" data-required="required" placeholder="填写银行卡所有者身份证号"></li>
+    <li><span>开户银行</span>
+    <div class="styled-select">
+<select>
+<option>中国工商银行</option>
+<option>中国建设银行</option>
+</select>
 </div>
-
-<div class="grzx">
-<span class="my-img" style="background-image:url(images/tx.png)">    		
-</span>
-<span class="yhxx"> 
-           <p>南笺北笙</p>
-    		<p>今日收入<strong>100.00</strong>元</p>
-           </span>
-</div>
-
-
-<div class="ddsx">
-<ul>
-<li><a href="">
-<h1>今日订单</h1>
-<p>1</p>
-
-</a>  </li>
-<li><a href="">
-<h1>今日买家</h1>
-<p>1</p>
-
-</a>  </li>
-
-</ul>
 <div class="clear"></div>
+
+</li>
+    <li><span>银行卡号</span><input type="text" name="mc" data-required="required" placeholder="填写储蓄卡卡号"></li>
+
+
+ </div>
+ 
+ 
 </div>
+<div class="btu">
 
-
-<div class="main">
-<ul>
-<li><a href=""><div class="img"><img src="images/main_ic1.png" /></div><h1>我的店铺</h1></a></li>
-<li><a href=""><div class="img"><img src="images/main_ic2.png" /></div><h1>商品管理</h1></a></li>
-<li><a href=""><div class="img"><img src="images/main_ic3.png" /></div><h1>订单管理</h1></a></li>
-<li><a href=""><div class="img"><img src="images/main_ic4.png" /></div><h1>收入管理</h1></a></li>
-<li><a href=""><div class="img"><img src="images/main_ic5.png" /></div><h1>营销管理</h1></a></li>
-<li><a href=""><div class="img"><img src="images/main_ic6.png" /></div><h1>系统设置</h1></a></li>
-</ul>
-
-
-<div class="clear"></div>
+<button class="c-order-btn  J_submit shdz">立即绑定</button>
 </div>
+</form>
+<div class="text" style="font-size:1rem; padding:0 1.7rem; color:#878888; line-height:2.4rem; padding-bottom:2.4rem;">
+* 注意:<br />
+－ 提现仅支持储蓄卡，不支持信用卡<br />
+－ 建议绑定62开头的银联卡，提现更及时<br />
+－ 目前仅支持绑定一张卡，要变更卡号，请删除已绑定卡后，重新添加新卡。<br />
+－ 企业用户请绑定公司账户<br />
 
-
+</div>
 </div>
 </body>
 </html>

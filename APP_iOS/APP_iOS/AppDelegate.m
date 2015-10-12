@@ -42,6 +42,7 @@
 - (void)customizeInterface {
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     [navigationBarAppearance setBarTintColor:kRGBCOLOR(0, 121, 198)];
+    [navigationBarAppearance setTranslucent:NO];
     
     //设置naviegationBar的文本属性
     NSDictionary *textAttributes = @{

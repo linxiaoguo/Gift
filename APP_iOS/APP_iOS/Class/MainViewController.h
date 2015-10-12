@@ -10,4 +10,7 @@
 
 @interface MainViewController : BaseViewController
 
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
