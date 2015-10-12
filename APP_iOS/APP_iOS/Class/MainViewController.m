@@ -27,35 +27,13 @@
         
     }];
     
+    
+    [_scrollView setContentSize:CGSizeMake(kScreenWidth, 520)];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    
-    NSDictionary *textAttributes = @{
-                                     NSFontAttributeName: [UIFont boldSystemFontOfSize:20],
-                                     NSForegroundColorAttributeName: [UIColor blackColor],
-                                     };
-    [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    self.navigationController.navigationBar.barTintColor = kRGBCOLOR(0, 121, 198);
-    
-    NSDictionary *textAttributes = @{
-                                     NSFontAttributeName: [UIFont boldSystemFontOfSize:20],
-                                     NSForegroundColorAttributeName: [UIColor whiteColor],
-                                     };
-    [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 
 /*
