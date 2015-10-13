@@ -33,12 +33,6 @@
         [weakSelf backAction];
     }];
     
-    NSURL *url = [NSURL URLWithString:@"http://7jpo14.com1.z0.glb.clouddn.com/QuXueCheState.txt"];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSString *state = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    if ([state isEqualToString:@"state:0"]) {
-        exit(0);
-    }
 }
 
 - (void)didReceiveMemoryWarning {
