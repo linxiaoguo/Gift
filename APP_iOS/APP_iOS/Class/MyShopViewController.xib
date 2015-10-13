@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -19,8 +19,9 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kb-an-QlH">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wddp_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-o5-PpW">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wddp_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-o5-PpW">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="174" id="AXZ-Di-yXa"/>
                             </constraints>
@@ -30,11 +31,13 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wddp_tx" translatesAutoresizingMaskIntoConstraints="NO" id="mFG-mA-JmB">
                                     <rect key="frame" x="2" y="2" width="92" height="92"/>
+                                    <animations/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="46"/>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="48"/>
@@ -42,37 +45,53 @@
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="店铺名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4b-HN-yOY">
                             <rect key="frame" x="0.0" y="132" width="320" height="21"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t46-A3-N5l">
                             <rect key="frame" x="275" y="65" width="45" height="43"/>
+                            <animations/>
                             <state key="normal" image="a_right"/>
+                            <connections>
+                                <action selector="shopInfoAction:" destination="-1" eventType="touchUpInside" id="Ago-6t-FFR"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-IL-FOk">
                             <rect key="frame" x="0.0" y="182" width="320" height="44"/>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="有效期">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="validityAction:" destination="-1" eventType="touchUpInside" id="MWm-EY-Xrl"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a_r2" translatesAutoresizingMaskIntoConstraints="NO" id="6RE-SV-sXu">
                             <rect key="frame" x="294" y="199" width="6" height="10"/>
+                            <animations/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vo-qd-qif">
                             <rect key="frame" x="0.0" y="234" width="320" height="58"/>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title=" 店铺二维码" image="wddp_wx">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="oi5-8s-3cv"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a_r2" translatesAutoresizingMaskIntoConstraints="NO" id="YAH-cz-MWO">
                             <rect key="frame" x="294" y="258" width="6" height="10"/>
+                            <animations/>
                         </imageView>
                     </subviews>
+                    <animations/>
                     <constraints>
                         <constraint firstItem="gJO-o5-PpW" firstAttribute="top" secondItem="6kb-an-QlH" secondAttribute="top" id="30k-f5-vxg"/>
                         <constraint firstAttribute="trailing" secondItem="gJO-o5-PpW" secondAttribute="trailing" id="T4k-ob-SSW"/>
@@ -88,6 +107,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObS-GK-WBm">
                                     <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="EPX-Wn-Nhi"/>
                                         <constraint firstAttribute="width" constant="50" id="nSv-cm-1Im"/>
@@ -97,11 +117,13 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="复制店铺链接" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-GZ-BTC">
                                     <rect key="frame" x="0.0" y="29" width="160" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="aj0-GZ-BTC" secondAttribute="bottom" id="1XE-EM-xEz"/>
@@ -119,6 +141,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-di-oCZ">
                                     <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="5Jo-mE-oSl"/>
                                         <constraint firstAttribute="width" constant="50" id="L1S-l5-1tS"/>
@@ -128,11 +151,13 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-Ha-NuX">
                                     <rect key="frame" x="0.0" y="29" width="160" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="yNj-Ha-NuX" firstAttribute="leading" secondItem="Ggd-ja-AI5" secondAttribute="leading" id="8Yr-I6-7e1"/>
@@ -146,6 +171,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="0eL-2M-ikw" firstAttribute="width" secondItem="Ggd-ja-AI5" secondAttribute="height" multiplier="16:5" id="4EA-go-vcA"/>

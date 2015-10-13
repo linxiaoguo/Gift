@@ -1,26 +1,25 @@
 //
-//  MyShopViewController.m
+//  MyValidityDateViewController.m
 //  APP_iOS
 //
-//  Created by Li on 15/10/10.
+//  Created by Li on 15/10/13.
 //  Copyright © 2015年 Li. All rights reserved.
 //
 
-#import "MyShopViewController.h"
 #import "MyValidityDateViewController.h"
-#import "ModifyViewController.h"
+#import "ValidityDateViewController.h"
 
-@interface MyShopViewController ()
+@interface MyValidityDateViewController ()
 
 @end
 
-@implementation MyShopViewController
+@implementation MyValidityDateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"微店信息";
+    self.title = @"有效期";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,17 +37,9 @@
 }
 */
 
-- (IBAction)shopInfoAction:(id)sender {
-    ModifyViewController *vc = [[ModifyViewController alloc] initWithNibName:@"ModifyViewController" bundle:nil];
+- (IBAction)longAction:(id)sender {
+    ValidityDateViewController *vc = [[ValidityDateViewController alloc] initWithNibName:@"ValidityDateViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (IBAction)validityAction:(id)sender {
-    MyValidityDateViewController *vc = [[MyValidityDateViewController alloc] initWithNibName:@"MyValidityDateViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (IBAction)scanAction:(id)sender {
 }
 
 @end

@@ -139,6 +139,20 @@
 		0BB6086C1B79CBBE00D42A16 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB608681B79CBBE00D42A16 /* Reachability.m */; };
 		0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BB6086D1B79CF6800D42A16 /* KeychainAccessGroups.plist */; };
 		0BB608731B79D6E500D42A16 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB608721B79D6E500D42A16 /* NullSafe.m */; };
+		0BF6C4EC1BCC8CD300D569C8 /* ValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EA1BCC8CD300D569C8 /* ValidityDateViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EB1BCC8CD300D569C8 /* ValidityDateViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4F11BCC9E7100D569C8 /* MyValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EF1BCC9E7100D569C8 /* MyValidityDateViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F01BCC9E7100D569C8 /* MyValidityDateViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F41BCCA0DC00D569C8 /* MyCodeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F51BCCA0DC00D569C8 /* MyCodeViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4FB1BCCAC0B00D569C8 /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4FC1BCCAC0B00D569C8 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FE1BCCAE0D00D569C8 /* BaseTextViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FF1BCCAE0D00D569C8 /* BaseTextViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C5051BCCEE6300D569C8 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		536692941BBF2A2500060A1A /* OrderViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692921BBF2A2500060A1A /* OrderViewCtr.m */; };
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
@@ -436,6 +450,27 @@
 		0BB6086D1B79CF6800D42A16 /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
 		0BB608701B79D30F00D42A16 /* APP_iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APP_iOS-Prefix.pch"; sourceTree = "<group>"; };
 		0BB608721B79D6E500D42A16 /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		0BF6C4E91BCC8CD300D569C8 /* ValidityDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidityDateViewController.h; sourceTree = "<group>"; };
+		0BF6C4EA1BCC8CD300D569C8 /* ValidityDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidityDateViewController.m; sourceTree = "<group>"; };
+		0BF6C4EB1BCC8CD300D569C8 /* ValidityDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidityDateViewController.xib; sourceTree = "<group>"; };
+		0BF6C4EE1BCC9E7100D569C8 /* MyValidityDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyValidityDateViewController.h; sourceTree = "<group>"; };
+		0BF6C4EF1BCC9E7100D569C8 /* MyValidityDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyValidityDateViewController.m; sourceTree = "<group>"; };
+		0BF6C4F01BCC9E7100D569C8 /* MyValidityDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyValidityDateViewController.xib; sourceTree = "<group>"; };
+		0BF6C4F31BCCA0DC00D569C8 /* MyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeViewController.h; sourceTree = "<group>"; };
+		0BF6C4F41BCCA0DC00D569C8 /* MyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeViewController.m; sourceTree = "<group>"; };
+		0BF6C4F51BCCA0DC00D569C8 /* MyCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCodeViewController.xib; sourceTree = "<group>"; };
+		0BF6C4F81BCCAC0B00D569C8 /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
+		0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
+		0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyViewController.xib; sourceTree = "<group>"; };
+		0BF6C4FD1BCCAE0D00D569C8 /* BaseTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTextViewController.h; sourceTree = "<group>"; };
+		0BF6C4FE1BCCAE0D00D569C8 /* BaseTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTextViewController.m; sourceTree = "<group>"; };
+		0BF6C4FF1BCCAE0D00D569C8 /* BaseTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTextViewController.xib; sourceTree = "<group>"; };
+		0BF6C5021BCCEE6200D569C8 /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
+		0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
+		0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsViewController.xib; sourceTree = "<group>"; };
+		0BF6C5071BCCEEEF00D569C8 /* GoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTableViewCell.h; sourceTree = "<group>"; };
+		0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsTableViewCell.m; sourceTree = "<group>"; };
+		0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsTableViewCell.xib; sourceTree = "<group>"; };
 		397606A5325BF093A737C8F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4574C16411636293EF573232 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		536692911BBF2A2500060A1A /* OrderViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewCtr.h; sourceTree = "<group>"; };
@@ -579,6 +614,9 @@
 		0BB606D61B798F8000D42A16 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6C4FD1BCCAE0D00D569C8 /* BaseTextViewController.h */,
+				0BF6C4FE1BCCAE0D00D569C8 /* BaseTextViewController.m */,
+				0BF6C4FF1BCCAE0D00D569C8 /* BaseTextViewController.xib */,
 				5366928F1BBF286200060A1A /* 登录 */,
 				5366928E1BBF285D00060A1A /* 首页 */,
 				5366928C1BBF283B00060A1A /* 店铺 */,
@@ -1283,6 +1321,12 @@
 		5366928B1BBF283000060A1A /* 商品 */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6C5071BCCEEEF00D569C8 /* GoodsTableViewCell.h */,
+				0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */,
+				0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */,
+				0BF6C5021BCCEE6200D569C8 /* GoodsViewController.h */,
+				0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */,
+				0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */,
 			);
 			name = "商品";
 			sourceTree = "<group>";
@@ -1296,6 +1340,18 @@
 				0B42B6211BC90B8E00BEBB90 /* ShopInfoViewController.h */,
 				0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */,
 				0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */,
+				0BF6C4F81BCCAC0B00D569C8 /* ModifyViewController.h */,
+				0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */,
+				0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */,
+				0BF6C4EE1BCC9E7100D569C8 /* MyValidityDateViewController.h */,
+				0BF6C4EF1BCC9E7100D569C8 /* MyValidityDateViewController.m */,
+				0BF6C4F01BCC9E7100D569C8 /* MyValidityDateViewController.xib */,
+				0BF6C4E91BCC8CD300D569C8 /* ValidityDateViewController.h */,
+				0BF6C4EA1BCC8CD300D569C8 /* ValidityDateViewController.m */,
+				0BF6C4EB1BCC8CD300D569C8 /* ValidityDateViewController.xib */,
+				0BF6C4F31BCCA0DC00D569C8 /* MyCodeViewController.h */,
+				0BF6C4F41BCCA0DC00D569C8 /* MyCodeViewController.m */,
+				0BF6C4F51BCCA0DC00D569C8 /* MyCodeViewController.xib */,
 			);
 			name = "店铺";
 			sourceTree = "<group>";
@@ -1456,6 +1512,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */,
+				0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */,
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
@@ -1465,15 +1523,20 @@
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
+				0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */,
 				53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
 				53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */,
 				53DEAAAC1BC171AA0008D6E8 /* BonusViewCtr.xib in Resources */,
+				0BF6C4FC1BCCAC0B00D569C8 /* ModifyViewController.xib in Resources */,
 				0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */,
+				0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */,
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
+				0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */,
 				0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */,
 				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
+				0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1524,6 +1587,7 @@
 				0BB6080E1B799EA200D42A16 /* NSString+Score.m in Sources */,
 				0BB6084B1B799EA300D42A16 /* UIWebView+Canvas.m in Sources */,
 				0BB6081D1B799EA200D42A16 /* UIColor+HEX.m in Sources */,
+				0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */,
 				0BB608411B799EA300D42A16 /* UIView+Find.m in Sources */,
 				0BB608071B799EA200D42A16 /* NSString+Base64.m in Sources */,
 				0BB607EE1B799EA200D42A16 /* NSDate+Addition.m in Sources */,
@@ -1560,14 +1624,17 @@
 				0BB608481B799EA300D42A16 /* UIViewController+Visible.m in Sources */,
 				0BB608271B799EA200D42A16 /* UIImage+FX.m in Sources */,
 				0BB608091B799EA200D42A16 /* NSString+Emoji.m in Sources */,
+				0BF6C4EC1BCC8CD300D569C8 /* ValidityDateViewController.m in Sources */,
 				0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */,
 				536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */,
 				0BB608231B799EA200D42A16 /* UIImage+animatedGIF.m in Sources */,
 				0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */,
 				0BB608391B799EA300D42A16 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				0BF6C4FB1BCCAC0B00D569C8 /* ModifyViewController.m in Sources */,
 				53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */,
 				0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */,
 				0BB606E51B799B5300D42A16 /* InteractivePopNavigationController.m in Sources */,
+				0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */,
 				0BB608141B799EA200D42A16 /* NSURL+Param.m in Sources */,
 				0BB6083B1B799EA300D42A16 /* UITextField+Blocks.m in Sources */,
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
@@ -1584,11 +1651,13 @@
 				0BB607F01B799EA200D42A16 /* NSDate+TimeAgo.m in Sources */,
 				0BB6085D1B79A8D600D42A16 /* CAAnimation+WAnimation.m in Sources */,
 				0BB6085E1B79A8D600D42A16 /* UIView+WZLFrame.m in Sources */,
+				0BF6C5051BCCEE6300D569C8 /* GoodsViewController.m in Sources */,
 				0BB608341B799EA200D42A16 /* UIResponder+Chain.m in Sources */,
 				0BB6084A1B799EA300D42A16 /* UIWebView+Blocks.m in Sources */,
 				0BB6086C1B79CBBE00D42A16 /* Reachability.m in Sources */,
 				53E485861BBFFC580064ACE7 /* IncomeCell.m in Sources */,
 				0BB6081A1B799EA200D42A16 /* UIButton+CountDown.m in Sources */,
+				0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */,
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
 				0BB6082A1B799EA200D42A16 /* UIImage+RemoteSize.m in Sources */,
@@ -1654,6 +1723,7 @@
 				0BB6083F1B799EA300D42A16 /* UIView+BlockGesture.m in Sources */,
 				0BB607F81B799EA200D42A16 /* NSFileManager+Paths.m in Sources */,
 				0BB6084E1B799EA300D42A16 /* UIWebView+Style.m in Sources */,
+				0BF6C4F11BCC9E7100D569C8 /* MyValidityDateViewController.m in Sources */,
 				53DE4F501BC6879500D1ADC5 /* AESCrypt.m in Sources */,
 				0BB608281B799EA200D42A16 /* UIImage+Merge.m in Sources */,
 				53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */,
