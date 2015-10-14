@@ -170,6 +170,9 @@
                                     <animations/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                     <state key="normal" image="main_ic2"/>
+                                    <connections>
+                                        <action selector="goodsAction:" destination="-1" eventType="touchUpInside" id="aZb-PU-wQF"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-uc-JOm">
                                     <rect key="frame" x="214" y="0.0" width="106" height="120"/>

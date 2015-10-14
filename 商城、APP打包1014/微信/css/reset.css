@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* reset */
+html{color:#000;background:#f5f5f5;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body{ font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; 
+ line-height:120%}/*fa*/
+img{border:none;}
+em,strong{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+
+
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+
+/* link */
+a{text-decoration:none;}
+a:hover{text-decoration:none}
+.clear{ clear:both;}
+/* CSS Document */
+
+html {
+	font-size: 62.5%; /* 10÷16=62.5% */
+}
+@media only screen and (min-width: 481px){
+	html {
+		font-size: 94%!important; /* 15.04÷16=94% */
+	}
+}
+@media only screen and (min-width: 561px){
+	html {
+		font-size: 109%!important; /* 17.44÷16=109% */
+	}
+
+}
+@media only screen and (min-width: 641px){
+	html {
+		font-size: 125%!important; /* 20÷16=125% */
+	}
+}

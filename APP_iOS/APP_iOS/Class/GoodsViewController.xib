@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoodsViewController">
             <connections>
+                <outlet property="tableView" destination="ckp-T9-qFY" id="SJC-ij-SSF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,16 +23,44 @@
                         <segment title="出售中"/>
                         <segment title="已下架"/>
                     </segments>
+                    <connections>
+                        <action selector="stateAction:" destination="-1" eventType="valueChanged" id="buX-tO-Zbt"/>
+                    </connections>
                 </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-T9-qFY">
-                    <rect key="frame" x="0.0" y="53" width="320" height="515"/>
+                    <rect key="frame" x="0.0" y="54" width="320" height="466"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="T3V-T6-guR"/>
+                        <outlet property="delegate" destination="-1" id="KOQ-y9-y9U"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-Jp-R0i">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-nC-kqE">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title=" 添加新商品" image="spgg_Bg2">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="addGoodsAction:" destination="-1" eventType="touchUpInside" id="gV8-MV-TT4"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="189" y="302"/>
         </view>
     </objects>
+    <resources>
+        <image name="spgg_Bg2" width="16" height="16"/>
+    </resources>
 </document>

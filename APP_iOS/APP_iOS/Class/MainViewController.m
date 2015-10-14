@@ -10,6 +10,7 @@
 #import "UIImage+Color.h"
 
 #import "MyShopViewController.h"
+#import "GoodsViewController.h"
 
 @interface MainViewController ()
 
@@ -50,6 +51,11 @@
 
 - (IBAction)myShopAction:(id)sender {
     MyShopViewController *vc = [[MyShopViewController alloc] initWithNibName:@"MyShopViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)goodsAction:(id)sender {
+    GoodsViewController *vc = [[GoodsViewController alloc] initWithNibName:@"GoodsViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

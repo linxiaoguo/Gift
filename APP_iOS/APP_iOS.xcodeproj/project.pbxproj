@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
+		0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F9DB01BCE365000FC8852 /* AddGoodsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -191,6 +193,9 @@
 		0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0B2D1D8F1B7B292300F55DD5 /* BaseHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpResponse.h; sourceTree = "<group>"; };
 		0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpResponse.m; sourceTree = "<group>"; };
+		0B3F9DAE1BCE365000FC8852 /* AddGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGoodsViewController.h; sourceTree = "<group>"; };
+		0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGoodsViewController.m; sourceTree = "<group>"; };
+		0B3F9DB01BCE365000FC8852 /* AddGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddGoodsViewController.xib; sourceTree = "<group>"; };
 		0B42B61C1BC90B8200BEBB90 /* MyShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopViewController.h; sourceTree = "<group>"; };
 		0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShopViewController.m; sourceTree = "<group>"; };
 		0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyShopViewController.xib; sourceTree = "<group>"; };
@@ -1327,6 +1332,9 @@
 				0BF6C5021BCCEE6200D569C8 /* GoodsViewController.h */,
 				0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */,
 				0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */,
+				0B3F9DAE1BCE365000FC8852 /* AddGoodsViewController.h */,
+				0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */,
+				0B3F9DB01BCE365000FC8852 /* AddGoodsViewController.xib */,
 			);
 			name = "商品";
 			sourceTree = "<group>";
@@ -1536,6 +1544,7 @@
 				0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */,
 				0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */,
 				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
+				0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */,
 				0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
 			);
@@ -1640,6 +1649,7 @@
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
 				0BB607F71B799EA200D42A16 /* NSException+Trace.m in Sources */,
 				0BB6081F1B799EA200D42A16 /* UIColor+Random.m in Sources */,
+				0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */,
 				53DEAAA61BC162DE0008D6E8 /* BindBankSelectCell.m in Sources */,
 				53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */,
 				0BB607EB1B799EA200D42A16 /* NSBundle+AppIcon.m in Sources */,

@@ -10,4 +10,7 @@
 
 @interface GoodsViewController : BaseViewController
 
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @end
