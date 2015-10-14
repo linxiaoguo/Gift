@@ -7,6 +7,8 @@
 //
 
 #import "MyShopViewController.h"
+#import "MyValidityDateViewController.h"
+#import "ModifyViewController.h"
 
 @interface MyShopViewController ()
 
@@ -35,5 +37,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)shopInfoAction:(id)sender {
+    ModifyViewController *vc = [[ModifyViewController alloc] initWithNibName:@"ModifyViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)validityAction:(id)sender {
+    MyValidityDateViewController *vc = [[MyValidityDateViewController alloc] initWithNibName:@"MyValidityDateViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)scanAction:(id)sender {
+}
 
 @end

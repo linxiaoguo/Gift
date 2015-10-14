@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>天天好礼</title>
+<link type="text/css" href="css/reset.css" rel="Stylesheet" />
+<link type="text/css" href="css/nav.css" rel="Stylesheet" />
+</head>
+<body>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<div class="warp">
+  <header class="header">
+    <div class="logo"><img src="images/logo.jpg" /></div>
+    <div class="search">
+      <div class="cx">
+        <input id="search_button" onclick="aj()" src="images/search.png" type="image">
+        <input class="text_box1_input" onclick="script:username2.value=''" id="username2" name="post_data[username]" type="text" value="搜索宝贝关键词">
+      </div>
+    </div>
+  </header>
+  <style>
+    .swiper-container {
+        width: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+		width:100%;
+    }
+	.swiper-slide img{ width:100%;}
+    </style>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/1.jpg" /></div>
+      <div class="swiper-slide"><img src="images/2.jpg" /></div>
+      <div class="swiper-slide"><img src="images/3.jpg" /></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  
+  <!-- Swiper JS --> 
+  <script src="js/swiper.min.js"></script> 
+  
+  <!-- Initialize Swiper --> 
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script>
+    <section class="goods_list" id="goods_list" name="goods_list" dd_name="商品列表">
+    <style type="text/css">
+
+/* colockbox */
+
+
+
+.colockbox span {
+float: left;
+display: block;
+width: 18px;
+height: 20px;
+line-height: 20px;
+font-size: 12px;
+text-align: center;
+color: #ffffff;
+
+background: #000;
+}
+.colockbox span.second{margin:0;}
+
+
+</style>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+    <script type="text/javascript">
+
+$(function(){
+
+	countDown("2018/8/10 23:59:59","#demo01 .day","#demo01 .hour","#demo01 .minute","#demo01 .second");
+
+	countDown("2019/8/10 22:59:59",null,"#demo02 .hour","#demo02 .minute","#demo02 .second");
+
+});
+
+
+
+function countDown(time,day_elem,hour_elem,minute_elem,second_elem){
+
+	//if(typeof end_time == "string")
+
+	var end_time = new Date(time).getTime(),//月份是实际月份-1
+
+	//current_time = new Date().getTime(),
+
+	sys_second = (end_time-new Date().getTime())/1000;
+
+	var timer = setInterval(function(){
+
+		if (sys_second > 0) {
+
+			sys_second -= 1;
+
+			var day = Math.floor((sys_second / 3600) / 24);
+
+			var hour = Math.floor((sys_second / 3600) % 24);
+
+			var minute = Math.floor((sys_second / 60) % 60);
+
+			var second = Math.floor(sys_second % 60);
+
+			day_elem && $(day_elem).text(day);//计算天
+
+			$(hour_elem).text(hour<10?"0"+hour:hour);//计算小时
+
+			$(minute_elem).text(minute<10?"0"+minute:minute);//计算分
+
+			$(second_elem).text(second<10?"0"+second:second);// 计算秒
+
+		} else { 
+
+			clearInterval(timer);
+
+		}
+
+	}, 1000);
+
+}
+
+</script>
+
+        <div class="title" style="position:relative">精品特惠秒杀
+             <div class="colockbox" id="demo02" style=" display:inline-block; position:absolute; top:2px; left:120px;">
+
+	<span class="hour">-</span>
+    <strong style="float:left;line-height: 20px; padding:0 5px">:</strong>
+	<span class="minute">-</span>
+    <strong style="float:left;line-height: 20px;padding:0 5px">:</strong>
+	<span class="second">-</span>
+
+</div>
+
+          
+        </div>
+
+      <div class="clearfix">
+        <ul class="clearfix p_left">
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price">
+              <span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <ul class="clearfix p_right">
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              <span><button type="button" class="gwc_b" onclick=""></button></span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="clear"></div>
+    
+    <!--主题馆-->
+   <section class="goods_list" id="goods_list" name="goods_list" dd_name="主题馆">
+   <div class="ztg">
+      <div class="title">主题馆</div>
+
+   <li><a href=""><img src="images/z1.jpg" /></a></li>
+   <li><a href=""><img src="images/z2.jpg" /></a></li>
+   <li><a href=""><img src="images/z3.jpg" /></a></li>
+
+    </div>  
+    </section>
+    <div class="clear"></div>
+ <div class="splb">
+     <section class="goods_list" id="goods_list" name="goods_list" dd_name="商品类别">
+            <div class="title" style="margin-bottom:0">商品类别</div>
+
+</section>
+       <div class="lb">
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s1.png" /></div>
+         </a>
+       </li>
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s2.png" /></div>
+         </a>
+       </li>
+
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s3.png" /></div>
+         </a>
+       </li>
+       <li style="border-right:none;">
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s4.png" /></div>
+         </a>
+       </li>
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s5.png" /></div>
+         </a>
+       </li>
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s6.png" /></div>
+         </a>
+       </li>
+
+       <li>
+       <a href="">
+         <h1>文化创意<p>清仓特卖</p></h1>
+         <div class="img"><img src="images/s7.png" /></div>
+         </a>
+       </li>
+       </div>
+        <div class="clear"></div>
+
+ </div>
+ <div class="clear"></div>
+ 
+ 
+ <div class="f-bg"></div>
+ <div class="nav">
+ <li>
+ <a name="fff"></a>
+ <a href="#fff">
+         <div class="img">
+         <img style="display:none" src="images/n1.png"/>
+         <img src="images/n1_h.png" />
+         </div>
+          <p class="curr">首页</p>
+ </a>
+ </li>
+  <li>
+ <a name="fff"></a>
+ <a href="#fff">
+         <div class="img">
+         <img style="display:none" src="images/n2_h.png"/>
+         <img src="images/n2.png" />
+         </div>
+          <p>扫码</p>
+ </a>
+ </li>
+
+ <li>
+ <a name="fff"></a>
+ <a href="#fff">
+         <div class="img">
+         <img style="display:none" src="images/n3_h.png"/>
+         <img src="images/n3.png" />
+         </div>
+          <p>购物车</p>
+ </a>
+ </li>
+ <li>
+ <a name="fff"></a>
+ <a href="#fff">
+         <div class="img">
+         <img style="display:none" src="images/n4_h.png"/>
+         <img src="images/n4.png" />
+         </div>
+          <p>我的</p>
+ </a>
+ </li>
+ 
+ </div>
+ 
+ 
+</div>
+</body>
+</html>

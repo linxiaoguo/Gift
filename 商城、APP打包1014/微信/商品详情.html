@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>天天好礼-商品详情</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<link type="text/css" href="css/reset.css" rel="Stylesheet" />
+<link type="text/css" href="css/nav.css" rel="Stylesheet" />
+
+<link href="css/app.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+<link rel="stylesheet" href="css/product3531.css" />
+<link type="text/css" href="css/style.css" />
+
+</head>
+<body>
+<div class="warp">
+  <header id="head_search_box" dd_name="结果页头部">
+    <div class="search_header blue"> <a href="javascript:;" class="back search_back" id='search_back' dd_name="返回"></a>
+      <div class="search">
+        <sapn>商品详情</sapn>
+      </div>
+      <a class="menu filtrate" name="list_go_filter" dd_name="" href="" ></a> </div>
+  </header>
+  <div class="header_bg"></div>
+  
+  <!-- 轮播开始 -->
+  <style>
+    .swiper-container {
+        width: 100%;
+    }
+	.swiper-container img{ width:100%;}
+    </style>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <li class="swiper-slide"><a><img src="images/s1.jpg" /></a></li>
+      <li class="swiper-slide"><a><img src="images/s2.jpg" /></a></li>
+      <li class="swiper-slide"><a><img src="images/s3.jpg" /></a></li>
+      <li class="swiper-slide"><a><img src="images/s4.jpg" /></a></li>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <script src="js/swiper.min.js"></script> 
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    </script> 
+  
+  <!-- 轮播结束 --> 
+  
+  <!-- 详情区域开始 -->
+  <section class="detail">
+    <div class="left"> <b>￥<span id="main_price">174</span></b> <del>￥599.00</del> </div>
+    <div class="right">
+      <ul>
+        <li class="fav"><a>收藏</a></li>
+      </ul>
+    </div>
+    <article>法国PELLIOT皮肤衣女男 春夏超薄透气速干防晒衣情侣户外皮肤风衣</article>
+  </section>
+  <!-- 详情区域结束 --> 
+  
+  <!-- 选项开始 -->
+  <section class="option"> 
+  <a class="arrow_con title">
+    <div class="arrow_d up" onclick="{$(this).toggleClass('up');if($(this).hasClass('up')){$('.option_detail').show(400);}else{$('.option_detail').hide(400);}}">选择 <span class="color">颜色 </span><span class="split">/ </span><span class="size">尺码</span></div>
+    </a>
+    <div class="option_detail">
+      <dl class="thumbnail">
+        <dt><img src="images/sxqxt.jpg" alt="缩略图" /></dt>
+        <dd> <span class="con"> <span class="price">¥<i id="color_size_price" class="J_change_price" data-price-range="174">174</i></span> <span class="select">请选择 </span> <span class="color">颜色</span> <span class="split">/</span> <span class="size">尺码</span> </span> </dd>
+      </dl>
+      <h3 id="color_name">颜色</h3>
+      <ul id="color_options">
+        <li>宝蓝色</li>
+        <li>天蓝色</li>
+        <li>女黄色</li>
+        <li>孔雀蓝</li>
+        <li>紫色</li>
+        <li>浅红色</li>
+        <li>深红色</li>
+        <li>男黄色</li>
+        <li>灰色</li>
+      </ul>
+      <h3 id="size_name">尺码</h3>
+      <ul id="size_options">
+        <li>XXL</li>
+        <li>XL</li>
+        <li>L</li>
+        <li>M</li>
+        <li>S</li>
+      </ul>
+    </div>
+  </section>
+  <!-- 选项结束 --> 
+  <script type="text/javascript">
+  $("#color_options li").click(function (){
+	  $("#color_options li").removeClass('on');
+	  $(this).addClass('on');
+	  }); 
+    $("#size_options li").click(function (){
+	  $("#size_options li").removeClass('on');
+	  $(this).addClass('on');
+	  }); 
+
+  </script>
+  <!-- 数量开始 -->
+  <section class="quantity">
+    <h4>数量：</h4>
+    <div class="number_con"> <span class="minus">-</span>
+      <div class="input">
+        <input id="buy_num"  type="text" value="1" />
+      </div>
+      <span class="plus on">+</span> </div>
+  </section>
+  <!-- 数量结束 -->
+  
+  <section class="quantity">
+    <h4>数量：</h4>
+    <span class="yunf">免费</span> </section>
+  
+  <!-- 店铺 -->
+  <section class="shop"> 
+  <a href="">
+    <div class="shop_con arrow_con">
+      <div class="arrow">
+        <div class="logo"><img src="images/dplogo.png" alt="PELLIOT户外旗舰店" /></div>
+        <div class="name">PELLIOT户外旗舰店</div>
+        <span>进入店铺</span> </div>
+    </div>
+    </a> </section>
+  <!-- 店铺束 -->
+  <section>
+    <div class="detail-desc">
+      <div class="sn-tab choose cm-v-gap">
+        <ul class="sn-tab-nav tabs" id="oxhhhh">
+        <a href="#" hidefocus="true"  class="active">规格参数</a>
+        <a href="#" hidefocus="true">图文详情</a>
+        <a href="#" hidefocus="true">猜你喜欢</a>
+
+        </ul>
+        <div class="clear"></div>
+        <div>
+            <div class="swiper-container" id="swiper_container">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide">
+           <div class="content-slide" id="sbsbsb">
+             <div class="desc-spec sn-tab-box" style="height: auto;">
+              <div class="desc-spec-param desc-spec-item" style="-webkit-transform-origin: 0px 0px; opacity: 1; -webkit-transform: scale(1, 1);"> 
+              <a href="javascript:void(0);">
+                <dl>
+                  <dt data-name="prodDetail_none_main_forkSpec" data-event="desc-spec-param"> 商品参数 
+                  <span class="cm-direct-t" data-event="desc-spec-param"></span> 
+                  </dt>
+                  <dd>
+                    <div class="desc-spec-param-i">
+                      <h3>主观参数</h3>
+                      <ul>
+                        <li>
+                          <div>品牌</div>
+                          <div>裂帛</div>
+                        </li>
+                        <li>
+                          <div>面料主材质（女）</div>
+                          <div>棉</div>
+                        </li>
+                        <li>
+                          <div>厚薄</div>
+                          <div>常规款</div>
+                        </li>
+                        <li>
+                          <div>款式</div>
+                          <div>套头</div>
+                        </li>
+                        <li>
+                          <div>风格</div>
+                          <div>淑女</div>
+                        </li>
+                        <li>
+                          <div>领型</div>
+                          <div>圆领</div>
+                        </li>
+                        <li>
+                          <div>版型</div>
+                          <div>宽松</div>
+                        </li>
+                        <li>
+                          <div>袖型</div>
+                          <div>灯笼袖</div>
+                        </li>
+                        <li>
+                          <div>花型图案</div>
+                          <div>纯色</div>
+                        </li>
+                        <li>
+                          <div>工艺处理</div>
+                          <div>水洗</div>
+                        </li>
+                        <li>
+                          <div>流行元素</div>
+                          <div>不对称</div>
+                        </li>
+                        <li>
+                          <div>衣长</div>
+                          <div>常规</div>
+                        </li>
+                        <li>
+                          <div>上市时间</div>
+                          <div>2015年</div>
+                        </li>
+                        <li>
+                          <div>商场同款</div>
+                          <div>非同款</div>
+                        </li>
+                        <li>
+                          <div>组合形式</div>
+                          <div>单件</div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="desc-spec-param-i">
+                      <h3>实质参数</h3>
+                      <ul>
+                        <li>
+                          <div>适用人群</div>
+                          <div>女士</div>
+                        </li>
+                        <li>
+                          <div>适用季节</div>
+                          <div>夏季</div>
+                        </li>
+                        <li>
+                          <div>适用年龄</div>
+                          <div>25-30岁</div>
+                        </li>
+                        <li>
+                          <div>袖长</div>
+                          <div>长袖</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                </dl>
+                </a> </div>
+              <div class="desc-spec-sale desc-spec-item" style="-webkit-transform-origin: 0px 0px; opacity: 1; -webkit-transform: scale(1, 1);"> <a href="javascript:void(0);">
+                <dl>
+                  <dt data-name="prodDetail_none_main_forkSHFW" data-event="desc-spec-sale"> 售后服务
+                  <span class="cm-direct-t" data-event="desc-spec-sale"></span> 
+                  </dt>
+                  <dd>
+                    <p class="shfw">本商户商品保证正品行货，严格按照国家三包政策提供售后服务，因质量问题或实物与描述不符产生的退换货服务运费由本店承担。</p>
+                  </dd>
+                </dl>
+                </a> </div>
+            </div>
+            </div>
+          </div>
+        <div class="swiper-slide">
+            <div class="content-slide">
+            <div class="desc-graphic sn-tab-box wbox-flex">
+              <div class="lazyimg">
+              <p>
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx1.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx2.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx3.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx4.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx5.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx6.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx7.jpg" alt="" width="100%" height="auto" class="opa1">
+              <img onload="if(this.width>750){this.height=this.height*(750.0/this.width); this.width = 750;}" src="images/tx8.jpg" alt="" width="100%" height="auto" class="opa1">
+              </p>
+              </div>
+                </div>
+            </div>
+          </div>
+        <div class="swiper-slide">
+            <div class="content-slide">
+            <style type="text/css">
+
+/* colockbox */
+
+
+
+.colockbox span {
+float: left;
+display: block;
+width: 18px;
+height: 24px;
+line-height: 24px;
+font-size: 12px;
+text-align: center;
+color: #ffffff;
+
+background: #000;
+}
+.colockbox span.second{margin:0;}
+
+
+</style>
+      <div class="clearfix goods_list">
+        <ul class="clearfix p_left">
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <ul class="clearfix p_right">
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div><a href="" name="product_item" dd_name="商品">
+              <p class="img"><img src="images/ic1.jpg" alt="茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款"></p>
+              <p class="name">茵曼女装 2015新款简约净色包边V领百搭长袖T恤上衣女【8510210396】可支持货到付款</p>
+              </a>
+              <p class="price"><span class="red">&yen;58.00</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+            </div>
+          </div>
+      </div>
+   </div>
+<script src="js/jquery-1.10.1.min.js"></script> 
+<script src="js/idangerous.swiper.min.js"></script> 
+<script>
+
+
+	var contentslides=$(".content-slide");
+$(contentslides).parent(".swiper-slide").height(0);
+
+$(contentslides[0]).parent(".swiper-slide").height(contentslides[0].offsetHeight);
+$($(contentslides[0]).parent(".swiper-slide")).parent(".swiper-wrapper").height(contentslides[0].offsetHeight);
+
+
+
+
+
+
+
+
+var tabsSwiper = new Swiper('#swiper_container',{
+	speed:500,
+	onSlideChangeStart: function(){
+		$(".tabs .active").removeClass('active');
+		$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+	
+	$(contentslides).parent(".swiper-slide").height(0);
+	var u=tabsSwiper.activeIndex;
+$(contentslides[u]).parent(".swiper-slide").height(contentslides[u].offsetHeight);
+$($(contentslides[u]).parent(".swiper-slide")).parent(".swiper-wrapper").height(contentslides[u].offsetHeight);
+	}
+});
+
+
+
+$(".tabs a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".tabs .active").removeClass('active');
+	$(this).addClass('active');
+	tabsSwiper.swipeTo($(this).index());
+});
+
+$(".tabs a").click(function(e){
+	e.preventDefault();
+});
+</script>
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  <script type="text/javascript">
+$("#huadong li").click(function(){ 
+	/*$(this).find(".picTitle").css("left","-156px");*/
+	var oioio=$("#huadong li");
+	var height1=$("#hd1 .wbox-flex");
+	for(var i=0;i<oioio.length;i++){
+	$(oioio[i]).removeClass("current");
+		$(height1[i]).css('height',"0");//未选中
+
+	if(oioio[i]==this){
+		
+		$(this).addClass("current");
+		hd1.style.transform=" translateX(-"+33*i+"%)";
+				$(height1[i]).css('height',"auto");//选中
+
+		}}
+				window.alert(hd1.style.transform);
+
+	});
+	
+	
+		
+		
+</script> 
+-->  
+
+
+<!-- 购物车开始 -->
+  <div class="shopping_cart_bg" style="height:1.75rem; width:100%;"></div>
+  <section class="shopping_cart">
+    <div class="btn_con">
+      <button class='add' dd_name='加入购物车'>加入购物车</button>
+      <button class='buy J_buy' dd_name='直接购买'>立即购买</button>
+    </div>
+    <a href="" class="cart" dd_name='查看购物车'> <span>购物车<i style="display: inline; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">1</i></span> </a> </section>
+  <!-- 购物车结束 --> 
+  
+  <div class="f-bg"></div>
+  <div class="nav">
+    <li> <a name="fff"></a> <a href="#fff">
+      <div class="img"> <img style="display:none" src="images/n1.png"/> <img src="images/n1_h.png" /> </div>
+      <p class="curr">首页</p>
+      </a> </li>
+    <li> <a name="fff"></a> <a href="#fff">
+      <div class="img"> <img style="display:none" src="images/n2_h.png"/> <img src="images/n2.png" /> </div>
+      <p>扫码</p>
+      </a> </li>
+    <li> <a name="fff"></a> <a href="#fff">
+      <div class="img"> <img style="display:none" src="images/n3_h.png"/> <img src="images/n3.png" /> </div>
+      <p>购物车</p>
+      </a> </li>
+    <li> <a name="fff"></a> <a href="#fff">
+      <div class="img"> <img style="display:none" src="images/n4_h.png"/> <img src="images/n4.png" /> </div>
+      <p>我的</p>
+      </a> </li>
+  </div>
+</div>
+</body>
+</html>
