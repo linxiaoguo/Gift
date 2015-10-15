@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
-		0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F9DB01BCE365000FC8852 /* AddGoodsViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; settings = {ASSET_TAGS = (); }; };
+		0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */; };
+		0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F9DB01BCE365000FC8852 /* AddGoodsViewController.xib */; };
+		0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */; };
+		0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */; };
+		0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */; };
+		0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */; };
+		0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */; };
+		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; };
+		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; };
+		0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */; };
+		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; };
 		0BB606B21B7989B400D42A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B11B7989B400D42A16 /* main.m */; };
 		0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B41B7989B400D42A16 /* AppDelegate.m */; };
 		0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB606BC1B7989B400D42A16 /* Images.xcassets */; };
@@ -141,20 +141,20 @@
 		0BB6086C1B79CBBE00D42A16 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB608681B79CBBE00D42A16 /* Reachability.m */; };
 		0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BB6086D1B79CF6800D42A16 /* KeychainAccessGroups.plist */; };
 		0BB608731B79D6E500D42A16 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB608721B79D6E500D42A16 /* NullSafe.m */; };
-		0BF6C4EC1BCC8CD300D569C8 /* ValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EA1BCC8CD300D569C8 /* ValidityDateViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EB1BCC8CD300D569C8 /* ValidityDateViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4F11BCC9E7100D569C8 /* MyValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EF1BCC9E7100D569C8 /* MyValidityDateViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F01BCC9E7100D569C8 /* MyValidityDateViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F41BCCA0DC00D569C8 /* MyCodeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F51BCCA0DC00D569C8 /* MyCodeViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4FB1BCCAC0B00D569C8 /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C4FC1BCCAC0B00D569C8 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FE1BCCAE0D00D569C8 /* BaseTextViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FF1BCCAE0D00D569C8 /* BaseTextViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C5051BCCEE6300D569C8 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		0BF6C4EC1BCC8CD300D569C8 /* ValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EA1BCC8CD300D569C8 /* ValidityDateViewController.m */; };
+		0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EB1BCC8CD300D569C8 /* ValidityDateViewController.xib */; };
+		0BF6C4F11BCC9E7100D569C8 /* MyValidityDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4EF1BCC9E7100D569C8 /* MyValidityDateViewController.m */; };
+		0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F01BCC9E7100D569C8 /* MyValidityDateViewController.xib */; };
+		0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F41BCCA0DC00D569C8 /* MyCodeViewController.m */; };
+		0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F51BCCA0DC00D569C8 /* MyCodeViewController.xib */; };
+		0BF6C4FB1BCCAC0B00D569C8 /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */; };
+		0BF6C4FC1BCCAC0B00D569C8 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */; };
+		0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FE1BCCAE0D00D569C8 /* BaseTextViewController.m */; };
+		0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C4FF1BCCAE0D00D569C8 /* BaseTextViewController.xib */; };
+		0BF6C5051BCCEE6300D569C8 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5031BCCEE6200D569C8 /* GoodsViewController.m */; };
+		0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */; };
+		0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */; };
+		0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */; };
 		536692941BBF2A2500060A1A /* OrderViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692921BBF2A2500060A1A /* OrderViewCtr.m */; };
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
@@ -175,6 +175,8 @@
 		53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAAF1BC173FB0008D6E8 /* BonusCell.xib */; };
 		53DEAAB51BC1768D0008D6E8 /* BonusTotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */; };
 		53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */; };
+		53DF348B1BD04A30003B5DE7 /* DES3Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF348A1BD04A30003B5DE7 /* DES3Util.m */; };
+		53DF34931BD04B59003B5DE7 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DF34911BD04B59003B5DE7 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */; };
 		53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */; };
 		53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4857C1BBFC9690064ACE7 /* OrderCell.m */; };
@@ -510,6 +512,11 @@
 		53DEAAB21BC1768D0008D6E8 /* BonusTotalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusTotalCell.h; sourceTree = "<group>"; };
 		53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusTotalCell.m; sourceTree = "<group>"; };
 		53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusTotalCell.xib; sourceTree = "<group>"; };
+		53DF34891BD04A30003B5DE7 /* DES3Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES3Util.h; sourceTree = "<group>"; };
+		53DF348A1BD04A30003B5DE7 /* DES3Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES3Util.m; sourceTree = "<group>"; };
+		53DF34901BD04B59003B5DE7 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		53DF34911BD04B59003B5DE7 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		53DF34921BD04B59003B5DE7 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		53E485761BBFC6E80064ACE7 /* OrderHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeadCell.h; sourceTree = "<group>"; };
 		53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeadCell.m; sourceTree = "<group>"; };
 		53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHeadCell.xib; sourceTree = "<group>"; };
@@ -670,6 +677,7 @@
 		0BB606DA1B798F8000D42A16 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				53DF34881BD04A20003B5DE7 /* 3Des */,
 				53DE4F471BC6879500D1ADC5 /* AESCrypt-ObjC */,
 				0BB608711B79D6E500D42A16 /* NullSafe */,
 				0BB608601B79CBBE00D42A16 /* CoreStatus */,
@@ -1419,6 +1427,18 @@
 			path = "AESCrypt-ObjC";
 			sourceTree = "<group>";
 		};
+		53DF34881BD04A20003B5DE7 /* 3Des */ = {
+			isa = PBXGroup;
+			children = (
+				53DF34901BD04B59003B5DE7 /* GTMBase64.h */,
+				53DF34911BD04B59003B5DE7 /* GTMBase64.m */,
+				53DF34921BD04B59003B5DE7 /* GTMDefines.h */,
+				53DF34891BD04A30003B5DE7 /* DES3Util.h */,
+				53DF348A1BD04A30003B5DE7 /* DES3Util.m */,
+			);
+			path = 3Des;
+			sourceTree = "<group>";
+		};
 		53E485751BBFC6CE0064ACE7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1680,6 +1700,7 @@
 				0BB6083A1B799EA300D42A16 /* UITableViewCell+NIB.m in Sources */,
 				0BB6080C1B799EA200D42A16 /* NSString+PJR.m in Sources */,
 				0BB608181B799EA200D42A16 /* UIBezierPath+Symbol.m in Sources */,
+				53DF348B1BD04A30003B5DE7 /* DES3Util.m in Sources */,
 				0BB608081B799EA200D42A16 /* NSString+DictionaryValue.m in Sources */,
 				0BB608001B799EA200D42A16 /* NSObject+AssociatedObject.m in Sources */,
 				0BB6084C1B799EA300D42A16 /* UIWebView+JS.m in Sources */,
@@ -1722,6 +1743,7 @@
 				0BB607E91B799EA200D42A16 /* NSArray+Block.m in Sources */,
 				0BB6084D1B799EA300D42A16 /* UIWebView+Load.m in Sources */,
 				0BB607EC1B799EA200D42A16 /* NSData+Base64.m in Sources */,
+				53DF34931BD04B59003B5DE7 /* GTMBase64.m in Sources */,
 				0BB606B21B7989B400D42A16 /* main.m in Sources */,
 				0BB6080D1B799EA200D42A16 /* NSString+RemoveEmoji.m in Sources */,
 				0BB607FD1B799EA200D42A16 /* NSNull+OVNatural.m in Sources */,

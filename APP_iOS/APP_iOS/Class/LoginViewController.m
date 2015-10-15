@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
+#import "DES3Util.h"
 
 @interface LoginViewController ()
 
@@ -63,11 +64,12 @@
 //        return;
 //    }
 
-    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
-        NSLog(@"%@", responseDic);
-    } failure:^(NSString *descript) {
-        
-    }];
+//    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
+//        NSLog(@"%@", responseDic);
+//    } failure:^(NSString *descript) {
+//        
+//    }];
+    [self testHttp];
     [kAppDelegate showMainViewController];
 }
 
@@ -87,5 +89,16 @@
     return YES;
 }
 
-
+#pragma mark - 测试接口
+- (void)testHttp {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"32768" forKey:@"shopid"];
+    [dic setObject:@"18" forKey:@"apilevel"];
+    NSString *shopid = @"{\"shopid\":\"32768\",\"apilevel\":\"18\"}";
+    NSLog(@"%@", shopid);
+    NSString *encode = [DES3Util encrypt:shopid];
+    NSLog(@"%@", encode);
+    NSString *decode = [DES3Util decrypt:encode];
+    NSLog(@"%@", decode);
+}
 @end
