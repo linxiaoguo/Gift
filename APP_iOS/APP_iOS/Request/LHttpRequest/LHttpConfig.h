@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Li. All rights reserved.
 //
 
-#define kServerUrl      @"http://110.84.128.171:7060/gzydh/api?apiName="
-#define kSuccessCode    @"0000"
-#define kSuccessKey     @"code"
+#define kServerUrl      @"http://121.40.131.81/shopping/mall/app/"
+#define kSuccessCode    @"1"
+#define kSuccessKey     @"success"
 
 #ifndef DLog
 #ifdef DEBUG

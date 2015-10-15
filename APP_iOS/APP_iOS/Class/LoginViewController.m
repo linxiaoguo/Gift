@@ -54,15 +54,20 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    if (!_nickNameTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
-        return;
-    }
-    if (!_passwordTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-        return;
-    }
-    
+//    if (!_nickNameTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
+//        return;
+//    }
+//    if (!_passwordTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+//        return;
+//    }
+
+    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
+        NSLog(@"%@", responseDic);
+    } failure:^(NSString *descript) {
+        
+    }];
     [kAppDelegate showMainViewController];
 }
 
