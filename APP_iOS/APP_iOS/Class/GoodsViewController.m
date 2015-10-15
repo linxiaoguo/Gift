@@ -22,7 +22,6 @@
     
     self.title = @"商品管理";
     
-    kWEAKSELF;
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
     }];
 }

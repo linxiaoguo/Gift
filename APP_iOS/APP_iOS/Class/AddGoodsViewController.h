@@ -10,4 +10,6 @@
 
 @interface AddGoodsViewController : BaseViewController
 
+
+
 @end

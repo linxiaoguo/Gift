@@ -32,7 +32,7 @@
 
 #define kUSER_DEFAULT               [NSUserDefaults standardUserDefaults]
 
-#define kWEAKSELF                   __weak __typeof(self) weakSelf = self;
+#define kWEAKSELF                   __weak __typeof(self) weakSelf = self
 
 #pragma mark - color functions
 
