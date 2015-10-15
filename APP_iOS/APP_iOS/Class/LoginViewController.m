@@ -10,6 +10,7 @@
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
 #import "DES3Util.h"
+#import "NSDictionary+JSONString.h"
 
 @interface LoginViewController ()
 
@@ -91,14 +92,25 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    [dic setObject:@"32768" forKey:@"shopid"];
+//    [dic setObject:@"18" forKey:@"apilevel"];
+//    NSString *shopid = [dic JSONStringPlain];
+//    NSString *encode = [DES3Util encrypt:shopid];
+//    NSLog(@"%@", encode);
+//    NSString *decode = [DES3Util decrypt:encode];
+//    NSLog(@"%@", decode);
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"32768" forKey:@"shopid"];
-    [dic setObject:@"18" forKey:@"apilevel"];
-    NSString *shopid = @"{\"shopid\":\"32768\",\"apilevel\":\"18\"}";
-    NSLog(@"%@", shopid);
-    NSString *encode = [DES3Util encrypt:shopid];
-    NSLog(@"%@", encode);
-    NSString *decode = [DES3Util decrypt:encode];
-    NSLog(@"%@", decode);
+    [dic setObject:@"1" forKey:@"shopid"];
+    NSString *jsonString = [dic JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
+
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:encode forKey:@"req"];
+    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
+        NSLog(@"%@", responseDic);
+    } failure:^(NSString *descript) {
+        
+    }];
 }
 @end

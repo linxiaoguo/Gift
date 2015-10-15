@@ -10,4 +10,6 @@
 
 @interface NSDictionary (JSONString)
 -(NSString *)JSONString;
+
+-(NSString *)JSONStringPlain;//无换行
 @end
