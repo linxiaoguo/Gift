@@ -7,6 +7,7 @@
 //
 
 #import "AddGoodsViewController.h"
+#import "AddGoodsTableViewCell.h"
 
 @interface AddGoodsViewController ()
 
@@ -20,6 +21,11 @@
     
     self.title = @"商品管理";
 
+    [self.dataSource addObject:[NSDictionary dictionary]];
+    [self.dataSource addObject:[NSDictionary dictionary]];
+    
+    _tableView.tableHeaderView = _headerView;
+    _tableView.tableFooterView = _footerView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +42,50 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addGoodsAction:(id)sender {
+    [self.dataSource addObject:[NSDictionary dictionary]];
+    
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 140.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"AddGoodsTableViewCell";
+    
+    AddGoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"AddGoodsTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    }
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    kWEAKSELF;
+    [cell.delButton addActionHandler:^(NSInteger tag) {
+        [weakSelf.dataSource removeObjectAtIndex:indexPath.row];
+        [weakSelf.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    
+    
+    return cell;
+}
+
 
 @end

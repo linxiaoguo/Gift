@@ -10,4 +10,7 @@
 
 @interface AddGoodsTableViewCell : UITableViewCell
 
+
+@property (strong, nonatomic) IBOutlet UIButton *delButton;
+
 @end

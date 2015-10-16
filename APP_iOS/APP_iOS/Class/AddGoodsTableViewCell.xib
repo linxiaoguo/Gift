@@ -84,6 +84,9 @@
                 <animations/>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="delButton" destination="jD6-eZ-kZb" id="SG3-Y8-qzV"/>
+            </connections>
             <point key="canvasLocation" x="189" y="350"/>
         </tableViewCell>
     </objects>

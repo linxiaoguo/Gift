@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddGoodsViewController">
             <connections>
+                <outlet property="footerView" destination="0sH-1c-ER5" id="I0D-he-Yrj"/>
+                <outlet property="headerView" destination="6hk-ev-cCI" id="PVQ-CG-uEz"/>
+                <outlet property="tableView" destination="e4R-um-toO" id="nBV-Ok-XFy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,14 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4R-um-toO">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4R-um-toO">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Pj7-22-4fg"/>
+                        <outlet property="delegate" destination="-1" id="vqn-6h-Pto"/>
+                    </connections>
                 </tableView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="e4R-um-toO" secondAttribute="trailing" id="Ghp-gQ-FtK"/>
+                <constraint firstItem="e4R-um-toO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JIg-I8-vrI"/>
+                <constraint firstAttribute="bottom" secondItem="e4R-um-toO" secondAttribute="bottom" id="lCu-ad-u5T"/>
+                <constraint firstItem="e4R-um-toO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vn5-z2-GC4"/>
+            </constraints>
             <point key="canvasLocation" x="189" y="302"/>
         </view>
         <view contentMode="scaleToFill" id="6hk-ev-cCI">
@@ -175,6 +188,9 @@
                     <state key="normal" title="       添加商品型号" image="spgg_Bg2">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addGoodsAction:" destination="-1" eventType="touchUpInside" id="YJh-03-mDC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-bf-OVR">
                     <rect key="frame" x="20" y="56" width="280" height="44"/>
