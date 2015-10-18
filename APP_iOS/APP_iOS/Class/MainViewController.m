@@ -11,6 +11,8 @@
 
 #import "MyShopViewController.h"
 #import "GoodsViewController.h"
+#import "IncomeViewCtr.h"
+#import "OrderViewCtr.h"
 
 @interface MainViewController ()
 
@@ -59,5 +61,14 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)orderAction:(id)sender {
+    OrderViewCtr *vc = [[OrderViewCtr alloc] initWithNibName:@"OrderViewCtr" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)incomeAction:(id)sender {
+    IncomeViewCtr *vc = [[IncomeViewCtr alloc] initWithNibName:@"IncomeViewCtr" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end
