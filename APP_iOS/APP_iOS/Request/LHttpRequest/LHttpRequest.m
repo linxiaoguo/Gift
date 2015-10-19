@@ -19,31 +19,31 @@
     DLog(@"请求网址：%@\n请求参数：\n%@", requestURL, parameters);
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-//    manager.requestSerializer.timeoutInterval = 15;	//超时
+
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    AFJSONResponseSerializer *ret = [AFJSONResponseSerializer serializer];
-    ret.removesKeysWithNullValues = YES;
-    manager.responseSerializer = ret;
+    manager.requestSerializer.timeoutInterval = 15;	//超时
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/plain"]];
 
     [manager GET:requestURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSString *jsonString = [NSObject jsonStringWithObject:responseObject];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
         NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         NSAssert(jsonData != nil, @"jsonData can not nil");
         NSError *error = nil;
 
         id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
         if (jsonObject && !error) {
-            NSDictionary *jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
-            if (![[jsonDic objectForKey:kSuccessKey] isEqualToString:kSuccessCode]) {
-                DLog(@"requestFailure:\n%@", jsonDic); 
-                failure([jsonDic objectForKey:@"message"]);
+            NSDictionary *jsonDic;
+            if ([jsonObject isKindOfClass:[NSArray class]]) {
+                jsonDic = [NSDictionary dictionaryWithObject:jsonObject forKey:@"data"];
+            } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
             }
-            else {
-                DLog(@"requestSuccess:\n%@", jsonDic);
-                sucess(jsonDic);
-            }
+            DLog(@"requestSuccess:\n%@", jsonDic);
+            sucess(jsonDic);
         }
         else {
             // 解析错误
@@ -62,26 +62,27 @@
     DLog(@"请求网址：%@\n请求参数：\n%@", requestURL, parameters);
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    AFJSONResponseSerializer *ret = [AFJSONResponseSerializer serializer];
-    ret.removesKeysWithNullValues = YES;
-    manager.responseSerializer = ret;
+    manager.requestSerializer.timeoutInterval = 15;	//超时
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/plain"]];
 
     [manager POST:requestURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSString *jsonString = [NSObject jsonStringWithObject:responseObject];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
         NSError *error = nil;
         id jsonObject = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&error];
         if (jsonObject && !error) {
-            NSDictionary *jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
+            NSDictionary *jsonDic;
+            if ([jsonObject isKindOfClass:[NSArray class]]) {
+                jsonDic = [NSDictionary dictionaryWithObject:jsonObject forKey:@"data"];
+            } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+                jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
+            }
             DLog(@"requestSuccess:\n%@", jsonDic);
-            if (![[jsonDic objectForKey:kSuccessKey] isEqualToString:kSuccessCode]) {
-                failure([jsonDic objectForKey:@"desc"]);
-            }
-            else {
-                sucess(jsonDic);
-            }
+            sucess(jsonDic);
         }
         else {
             // 解析错误

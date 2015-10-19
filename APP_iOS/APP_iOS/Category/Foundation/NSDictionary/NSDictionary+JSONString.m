@@ -23,4 +23,13 @@
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     return jsonString;
 }
+
+-(NSString *)JSONStringPlain {
+    NSString *jsonString = [self JSONString];
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    return jsonString;
+}
 @end

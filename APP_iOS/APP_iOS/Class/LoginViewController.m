@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
+#import "DES3Util.h"
+#import "NSDictionary+JSONString.h"
 
 @interface LoginViewController ()
 
@@ -54,15 +56,21 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    if (!_nickNameTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
-        return;
-    }
-    if (!_passwordTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-        return;
-    }
-    
+//    if (!_nickNameTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
+//        return;
+//    }
+//    if (!_passwordTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+//        return;
+//    }
+
+//    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
+//        NSLog(@"%@", responseDic);
+//    } failure:^(NSString *descript) {
+//        
+//    }];
+    [self testHttp];
     [kAppDelegate showMainViewController];
 }
 
@@ -82,5 +90,27 @@
     return YES;
 }
 
+#pragma mark - 测试接口
+- (void)testHttp {
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    [dic setObject:@"32768" forKey:@"shopid"];
+//    [dic setObject:@"18" forKey:@"apilevel"];
+//    NSString *shopid = [dic JSONStringPlain];
+//    NSString *encode = [DES3Util encrypt:shopid];
+//    NSLog(@"%@", encode);
+//    NSString *decode = [DES3Util decrypt:encode];
+//    NSLog(@"%@", decode);
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"1" forKey:@"shopid"];
+    NSString *jsonString = [dic JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
 
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:encode forKey:@"req"];
+    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
+        NSLog(@"%@", responseDic);
+    } failure:^(NSString *descript) {
+        
+    }];
+}
 @end
