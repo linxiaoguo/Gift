@@ -27,9 +27,6 @@
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
         
     }];
-    
-    
-    [_scrollView setContentSize:CGSizeMake(kScreenWidth, 520)];
 }
 
 - (void)didReceiveMemoryWarning {
