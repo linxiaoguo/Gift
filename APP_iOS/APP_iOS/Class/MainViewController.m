@@ -11,6 +11,7 @@
 
 #import "MyShopViewController.h"
 #import "GoodsViewController.h"
+#import "SettingViewController.h"
 #import "IncomeViewCtr.h"
 #import "OrderViewCtr.h"
 
@@ -29,9 +30,6 @@
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
         
     }];
-    
-    
-    [_scrollView setContentSize:CGSizeMake(kScreenWidth, 520)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +56,11 @@
 
 - (IBAction)goodsAction:(id)sender {
     GoodsViewController *vc = [[GoodsViewController alloc] initWithNibName:@"GoodsViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)settingAction:(id)sender {
+    SettingViewController *vc = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

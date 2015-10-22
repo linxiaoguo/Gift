@@ -16,9 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-52-LKv">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="1h5-52-LKv">
                     <rect key="frame" x="100" y="12" width="121" height="29"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="121" id="0G1-vA-mfm"/>
+                        <constraint firstAttribute="height" constant="28" id="au7-Vp-wmZ"/>
+                    </constraints>
                     <segments>
                         <segment title="出售中"/>
                         <segment title="已下架"/>
@@ -27,8 +31,8 @@
                         <action selector="stateAction:" destination="-1" eventType="valueChanged" id="buX-tO-Zbt"/>
                     </connections>
                 </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-T9-qFY">
-                    <rect key="frame" x="0.0" y="54" width="320" height="466"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-T9-qFY">
+                    <rect key="frame" x="0.0" y="52" width="320" height="466"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -36,7 +40,7 @@
                         <outlet property="delegate" destination="-1" id="KOQ-y9-y9U"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-Jp-R0i">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-Jp-R0i">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-nC-kqE">
@@ -53,10 +57,26 @@
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="olm-4a-WFO"/>
+                    </constraints>
                 </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Jak-Jp-R0i" secondAttribute="trailing" id="58U-Bo-lfJ"/>
+                <constraint firstItem="ckp-T9-qFY" firstAttribute="top" secondItem="1h5-52-LKv" secondAttribute="bottom" constant="12" id="GEC-yi-6Uv"/>
+                <constraint firstItem="ckp-T9-qFY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JmP-BW-g0i"/>
+                <constraint firstAttribute="trailing" secondItem="ckp-T9-qFY" secondAttribute="trailing" id="KTf-VR-y2g"/>
+                <constraint firstItem="1h5-52-LKv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NUN-4b-cNz"/>
+                <constraint firstItem="1h5-52-LKv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="ZnA-gq-QWe"/>
+                <constraint firstItem="Jak-Jp-R0i" firstAttribute="top" secondItem="ckp-T9-qFY" secondAttribute="bottom" id="evB-nC-aUf"/>
+                <constraint firstItem="Jak-Jp-R0i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="flS-NK-sL8"/>
+                <constraint firstItem="ckp-T9-qFY" firstAttribute="top" secondItem="1h5-52-LKv" secondAttribute="bottom" constant="12" id="gcf-FN-7ms"/>
+                <constraint firstItem="Jak-Jp-R0i" firstAttribute="top" secondItem="ckp-T9-qFY" secondAttribute="bottom" id="qt7-Hf-Br0"/>
+                <constraint firstAttribute="bottom" secondItem="Jak-Jp-R0i" secondAttribute="bottom" id="v3V-T9-oRg"/>
+            </constraints>
             <point key="canvasLocation" x="189" y="302"/>
         </view>
     </objects>

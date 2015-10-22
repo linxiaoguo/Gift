@@ -10,4 +10,9 @@
 
 @interface AddGoodsViewController : BaseViewController
 
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
+
 @end
