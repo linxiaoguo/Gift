@@ -11,6 +11,7 @@
 
 #import "MyShopViewController.h"
 #import "GoodsViewController.h"
+#import "SettingViewController.h"
 
 @interface MainViewController ()
 
@@ -56,5 +57,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)settingAction:(id)sender {
+    SettingViewController *vc = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

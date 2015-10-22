@@ -211,6 +211,9 @@
                                     </constraints>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                     <state key="normal" image="main_ic6"/>
+                                    <connections>
+                                        <action selector="settingAction:" destination="-1" eventType="touchUpInside" id="ia2-wH-sgU"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkQ-z5-SDZ">
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="120"/>

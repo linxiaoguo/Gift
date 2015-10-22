@@ -21,7 +21,13 @@
 		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0B59A8221BC65BF6008C8CD1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0B5E44061BD87328003F7D1F /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E44041BD87328003F7D1F /* ModifyPwdViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B5E44071BD87328003F7D1F /* ModifyPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E44051BD87328003F7D1F /* ModifyPwdViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		0B5E440B1BD87FA4003F7D1F /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B5E440C1BD87FA4003F7D1F /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; settings = {ASSET_TAGS = (); }; };
+		0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B886FB71BD7880600388F03 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0B886FBA1BD7880600388F03 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B886FB81BD7880600388F03 /* SettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		0BB606B21B7989B400D42A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B11B7989B400D42A16 /* main.m */; };
 		0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B41B7989B400D42A16 /* AppDelegate.m */; };
 		0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB606BC1B7989B400D42A16 /* Images.xcassets */; };
@@ -215,8 +221,17 @@
 		0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0B5E44031BD87328003F7D1F /* ModifyPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPwdViewController.h; sourceTree = "<group>"; };
+		0B5E44041BD87328003F7D1F /* ModifyPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPwdViewController.m; sourceTree = "<group>"; };
+		0B5E44051BD87328003F7D1F /* ModifyPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyPwdViewController.xib; sourceTree = "<group>"; };
+		0B5E44081BD87FA4003F7D1F /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		0B8594591BC8A2E5002B42B8 /* UINavigationController+StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBar.h"; sourceTree = "<group>"; };
 		0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBar.m"; sourceTree = "<group>"; };
+		0B886FB61BD7880600388F03 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		0B886FB71BD7880600388F03 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		0B886FB81BD7880600388F03 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		0BB606AC1B7989B400D42A16 /* APP_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APP_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB606B01B7989B400D42A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB606B11B7989B400D42A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1416,6 +1431,15 @@
 		536692901BBF286700060A1A /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				0B886FB61BD7880600388F03 /* SettingViewController.h */,
+				0B886FB71BD7880600388F03 /* SettingViewController.m */,
+				0B886FB81BD7880600388F03 /* SettingViewController.xib */,
+				0B5E44031BD87328003F7D1F /* ModifyPwdViewController.h */,
+				0B5E44041BD87328003F7D1F /* ModifyPwdViewController.m */,
+				0B5E44051BD87328003F7D1F /* ModifyPwdViewController.xib */,
+				0B5E44081BD87FA4003F7D1F /* NoticeViewController.h */,
+				0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */,
+				0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */,
 			);
 			name = "设置";
 			sourceTree = "<group>";
@@ -1548,6 +1572,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5E440C1BD87FA4003F7D1F /* NoticeViewController.xib in Resources */,
+				0B5E44071BD87328003F7D1F /* ModifyPwdViewController.xib in Resources */,
 				0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */,
 				0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */,
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
@@ -1560,6 +1586,7 @@
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
 				0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */,
+				0B886FBA1BD7880600388F03 /* SettingViewController.xib in Resources */,
 				53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
 				53DEAA9D1BC162910008D6E8 /* BindBankViewCtr.xib in Resources */,
@@ -1633,11 +1660,13 @@
 				0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */,
 				0BB608171B799EA200D42A16 /* UIBezierPath+SVG.m in Sources */,
 				0BB607F91B799EA200D42A16 /* NSIndexPath+Offset.m in Sources */,
+				0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */,
 				0BB606EC1B799B6600D42A16 /* LHttpRequest.m in Sources */,
 				536692941BBF2A2500060A1A /* OrderViewCtr.m in Sources */,
 				0BB606F41B799D0600D42A16 /* ShareFunction.m in Sources */,
 				0BB608291B799EA200D42A16 /* UIImage+Orientation.m in Sources */,
 				0B3F9DB61BCF974A00FC8852 /* AddGoodsTableViewCell.m in Sources */,
+				0B5E440B1BD87FA4003F7D1F /* NoticeViewController.m in Sources */,
 				0BB6082D1B799EA200D42A16 /* UIImageView+Addition.m in Sources */,
 				53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */,
 				0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */,
@@ -1728,6 +1757,7 @@
 				0BB608311B799EA200D42A16 /* UINavigationController+BATransitions.m in Sources */,
 				0BB608331B799EA200D42A16 /* UINavigationController+StackManager.m in Sources */,
 				0BB608131B799EA200D42A16 /* NSTimer+Blocks.m in Sources */,
+				0B5E44061BD87328003F7D1F /* ModifyPwdViewController.m in Sources */,
 				0BB608371B799EA300D42A16 /* UIScrollView+Pages.m in Sources */,
 				0BB6082F1B799EA200D42A16 /* UILabel+SuggestSize.m in Sources */,
 				0BB608461B799EA300D42A16 /* UIViewController+MJPopupViewController.m in Sources */,

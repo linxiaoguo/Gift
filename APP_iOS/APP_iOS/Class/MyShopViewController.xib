@@ -19,7 +19,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kb-an-QlH">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wddp_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-o5-PpW">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wddp_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-o5-PpW">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
                             <animations/>
                             <constraints>
