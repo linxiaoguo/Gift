@@ -31,6 +31,7 @@
         [weakSelf backAction];
     }];
     
+    [_vHeader setBackgroundColor:kRGBCOLOR(200, 200, 200)];
     _marOderHeaderCell = [NSMutableArray array];
     _waitSend = [CustomView viewWithNibName:@"OrderHeadCell"];
     _waitPay = [CustomView viewWithNibName:@"OrderHeadCell"];
@@ -40,7 +41,7 @@
     for (NSInteger i=1; i<4; i++) {
         UIImageView *line = [[UIImageView alloc] init];
         [_vHeader addSubview:line];
-        [line setBackgroundColor:[UIColor darkGrayColor]];
+        [line setBackgroundColor:[UIColor lightGrayColor]];
         [line setTag:100+i];
     }
     [_vHeader addSubview:_waitSend];
@@ -78,7 +79,7 @@
         OrderHeadCell *cell = [_marOderHeaderCell objectAtIndex:i];
         cell.frame = CGRectMake(x + w * i - 1, y, w + 2, h);
         UIImageView *line = (UIImageView *)[_vHeader viewWithTag:100+i];
-        line.frame = CGRectMake(x + w * i - 1, 10, 1, h - 20);
+        line.frame = CGRectMake(x + w * i - 1, 10, 0.5, h - 20);
     }
 }
 
