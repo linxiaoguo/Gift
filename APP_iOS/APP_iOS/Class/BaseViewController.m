@@ -65,7 +65,7 @@
 }
 
 - (void)dealloc {
-    DLog(@"***********************%@ dealloc**********************", NSStringFromClass([self class]));
+    DLog(@"---[%@ dealloc]!!!", NSStringFromClass([self class]));
 }
 
 #pragma mark - lazy load

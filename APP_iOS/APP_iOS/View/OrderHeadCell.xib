@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-uK-uZB" userLabel="Image View 分割线">
-                        <rect key="frame" x="89" y="16" width="1" height="44"/>
+                        <rect key="frame" x="89" y="18" width="1" height="33"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="qFI-Om-IzG"/>
@@ -29,20 +29,20 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ6-gk-nol">
-                        <rect key="frame" x="0.0" y="16" width="90" height="26"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <rect key="frame" x="0.0" y="13" width="90" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待发货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-tn-bbe">
-                        <rect key="frame" x="0.0" y="45" width="90" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="0.0" y="43" width="90" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TQ6-gk-nol" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="3iE-3T-twx"/>
+                    <constraint firstItem="TQ6-gk-nol" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="3iE-3T-twx"/>
                     <constraint firstItem="4ou-Mx-hNi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="5SY-VI-yhd"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4ou-Mx-hNi" secondAttribute="trailing" constant="-8" id="7HV-zF-gPO"/>
                     <constraint firstItem="TQ6-gk-nol" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="9Ts-aC-5ab"/>
@@ -52,8 +52,8 @@
                     <constraint firstItem="ZYp-tn-bbe" firstAttribute="top" secondItem="TQ6-gk-nol" secondAttribute="bottom" constant="3" id="Lx1-5p-dxH"/>
                     <constraint firstItem="ZYp-tn-bbe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="Px8-Vp-FK0"/>
                     <constraint firstAttribute="bottomMargin" secondItem="4ou-Mx-hNi" secondAttribute="bottom" constant="-8" id="WaO-Dv-OiV"/>
-                    <constraint firstItem="Pq6-uK-uZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="kM2-BS-1WY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Pq6-uK-uZB" secondAttribute="bottom" constant="1" id="syq-3L-p6d"/>
+                    <constraint firstItem="Pq6-uK-uZB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="kM2-BS-1WY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Pq6-uK-uZB" secondAttribute="bottom" constant="10" id="syq-3L-p6d"/>
                     <constraint firstAttribute="trailingMargin" secondItem="TQ6-gk-nol" secondAttribute="trailing" constant="-8" id="xF6-DM-YeE"/>
                 </constraints>
             </tableViewCellContentView>
