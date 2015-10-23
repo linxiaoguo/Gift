@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -15,38 +15,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8S-cG-jbf" userLabel="Image View 银行卡">
-                        <rect key="frame" x="10" y="7" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfont-bdb" translatesAutoresizingMaskIntoConstraints="NO" id="X8S-cG-jbf" userLabel="Image View 银行卡">
+                        <rect key="frame" x="30" y="7" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="um0-IX-fRb"/>
                             <constraint firstAttribute="height" constant="30" id="xch-WM-wu3"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定银行卡" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg5-ds-AL9">
-                        <rect key="frame" x="50" y="11" width="100" height="21"/>
+                        <rect key="frame" x="75" y="11" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="NLU-VC-taL"/>
                             <constraint firstAttribute="height" constant="21" id="btK-js-V2S"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未绑定" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lox-tp-5c4">
-                        <rect key="frame" x="202" y="11" width="70" height="21"/>
+                        <rect key="frame" x="210" y="11" width="70" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="cLC-EJ-7P5"/>
                             <constraint firstAttribute="height" constant="21" id="gGx-YR-oG9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bxi-iZ-pJ7" userLabel="Image View 箭头">
-                        <rect key="frame" x="277" y="12" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a_r2" translatesAutoresizingMaskIntoConstraints="NO" id="Bxi-iZ-pJ7" userLabel="Image View 箭头">
+                        <rect key="frame" x="285" y="12" width="12" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="2O6-1b-dYm"/>
-                            <constraint firstAttribute="width" constant="20" id="iNW-rf-1bA"/>
+                            <constraint firstAttribute="width" constant="12" id="iNW-rf-1bA"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -56,9 +56,9 @@
                     <constraint firstAttribute="centerY" secondItem="Lox-tp-5c4" secondAttribute="centerY" id="QN7-f0-Vab"/>
                     <constraint firstAttribute="centerY" secondItem="bg5-ds-AL9" secondAttribute="centerY" id="XeN-Rv-2m1"/>
                     <constraint firstItem="Bxi-iZ-pJ7" firstAttribute="leading" secondItem="Lox-tp-5c4" secondAttribute="trailing" constant="5" id="Ynz-Xm-DPC"/>
-                    <constraint firstItem="bg5-ds-AL9" firstAttribute="leading" secondItem="X8S-cG-jbf" secondAttribute="trailing" constant="10" id="ZdT-y8-Let"/>
+                    <constraint firstItem="bg5-ds-AL9" firstAttribute="leading" secondItem="X8S-cG-jbf" secondAttribute="trailing" constant="15" id="ZdT-y8-Let"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Bxi-iZ-pJ7" secondAttribute="trailing" constant="15" id="w0n-cV-N8M"/>
-                    <constraint firstItem="X8S-cG-jbf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="xTC-4S-mvz"/>
+                    <constraint firstItem="X8S-cG-jbf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="xTC-4S-mvz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -69,4 +69,8 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="a_r2" width="12" height="20"/>
+        <image name="iconfont-bdb" width="50" height="50"/>
+    </resources>
 </document>

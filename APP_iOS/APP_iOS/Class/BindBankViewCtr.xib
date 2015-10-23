@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -45,19 +45,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui4-4u-goj">
-                                <rect key="frame" x="210" y="10" width="180" height="40"/>
+                                <rect key="frame" x="15" y="10" width="570" height="50"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.40784313725490196" blue="0.71372549019607845" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="itk-W6-hQY"/>
-                                    <constraint firstAttribute="width" constant="180" id="rP7-gc-w5S"/>
+                                    <constraint firstAttribute="height" constant="50" id="itk-W6-hQY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="立即保存">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-ab-BZJ">
-                                <rect key="frame" x="15" y="55" width="570" height="135"/>
+                                <rect key="frame" x="15" y="65" width="570" height="125"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,12 +64,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ui4-4u-goj" secondAttribute="trailing" constant="15" id="ETu-ma-EaE"/>
                             <constraint firstItem="Ui4-4u-goj" firstAttribute="top" secondItem="Brt-u2-alr" secondAttribute="top" constant="10" id="PUQ-OL-rt1"/>
                             <constraint firstItem="3Ck-ab-BZJ" firstAttribute="leading" secondItem="Brt-u2-alr" secondAttribute="leading" constant="15" id="QAz-0g-OrW"/>
                             <constraint firstAttribute="trailing" secondItem="3Ck-ab-BZJ" secondAttribute="trailing" constant="15" id="Vvu-AM-Nk8"/>
                             <constraint firstAttribute="centerX" secondItem="Ui4-4u-goj" secondAttribute="centerX" id="WXG-Vw-vZu"/>
                             <constraint firstItem="3Ck-ab-BZJ" firstAttribute="top" secondItem="Ui4-4u-goj" secondAttribute="bottom" constant="5" id="jNK-QU-uER"/>
                             <constraint firstAttribute="bottom" secondItem="3Ck-ab-BZJ" secondAttribute="bottom" constant="10" id="jgi-od-ejR"/>
+                            <constraint firstItem="Ui4-4u-goj" firstAttribute="leading" secondItem="Brt-u2-alr" secondAttribute="leading" constant="15" id="qtc-S1-zBQ"/>
                         </constraints>
                     </view>
                     <connections>

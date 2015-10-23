@@ -35,6 +35,7 @@
     _lblBottomTips.text = string;
     _lblBottomTips.numberOfLines = 0;
     _lblTopTips.numberOfLines = 0;
+    _btnConfirm.layer.cornerRadius = 5.0;
     _bindBankModel = [[BindBankModel alloc] init];
 }
 

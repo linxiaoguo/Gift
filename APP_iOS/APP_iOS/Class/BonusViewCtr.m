@@ -9,6 +9,7 @@
 #import "BonusViewCtr.h"
 #import "BonusCell.h"
 #import "BonusTotalCell.h"
+#import "UITableView+Separator.h"
 
 @interface BonusViewCtr ()
 
@@ -21,12 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.scrollEnabled = NO;
     [self setTitle:@"未提现金额"];
     kWEAKSELF;
     [self setLeftBarButtonWithTitle:@"返回" withBlock:^(NSInteger tag) {
         [weakSelf backAction];
     }];
     _lblTips1.numberOfLines = 2;
+    [_tableView setFullWidthSeparator];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,5 +84,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
-
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
 @end

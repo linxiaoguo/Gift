@@ -16,7 +16,7 @@
 @implementation BonusCell
 
 - (void)awakeFromNib {
-    _btnBonus.layer.cornerRadius = 2.0;
+    _btnBonus.layer.cornerRadius = 3.0;
     _btnBonus.layer.borderWidth = 1.0;
     _btnBonus.layer.borderColor = [UIColor redColor].CGColor;
 }
