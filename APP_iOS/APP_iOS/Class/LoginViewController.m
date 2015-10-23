@@ -22,6 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
+    
+    [_nickNameTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_passwordTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,7 +100,6 @@
 //    [dic setObject:@"32768" forKey:@"shopid"];
 //    [dic setObject:@"18" forKey:@"apilevel"];
 //    NSString *shopid = [dic JSONStringPlain];
-//    NSString *encode = [DES3Util encrypt:shopid];
 //    NSLog(@"%@", encode);
 //    NSString *decode = [DES3Util decrypt:encode];
 //    NSLog(@"%@", decode);

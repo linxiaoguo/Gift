@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"系统设置";
+    
     _dataArr = [[NSArray alloc] initWithObjects:
                 @{@"image": @"xiconfont-mimaxiugai", @"title": @"密码修改"},
                 @{@"image": @"xiconfont-gonggao", @"title": @"系统公告"},

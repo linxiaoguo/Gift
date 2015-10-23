@@ -19,7 +19,7 @@
     DLog(@"请求网址：%@\n请求参数：\n%@", requestURL, parameters);
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.requestSerializer.timeoutInterval = 15;	//超时
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/plain"]];
