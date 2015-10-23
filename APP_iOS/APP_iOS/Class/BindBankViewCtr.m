@@ -31,7 +31,7 @@
         [weakSelf backAction];
     }];
     
-    NSString *string = [NSString stringWithFormat:@"%@", @"注意：\r\n- 提现仅支持储蓄卡，不支持信用卡\r\n- 建议绑定62开头的银联卡，提现更及时\r\n- 目前仅支持绑定一张卡，要变更开好，请删除绑定卡后，重新添加新卡\r\n- 企业用户，请绑定公司账户"];
+    NSString *string = [NSString stringWithFormat:@"%@", @"注意：\r\n- 提现仅支持储蓄卡，不支持信用卡\r\n- 建议绑定62开头的银联卡，提现更及时\r\n- 目前仅支持绑定一张卡，要变更卡号，请删除绑定卡后，重新添加新卡\r\n- 企业用户，请绑定公司账户"];
     _lblBottomTips.text = string;
     _lblBottomTips.numberOfLines = 0;
     _lblTopTips.numberOfLines = 0;
