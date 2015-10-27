@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -22,27 +22,27 @@
                             <constraint firstAttribute="height" constant="21" id="cIv-x0-TRt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjT-Cs-bRg">
-                        <rect key="frame" x="8" y="34" width="219" height="60"/>
+                        <rect key="frame" x="8" y="39" width="219" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="6M8-io-iBM"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                        <color key="textColor" red="0.90196078430000004" green="0.18823529410000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-jn-Z3l">
-                        <rect key="frame" x="232" y="58" width="80" height="30"/>
+                        <rect key="frame" x="232" y="58" width="80" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="BiM-lW-2Na"/>
-                            <constraint firstAttribute="height" constant="30" id="lkt-RL-6MY"/>
+                            <constraint firstAttribute="height" constant="28" id="lkt-RL-6MY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <state key="normal" title="立即提现">
-                            <color key="titleColor" red="0.90196078430000004" green="0.18823529410000001" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -51,7 +51,7 @@
                     <constraint firstItem="FBd-YO-5Ge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="48G-1E-Uu3"/>
                     <constraint firstItem="v8j-jn-Z3l" firstAttribute="leading" secondItem="bjT-Cs-bRg" secondAttribute="trailing" constant="5" id="9gb-Fs-fIJ"/>
                     <constraint firstItem="bjT-Cs-bRg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EPK-yB-c7S"/>
-                    <constraint firstItem="bjT-Cs-bRg" firstAttribute="top" secondItem="FBd-YO-5Ge" secondAttribute="bottom" constant="5" id="aSp-6n-gYj"/>
+                    <constraint firstItem="bjT-Cs-bRg" firstAttribute="top" secondItem="FBd-YO-5Ge" secondAttribute="bottom" constant="10" id="aSp-6n-gYj"/>
                     <constraint firstItem="v8j-jn-Z3l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="50" id="nyR-pu-kAb"/>
                     <constraint firstItem="FBd-YO-5Ge" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rwe-5s-J5W"/>
                     <constraint firstAttribute="trailingMargin" secondItem="v8j-jn-Z3l" secondAttribute="trailing" id="zbM-PH-UrX"/>

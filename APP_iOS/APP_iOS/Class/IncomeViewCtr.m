@@ -74,9 +74,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0)
-        return 165;
+        return 150;
     else
-        return 44;
+        return 60;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -94,7 +94,15 @@
             cell = [CustomView viewWithNibName:@"IncomeCell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        
+        if (indexPath.row == 0) {
+            cell.lblFee.text = @"0.00";
+            cell.lblTitle.text = @"未提现金额（元）";
+            cell.lblFee.text = @"0.00";
+        } else if (indexPath.row == 1) {
+            cell.imvIcon.image = [UIImage imageNamed:@"sr_ytx"];
+            cell.lblTitle.text = @"已提现金额（元）";
+            cell.lblFee.text = @"0.00";
+        }
         return cell;
     } else {
         static NSString *identifier=@"IncomeBindCell";
@@ -113,7 +121,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.section == 0) {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
             BonusViewCtr *vc = [[BonusViewCtr alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
