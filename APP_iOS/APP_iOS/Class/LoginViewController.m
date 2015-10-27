@@ -92,25 +92,19 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//    [dic setObject:@"32768" forKey:@"shopid"];
-//    [dic setObject:@"18" forKey:@"apilevel"];
-//    NSString *shopid = [dic JSONStringPlain];
-//    NSString *encode = [DES3Util encrypt:shopid];
-//    NSLog(@"%@", encode);
-//    NSString *decode = [DES3Util decrypt:encode];
-//    NSLog(@"%@", decode);
+
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"1" forKey:@"shopid"];
+    [dic setObject:@"32769" forKey:@"shopid"];
+    [dic setObject:@"18" forKey:@"apilevel"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
-
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setObject:encode forKey:@"req"];
-    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
-        NSLog(@"%@", responseDic);
-    } failure:^(NSString *descript) {
-        
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/myshop.htm?req=%@", encode];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *decode = [DES3Util decrypt:string];
+        NSLog(@"返回数据：%@", decode);
     }];
 }
 @end
