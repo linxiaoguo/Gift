@@ -40,32 +40,6 @@
             DLog(@"requestFailure:\n%@", error.domain);
             failure(error.domain);
         }
-
-
-        
-//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
-//        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-//        NSAssert(jsonData != nil, @"jsonData can not nil");
-//        NSError *error = nil;
-//
-//        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-//        if (jsonObject && !error) {
-//            NSDictionary *jsonDic;
-//            if ([jsonObject isKindOfClass:[NSArray class]]) {
-//                jsonDic = [NSDictionary dictionaryWithObject:jsonObject forKey:@"data"];
-//            } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
-//                jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
-//            }
-//            DLog(@"requestSuccess:\n%@", jsonDic);
-//            sucess(jsonDic);
-//        }
-//        else {
-//            // 解析错误
-//            DLog(@"requestFailure:\n%@", error.domain);
-//            failure(error.domain);
-//        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"requestFailure:\n%@", error.domain);
         failure(error.domain);

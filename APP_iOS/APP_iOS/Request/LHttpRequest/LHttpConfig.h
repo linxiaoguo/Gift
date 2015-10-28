@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Li. All rights reserved.
 //
 
-#define kServerUrl      @"http://121.40.131.81/shopping/mall/app/"
+#define kServerUrl      @"http://121.40.131.81:80/shopping/mall/app/"
 #define kSuccessCode    @"1"
 #define kSuccessKey     @"success"
 

@@ -11,7 +11,8 @@
 #import "AppDelegate.h"
 #import "DES3Util.h"
 #import "NSDictionary+JSONString.h"
-#import "AFHTTPRequestOperation.h"
+#import "ShopModel.h"
+#import "Http.h"
 
 @interface LoginViewController ()
 
@@ -22,17 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    NSURL *URL = [NSURL URLWithString:@"http://121.40.131.81/shopping/mall/app/myshop.htm?req=Cqd6wodLNSq1EHf24qAafTCuYVjvnyH4805v8k9SF3cX9gfpFLkVBw=="];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    op.responseSerializer = [AFJSONResponseSerializer serializer];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    [[NSOperationQueue mainQueue] addOperation:op];
     
     [_nickNameTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_passwordTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -106,6 +96,49 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
+    [[Http instance] myShop:@"1" completion:^(NSError *error, ShopModel *shop) {
+        if ([error.domain isEqualToString:@""]) {
+            NSLog(@"shopid=%@", shop.shopid);
+        }
+    }];
+    
+    [[Http instance] login:@"username" pwd:@"123456" completion:^(NSError *error, UserModel *user) {
+        
+    }];
+    
+    [[Http instance] main:@"32769" completion:^(NSError *error, MainModel *main) {
+        NSLog(@"首页接口：%@", main.buyer);
+    }];
+    
+    [[Http instance] modifyMyshop:@"32769" name:@"我的店铺" pic:@"" addr:@"" linkman:@"" linkphone:@"" completion:^(NSError *error) {
+        NSLog(@"修改店铺信息%@", error.domain);
+    }];
+    
+    [[Http instance] postpone:@"32769" month:1 completion:^(NSError *error) {
+                NSLog(@"延长店铺时间%@", error.domain);
+    }];
+    
+    [[Http instance] modifyPwd:@"32769" oldpwd:@"123456" newpwd:@"1111111" completion:^(NSError *error) {
+        NSLog(@"修改密码%@", error.domain);
+    }];
+    
+    [[Http instance] goodsList:@"32769" stat:1 count:10 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        NSLog(@"商品列表：%@", dataArray);
+    }];
+    
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    [dic setObject:@"32769" forKey:@"shopid"];
+//    [dic setObject:@"18" forKey:@"apilevel"];
+//    NSString *jsonString = [dic JSONStringPlain];
+//    NSString *encode = [DES3Util encrypt:jsonString];
+//    
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    [param setObject:encode forKey:@"req"];
+//    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
+//        NSLog(@"%@", responseDic);
+//    } failure:^(NSString *descript) {
+//        
+//    }];
 
 }
 @end
