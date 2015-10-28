@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "DES3Util.h"
 #import "NSDictionary+JSONString.h"
+#import "ShopModel.h"
+#import "Http.h"
 
 @interface LoginViewController ()
 
@@ -92,19 +94,34 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
-
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"32769" forKey:@"shopid"];
-    [dic setObject:@"18" forKey:@"apilevel"];
-    NSString *jsonString = [dic JSONStringPlain];
-    NSString *encode = [DES3Util encrypt:jsonString];
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/myshop.htm?req=%@", encode];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"GET"];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSString *decode = [DES3Util decrypt:string];
-        NSLog(@"返回数据：%@", decode);
+    [[Http instance] myShop:@"1" completion:^(NSError *error, ShopModel *shop) {
+        if ([error.domain isEqualToString:@""]) {
+            NSLog(@"shopid=%@", shop.shopid);
+        }
+    }];
+    
+    [[Http instance] login:@"username" pwd:@"123456" completion:^(NSError *error, UserModel *user) {
+        
+    }];
+    
+    [[Http instance] main:@"32769" completion:^(NSError *error, MainModel *main) {
+        NSLog(@"首页接口：%@", main.buyer);
+    }];
+    
+    [[Http instance] modifyMyshop:@"32769" name:@"我的店铺" pic:@"" addr:@"" linkman:@"" linkphone:@"" completion:^(NSError *error) {
+        NSLog(@"修改店铺信息%@", error.domain);
+    }];
+    
+    [[Http instance] postpone:@"32769" month:1 completion:^(NSError *error) {
+                NSLog(@"延长店铺时间%@", error.domain);
+    }];
+    
+    [[Http instance] modifyPwd:@"32769" oldpwd:@"123456" newpwd:@"1111111" completion:^(NSError *error) {
+        NSLog(@"修改密码%@", error.domain);
+    }];
+    
+    [[Http instance] goodsList:@"32769" stat:1 count:10 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        NSLog(@"商品列表：%@", dataArray);
     }];
 }
 @end
