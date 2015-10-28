@@ -10,6 +10,7 @@
 #import "NSObject+HXAddtions.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "LHttpConfig.h"
+#import "DES3Util.h"
 
 @implementation LHttpRequest
 
@@ -19,29 +20,18 @@
     DLog(@"请求网址：%@\n请求参数：\n%@", requestURL, parameters);
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 15;	//超时
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/plain"]];
-
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:requestURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSString *jsonString = [NSObject jsonStringWithObject:responseObject];
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
-        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        NSAssert(jsonData != nil, @"jsonData can not nil");
-        NSError *error = nil;
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [DES3Util decrypt:string];
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@":null" withString:@":\"\""];
 
-        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+        NSError *error = nil;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&error];
         if (jsonObject && !error) {
-            NSDictionary *jsonDic;
-            if ([jsonObject isKindOfClass:[NSArray class]]) {
-                jsonDic = [NSDictionary dictionaryWithObject:jsonObject forKey:@"data"];
-            } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
-                jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
-            }
+            NSDictionary *jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
             DLog(@"requestSuccess:\n%@", jsonDic);
             sucess(jsonDic);
         }
@@ -50,6 +40,32 @@
             DLog(@"requestFailure:\n%@", error.domain);
             failure(error.domain);
         }
+
+
+        
+//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+//        NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//        NSAssert(jsonData != nil, @"jsonData can not nil");
+//        NSError *error = nil;
+//
+//        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+//        if (jsonObject && !error) {
+//            NSDictionary *jsonDic;
+//            if ([jsonObject isKindOfClass:[NSArray class]]) {
+//                jsonDic = [NSDictionary dictionaryWithObject:jsonObject forKey:@"data"];
+//            } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+//                jsonDic = [NSDictionary dictionaryWithDictionary:jsonObject];
+//            }
+//            DLog(@"requestSuccess:\n%@", jsonDic);
+//            sucess(jsonDic);
+//        }
+//        else {
+//            // 解析错误
+//            DLog(@"requestFailure:\n%@", error.domain);
+//            failure(error.domain);
+//        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"requestFailure:\n%@", error.domain);
         failure(error.domain);

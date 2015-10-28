@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "DES3Util.h"
 #import "NSDictionary+JSONString.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface LoginViewController ()
 
@@ -22,7 +23,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    NSURL *URL = [NSURL URLWithString:@"http://121.40.131.81/shopping/mall/app/myshop.htm?req=Cqd6wodLNSq1EHf24qAafTCuYVjvnyH4805v8k9SF3cX9gfpFLkVBw=="];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [[NSOperationQueue mainQueue] addOperation:op];
     
     [_nickNameTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [_passwordTextField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -96,24 +106,6 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//    [dic setObject:@"32768" forKey:@"shopid"];
-//    [dic setObject:@"18" forKey:@"apilevel"];
-//    NSString *shopid = [dic JSONStringPlain];
-//    NSLog(@"%@", encode);
-//    NSString *decode = [DES3Util decrypt:encode];
-//    NSLog(@"%@", decode);
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"1" forKey:@"shopid"];
-    NSString *jsonString = [dic JSONStringPlain];
-    NSString *encode = [DES3Util encrypt:jsonString];
 
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setObject:encode forKey:@"req"];
-    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
-        NSLog(@"%@", responseDic);
-    } failure:^(NSString *descript) {
-        
-    }];
 }
 @end
