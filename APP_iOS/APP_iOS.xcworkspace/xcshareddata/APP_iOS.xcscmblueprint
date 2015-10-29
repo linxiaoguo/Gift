@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "29B8A0EA0619729D9DF764E1E4A8925C36C7F98F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "de030151-6e7c-4a1c-89ed-f1bace50a446++2124" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "de030151-6e7c-4a1c-89ed-f1bace50a446++2124" : 0,
+    "29B8A0EA0619729D9DF764E1E4A8925C36C7F98F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "50076315-4605-40EF-8A45-4FAABDE1F89C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "de030151-6e7c-4a1c-89ed-f1bace50a446++2124" : "Gift\/APP_iOS\/APP_iOS\/Vendors\/JSONKit\/",
+    "29B8A0EA0619729D9DF764E1E4A8925C36C7F98F" : "GiftAtGit"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "APP_iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "APP_iOS\/APP_iOS.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/linxiaoguo\/Gift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "29B8A0EA0619729D9DF764E1E4A8925C36C7F98F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/120.26.42.186",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "de030151-6e7c-4a1c-89ed-f1bace50a446++2124"
+    }
+  ]
+}

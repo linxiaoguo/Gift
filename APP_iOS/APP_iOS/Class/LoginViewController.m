@@ -40,12 +40,6 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    [_scrollView setContentSize:CGSizeMake(kScreenWidth, kScreenHeight)];
-}
-
 /*
 #pragma mark - Navigation
 
@@ -60,22 +54,27 @@
 
 - (IBAction)loginAction:(id)sender {
     
-//    if (!_nickNameTextField.text.length) {
-//        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
-//        return;
-//    }
-//    if (!_passwordTextField.text.length) {
-//        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-//        return;
-//    }
-
-//    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
-//        NSLog(@"%@", responseDic);
-//    } failure:^(NSString *descript) {
-//        
-//    }];
-    [self testHttp];
-    [kAppDelegate showMainViewController];
+    if (!_nickNameTextField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
+        return;
+    }
+    if (!_passwordTextField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        return;
+    }
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:_nickNameTextField.text forKey:@"username"];
+    [param setValue:_passwordTextField.text forKey:@"password"];
+    [param setValue:@"1" forKey:@"applogin"];
+    
+    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
+        NSLog(@"%@", responseDic);
+    } failure:^(NSString *descript) {
+        
+    }];
+//    [self testHttp];
+//    [kAppDelegate showMainViewController];
 }
 
 #pragma mark - UITextFieldDelegate

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E74731BE1F0E5000C99B8 /* BaseModel.m */; };
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
 		0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */; };
@@ -205,6 +206,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1E74721BE1F0E5000C99B8 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		0B1E74731BE1F0E5000C99B8 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0B2D1D8C1B7B261F00F55DD5 /* BaseHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpRequest.h; sourceTree = "<group>"; };
 		0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0B2D1D8F1B7B292300F55DD5 /* BaseHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpResponse.h; sourceTree = "<group>"; };
@@ -698,6 +701,8 @@
 		0BB606D81B798F8000D42A16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B1E74721BE1F0E5000C99B8 /* BaseModel.h */,
+				0B1E74731BE1F0E5000C99B8 /* BaseModel.m */,
 				0B2D1D8A1B7B260500F55DD5 /* BaseHttpRequest */,
 				0B2D1D8B1B7B260500F55DD5 /* BaseHttpResponse */,
 				53E07FA81BE04BDA0095F8B7 /* ShopModel.h */,
@@ -1715,6 +1720,7 @@
 				0BB6086B1B79CBBE00D42A16 /* CoreStatus.m in Sources */,
 				0BB6083C1B799EA300D42A16 /* UITextView+margin.m in Sources */,
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
+				0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */,
 				53E07FB71BE056360095F8B7 /* GoodModel.m in Sources */,
 				0BB608121B799EA200D42A16 /* NSTimer+Addition.m in Sources */,
 				0BB608111B799EA200D42A16 /* NSString+UUID.m in Sources */,
