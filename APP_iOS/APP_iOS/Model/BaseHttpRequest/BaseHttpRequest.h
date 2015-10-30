@@ -13,7 +13,7 @@
  */
 @interface BaseHttpRequest : NSObject
 
-@property (nonatomic, copy) NSString *deviceId;
+//@property (nonatomic, copy) NSString *deviceId;
 
 @end
 
@@ -22,7 +22,7 @@
  */
 @interface BasePageHttpRequest : BaseHttpRequest
 
-@property (nonatomic, copy) NSString *offset;   /**< 分页开始位置（偏移量）*/
-@property (nonatomic, copy) NSString *max;      /**< 每页请求的条数*/
+@property (nonatomic, copy) NSString *page;   /**< 分页开始位置（偏移量）*/
+@property (nonatomic, copy) NSString *count;      /**< 每页请求的条数*/
 
 @end

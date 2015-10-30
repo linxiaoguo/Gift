@@ -8,31 +8,11 @@
 
 #import "BaseModel.h"
 
-@implementation ClassModel
-
-@end
-
-@implementation GetClassRequest
-
-@end
-
-@implementation GetClassResponse
-
-+ (NSDictionary *)objectClassInArray {
-    return @{
-             @"classes" : @"ClassModel",
-             };
-}
-
-@end
-
-@implementation FeedBackRequest
-
-@end
-
-@implementation FeedBackResponse
-
-@end
+//+ (NSDictionary *)objectClassInArray {
+//    return @{
+//             @"classes" : @"ClassModel",
+//             };
+//}
 
 @implementation VersionModel
 
@@ -46,10 +26,16 @@
 
 @end
 
-@implementation ApplyPaymentRequest
+@implementation NoticeModel
 
 @end
 
-@implementation ApplyPaymentResponse
+@implementation NoticeRequest
 
 @end
+
+@implementation NoticeResponse
+
+@end
+
+

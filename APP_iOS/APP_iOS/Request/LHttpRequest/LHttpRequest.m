@@ -27,6 +27,7 @@
     [param setObject:encode forKey:@"req"];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:requestURL parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {

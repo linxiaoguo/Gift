@@ -9,10 +9,10 @@
 #import "LoginViewController.h"
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
-#import "DES3Util.h"
-#import "NSDictionary+JSONString.h"
 #import "ShopModel.h"
 #import "Http.h"
+#import "NSDictionary+JSONString.h"
+#import "DES3Util.h"
 
 @interface LoginViewController ()
 
@@ -54,14 +54,18 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    if (!_nickNameTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
-        return;
-    }
-    if (!_passwordTextField.text.length) {
-        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-        return;
-    }
+//    if (!_nickNameTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
+//        return;
+//    }
+//    if (!_passwordTextField.text.length) {
+//        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+//        return;
+//    }
+    
+    [kAppDelegate showMainViewController];
+
+    return;
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:_nickNameTextField.text forKey:@"username"];
@@ -70,6 +74,7 @@
     
     [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
         NSLog(@"%@", responseDic);
+        [kAppDelegate showMainViewController];
     } failure:^(NSString *descript) {
         
     }];

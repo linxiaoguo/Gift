@@ -1589,7 +1589,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 6KHC6948MS;
+						DevelopmentTeam = NHFM69V8J8;
 					};
 				};
 			};
@@ -1953,9 +1953,9 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61152f9f-bd98-4756-ab2b-a4ad86a4af5c";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1977,9 +1977,9 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "583d68f7-f4d5-40d7-bc17-7e7d68044bf1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

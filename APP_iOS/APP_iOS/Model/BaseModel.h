@@ -10,87 +10,56 @@
 #import "BaseHttpResponse.h"
 
 /**
- *  主页
- */
-
-@interface ClassModel : NSObject
-
-@property (nonatomic, copy) NSString *class_id;
-@property (nonatomic, copy) NSString *class_name;
-@property (nonatomic, copy) NSString *first_Pay;
-@property (nonatomic, copy) NSString *note;
-@property (nonatomic, copy) NSString *photo;
-@property (nonatomic, copy) NSString *all_cost;
-@property (nonatomic, copy) NSString *discount;
-
-@end
-
-@interface GetClassRequest : BaseHttpRequest
-
-@end
-
-@interface GetClassResponse : BaseHttpResponse
-
-@property (nonatomic, copy) NSArray *classes;
-
-@end
-
-/**
- *  意见反馈
- */
-
-@interface FeedBackRequest : BaseHttpRequest
-
-@property (nonatomic, copy) NSString *userid;
-@property (nonatomic, copy) NSString *opinion;
-
-@end
-
-@interface FeedBackResponse : BaseHttpResponse
-
-@end
-
-/**
  *  获取最新版本
  */
 
 @interface VersionModel : NSObject
 
-@property (nonatomic, copy) NSString *file;
+@property (nonatomic, copy) NSString *pagename;
+@property (nonatomic, copy) NSString *version;
+@property (nonatomic, copy) NSString *downurl;
+@property (nonatomic, copy) NSString *size;
+@property (nonatomic, copy) NSString *litpic;
 @property (nonatomic, copy) NSString *info;
-@property (nonatomic, copy) NSString *update_time;
-@property (nonatomic, copy) NSString *version_no;
+@property (nonatomic, copy) NSString *versionname;
+@property (nonatomic, copy) NSString *status;
 
 @end
 
 @interface GetVersionRequest : BaseHttpRequest
 
 @property (nonatomic, copy) NSString *type;         /**< 0-安卓 1-iOS */
+@property (nonatomic, copy) NSString *pagename;     /**< 包名 */
+@property (nonatomic, copy) NSString *version;      /**< 版本号 */
 
 @end
 
 @interface GetVersionResponse : BaseHttpResponse
 
-@property (nonatomic, strong) VersionModel *version;
+@property (nonatomic, strong) VersionModel *data;
 
 @end
 
 /**
- *  申请理赔
+ *  系统公告
  */
 
-@interface ApplyPaymentRequest : BaseHttpRequest
+@interface NoticeModel : NSObject
 
-@property (nonatomic, copy) NSString *userid;
-@property (nonatomic, copy) NSString *subject;
-@property (nonatomic, copy) NSString *realname;
-@property (nonatomic, copy) NSString *sex;
-@property (nonatomic, copy) NSString *phone;
-@property (nonatomic, copy) NSString *payment;
-@property (nonatomic, copy) NSString *idcard;
+@property (nonatomic, copy) NSString *msgid;
+@property (nonatomic, copy) NSString *msgtitle;
+@property (nonatomic, copy) NSString *msgtime;
 
 @end
 
-@interface ApplyPaymentResponse : BaseHttpResponse
+@interface NoticeRequest : BasePageHttpRequest
+
+@property (nonatomic, copy) NSString *shopid;
+
+@end
+
+@interface NoticeResponse : BaseHttpResponse
+
+@property (nonatomic, strong) NoticeModel *data;
 
 @end

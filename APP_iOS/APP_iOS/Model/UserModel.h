@@ -21,7 +21,9 @@
 @property (nonatomic, strong)NSString *url;//网址
 @property (nonatomic, strong)NSString *status;//店铺状态，0：关闭，1：开启
 @property (nonatomic, strong)NSString *isbingingcard;//是否绑定银行卡信息
+
 @end
+
 
 /**
  *  登录Model

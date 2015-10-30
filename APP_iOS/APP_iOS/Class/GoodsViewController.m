@@ -9,6 +9,7 @@
 #import "GoodsViewController.h"
 #import "GoodsTableViewCell.h"
 #import "AddGoodsViewController.h"
+#import "GoodModel.h"
 
 @interface GoodsViewController ()
 
@@ -24,6 +25,18 @@
     
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
     }];
+    
+    kWEAKSELF;
+    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        [weakSelf goodsListRequest:YES];
+    }];
+    [self.tableView addLegendFooterWithRefreshingBlock:^{
+        [weakSelf goodsListRequest:NO];
+    }];
+    self.tableView.footer.stateHidden = YES;
+    self.tableView.header.updatedTimeHidden = YES;
+    self.tableView.tableFooterView = [UIView new];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,12 +76,8 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSource.count;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.dataSource objectAtIndex:section] count];
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,6 +90,55 @@
     }
     
     return cell;
+}
+
+#pragma mark - Request
+
+- (void)goodsListRequest:(BOOL)reload {
+    
+    GoodsListRequest *request = [[GoodsListRequest alloc] init];
+    request.shopid = @"32769";
+    request.stat = @"1";
+    if (reload) {
+        request.page = @"1";
+    }
+    
+    [LHttpRequest getHttpRequest:@"goodsList.htm" parameters:request.keyValues success:^(NSDictionary *responseDic) {
+
+        GoodsListResponse *goodsListModel = [GoodsListResponse objectWithKeyValues:responseDic];
+        NSArray *list = goodsListModel.data;
+
+        if (reload) {
+            [self.dataSource removeAllObjects];
+        }
+        [self.dataSource addObjectsFromArray:list];
+        [self.tableView reloadData];
+        
+        if (self.tableView.header.isRefreshing) {
+            [self.tableView.header endRefreshing];
+        }
+        if (self.tableView.footer.isRefreshing) {
+            [self.tableView.footer endRefreshing];
+        }
+//        
+//        if (newsListModel.retData.lastPage.intValue == 1) {
+//            self.tableView.footer.hidden = YES;
+//        }
+//        else {
+//            self.offset += self.max;
+//            self.tableView.footer.hidden = NO;
+//        }
+        
+    } failure:^(NSString *descript) {
+        [SVProgressHUD showErrorWithStatus:descript];
+        if (self.tableView.header.isRefreshing) {
+            [self.tableView.header endRefreshing];
+        }
+        if (self.tableView.footer.isRefreshing) {
+            [self.tableView.footer endRefreshing];
+        }
+    }];
+
 }
 
 @end

@@ -11,3 +11,11 @@
 @implementation UserModel
 
 @end
+
+@implementation LoginModelRequest
+
+@end
+
+@implementation LoginModelResponse
+
+@end
