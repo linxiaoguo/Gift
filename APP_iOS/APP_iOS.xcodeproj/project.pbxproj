@@ -679,9 +679,6 @@
 				536692901BBF286700060A1A /* 设置 */,
 				0BB606DB1B799A5400D42A16 /* BaseViewController.h */,
 				0BB606DC1B799A5400D42A16 /* BaseViewController.m */,
-				0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */,
-				0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */,
-				0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1448,6 +1445,9 @@
 		5366928E1BBF285D00060A1A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */,
+				0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */,
+				0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */,
 			);
 			name = "首页";
 			sourceTree = "<group>";

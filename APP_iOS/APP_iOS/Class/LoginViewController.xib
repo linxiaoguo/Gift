@@ -100,11 +100,16 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEz-nB-o2c">
                             <rect key="frame" x="25" y="306" width="270" height="44"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.13333333333333333" green="0.44313725490196076" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.99607843137254903" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="4cp-Iy-4uY"/>
                             </constraints>
                             <state key="normal" title="登录"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="2AA-sl-evC"/>
                             </connections>

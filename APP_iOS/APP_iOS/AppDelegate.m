@@ -41,9 +41,14 @@
 
 - (void)customizeInterface {
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    [navigationBarAppearance setBarTintColor:kRGBCOLOR(0, 121, 198)];
+    [navigationBarAppearance setBarTintColor:kRGBCOLOR(254, 84, 0)];
     [navigationBarAppearance setTranslucent:NO];
     
+    if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)]) {
+        [navigationBarAppearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [navigationBarAppearance setShadowImage:[[UIImage alloc] init]];
+    }
+
     //设置naviegationBar的文本属性
     NSDictionary *textAttributes = @{
                                      NSFontAttributeName: [UIFont boldSystemFontOfSize:20],
