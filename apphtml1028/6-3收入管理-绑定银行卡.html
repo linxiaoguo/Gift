@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>绑定银行卡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript">
+console.time("test");
+/*
+    # 按照宽高比例设定html字体, width=device-width initial-scale=1版
+    # @pargam win 窗口window对象
+    # @pargam option{
+      designWidth: 设计稿宽度，必须
+      designHeight: 设计稿高度，不传的话则比例按照宽度来计算，可选
+      designFontSize: 设计稿宽高下用于计算的字体大小，默认20，可选
+      callback: 字体计算之后的回调函数，可选
+    }
+    # return Boolean;
+    # xiaoweili@tencent.com
+    # ps:请尽量第一时间运行此js计算字体
+*/
+!function(win, option) {
+  var count = 0, 
+      designWidth = option.designWidth, 
+      designHeight = option.designHeight || 0, 
+      designFontSize = option.designFontSize || 20, 
+      callback = option.callback || null,
+      root = document.documentElement,
+      body = document.body,
+      rootWidth, newSize, t, self;
+  //返回root元素字体计算结果
+  function _getNewFontSize() {
+    var scale = designHeight !== 0 ? Math.min(win.innerWidth / designWidth, win.innerHeight / designHeight) : win.innerWidth / designWidth;
+    return parseInt( scale * 10000 * designFontSize ) / 10000;
+  }
+  !function () {
+    rootWidth = root.getBoundingClientRect().width;
+    self = self ? self : arguments.callee;
+    //如果此时屏幕宽度不准确，就尝试再次获取分辨率，只尝试20次，否则使用win.innerWidth计算
+    if( rootWidth !== win.innerWidth &&  count < 20 ) {
+      win.setTimeout(function () {
+        count++;
+        self();
+      }, 0);
+    } else {
+      newSize = _getNewFontSize();
+      //如果css已经兼容当前分辨率就不管了
+      if( newSize + 'px' !== getComputedStyle(root)['font-size'] ) {
+        root.style.fontSize = newSize + "px";
+        return callback && callback(newSize);
+      };
+    };
+  }();
+  //横竖屏切换的时候改变fontSize，根据需要选择使用
+  win.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    clearTimeout(t);
+    t = setTimeout(function () {
+      self();
+    }, 300);
+  }, false);
+}(window, {
+  designWidth: 640, 
+  designFontSize: 24,
+  callback: function (argument) {
+    console.timeEnd("test")
+  }
+});
+</script>
+
+<link href="css/reset.css" type="text/css" rel="stylesheet" />
+<link href="css/srgl.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="warp">
+<header id="head_search_box" dd_name="结果页头部">
+    <div class="search_header"> 
+    <a href="javascript:;" class="back search_back" id="search_back" dd_name="返回"></a>
+      <div class="search">
+        <sapn>绑定银行卡</sapn>
+      </div>
+
+      
+      </div>
+      
+  </header>
+<div class="header_bg"></div>
+ <div class="bdyhk_title">所填的姓名、身份证、银行卡开户人必须为同一人</div>
+<form action="" method="post" >
+
+<div class="bdyhk">
+ <div class="yhkzl">
+ <li><span>真实姓名</span><input type="text" name="mc" data-required="required" placeholder="填写银行卡姓名"></li>
+  <li><span>身份证号</span><input type="text" name="mc" data-required="required" placeholder="填写银行卡所有者身份证号"></li>
+    <li><span>开户银行</span>
+    <div class="styled-select">
+<select>
+<option>中国工商银行</option>
+<option>中国建设银行</option>
+</select>
+</div>
+<div class="clear"></div>
+
+</li>
+    <li><span>银行卡号</span><input type="text" name="mc" data-required="required" placeholder="填写储蓄卡卡号"></li>
+
+
+ </div>
+ 
+ 
+</div>
+<div class="btu">
+
+<button class="c-order-btn  J_submit shdz">立即绑定</button>
+</div>
+</form>
+<div class="text" style="font-size:12px; padding:0 20px; color:#878888; line-height:2;">
+* 注意:<br />
+－ 提现仅支持储蓄卡，不支持信用卡<br />
+－ 建议绑定62开头的银联卡，提现更及时<br />
+－ 目前仅支持绑定一张卡，要变更卡号，请删除已绑定卡后，重新添加新卡。<br />
+－ 企业用户请绑定公司账户<br />
+
+</div>
+</div>
+</body>
+</html>
