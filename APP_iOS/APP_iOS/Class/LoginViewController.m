@@ -63,23 +63,19 @@
 //        return;
 //    }
     
-    [kAppDelegate showMainViewController];
-
-    return;
     
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setValue:_nickNameTextField.text forKey:@"username"];
-    [param setValue:_passwordTextField.text forKey:@"password"];
-    [param setValue:@"1" forKey:@"applogin"];
-    
-    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
-        NSLog(@"%@", responseDic);
-        [kAppDelegate showMainViewController];
-    } failure:^(NSString *descript) {
-        
-    }];
-//    [self testHttp];
-//    [kAppDelegate showMainViewController];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    [param setValue:_nickNameTextField.text forKey:@"username"];
+//    [param setValue:_passwordTextField.text forKey:@"password"];
+//    [param setValue:@"1" forKey:@"applogin"];
+//    
+//    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
+//        NSLog(@"%@", responseDic);
+//        [kAppDelegate showMainViewController];
+//    } failure:^(NSString *descript) {
+//        
+//    }];
+    [self testHttp];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -129,20 +125,5 @@
     [[Http instance] goodsList:@"32769" stat:1 count:10 page:1 completion:^(NSError *error, NSArray *dataArray) {
         NSLog(@"商品列表：%@", dataArray);
     }];
-    
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//    [dic setObject:@"32769" forKey:@"shopid"];
-//    [dic setObject:@"18" forKey:@"apilevel"];
-//    NSString *jsonString = [dic JSONStringPlain];
-//    NSString *encode = [DES3Util encrypt:jsonString];
-//    
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    [param setObject:encode forKey:@"req"];
-//    [LHttpRequest getHttpRequest:@"myshop.htm" parameters:param success:^(NSDictionary *responseDic) {
-//        NSLog(@"%@", responseDic);
-//    } failure:^(NSString *descript) {
-//        
-//    }];
-
 }
 @end
