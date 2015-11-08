@@ -6,7 +6,8 @@
 //  Copyright (c) 2015年 Li. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseHttpRequest.h"
+#import "BaseHttpResponse.h"
 
 @interface UserModel : NSObject
 @property (nonatomic, strong)NSString *shopid;//商家ID
@@ -20,4 +21,23 @@
 @property (nonatomic, strong)NSString *url;//网址
 @property (nonatomic, strong)NSString *status;//店铺状态，0：关闭，1：开启
 @property (nonatomic, strong)NSString *isbingingcard;//是否绑定银行卡信息
+
+@end
+
+
+/**
+ *  登录Model
+ */
+@interface LoginModelRequest : BaseHttpRequest
+
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *applogin;
+
+@end
+
+@interface LoginModelResponse : BaseHttpResponse
+
+@property (nonatomic, strong) UserModel *data;
+
 @end

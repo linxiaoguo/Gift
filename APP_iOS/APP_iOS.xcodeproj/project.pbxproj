@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E74731BE1F0E5000C99B8 /* BaseModel.m */; };
 		0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */; };
 		0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D1D901B7B292300F55DD5 /* BaseHttpResponse.m */; };
 		0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F9DAF1BCE365000FC8852 /* AddGoodsViewController.m */; };
@@ -205,6 +206,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1E74721BE1F0E5000C99B8 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		0B1E74731BE1F0E5000C99B8 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0B2D1D8C1B7B261F00F55DD5 /* BaseHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpRequest.h; sourceTree = "<group>"; };
 		0B2D1D8D1B7B261F00F55DD5 /* BaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpRequest.m; sourceTree = "<group>"; };
 		0B2D1D8F1B7B292300F55DD5 /* BaseHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpResponse.h; sourceTree = "<group>"; };
@@ -676,9 +679,6 @@
 				536692901BBF286700060A1A /* 设置 */,
 				0BB606DB1B799A5400D42A16 /* BaseViewController.h */,
 				0BB606DC1B799A5400D42A16 /* BaseViewController.m */,
-				0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */,
-				0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */,
-				0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -698,6 +698,8 @@
 		0BB606D81B798F8000D42A16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B1E74721BE1F0E5000C99B8 /* BaseModel.h */,
+				0B1E74731BE1F0E5000C99B8 /* BaseModel.m */,
 				0B2D1D8A1B7B260500F55DD5 /* BaseHttpRequest */,
 				0B2D1D8B1B7B260500F55DD5 /* BaseHttpResponse */,
 				53E07FA81BE04BDA0095F8B7 /* ShopModel.h */,
@@ -1443,6 +1445,9 @@
 		5366928E1BBF285D00060A1A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				0B59A81E1BC65BF6008C8CD1 /* MainViewController.h */,
+				0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */,
+				0B59A8201BC65BF6008C8CD1 /* MainViewController.xib */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -1584,7 +1589,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 6KHC6948MS;
+						DevelopmentTeam = NHFM69V8J8;
 					};
 				};
 			};
@@ -1715,6 +1720,7 @@
 				0BB6086B1B79CBBE00D42A16 /* CoreStatus.m in Sources */,
 				0BB6083C1B799EA300D42A16 /* UITextView+margin.m in Sources */,
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
+				0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */,
 				53E07FB71BE056360095F8B7 /* GoodModel.m in Sources */,
 				0BB608121B799EA200D42A16 /* NSTimer+Addition.m in Sources */,
 				0BB608111B799EA200D42A16 /* NSString+UUID.m in Sources */,
@@ -1947,9 +1953,9 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61152f9f-bd98-4756-ab2b-a4ad86a4af5c";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1971,9 +1977,9 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "L.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "583d68f7-f4d5-40d7-bc17-7e7d68044bf1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -343,7 +343,7 @@
         headImage.frame = CGRectMake(kScreenWidth-32-30, 6, 32, 32);
         headImage.layer.cornerRadius = 16;
         headImage.layer.masksToBounds = YES;
-        [headImage sd_setImageWithURL:[NSURL URLWithString:nil] placeholderImage:[UIImage imageNamed:@"wddp_tx"]];
+        [headImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"wddp_tx"]];
         headImage.tag = 100;
         [cell.contentView addSubview:headImage];
     }

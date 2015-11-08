@@ -11,3 +11,17 @@
 @implementation GoodModel
 
 @end
+
+@implementation GoodsListRequest
+
+@end
+
+@implementation GoodsListResponse
+
++ (NSDictionary *)objectClassInArray {
+    return @{
+             @"data" : @"GoodModel",
+             };
+}
+
+@end

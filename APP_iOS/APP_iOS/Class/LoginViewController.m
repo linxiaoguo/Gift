@@ -9,10 +9,10 @@
 #import "LoginViewController.h"
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
-#import "DES3Util.h"
-#import "NSDictionary+JSONString.h"
 #import "ShopModel.h"
 #import "Http.h"
+#import "NSDictionary+JSONString.h"
+#import "DES3Util.h"
 
 @interface LoginViewController ()
 
@@ -40,12 +40,6 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    [_scrollView setContentSize:CGSizeMake(kScreenWidth, kScreenHeight)];
-}
-
 /*
 #pragma mark - Navigation
 
@@ -68,14 +62,24 @@
 //        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
 //        return;
 //    }
-
-//    [LHttpRequest getHttpRequest:@"goodsType.htm" parameters:nil success:^(NSDictionary *responseDic) {
-//        NSLog(@"%@", responseDic);
-//    } failure:^(NSString *descript) {
-//        
-//    }];
-    [self testHttp];
+    
     [kAppDelegate showMainViewController];
+
+    return;
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:_nickNameTextField.text forKey:@"username"];
+    [param setValue:_passwordTextField.text forKey:@"password"];
+    [param setValue:@"1" forKey:@"applogin"];
+    
+    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
+        NSLog(@"%@", responseDic);
+        [kAppDelegate showMainViewController];
+    } failure:^(NSString *descript) {
+        
+    }];
+//    [self testHttp];
+//    [kAppDelegate showMainViewController];
 }
 
 #pragma mark - UITextFieldDelegate

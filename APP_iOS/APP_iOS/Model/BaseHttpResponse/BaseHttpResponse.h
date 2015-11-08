@@ -13,8 +13,8 @@
  */
 @interface BaseHttpResponse : NSObject
 
-@property (nonatomic, copy) NSString *code;
-@property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *success;
+@property (nonatomic, copy) NSString *message;
 
 @end
 

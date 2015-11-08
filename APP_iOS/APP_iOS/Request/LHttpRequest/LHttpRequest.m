@@ -11,6 +11,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "LHttpConfig.h"
 #import "DES3Util.h"
+#import "NSDictionary+JSONString.h"
 
 @implementation LHttpRequest
 
@@ -18,11 +19,18 @@
 
     NSString *requestURL = [NSString stringWithFormat:@"%@%@", kServerUrl, path];
     DLog(@"请求网址：%@\n请求参数：\n%@", requestURL, parameters);
+    
+    NSString *jsonString = [parameters JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
+
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:encode forKey:@"req"];
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:requestURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:requestURL parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSString *jsonString = [DES3Util decrypt:string];
@@ -41,7 +49,7 @@
             failure(error.domain);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"requestFailure:\n%@", error.domain);
+        DLog(@"requestFailure:\n%@", error);
         failure(error.domain);
     }];
 }

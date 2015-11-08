@@ -14,7 +14,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _deviceId = [SvUDIDTools UDID];
+//        _deviceId = [SvUDIDTools UDID];
     }
     return self;
 }
@@ -27,8 +27,8 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _offset = @"1";
-        _max = @"20";
+        _page = @"1";
+        _count = @"20";
     }
     return self;
 }
