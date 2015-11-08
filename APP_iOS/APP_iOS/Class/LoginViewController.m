@@ -96,35 +96,39 @@
 
 #pragma mark - 测试接口
 - (void)testHttp {
-    [[Http instance] myShop:@"1" completion:^(NSError *error, ShopModel *shop) {
-        if ([error.domain isEqualToString:@""]) {
-            NSLog(@"shopid=%@", shop.shopid);
+//    [[Http instance] myShop:@"1" completion:^(NSError *error, ShopModel *shop) {
+//        if ([error.domain isEqualToString:@""]) {
+//            NSLog(@"shopid=%@", shop.shopid);
+//        }
+//    }];
+    
+    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, UserModel *user) {
+        if (error.code == 0) {
+            NSLog(@"登陆成功，用户名字：%@", user.name);
+            
+            [[Http instance] modifyMyshop:@"32768" name:@"我的店铺" pic:@"" addr:@"" linkman:@"" linkphone:@"" completion:^(NSError *error) {
+                NSLog(@"修改店铺信息%@", error.domain);
+            }];
+            
+            
+            [[Http instance] modifyPwd:@"32768" oldpwd:@"123456" newpwd:@"1111111" completion:^(NSError *error) {
+                NSLog(@"修改密码%@", error.domain);
+            }];
         }
     }];
     
-    [[Http instance] login:@"username" pwd:@"123456" completion:^(NSError *error, UserModel *user) {
-        if (error == nil)
-            NSLog(@"登陆成功，用户名字：%@", user.name);
-    }];
+//    [[Http instance] main:@"32769" completion:^(NSError *error, MainModel *main) {
+//        NSLog(@"首页接口今日买家：%@", main.buyer);
+//    }];
     
-    [[Http instance] main:@"32769" completion:^(NSError *error, MainModel *main) {
-        NSLog(@"首页接口今日买家：%@", main.buyer);
-    }];
     
-    [[Http instance] modifyMyshop:@"32769" name:@"我的店铺" pic:@"" addr:@"" linkman:@"" linkphone:@"" completion:^(NSError *error) {
-        NSLog(@"修改店铺信息%@", error.domain);
-    }];
+//    [[Http instance] postpone:@"32769" month:1 completion:^(NSError *error) {
+//        NSLog(@"延长店铺时间%@", error.domain);
+//    }];
+
     
-    [[Http instance] postpone:@"32769" month:1 completion:^(NSError *error) {
-        NSLog(@"延长店铺时间%@", error.domain);
-    }];
-    
-    [[Http instance] modifyPwd:@"32769" oldpwd:@"123456" newpwd:@"1111111" completion:^(NSError *error) {
-        NSLog(@"修改密码%@", error.domain);
-    }];
-    
-    [[Http instance] goodsList:@"32769" stat:1 count:10 page:1 completion:^(NSError *error, NSArray *dataArray) {
-        NSLog(@"商品列表：%@", dataArray);
-    }];
+//    [[Http instance] goodsList:@"32769" stat:1 count:10 page:1 completion:^(NSError *error, NSArray *dataArray) {
+//        NSLog(@"商品列表：%@", dataArray);
+//    }];
 }
 @end

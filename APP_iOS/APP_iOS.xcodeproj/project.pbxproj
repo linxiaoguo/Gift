@@ -168,6 +168,15 @@
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
 		5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */; };
+		5378561C1BEF7C6A003F1154 /* GoodTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5378561B1BEF7C6A003F1154 /* GoodTypeModel.m */; };
+		5378561F1BEF7D98003F1154 /* GoodsTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5378561E1BEF7D98003F1154 /* GoodsTopicModel.m */; };
+		537856221BEF806D003F1154 /* FieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 537856211BEF806D003F1154 /* FieldModel.m */; };
+		537856251BEF854D003F1154 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 537856241BEF854D003F1154 /* OrderModel.m */; };
+		537856281BEF8678003F1154 /* OrderTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 537856271BEF8678003F1154 /* OrderTotalModel.m */; };
+		5378562B1BEF8ADB003F1154 /* logisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5378562A1BEF8ADB003F1154 /* logisticsModel.m */; };
+		5378562E1BEF8C7A003F1154 /* IncomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5378562D1BEF8C7A003F1154 /* IncomeModel.m */; };
+		537856311BEF900E003F1154 /* BankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 537856301BEF900E003F1154 /* BankModel.m */; };
+		537856341BEF91B5003F1154 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 537856331BEF91B5003F1154 /* MessageModel.m */; };
 		53DE4F501BC6879500D1ADC5 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F491BC6879500D1ADC5 /* AESCrypt.m */; };
 		53DE4F521BC6879500D1ADC5 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F4D1BC6879500D1ADC5 /* NSData+CommonCrypto.m */; };
 		53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE4F551BC6899400D1ADC5 /* NSData+Base64Additions.m */; };
@@ -515,6 +524,24 @@
 		536692961BBF2A3A00060A1A /* IncomeViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewCtr.h; sourceTree = "<group>"; };
 		536692971BBF2A3A00060A1A /* IncomeViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewCtr.m; sourceTree = "<group>"; };
 		536692981BBF2A3A00060A1A /* IncomeViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeViewCtr.xib; sourceTree = "<group>"; };
+		5378561A1BEF7C6A003F1154 /* GoodTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodTypeModel.h; sourceTree = "<group>"; };
+		5378561B1BEF7C6A003F1154 /* GoodTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodTypeModel.m; sourceTree = "<group>"; };
+		5378561D1BEF7D98003F1154 /* GoodsTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTopicModel.h; sourceTree = "<group>"; };
+		5378561E1BEF7D98003F1154 /* GoodsTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsTopicModel.m; sourceTree = "<group>"; };
+		537856201BEF806D003F1154 /* FieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldModel.h; sourceTree = "<group>"; };
+		537856211BEF806D003F1154 /* FieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldModel.m; sourceTree = "<group>"; };
+		537856231BEF854D003F1154 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		537856241BEF854D003F1154 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		537856261BEF8678003F1154 /* OrderTotalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTotalModel.h; sourceTree = "<group>"; };
+		537856271BEF8678003F1154 /* OrderTotalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTotalModel.m; sourceTree = "<group>"; };
+		537856291BEF8ADB003F1154 /* logisticsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logisticsModel.h; sourceTree = "<group>"; };
+		5378562A1BEF8ADB003F1154 /* logisticsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logisticsModel.m; sourceTree = "<group>"; };
+		5378562C1BEF8C7A003F1154 /* IncomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeModel.h; sourceTree = "<group>"; };
+		5378562D1BEF8C7A003F1154 /* IncomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeModel.m; sourceTree = "<group>"; };
+		5378562F1BEF900E003F1154 /* BankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankModel.h; sourceTree = "<group>"; };
+		537856301BEF900E003F1154 /* BankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankModel.m; sourceTree = "<group>"; };
+		537856321BEF91B5003F1154 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		537856331BEF91B5003F1154 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		53DE4F481BC6879500D1ADC5 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		53DE4F491BC6879500D1ADC5 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		53DE4F4C1BC6879500D1ADC5 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
@@ -710,6 +737,24 @@
 				53E07FB31BE0525B0095F8B7 /* UserModel.m */,
 				53E07FB51BE056360095F8B7 /* GoodModel.h */,
 				53E07FB61BE056360095F8B7 /* GoodModel.m */,
+				5378561A1BEF7C6A003F1154 /* GoodTypeModel.h */,
+				5378561B1BEF7C6A003F1154 /* GoodTypeModel.m */,
+				5378561D1BEF7D98003F1154 /* GoodsTopicModel.h */,
+				5378561E1BEF7D98003F1154 /* GoodsTopicModel.m */,
+				537856201BEF806D003F1154 /* FieldModel.h */,
+				537856211BEF806D003F1154 /* FieldModel.m */,
+				537856261BEF8678003F1154 /* OrderTotalModel.h */,
+				537856271BEF8678003F1154 /* OrderTotalModel.m */,
+				537856231BEF854D003F1154 /* OrderModel.h */,
+				537856241BEF854D003F1154 /* OrderModel.m */,
+				537856291BEF8ADB003F1154 /* logisticsModel.h */,
+				5378562A1BEF8ADB003F1154 /* logisticsModel.m */,
+				5378562C1BEF8C7A003F1154 /* IncomeModel.h */,
+				5378562D1BEF8C7A003F1154 /* IncomeModel.m */,
+				5378562F1BEF900E003F1154 /* BankModel.h */,
+				537856301BEF900E003F1154 /* BankModel.m */,
+				537856321BEF91B5003F1154 /* MessageModel.h */,
+				537856331BEF91B5003F1154 /* MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1719,6 +1764,7 @@
 				0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */,
 				0BB6086B1B79CBBE00D42A16 /* CoreStatus.m in Sources */,
 				0BB6083C1B799EA300D42A16 /* UITextView+margin.m in Sources */,
+				5378561C1BEF7C6A003F1154 /* GoodTypeModel.m in Sources */,
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
 				0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */,
 				53E07FB71BE056360095F8B7 /* GoodModel.m in Sources */,
@@ -1734,6 +1780,7 @@
 				53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */,
 				0BB6080F1B799EA200D42A16 /* NSString+Trims.m in Sources */,
 				0BB608441B799EA300D42A16 /* UIView+Screenshot.m in Sources */,
+				5378562B1BEF8ADB003F1154 /* logisticsModel.m in Sources */,
 				0BB608421B799EA300D42A16 /* UIView+Frame.m in Sources */,
 				0BB608481B799EA300D42A16 /* UIViewController+Visible.m in Sources */,
 				0BB608271B799EA200D42A16 /* UIImage+FX.m in Sources */,
@@ -1743,12 +1790,14 @@
 				536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */,
 				0BB608231B799EA200D42A16 /* UIImage+animatedGIF.m in Sources */,
 				0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */,
+				537856311BEF900E003F1154 /* BankModel.m in Sources */,
 				0BB608391B799EA300D42A16 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				0BF6C4FB1BCCAC0B00D569C8 /* ModifyViewController.m in Sources */,
 				53DE4F581BC6899400D1ADC5 /* NSData+Base64Additions.m in Sources */,
 				0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */,
 				0BB606E51B799B5300D42A16 /* InteractivePopNavigationController.m in Sources */,
 				0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */,
+				5378562E1BEF8C7A003F1154 /* IncomeModel.m in Sources */,
 				0BB608141B799EA200D42A16 /* NSURL+Param.m in Sources */,
 				0BB6083B1B799EA300D42A16 /* UITextField+Blocks.m in Sources */,
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
@@ -1771,9 +1820,11 @@
 				53E07FA71BE04A6F0095F8B7 /* Http.m in Sources */,
 				0BB608341B799EA200D42A16 /* UIResponder+Chain.m in Sources */,
 				0BB6084A1B799EA300D42A16 /* UIWebView+Blocks.m in Sources */,
+				537856341BEF91B5003F1154 /* MessageModel.m in Sources */,
 				0BB6086C1B79CBBE00D42A16 /* Reachability.m in Sources */,
 				53E485861BBFFC580064ACE7 /* IncomeCell.m in Sources */,
 				0BB6081A1B799EA200D42A16 /* UIButton+CountDown.m in Sources */,
+				537856281BEF8678003F1154 /* OrderTotalModel.m in Sources */,
 				0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */,
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
@@ -1804,6 +1855,7 @@
 				0BB606ED1B799B6600D42A16 /* NSObject+HXAddtions.m in Sources */,
 				0BB6080A1B799EA200D42A16 /* NSString+Encrypt.m in Sources */,
 				0BB608311B799EA200D42A16 /* UINavigationController+BATransitions.m in Sources */,
+				537856221BEF806D003F1154 /* FieldModel.m in Sources */,
 				0BB608331B799EA200D42A16 /* UINavigationController+StackManager.m in Sources */,
 				0BB608131B799EA200D42A16 /* NSTimer+Blocks.m in Sources */,
 				0B5E44061BD87328003F7D1F /* ModifyPwdViewController.m in Sources */,
@@ -1833,6 +1885,7 @@
 				0BB607E91B799EA200D42A16 /* NSArray+Block.m in Sources */,
 				0BB6084D1B799EA300D42A16 /* UIWebView+Load.m in Sources */,
 				0BB607EC1B799EA200D42A16 /* NSData+Base64.m in Sources */,
+				5378561F1BEF7D98003F1154 /* GoodsTopicModel.m in Sources */,
 				53DF34931BD04B59003B5DE7 /* GTMBase64.m in Sources */,
 				0BB606B21B7989B400D42A16 /* main.m in Sources */,
 				0BB6080D1B799EA200D42A16 /* NSString+RemoveEmoji.m in Sources */,
@@ -1851,6 +1904,7 @@
 				0BB608281B799EA200D42A16 /* UIImage+Merge.m in Sources */,
 				53DEAA9C1BC162910008D6E8 /* BindBankViewCtr.m in Sources */,
 				0BB607FB1B799EA200D42A16 /* NSManagedObjectContext+FetchRequestsConstructors.m in Sources */,
+				537856251BEF854D003F1154 /* OrderModel.m in Sources */,
 				0BB608731B79D6E500D42A16 /* NullSafe.m in Sources */,
 				0BB608321B799EA200D42A16 /* UINavigationController+KeyboardFix.m in Sources */,
 				0BB6082B1B799EA200D42A16 /* UIImage+Resize.m in Sources */,

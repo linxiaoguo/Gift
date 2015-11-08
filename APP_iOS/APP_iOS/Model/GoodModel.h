@@ -11,14 +11,27 @@
 
 @interface GoodModel : NSObject
 
-@property (nonatomic, copy) NSString *id;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *price;
-@property (nonatomic, copy) NSString *stock;//库存
-@property (nonatomic, copy) NSString *sales;//销量
-@property (nonatomic, copy) NSString *pic;
-@property (nonatomic, copy) NSString *addtime;//添加时间
+@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, copy)   NSString *name;
+@property (nonatomic, assign) CGFloat price;
+@property (nonatomic, assign) NSInteger stock;//库存
+@property (nonatomic, assign) NSInteger sales;//销量
+@property (nonatomic, copy)   NSString *pic;
+@property (nonatomic, copy)   NSString *addtime;//添加时间
+@property (nonatomic, assign) NSInteger typeid;
+@property (nonatomic, assign) NSInteger topicid;
+@property (nonatomic, strong) NSArray *fileids;//FieldModel
+@property (nonatomic, assign) BOOL isrecommand;
+@end
 
+@interface GoodOrderModel : NSObject
+
+@property (nonatomic, assign)NSInteger id;
+@property (nonatomic, strong)NSString *name;
+@property (nonatomic, assign)CGFloat price;
+@property (nonatomic, assign)NSInteger sales;//数量
+@property (nonatomic, strong)NSString *color;//颜色
+@property (nonatomic, assign)NSInteger num;//数量，num和sales到底用哪个？
 @end
 
 /**
