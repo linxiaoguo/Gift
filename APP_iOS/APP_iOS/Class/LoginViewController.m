@@ -103,11 +103,12 @@
     }];
     
     [[Http instance] login:@"username" pwd:@"123456" completion:^(NSError *error, UserModel *user) {
-        
+        if (error == nil)
+            NSLog(@"登陆成功，用户名字：%@", user.name);
     }];
     
     [[Http instance] main:@"32769" completion:^(NSError *error, MainModel *main) {
-        NSLog(@"首页接口：%@", main.buyer);
+        NSLog(@"首页接口今日买家：%@", main.buyer);
     }];
     
     [[Http instance] modifyMyshop:@"32769" name:@"我的店铺" pic:@"" addr:@"" linkman:@"" linkphone:@"" completion:^(NSError *error) {
@@ -115,7 +116,7 @@
     }];
     
     [[Http instance] postpone:@"32769" month:1 completion:^(NSError *error) {
-                NSLog(@"延长店铺时间%@", error.domain);
+        NSLog(@"延长店铺时间%@", error.domain);
     }];
     
     [[Http instance] modifyPwd:@"32769" oldpwd:@"123456" newpwd:@"1111111" completion:^(NSError *error) {

@@ -228,10 +228,11 @@
         if (message == nil)
             message = @"";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
-        NSArray *body = [resDic objectForKey:@"data"];
+        NSDictionary *body = [resDic objectForKey:@"data"];
+        NSArray *goodsArray = [body objectForKey:@"data"];
         NSMutableArray *goods = [NSMutableArray array];
-        for (NSInteger i=0; i<body.count; i++) {
-            NSDictionary *goodDic = [body objectAtIndex:i];
+        for (NSInteger i=0; i<goodsArray.count; i++) {
+            NSDictionary *goodDic = [goodsArray objectAtIndex:i];
             GoodModel *good = [GoodModel objectWithKeyValues:goodDic];
             [goods addObject:good];
         }
