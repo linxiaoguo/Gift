@@ -21,10 +21,12 @@ a:hover{text-decoration:none}
 .clear{ clear:both;}
 /* CSS Document */
 
-body{ max-width:640px;}
+body{ /*max-width:720px;*/ }
+.warp{width:720px !important; margin:0 auto; position:relative}
 /*html,body{
 	height:100%;
 }*/
+@media screen and (max-width: 719px) {.warp{width:100% !important;}}
 h1{ font-weight:normal;}
 
 
@@ -34,7 +36,7 @@ position: fixed;
 top: 0;
 z-index: 5004;
 overflow: hidden;
-max-width: 640px;
+max-width: 720px;
 height:45px;
 background:#FE5400;
 text-align:center;
@@ -43,6 +45,8 @@ color:#fff;
 font-size:16px;
 }
 .header_bg{height:45px
+}
+.bottom_bg{height:78px
 }
 
 .search_header .back {
