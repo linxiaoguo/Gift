@@ -1,6 +1,6 @@
 @charset "utf-8";
 body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul {margin: 0;padding: 0}
-body {min-width: 320px;font-size: 12px;font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color: #000;-webkit-text-size-adjust: none}
+body { font-size: 12px;font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color: #000;-webkit-text-size-adjust: none}
 fieldset,img {border: 0}
 ol,ul {list-style: none}
 address,em {font-style: normal}

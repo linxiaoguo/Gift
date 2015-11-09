@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-body{ max-width:640px;}
+body{/* max-width:640px;*/}
 .dr_y{ padding-top:8.5rem}
 .dr_bg{ width:100%;  height:100%; background:url(../images/dr_bg.jpg); background-size:cover;}
 .dr_logo{ width:100%; text-align:center;}
@@ -21,12 +21,12 @@ body{ max-width:640px;}
 }
 #signup_name {
 background:url(../images/uese.png) no-repeat center left;
-background-size:5%;
+background-size:18px;
 
 }
 #signup_password {
 background:url(../images/prowww.png) no-repeat center left;
-background-size:5%;
+background-size:18px;
 }
 /* all */
 ::-webkit-input-placeholder { color:#ccc; }
@@ -60,11 +60,11 @@ margin: 0;
     text-align: center;
     text-decoration: none;
     width:100%;
-    height: 3.75rem;
-    line-height: 3.75rem;
+    height:40px;
+    line-height: 40px;
     color: #fff;
-    font-size: 1.5rem;
-    -webkit-border-radius: 0.625rem;
+    font-size: 18px;
+    -webkit-border-radius: 5px;
     background:#ff5000;
     margin: 15px auto;
 }
@@ -224,7 +224,7 @@ position: initial;
 .wddp h1{ font-size:14px; color:#fff; padding-top:1.5rem;}
 .wddp .a_r{ position:absolute; right:1.5rem; top:6.3rem;}
 
-.wddp1{ width:100%; height:50px; margin-top:1rem; background:#fff url(../images/a_r2.png) no-repeat 24.75rem center; text-align:center;}
+.wddp1{ width:100%; height:50px; margin-top:1rem; background:#fff url(../images/a_r2.png) no-repeat 97% center; text-align:center;}
 .wddp1 a {
     color: #000;
     font-size: 14px;
@@ -283,7 +283,7 @@ position: initial;
 }
 
 .btu{ text-align:center;}
-.btu p{ font-size:1rem;}
+.btu p{ font-size:20px;}
 
 
 /*延长有效期*/

@@ -12,6 +12,10 @@
 
 @end
 
+@implementation GoodOrderModel
+
+@end
+
 @implementation GoodsListRequest
 
 @end
