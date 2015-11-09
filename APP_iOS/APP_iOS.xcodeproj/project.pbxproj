@@ -211,6 +211,7 @@
 		53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485891BC000CC0064ACE7 /* UITableView+Separator.m */; };
 		53E4858E1BC002AA0064ACE7 /* IncomeBindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */; };
 		53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */; };
+		53E90AA91BF0CF4700D28889 /* VersionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E90AA81BF0CF4700D28889 /* VersionModel.m */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -601,6 +602,8 @@
 		53E4858B1BC002AA0064ACE7 /* IncomeBindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeBindCell.h; sourceTree = "<group>"; };
 		53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBindCell.m; sourceTree = "<group>"; };
 		53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeBindCell.xib; sourceTree = "<group>"; };
+		53E90AA71BF0CF4700D28889 /* VersionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionModel.h; sourceTree = "<group>"; };
+		53E90AA81BF0CF4700D28889 /* VersionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionModel.m; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -755,6 +758,8 @@
 				537856301BEF900E003F1154 /* BankModel.m */,
 				537856321BEF91B5003F1154 /* MessageModel.h */,
 				537856331BEF91B5003F1154 /* MessageModel.m */,
+				53E90AA71BF0CF4700D28889 /* VersionModel.h */,
+				53E90AA81BF0CF4700D28889 /* VersionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1809,6 +1814,7 @@
 				0BB607EB1B799EA200D42A16 /* NSBundle+AppIcon.m in Sources */,
 				0BB608151B799EA200D42A16 /* MKMapView+ZoomLevel.m in Sources */,
 				0BB607ED1B799EA200D42A16 /* NSData+Encrypt.m in Sources */,
+				53E90AA91BF0CF4700D28889 /* VersionModel.m in Sources */,
 				0BB608251B799EA200D42A16 /* UIImage+Color.m in Sources */,
 				53E07FAA1BE04BDA0095F8B7 /* ShopModel.m in Sources */,
 				0BB608351B799EA200D42A16 /* UIResponder+UIAdapt.m in Sources */,
@@ -2007,7 +2013,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.liwu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2031,7 +2037,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.liwu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

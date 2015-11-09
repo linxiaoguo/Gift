@@ -20,6 +20,7 @@
 #import "IncomeModel.h"
 #import "BankModel.h"
 #import "MessageModel.h"
+#import "VersionModel.h"
 
 @interface Http : NSObject
 
@@ -128,4 +129,7 @@
 //系统公告
 //dataArray存储MessageModel
 - (void)messageList:(NSInteger)shopId count:(NSInteger)count page:(NSInteger)page completion:(void(^)(NSError *error, NSArray *dataArray))completion;
+
+//版本更新
+- (void)queryVersion:(NSInteger)version completion:(void(^)(NSError *error, VersionModel *version))completion;
 @end

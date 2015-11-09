@@ -883,6 +883,41 @@
     }];
 }
 
+- (void)queryVersion:(NSInteger)version completion:(void(^)(NSError *error, VersionModel *version))completion {
+
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
+    NSString *boundle = @"com.haisi.liwu";
+    [dic setObject:boundle forKey:@"pagename"];
+    [dic setObject:[NSNumber numberWithInteger:2] forKey:@"type"];
+    NSString *jsonString = [dic JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
+    encode = [self encodeToPercentEscapeString:encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/upgrade.htm?req=%@", encode];
+    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *decode = [DES3Util decrypt:string];
+        NSLog(@"请求url：%@", urlString);
+        NSLog(@"返回数据：%@", decode);
+        NSDictionary *resDic = [decode objectFromJSONString];
+        NSString *message = [resDic objectForKey:@"message"];
+        NSString *success = [resDic objectForKey:@"success"];
+        if (message == nil)
+            message = @"";
+        if (success == nil)
+            success = @"1";
+        NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
+        NSDictionary *dic = [resDic objectForKey:@"data"];
+        VersionModel *ver = [VersionModel objectWithKeyValues:dic];
+
+        if (completion)
+            completion(error, ver);
+    }];
+}
+
 ////
 - (NSString *)encodeToPercentEscapeString: (NSString *) input {
     NSString*
