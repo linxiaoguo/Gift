@@ -61,9 +61,9 @@
     }];
 }
 
-- (void)main:(NSString *)shopId completion:(void(^)(NSError *error, MainModel *main))completion {
+- (void)main:(NSInteger)shopId completion:(void(^)(NSError *error, MainModel *main))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:shopId forKey:@"shopid"];
+    [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:@"18" forKey:@"apilevel"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -92,9 +92,9 @@
     }];
 }
 
-- (void)myShop:(NSString *)shopId completion:(void(^)(NSError *error, ShopModel *shop))completion {
+- (void)myShop:(NSInteger)shopId completion:(void(^)(NSError *error, ShopModel *shop))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"32769" forKey:@"shopid"];
+    [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:@"18" forKey:@"apilevel"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -123,10 +123,10 @@
     }];
 }
 
-- (void)modifyMyshop:(NSString *)shopId name:(NSString *)name pic:(NSString *)pic addr:(NSString *)addr linkman:(NSString *)linkman linkphone:(NSString *)linkphone completion:(void(^)(NSError *error))completion {
+- (void)modifyMyshop:(NSInteger)shopId name:(NSString *)name pic:(NSString *)pic addr:(NSString *)addr linkman:(NSString *)linkman linkphone:(NSString *)linkphone completion:(void(^)(NSError *error))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:shopId forKey:@"shopid"];
+    [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     if (name)
         [dic setObject:name forKey:@"name"];
     if (pic)
@@ -162,9 +162,9 @@
     }];
 }
 
-- (void)postpone:(NSString *)shopid month:(NSInteger)month completion:(void(^)(NSError *error))completion {
+- (void)postpone:(NSInteger)shopId month:(NSInteger)month completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:shopid forKey:@"shopid"];
+    [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:[NSNumber numberWithInteger:month] forKey:@"month"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -191,9 +191,9 @@
     }];
 }
 
-- (void)modifyPwd:(NSString *)shopid oldpwd:(NSString *)oldpwd newpwd:(NSString *)newpwd completion:(void(^)(NSError *error))completion {
+- (void)modifyPwd:(NSInteger)shopId oldpwd:(NSString *)oldpwd newpwd:(NSString *)newpwd completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:shopid forKey:@"shopid"];
+    [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:oldpwd forKey:@"oldpwd"];
     [dic setObject:newpwd forKey:@"newpwd"];
     NSString *jsonString = [dic JSONStringPlain];
@@ -336,7 +336,8 @@
     [dic setObject:[NSNumber numberWithBool:isrecommand] forKey:@"isrecommand"];
     [dic setObject:[NSNumber numberWithFloat:price] forKey:@"price"];
     [dic setObject:[NSNumber numberWithInteger:stock] forKey:@"stock"];
-    [dic setObject:fileids forKey:@"fileids"];
+    if (fileids)
+        [dic setObject:fileids forKey:@"fileids"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -408,7 +409,8 @@
     [dic setObject:[NSNumber numberWithBool:isrecommand] forKey:@"isrecommand"];
     [dic setObject:[NSNumber numberWithFloat:price] forKey:@"price"];
     [dic setObject:[NSNumber numberWithInteger:stock] forKey:@"stock"];
-    [dic setObject:fileids forKey:@"fileids"];
+    if (fileids)
+        [dic setObject:fileids forKey:@"fileids"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -466,11 +468,11 @@
     }];
 }
 
-- (void)recommendGoods:(NSInteger)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion {
+- (void)recommendGoods:(BOOL)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodid"];
-    [dic setObject:[NSNumber numberWithInteger:recommend] forKey:@"recommend"];
+    [dic setObject:[NSNumber numberWithBool:recommend] forKey:@"recommend"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -555,7 +557,7 @@
         if (success == nil)
             success = @"1";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
-        NSArray *ordersArray = [resDic objectForKey:@"data"];
+        NSArray *ordersArray = [[resDic objectForKey:@"data"] objectForKey:@"data"];
         NSMutableArray *orders = [NSMutableArray array];
         for (NSInteger i=0; i<ordersArray.count; i++) {
             NSDictionary *orderDic = [ordersArray objectAtIndex:i];
