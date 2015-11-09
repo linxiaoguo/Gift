@@ -11,3 +11,7 @@
 @implementation IncomeModel
 
 @end
+
+@implementation IncomeTotalModel
+
+@end
