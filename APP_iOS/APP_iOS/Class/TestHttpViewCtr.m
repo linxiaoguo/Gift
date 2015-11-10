@@ -109,9 +109,9 @@
 }
 
 - (void)login {
-    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, UserModel *user) {
+    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, ShopModel *shop) {
         if (error.code == 0) {
-            NSLog(@"登陆成功，用户名字：%@", user.name); 
+            NSLog(@"登陆成功，用户名字：%@", shop.name);
         }
     }];
 }
@@ -135,7 +135,7 @@
 }
 
 - (void)modifyMyshop {    
-    [[Http instance] modifyMyshop:32768 name:@"我的店铺2" pic:nil addr:@"福州鼓楼区" linkman:@"小张" linkphone:@"12345678901" completion:^(NSError *error) {
+    [[Http instance] modifyMyshop:32768 name:@"我的店铺2" pic:@"426308" addr:@"福州鼓楼区" linkman:@"小张" linkphone:@"12345678901" completion:^(NSError *error) {
        NSLog(@"修改我的店铺：%@", error.domain);
     }];
 }
@@ -153,7 +153,7 @@
 }
 
 - (void)goodsList {
-    [[Http instance] goodsList:32769 stat:1 count:10 page:1 recommend:YES completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] goodsList:32768 stat:1 count:10 page:1 recommend:YES completion:^(NSError *error, NSArray *dataArray) {
         NSLog(@"商品列表：%@", dataArray);
     }];
 }

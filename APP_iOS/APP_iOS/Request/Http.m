@@ -30,7 +30,7 @@
 }
 
 #pragma mark - 接口
-- (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, UserModel *user))completion {
+- (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, ShopModel *user))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:userName forKey:@"username"];
     [dic setObject:pwd forKey:@"password"];
@@ -55,9 +55,11 @@
             success = @"1";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         NSDictionary *body = [resDic objectForKey:@"data"];
-        UserModel *user = [UserModel objectWithKeyValues:body];
+        ShopModel *shop = [ShopModel objectWithKeyValues:body];
+        FieldModel *field = [FieldModel objectWithKeyValues:[body objectForKey:@"pic"]];
+        shop.pic = field;
         if (completion)
-            completion(error, user);
+            completion(error, shop);
     }];
 }
 
@@ -118,6 +120,8 @@
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         NSDictionary *body = [resDic objectForKey:@"data"];
         ShopModel *shop = [ShopModel objectWithKeyValues:body];
+        FieldModel *field = [FieldModel objectWithKeyValues:[body objectForKey:@"pic"]];
+        shop.pic = field;
         if (completion)
             completion(error, shop);
     }];
@@ -134,14 +138,13 @@
     if (addr)
         [dic setObject:addr forKey:@"addr"];
     if (linkman)
-        [dic setObject:linkman forKey:linkman];
+        [dic setObject:linkman forKey:@"linkman"];
     if (linkphone)
         [dic setObject:linkphone forKey:@"linkphone"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/modifyShop.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -169,8 +172,7 @@
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/postpone.htm?req=%@", encode];\
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/postpone.htm?req=%@", encode];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -200,7 +202,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/modifyPwd.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -233,7 +234,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/goodsList.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -343,7 +343,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/addGoods.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -373,7 +372,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/goodsDetail.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -416,7 +414,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/modifyGoods.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -447,7 +444,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/statusGoods.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -478,7 +474,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/recommendGoods.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -507,7 +502,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/order.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -541,7 +535,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/orderList.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -587,7 +580,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/orderDetail.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -660,7 +652,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/ship.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -691,7 +682,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/income.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -722,7 +712,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdraw.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -753,7 +742,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdraw.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -827,7 +815,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/bindbank.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -857,7 +844,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/messageList.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -896,7 +882,6 @@
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/upgrade.htm?req=%@", encode];
-    urlString = [urlString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {

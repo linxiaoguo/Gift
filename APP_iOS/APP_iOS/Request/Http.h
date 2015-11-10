@@ -27,7 +27,7 @@
 + (Http *)instance;
 
 //登录接口，error.code == 0代表正确
-- (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, UserModel *user))completion;
+- (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, ShopModel *shop))completion;
 
 //主页界面接口
 - (void)main:(NSInteger)shopId completion:(void(^)(NSError *error, MainModel *main))completion;
