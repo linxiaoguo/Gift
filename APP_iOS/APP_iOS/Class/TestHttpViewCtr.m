@@ -154,7 +154,7 @@
 
 - (void)goodsList {
     [[Http instance] goodsList:32768 stat:1 count:10 page:1 recommend:YES completion:^(NSError *error, NSArray *dataArray) {
-        NSLog(@"商品列表：%@", dataArray);
+        NSLog(@"商品列表：%lu", (unsigned long)dataArray.count);
     }];
 }
 
@@ -181,25 +181,25 @@
 }
 
 - (void)goodsDetail {
-    [[Http instance] goodsDetail:32768 goodsId:1 completion:^(NSError *error, GoodModel *goods) {
+    [[Http instance] goodsDetail:32768 goodsId:98524 completion:^(NSError *error, GoodModel *goods) {
         NSLog(@"商品详情：%@", goods.name);
     }];
 }
 
 - (void)goodsModify {
-    [[Http instance] goodsModify:32768 goodsId:1 name:@"商品新名称" typeId:1 topicId:1 isrecommand:YES price:100 stock:10 fileids:nil completion:^(NSError *error) {
+    [[Http instance] goodsModify:32768 goodsId:98524 name:@"商品新名称" typeId:1 topicId:1 isrecommand:YES price:100 stock:10 fileids:nil completion:^(NSError *error) {
         NSLog(@"修改商品：%@", error.domain);
     }];
 }
 
 - (void)statusGoods {
-    [[Http instance] statusGoods:1 shopId:32768 goodsId:1 completion:^(NSError *error) {
+    [[Http instance] statusGoods:1 shopId:32768 goodsId:98524 completion:^(NSError *error) {
         NSLog(@"商品上架：%@", error.domain);
     }];
 }
 
 - (void)recommendGoods {
-    [[Http instance] recommendGoods:YES shopId:32768 goodsId:1 completion:^(NSError *error) {
+    [[Http instance] recommendGoods:YES shopId:32768 goodsId:98524 completion:^(NSError *error) {
        NSLog(@"推荐商品：%@", error.domain);
     }];
 }
