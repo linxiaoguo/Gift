@@ -14,9 +14,6 @@
 //             };
 //}
 
-@implementation VersionModel
-
-@end
 
 @implementation GetVersionRequest
 

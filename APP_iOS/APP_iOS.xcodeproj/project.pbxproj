@@ -211,6 +211,11 @@
 		53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485891BC000CC0064ACE7 /* UITableView+Separator.m */; };
 		53E4858E1BC002AA0064ACE7 /* IncomeBindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */; };
 		53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */; };
+		53E90AA91BF0CF4700D28889 /* VersionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E90AA81BF0CF4700D28889 /* VersionModel.m */; };
+		53E90AAD1BF0D17400D28889 /* TestHttpViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E90AAB1BF0D17400D28889 /* TestHttpViewCtr.m */; };
+		53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */; };
+		53EAC6BE1BF10CD6004560ED /* MarketViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */; };
+		53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -601,6 +606,14 @@
 		53E4858B1BC002AA0064ACE7 /* IncomeBindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeBindCell.h; sourceTree = "<group>"; };
 		53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBindCell.m; sourceTree = "<group>"; };
 		53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeBindCell.xib; sourceTree = "<group>"; };
+		53E90AA71BF0CF4700D28889 /* VersionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionModel.h; sourceTree = "<group>"; };
+		53E90AA81BF0CF4700D28889 /* VersionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionModel.m; sourceTree = "<group>"; };
+		53E90AAA1BF0D17400D28889 /* TestHttpViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHttpViewCtr.h; sourceTree = "<group>"; };
+		53E90AAB1BF0D17400D28889 /* TestHttpViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHttpViewCtr.m; sourceTree = "<group>"; };
+		53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestHttpViewCtr.xib; sourceTree = "<group>"; };
+		53EAC6BB1BF10CD6004560ED /* MarketViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketViewCtr.h; sourceTree = "<group>"; };
+		53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketViewCtr.m; sourceTree = "<group>"; };
+		53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarketViewCtr.xib; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -704,8 +717,12 @@
 				5366928A1BBF282400060A1A /* 订单 */,
 				5366928D1BBF285000060A1A /* 收入 */,
 				536692901BBF286700060A1A /* 设置 */,
+				53EAC6BA1BF10CA9004560ED /* 营销 */,
 				0BB606DB1B799A5400D42A16 /* BaseViewController.h */,
 				0BB606DC1B799A5400D42A16 /* BaseViewController.m */,
+				53E90AAA1BF0D17400D28889 /* TestHttpViewCtr.h */,
+				53E90AAB1BF0D17400D28889 /* TestHttpViewCtr.m */,
+				53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -755,6 +772,8 @@
 				537856301BEF900E003F1154 /* BankModel.m */,
 				537856321BEF91B5003F1154 /* MessageModel.h */,
 				537856331BEF91B5003F1154 /* MessageModel.m */,
+				53E90AA71BF0CF4700D28889 /* VersionModel.h */,
+				53E90AA81BF0CF4700D28889 /* VersionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1592,6 +1611,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		53EAC6BA1BF10CA9004560ED /* 营销 */ = {
+			isa = PBXGroup;
+			children = (
+				53EAC6BB1BF10CD6004560ED /* MarketViewCtr.h */,
+				53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */,
+				53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */,
+			);
+			name = "营销";
+			sourceTree = "<group>";
+		};
 		CE224116631EE3C7C924B4F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1664,11 +1693,13 @@
 				0B5E440C1BD87FA4003F7D1F /* NoticeViewController.xib in Resources */,
 				0B5E44071BD87328003F7D1F /* ModifyPwdViewController.xib in Resources */,
 				0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */,
+				53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */,
 				0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */,
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
 				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
+				53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */,
 				0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */,
 				0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */,
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
@@ -1751,6 +1782,7 @@
 				0BB607F91B799EA200D42A16 /* NSIndexPath+Offset.m in Sources */,
 				0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */,
 				0BB606EC1B799B6600D42A16 /* LHttpRequest.m in Sources */,
+				53E90AAD1BF0D17400D28889 /* TestHttpViewCtr.m in Sources */,
 				536692941BBF2A2500060A1A /* OrderViewCtr.m in Sources */,
 				0BB606F41B799D0600D42A16 /* ShareFunction.m in Sources */,
 				0BB608291B799EA200D42A16 /* UIImage+Orientation.m in Sources */,
@@ -1768,6 +1800,7 @@
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
 				0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */,
 				53E07FB71BE056360095F8B7 /* GoodModel.m in Sources */,
+				53EAC6BE1BF10CD6004560ED /* MarketViewCtr.m in Sources */,
 				0BB608121B799EA200D42A16 /* NSTimer+Addition.m in Sources */,
 				0BB608111B799EA200D42A16 /* NSString+UUID.m in Sources */,
 				0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */,
@@ -1809,6 +1842,7 @@
 				0BB607EB1B799EA200D42A16 /* NSBundle+AppIcon.m in Sources */,
 				0BB608151B799EA200D42A16 /* MKMapView+ZoomLevel.m in Sources */,
 				0BB607ED1B799EA200D42A16 /* NSData+Encrypt.m in Sources */,
+				53E90AA91BF0CF4700D28889 /* VersionModel.m in Sources */,
 				0BB608251B799EA200D42A16 /* UIImage+Color.m in Sources */,
 				53E07FAA1BE04BDA0095F8B7 /* ShopModel.m in Sources */,
 				0BB608351B799EA200D42A16 /* UIResponder+UIAdapt.m in Sources */,
@@ -2007,7 +2041,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.liwu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2031,7 +2065,7 @@
 				INFOPLIST_FILE = APP_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llll.llll;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.liwu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

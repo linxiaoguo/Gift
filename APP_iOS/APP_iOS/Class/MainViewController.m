@@ -14,6 +14,7 @@
 #import "SettingViewController.h"
 #import "IncomeViewCtr.h"
 #import "OrderViewCtr.h"
+#import "MarketViewCtr.h"
 
 @interface MainViewController ()
 
@@ -74,4 +75,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)marketAction:(id)sender {
+    MarketViewCtr *vc = [[MarketViewCtr alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

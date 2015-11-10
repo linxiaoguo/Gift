@@ -9,22 +9,6 @@
 #import "BaseHttpRequest.h"
 #import "BaseHttpResponse.h"
 
-/**
- *  获取最新版本
- */
-
-@interface VersionModel : NSObject
-
-@property (nonatomic, copy) NSString *pagename;
-@property (nonatomic, copy) NSString *version;
-@property (nonatomic, copy) NSString *downurl;
-@property (nonatomic, copy) NSString *size;
-@property (nonatomic, copy) NSString *litpic;
-@property (nonatomic, copy) NSString *info;
-@property (nonatomic, copy) NSString *versionname;
-@property (nonatomic, copy) NSString *status;
-
-@end
 
 @interface GetVersionRequest : BaseHttpRequest
 
@@ -36,7 +20,6 @@
 
 @interface GetVersionResponse : BaseHttpResponse
 
-@property (nonatomic, strong) VersionModel *data;
 
 @end
 

@@ -20,6 +20,7 @@
 #import "IncomeModel.h"
 #import "BankModel.h"
 #import "MessageModel.h"
+#import "VersionModel.h"
 
 @interface Http : NSObject
 
@@ -29,19 +30,24 @@
 - (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, UserModel *user))completion;
 
 //主页界面接口
-- (void)main:(NSString *)shopId completion:(void(^)(NSError *error, MainModel *main))completion;
+- (void)main:(NSInteger)shopId completion:(void(^)(NSError *error, MainModel *main))completion;
 
 //我的店铺接口
-- (void)myShop:(NSString *)shopId completion:(void(^)(NSError *error, ShopModel *shop))completion;
+- (void)myShop:(NSInteger)shopId completion:(void(^)(NSError *error, ShopModel *shop))completion;
 
 //店铺修改接口
-- (void)modifyMyshop:(NSString *)shopId name:(NSString *)name pic:(NSString *)pic addr:(NSString *)addr linkman:(NSString *)linkman linkphone:(NSString *)linkphone completion:(void(^)(NSError *error))completion;
+//name 店铺名称
+//picid 商家图片地址(图片ID)
+//addr 店铺实体地址
+//linkman 联系人
+//linkphone 联系电话
+- (void)modifyMyshop:(NSInteger)shopId name:(NSString *)name pic:(NSString *)pic addr:(NSString *)addr linkman:(NSString *)linkman linkphone:(NSString *)linkphone completion:(void(^)(NSError *error))completion;
 
 //店铺延长时间接口
-- (void)postpone:(NSString *)shopid month:(NSInteger)month completion:(void(^)(NSError *error))completion;
+- (void)postpone:(NSInteger)shopId month:(NSInteger)month completion:(void(^)(NSError *error))completion;
 
 //店铺修改密码接口
-- (void)modifyPwd:(NSString *)shopid oldpwd:(NSString *)oldpwd newpwd:(NSString *)newpwd completion:(void(^)(NSError *error))completion;
+- (void)modifyPwd:(NSInteger)shopId oldpwd:(NSString *)oldpwd newpwd:(NSString *)newpwd completion:(void(^)(NSError *error))completion;
 
 //商品列表接口
 //stat 商品状态，1：出售中，0：已下架
@@ -88,12 +94,14 @@
 
 //推荐商品
 //recommend 0表示不推荐，1 表示推荐
-- (void)recommendGoods:(NSInteger)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion;
+- (void)recommendGoods:(BOOL)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion;
 
 //订单管理
 - (void)order:(NSInteger)shopId completion:(void(^)(NSError *error, OrderTotalModel *order))completion;
 
 //订单列表
+//stat 订单状态，10：待付款，20：待发货，40：已发货，60：已完成
+//page 从1开始
 //dataArray 存储 OrderModel
 - (void)orderList:(NSInteger)shopId stat:(NSInteger)stat pageSize:(NSInteger)pageSize page:(NSInteger)page completion:(void(^)(NSError *error, NSArray *dataArray))completion;
 
@@ -128,4 +136,7 @@
 //系统公告
 //dataArray存储MessageModel
 - (void)messageList:(NSInteger)shopId count:(NSInteger)count page:(NSInteger)page completion:(void(^)(NSError *error, NSArray *dataArray))completion;
+
+//版本更新
+- (void)queryVersion:(NSInteger)version completion:(void(^)(NSError *error, VersionModel *version))completion;
 @end
