@@ -24,7 +24,7 @@
     _titles = [NSMutableArray arrayWithObjects:@"登录", @"首页", @"我的店铺", @"店铺修改", @"店铺延长时间",
                @"店铺修改密码", @"商品列表", @"商品类型列表", @"商品主题列表", @"上传文件(未实现)",
                @"添加商品", @"商品详情", @"商品修改", @"商品上下架", @"推荐商品",
-               @"订单管理", @"订单列表", @"订单详情", @"物流列表", @"订单发货",
+               @"订单管理", @"订单列表", @"订单详情", @"订单统计列表", @"订单发货",
                @"收入管理", @"申请提现", @"提现列表", @"银行列表", @"绑定银行卡",
                @"系统公告", @"版本更新", nil];
     
@@ -181,7 +181,7 @@
 }
 
 - (void)goodsDetail {
-    [[Http instance] goodsDetail:32768 goodsId:98524 completion:^(NSError *error, GoodModel *goods) {
+    [[Http instance] goodsDetail:32768 goodsId:98471 completion:^(NSError *error, GoodModel *goods) {
         NSLog(@"商品详情：%@", goods.name);
     }];
 }
@@ -224,7 +224,7 @@
 
 - (void)logisticsList {
     [[Http instance] logisticsList:^(NSError *error, NSArray *dataArray) {
-       NSLog(@"物流列表%lu", (unsigned long)dataArray.count);
+       NSLog(@"订单统计列表%lu", (unsigned long)dataArray.count);
     }];
 }
 

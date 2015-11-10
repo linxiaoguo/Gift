@@ -109,7 +109,7 @@
 - (void)orderDetail:(NSInteger)shopId orderId:(NSInteger)orderId completion:(void(^)(NSError *error, OrderModel *order))completion;
 
 
-//物流列表
+//订单统计列表
 //dataArray存储
 - (void)logisticsList:(void(^)(NSError *error, NSArray *dataArray))completion;
 

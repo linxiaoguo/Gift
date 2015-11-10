@@ -366,7 +366,7 @@
 - (void)goodsDetail:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error, GoodModel *goods))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsId"];
+    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsid"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -401,7 +401,7 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:name forKey:@"name"];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodid"];
+    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsid"];
     [dic setObject:[NSNumber numberWithInteger:typeId] forKey:@"typeid"];
     [dic setObject:[NSNumber numberWithInteger:topicId] forKey:@"topicid"];
     [dic setObject:[NSNumber numberWithBool:isrecommand] forKey:@"isrecommand"];
@@ -437,7 +437,7 @@
 - (void)statusGoods:(NSInteger)status shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodid"];
+    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsid"];
     [dic setObject:[NSNumber numberWithInteger:status] forKey:@"status"];
 
     NSString *jsonString = [dic JSONStringPlain];
@@ -467,7 +467,7 @@
 - (void)recommendGoods:(BOOL)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodid"];
+    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsid"];
     [dic setObject:[NSNumber numberWithBool:recommend] forKey:@"recommend"];
     
     NSString *jsonString = [dic JSONStringPlain];
