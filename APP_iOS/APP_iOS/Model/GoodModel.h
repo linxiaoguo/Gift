@@ -12,16 +12,18 @@
 @interface GoodModel : NSObject
 
 @property (nonatomic, assign) NSInteger id;
-@property (nonatomic, copy)   NSString *name;
-@property (nonatomic, assign) CGFloat price;
+@property (nonatomic, copy)   NSString *name;//商品名称
+@property (nonatomic, assign) CGFloat price;//价格
 @property (nonatomic, assign) NSInteger stock;//库存
 @property (nonatomic, assign) NSInteger sales;//销量
-@property (nonatomic, copy)   NSString *pic;
+@property (nonatomic, copy)   NSString *pic;//图片地址
 @property (nonatomic, copy)   NSString *addtime;//添加时间
 @property (nonatomic, assign) NSInteger typeid;
 @property (nonatomic, assign) NSInteger topicid;
 @property (nonatomic, strong) NSArray *fileids;//FieldModel
 @property (nonatomic, assign) BOOL isrecommand;
+@property (nonatomic, assign) BOOL recommend;//是否推荐
+@property (nonatomic, assign) NSInteger goods_status;//商品状态，文档未提供说明
 @end
 
 @interface GoodOrderModel : NSObject

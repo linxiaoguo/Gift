@@ -26,4 +26,5 @@
 @property (nonatomic, strong)NSString *logname;//物流名称
 @property (nonatomic, strong)NSString *number;//物流单号
 @property (nonatomic, strong)NSArray *goods;//订单商品列表
+@property (nonatomic, strong)NSArray *pic;//图片列表
 @end
