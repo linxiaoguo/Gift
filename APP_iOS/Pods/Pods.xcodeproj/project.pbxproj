@@ -17,9 +17,9 @@
 		0AE9C88027FA64360FFEFE2924C473E7 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 585043F50945B82C801AADCE9DF7829E /* UIActivityIndicatorView+AFNetworking.m */; };
 		0B1CE4D9196C3968F09B9E02748DD7B6 /* IQSegmentedNextPrevious.h in Headers */ = {isa = PBXBuildFile; fileRef = DE47BEB08B10AC6B09B7D3E2C92ADDDF /* IQSegmentedNextPrevious.h */; };
 		0B3E719CCD23397B91A3FE497E8897B1 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = E30C2309A76AA7EFC7EAFC315F2ACD7B /* UIImage+MultiFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0B552E881BF0332500B47E0D /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32182AB8A915195908668BB560653409 /* IQTitleBarButtonItem.m */; };
 		0D8BAEA5998C2C6CB246DC3C4769A6B4 /* MJRefreshLegendHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 17339CF71C4B4F5096199553D725FD4A /* MJRefreshLegendHeader.h */; };
 		0F0BA7CCB3FE42B282996881444081D4 /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E648E20476D46EB9F62CCCC7365816E7 /* IQKeyboardManager.h */; };
-		0F2CF664ACFE64DECF61D443F56FD0D8 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32182AB8A915195908668BB560653409 /* IQTitleBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		10D806DB2203105A2B6B1408580CD291 /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 749B38D0A857DC1CC5C74EFB1F961B2A /* ImagePlayerView.m */; };
 		111C7260AC01563F6FBAA966750FBC56 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A573BA33497E80C4D4C951E829B984FF /* AFHTTPSessionManager.h */; };
 		11B62B1832BBE9FB95E4A671F5242647 /* SVWebViewControllerActivityChrome.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D8FAB73F32C82852581E6A38DD6E2A6 /* SVWebViewControllerActivityChrome.h */; };
@@ -1519,13 +1519,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D1CE9C672CDD1AB3D70507AB495CE9 /* IQBarButtonItem.m in Sources */,
+				0B552E881BF0332500B47E0D /* IQTitleBarButtonItem.m in Sources */,
 				A01269F8AEBC04EC231DD46FF4A943C4 /* IQKeyboardManager-dummy.m in Sources */,
 				DFF263EFEB27BCE31C62FC2D9DC727AB /* IQKeyboardManager.m in Sources */,
 				859938803CDCA9AC88310368FB774A0B /* IQKeyboardReturnKeyHandler.m in Sources */,
 				E9EC0B68FBF19E9BB59F9982FF77B116 /* IQNSArray+Sort.m in Sources */,
 				335E5B612D73AFEB5BCCE6506FB38822 /* IQSegmentedNextPrevious.m in Sources */,
 				BC8FBB20EB3E8DE0DEFA3F259D76247C /* IQTextView.m in Sources */,
-				0F2CF664ACFE64DECF61D443F56FD0D8 /* IQTitleBarButtonItem.m in Sources */,
 				E9324D65E97CAE9F6CB19C753DC24A85 /* IQToolbar.m in Sources */,
 				B3F4F6C399051DA33F5C66F9BCA3F254 /* IQUITextFieldView+Additions.m in Sources */,
 				B24369E6E74341FCBD6AECC9AF9783E1 /* IQUIView+Hierarchy.m in Sources */,

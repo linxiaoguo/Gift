@@ -28,4 +28,27 @@
     return self;
 }
 
+- (void)setUserModel:(UserModel *)userModel {
+    if (userModel) {
+        NSDictionary *dic = userModel.keyValues;
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:dic];
+        [[NSUserDefaults standardUserDefaults] setValue:userData forKey:@"userModelUD"];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userModelUD"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (UserModel *)userModel {
+    NSData *mcUserData = [[NSUserDefaults standardUserDefaults] valueForKey:@"userModelUD"];
+    if (mcUserData) {
+        NSDictionary *mcUserDic = [NSKeyedUnarchiver unarchiveObjectWithData:mcUserData];
+        return [UserModel objectWithKeyValues:mcUserDic];
+    }
+    else {
+        return nil;
+    }
+}
+
 @end

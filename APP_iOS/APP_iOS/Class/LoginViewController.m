@@ -63,20 +63,13 @@
 //        return;
 //    }
     
-    
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    [param setValue:_nickNameTextField.text forKey:@"username"];
-//    [param setValue:_passwordTextField.text forKey:@"password"];
-//    [param setValue:@"1" forKey:@"applogin"];
-//    
-//    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
-//        NSLog(@"%@", responseDic);
-//        [kAppDelegate showMainViewController];
-//    } failure:^(NSString *descript) {
-//        
-//    }];
-    
-    [kAppDelegate showMainViewController];
+    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, UserModel *user) {
+        if (error.code == 0) {
+            NSLog(@"登陆成功，用户名字：%@", user.name);
+        }
+    }];
+        
+//    [kAppDelegate showMainViewController];
 }
 
 #pragma mark - UITextFieldDelegate
