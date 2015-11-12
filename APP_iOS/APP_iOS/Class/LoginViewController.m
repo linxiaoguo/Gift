@@ -63,12 +63,12 @@
 //        return;
 //    }
     
-    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, UserModel *user) {
+    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, ShopModel *shop) {
         if (error.code == 0) {
-            NSLog(@"登陆成功，用户名字：%@", user.name);
+            NSLog(@"登陆成功，用户名字：%@", shop.name);
         }
     }];
-        
+    
 //    [kAppDelegate showMainViewController];
 }
 
