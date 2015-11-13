@@ -195,7 +195,6 @@
 		53E07FAA1BE04BDA0095F8B7 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E07FA91BE04BDA0095F8B7 /* ShopModel.m */; };
 		53E07FAE1BE04F220095F8B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E07FAD1BE04F220095F8B7 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		53E07FB11BE051840095F8B7 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E07FB01BE051840095F8B7 /* MainModel.m */; };
-		53E07FB41BE0525B0095F8B7 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E07FB31BE0525B0095F8B7 /* UserModel.m */; };
 		53E07FB71BE056360095F8B7 /* GoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E07FB61BE056360095F8B7 /* GoodModel.m */; };
 		53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485771BBFC6E80064ACE7 /* OrderHeadCell.m */; };
 		53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E485781BBFC6E80064ACE7 /* OrderHeadCell.xib */; };
@@ -574,8 +573,6 @@
 		53E07FAD1BE04F220095F8B7 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		53E07FAF1BE051840095F8B7 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		53E07FB01BE051840095F8B7 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
-		53E07FB21BE0525B0095F8B7 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		53E07FB31BE0525B0095F8B7 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		53E07FB51BE056360095F8B7 /* GoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodModel.h; sourceTree = "<group>"; };
 		53E07FB61BE056360095F8B7 /* GoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodModel.m; sourceTree = "<group>"; };
 		53E485761BBFC6E80064ACE7 /* OrderHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeadCell.h; sourceTree = "<group>"; };
@@ -738,8 +735,6 @@
 				53E07FA91BE04BDA0095F8B7 /* ShopModel.m */,
 				53E07FAF1BE051840095F8B7 /* MainModel.h */,
 				53E07FB01BE051840095F8B7 /* MainModel.m */,
-				53E07FB21BE0525B0095F8B7 /* UserModel.h */,
-				53E07FB31BE0525B0095F8B7 /* UserModel.m */,
 				53E07FB51BE056360095F8B7 /* GoodModel.h */,
 				53E07FB61BE056360095F8B7 /* GoodModel.m */,
 				5378561A1BEF7C6A003F1154 /* GoodTypeModel.h */,
@@ -1891,7 +1886,6 @@
 				0BB608031B799EA200D42A16 /* NSObject+GCD.m in Sources */,
 				0BB6083F1B799EA300D42A16 /* UIView+BlockGesture.m in Sources */,
 				0BB607F81B799EA200D42A16 /* NSFileManager+Paths.m in Sources */,
-				53E07FB41BE0525B0095F8B7 /* UserModel.m in Sources */,
 				0BB6084E1B799EA300D42A16 /* UIWebView+Style.m in Sources */,
 				0BF6C4F11BCC9E7100D569C8 /* MyValidityDateViewController.m in Sources */,
 				53DE4F501BC6879500D1ADC5 /* AESCrypt.m in Sources */,

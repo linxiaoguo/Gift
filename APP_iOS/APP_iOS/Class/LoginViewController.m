@@ -10,7 +10,6 @@
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
 #import "ShopModel.h"
-#import "Http.h"
 #import "NSDictionary+JSONString.h"
 #import "DES3Util.h"
 
@@ -66,10 +65,10 @@
     [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, ShopModel *shop) {
         if (error.code == 0) {
             NSLog(@"登陆成功，用户名字：%@", shop.name);
+            [ShareValue instance].shopModel = shop;
+            [kAppDelegate showMainViewController];
         }
     }];
-    
-//    [kAppDelegate showMainViewController];
 }
 
 #pragma mark - UITextFieldDelegate

@@ -28,9 +28,9 @@
     return self;
 }
 
-- (void)setUserModel:(UserModel *)userModel {
-    if (userModel) {
-        NSDictionary *dic = userModel.keyValues;
+- (void)setShopModel:(ShopModel *)shopModel {
+    if (shopModel) {
+        NSDictionary *dic = shopModel.keyValues;
         NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:dic];
         [[NSUserDefaults standardUserDefaults] setValue:userData forKey:@"userModelUD"];
     }
@@ -40,11 +40,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (UserModel *)userModel {
+- (ShopModel *)shopModel {
     NSData *mcUserData = [[NSUserDefaults standardUserDefaults] valueForKey:@"userModelUD"];
     if (mcUserData) {
         NSDictionary *mcUserDic = [NSKeyedUnarchiver unarchiveObjectWithData:mcUserData];
-        return [UserModel objectWithKeyValues:mcUserDic];
+        return [ShopModel objectWithKeyValues:mcUserDic];
     }
     else {
         return nil;

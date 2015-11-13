@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ShopModel.h"
 #import "MainModel.h"
-#import "UserModel.h"
 #import "GoodModel.h"
 #import "GoodTypeModel.h"
 #import "GoodsTopicModel.h"

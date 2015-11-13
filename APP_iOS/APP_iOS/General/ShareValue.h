@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworkReachabilityManager.h"
-#import "UserModel.h"
+#import "ShopModel.h"
 
 @interface ShareValue : NSObject  {
 
@@ -16,7 +16,7 @@
 
 + (ShareValue *)instance;
 
-@property (nonatomic, strong) UserModel *userModel;
+@property (nonatomic, strong) ShopModel *shopModel;
 @property (nonatomic, assign) AFNetworkReachabilityStatus netWorkStatus;
 
 @end
