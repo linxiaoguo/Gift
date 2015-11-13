@@ -21,6 +21,9 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"微店信息";
+    
+    [self httpRequest];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +52,17 @@
 }
 
 - (IBAction)scanAction:(id)sender {
+}
+
+#pragma mark - http
+
+- (void)httpRequest {
+    [[Http instance] myShop:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, ShopModel *shop) {
+        if (error.code == 0) {
+            NSLog(@"我的店铺shopid：%@", shop.shopid);
+        }
+    }];
+
 }
 
 @end

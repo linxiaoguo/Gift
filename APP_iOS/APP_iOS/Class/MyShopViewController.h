@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
-@interface MyShopViewController : BaseViewController
+@interface MyShopViewController : BaseViewController {
+    
+    __weak IBOutlet UIImageView *_headImage;
+    __weak IBOutlet UILabel *_shopNameLabel;
+    
+    
+}
 
 @end
