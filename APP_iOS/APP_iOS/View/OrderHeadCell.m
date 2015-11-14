@@ -11,6 +11,7 @@
 @implementation OrderHeadCell
 
 - (void)awakeFromNib {
+    [self setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,7 +24,7 @@
     if (selected) {
         _lblTitle.textColor = [UIColor redColor];
         _lblCount.textColor = [UIColor redColor];
-        _btnBg.backgroundColor = [UIColor whiteColor];
+        _btnBg.backgroundColor = [UIColor clearColor];
     } else {
         _lblTitle.textColor = [UIColor blackColor];
         _lblCount.textColor = [UIColor blackColor];
