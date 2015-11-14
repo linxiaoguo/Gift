@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface OrderViewCtr : BaseViewController
+@interface OrderViewCtr : BaseViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end
