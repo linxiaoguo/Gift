@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface MyCodeViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UIImageView *codeImage;
 
 @end

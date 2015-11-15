@@ -36,4 +36,23 @@
 }
 */
 
+- (IBAction)saveAction:(id)sender {
+    UIImageWriteToSavedPhotosAlbum(_codeImage.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+- (IBAction)shareAction:(id)sender {
+
+}
+
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
+    NSString *msg = nil ;
+    if(error != NULL) {
+        msg = @"保存图片失败" ;
+        [SVProgressHUD showErrorWithStatus:msg];
+    }
+    else {
+        msg = @"保存图片成功" ;
+        [SVProgressHUD showSuccessWithStatus:msg];
+    }
+}
+
 @end
