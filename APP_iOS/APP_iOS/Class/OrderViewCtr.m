@@ -9,6 +9,7 @@
 #import "OrderViewCtr.h"
 #import "OrderHeadCell.h"
 #import "OrderCell.h"
+#import "OrderDetailViewCtr.h"
 
 @interface OrderViewCtr ()
 
@@ -57,7 +58,7 @@
     [_vHeader addSubview:_waitPay];
     [_vHeader addSubview:_alreadySend];
     [_vHeader addSubview:_alreadyDone];
-//    [_waitSend setSelected:YES];
+    [_waitSend setSelected:YES];
     _waitSend.imvLine.hidden = YES;
     [_waitPay.lblTitle setText:@"待支付"];
     [_alreadySend.lblTitle setText:@"已发货"];
@@ -110,7 +111,7 @@
         OrderHeadCell *cell = [_cellArray objectAtIndex:i];
         cell.frame = CGRectMake(x + w * i, y, w, h);
     }
-    _selectImageView.frame = CGRectMake(x, y, w, h);
+    _selectImageView.frame = CGRectMake(x-1, y, w+2, h);
     
     x = 0;
     y = 0;
@@ -149,16 +150,16 @@
     }
     _isAnimation = YES;
     
-    for (NSInteger i=0; i<_cellArray.count; i++) {
-        OrderHeadCell *cell = [_cellArray objectAtIndex:i];
-        if (index == i)
-            [cell setSelected:YES];
-        else
-            [cell setSelected:NO];
-    }
-
     [UIView animateWithDuration:0.25 animations:^{
-        _selectImageView.frame = CGRectMake(x + w * index, y, w, h);
+        _selectImageView.frame = CGRectMake(x + w * index - 1, y, w+2, h);
+        
+        for (NSInteger i=0; i<_cellArray.count; i++) {
+            OrderHeadCell *cell = [_cellArray objectAtIndex:i];
+            if (index == i)
+                [cell setSelected:YES];
+            else
+                [cell setSelected:NO];
+        }
     } completion:^(BOOL finished) {
         if (finished)
             _isAnimation = NO;
@@ -213,7 +214,6 @@
     OrderCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [CustomView viewWithNibName:@"OrderCell"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     return cell;
@@ -221,6 +221,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+    
+    OrderDetailViewCtr *vc = [[OrderDetailViewCtr alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate

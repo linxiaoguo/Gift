@@ -58,22 +58,33 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="纯天然纯天然纯天然纯天然" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc9-qJ-hPq">
-                        <rect key="frame" x="101" y="43" width="211" height="20"/>
+                        <rect key="frame" x="101" y="43" width="211" height="19"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Yb1-P6-P9L"/>
+                            <constraint firstAttribute="height" constant="19" id="Yb1-P6-P9L"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可调节背带 舒适设计 针对女性设计 直通式腰部设计" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-rO-qaa">
+                        <rect key="frame" x="101" y="62" width="211" height="35"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="24r-rU-f76"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待发货" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o00-ha-TT0">
-                        <rect key="frame" x="101" y="103" width="211" height="21"/>
+                        <rect key="frame" x="101" y="97" width="100" height="21"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="378-56-35b"/>
+                            <constraint firstAttribute="width" constant="100" id="oNa-a0-F2E"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.92156862750000001" green="0.51372549020000002" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -99,20 +110,16 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可调节背带 舒适设计 针对女性设计 直通式腰部设计" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-rO-qaa">
-                        <rect key="frame" x="101" y="63" width="211" height="40"/>
-                        <animations/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a_r2" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-la-qXB">
+                        <rect key="frame" x="299" y="100" width="8" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="24r-rU-f76"/>
+                            <constraint firstAttribute="height" constant="15" id="bhr-iW-mAc"/>
+                            <constraint firstAttribute="width" constant="8" id="tgZ-a4-Hyd"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="o00-ha-TT0" secondAttribute="trailing" id="3Qy-Eg-Yne"/>
                     <constraint firstItem="tVq-rO-qaa" firstAttribute="leading" secondItem="lTz-1x-L1x" secondAttribute="trailing" constant="8" id="78I-3f-HHC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="y9I-bF-ycS" secondAttribute="trailing" constant="-8" id="KB1-YU-JUQ"/>
                     <constraint firstItem="tVq-rO-qaa" firstAttribute="top" secondItem="Kc9-qJ-hPq" secondAttribute="bottom" id="KqY-VR-A15"/>
@@ -138,6 +145,8 @@
                     <constraint firstItem="o00-ha-TT0" firstAttribute="top" secondItem="tVq-rO-qaa" secondAttribute="bottom" id="tCn-3C-3m4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Hbf-WN-PLg" secondAttribute="trailing" constant="-8" id="upR-Da-D8t"/>
                     <constraint firstItem="o00-ha-TT0" firstAttribute="leading" secondItem="lTz-1x-L1x" secondAttribute="trailing" constant="8" id="wOR-Ei-gpe"/>
+                    <constraint firstItem="wMp-la-qXB" firstAttribute="centerY" secondItem="o00-ha-TT0" secondAttribute="centerY" id="wm6-1E-U9H"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wMp-la-qXB" secondAttribute="trailing" constant="5" id="wqn-8x-ayw"/>
                     <constraint firstItem="iFY-Ml-VB7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="z42-9B-V44"/>
                 </constraints>
             </tableViewCellContentView>
@@ -152,10 +161,11 @@
                 <outlet property="lblTime" destination="iFY-Ml-VB7" id="MxK-Ok-lHK"/>
                 <outlet property="lblTitle" destination="Kc9-qJ-hPq" id="9Il-Jm-r7U"/>
             </connections>
-            <point key="canvasLocation" x="309" y="409"/>
+            <point key="canvasLocation" x="309" y="408.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="a_r2" width="12" height="20"/>
         <image name="cpxqq" width="90" height="90"/>
     </resources>
 </document>
