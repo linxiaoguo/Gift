@@ -68,7 +68,7 @@
 //上传文件接口
 //mname：theme store
 //dataArray存储FieldModel
-- (void)uploadFile:(NSString *)fileId uploadFile:(NSString *)uploadFile mname:(NSString *)mname completion:(void(^)(NSError *error, NSArray *dataArray))completion;
+- (void)uploadFile:(NSString *)fileId uploadFile:(NSData *)uploadFile mname:(NSString *)mname completion:(void(^)(NSError *error, FieldModel *fieldModel))completion;
 
 //添加商品接口
 //shopId 商家id

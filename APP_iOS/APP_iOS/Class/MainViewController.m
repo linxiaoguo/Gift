@@ -32,6 +32,8 @@
         
     }];
     
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    _shopNameLabel.text = [ShareValue instance].shopModel.name;
     [self httpRequest];
 }
 
@@ -90,7 +92,7 @@
         if (error.code == 0) {
             _orderLabel.text = main.order;
             _buyerLabel.text = main.buyer;
-            _incomeLabel.text = main.order;
+            _incomeLabel.text = [NSString stringWithFormat:@"今日收入%@元", main.income];
         }
     }];
 }

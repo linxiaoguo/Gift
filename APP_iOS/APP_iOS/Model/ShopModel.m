@@ -10,4 +10,18 @@
 
 @implementation ShopModel
 
+- (void)setValidate:(NSString *)validate {
+    _validate = validate;
+    if (validate.length > 10) {
+        _validate = [validate substringToIndex:10];
+    }
+}
+
+- (void)setRegdate:(NSString *)regdate {
+    _regdate = regdate;
+    if (regdate.length > 10) {
+        _regdate = [regdate substringToIndex:10];
+    }
+}
+
 @end

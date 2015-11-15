@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy)   NSString *name;//商品名称
-@property (nonatomic, assign) CGFloat price;//价格
+@property (nonatomic, copy) NSString *price;//价格
 @property (nonatomic, assign) NSInteger stock;//库存
 @property (nonatomic, assign) NSInteger sales;//销量
 @property (nonatomic, copy)   NSString *pic;//图片地址

@@ -54,4 +54,20 @@
     return strRandom;
 }
 
+
++ (NSString *)stringWithTimestamp:(NSString *)timestamp {
+
+    double lastactivityInterval = [timestamp doubleValue];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy.MM.dd"];
+    
+    NSString *dateStr = [formatter stringFromDate:date];
+    return dateStr;
+}
+
+
 @end

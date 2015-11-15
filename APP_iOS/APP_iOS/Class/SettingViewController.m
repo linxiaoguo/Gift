@@ -15,6 +15,7 @@
 @interface SettingViewController ()
 
 @property (nonatomic, copy) NSArray *dataArr;
+@property (nonatomic, copy) NSString *url;
 
 @end
 
@@ -56,6 +57,43 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.row == 0) {
+        ModifyPwdViewController *vc = [[ModifyPwdViewController alloc] initWithNibName:@"ModifyPwdViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 1) {
+        NoticeViewController *vc = [[NoticeViewController alloc] initWithNibName:@"NoticeViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 3) {
+        [[Http instance] queryVersion:1 completion:^(NSError *error, VersionModel *version) {
+            NSLog(@"版本更新：%@", version.versionname);
+            if (error.code == 0) {
+                if (version.status == 0) {
+                    [SVProgressHUD showSuccessWithStatus:@"已经是最新版本"];
+                    return ;
+                }
+                NSString *iosVersion = version.version;
+                NSString *localVersion = kAppVersion;
+                
+                NSComparisonResult result = [iosVersion compare:localVersion];
+                if (result == NSOrderedDescending) {
+                    _url = version.downurl;
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:version.info delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
+                    [alertView show];
+                }
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:error.domain];
+            }
+        }];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -70,7 +108,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
     
     cell.textLabel.text = [[_dataArr objectAtIndex:indexPath.row] objectForKey:@"title"];

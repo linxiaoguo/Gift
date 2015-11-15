@@ -135,7 +135,7 @@
 }
 
 - (void)modifyMyshop {    
-    [[Http instance] modifyMyshop:32768 name:@"我的店铺2" pic:@"426308" addr:@"福州鼓楼区" linkman:@"小张" linkphone:@"12345678901" completion:^(NSError *error) {
+    [[Http instance] modifyMyshop:32768 name:@"我的店铺2" pic:@"426308" addr:nil linkman:@"小张" linkphone:@"12345678901" completion:^(NSError *error) {
        NSLog(@"修改我的店铺：%@", error.domain);
     }];
 }

@@ -37,4 +37,6 @@
  */
 + (NSString *)strRandom:(NSInteger)count;
 
++ (NSString *)stringWithTimestamp:(NSString *)timestamp;
+
 @end

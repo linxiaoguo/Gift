@@ -16,8 +16,6 @@
 		0B3F9DB71BCF974A00FC8852 /* AddGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F9DB51BCF974A00FC8852 /* AddGoodsTableViewCell.xib */; };
 		0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */; };
 		0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */; };
-		0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */; };
-		0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */; };
 		0B59A81C1BC6528E008C8CD1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */; };
 		0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */; };
 		0B59A8211BC65BF6008C8CD1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B59A81F1BC65BF6008C8CD1 /* MainViewController.m */; };
@@ -230,9 +228,6 @@
 		0B42B61C1BC90B8200BEBB90 /* MyShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopViewController.h; sourceTree = "<group>"; };
 		0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShopViewController.m; sourceTree = "<group>"; };
 		0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyShopViewController.xib; sourceTree = "<group>"; };
-		0B42B6211BC90B8E00BEBB90 /* ShopInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfoViewController.h; sourceTree = "<group>"; };
-		0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfoViewController.m; sourceTree = "<group>"; };
-		0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopInfoViewController.xib; sourceTree = "<group>"; };
 		0B59A8191BC6528E008C8CD1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0B59A81A1BC6528E008C8CD1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0B59A81B1BC6528E008C8CD1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -1430,9 +1425,6 @@
 				0B42B61C1BC90B8200BEBB90 /* MyShopViewController.h */,
 				0B42B61D1BC90B8200BEBB90 /* MyShopViewController.m */,
 				0B42B61E1BC90B8200BEBB90 /* MyShopViewController.xib */,
-				0B42B6211BC90B8E00BEBB90 /* ShopInfoViewController.h */,
-				0B42B6221BC90B8E00BEBB90 /* ShopInfoViewController.m */,
-				0B42B6231BC90B8E00BEBB90 /* ShopInfoViewController.xib */,
 				0BF6C4F81BCCAC0B00D569C8 /* ModifyViewController.h */,
 				0BF6C4F91BCCAC0B00D569C8 /* ModifyViewController.m */,
 				0BF6C4FA1BCCAC0B00D569C8 /* ModifyViewController.xib */,
@@ -1677,7 +1669,6 @@
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
 				0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */,
-				0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */,
 				53DEAAB61BC1768D0008D6E8 /* BonusTotalCell.xib in Resources */,
 				0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */,
 				0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */,
@@ -1736,7 +1727,6 @@
 				0BB608071B799EA200D42A16 /* NSString+Base64.m in Sources */,
 				0BB607EE1B799EA200D42A16 /* NSDate+Addition.m in Sources */,
 				0BB606F11B799BD100D42A16 /* SvUDIDTools.m in Sources */,
-				0B42B6241BC90B8E00BEBB90 /* ShopInfoViewController.m in Sources */,
 				0BB608171B799EA200D42A16 /* UIBezierPath+SVG.m in Sources */,
 				0BB607F91B799EA200D42A16 /* NSIndexPath+Offset.m in Sources */,
 				0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */,

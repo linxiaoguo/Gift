@@ -20,8 +20,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"微店信息";
+    self.title = @"个人中心";
     
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    _shopNameLabel.text = [ShareValue instance].shopModel.name;
+    [_validateButton setTitle:[NSString stringWithFormat:@"有效期至%@", [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.validate]] forState:UIControlStateNormal];
     [self httpRequest];
 
 }
@@ -40,6 +43,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)copyUrlAction:(id)sender {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [ShareValue instance].shopModel.url;
+    
+    [SVProgressHUD showSuccessWithStatus:@"已复制店铺链接到剪贴板"];
+}
+
+- (IBAction)shareAction:(id)sender {
+}
 
 - (IBAction)shopInfoAction:(id)sender {
     ModifyViewController *vc = [[ModifyViewController alloc] initWithNibName:@"ModifyViewController" bundle:nil];
