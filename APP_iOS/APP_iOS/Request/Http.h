@@ -100,6 +100,11 @@
 //qrcodeImg
 - (void)goodsQrcode:(NSInteger)goodsId completion:(void(^)(NSError *error, NSString *goodsAddr, NSString *qrcodeImg))completion;
 
+//店铺二维码
+//goodsAddr商品地址
+//qrcodeImg
+- (void)shopQrcode:(NSInteger)shopid completion:(void(^)(NSError *error, NSString *shopAddr, NSString *qrcodeImg))completion;
+
 //订单管理
 - (void)order:(NSInteger)shopId completion:(void(^)(NSError *error, OrderTotalModel *order))completion;
 

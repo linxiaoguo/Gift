@@ -20,6 +20,23 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"有效期";
+    
+    double lastactivityInterval = [[ShareValue instance].shopModel.validate doubleValue];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+
+    NSDate *now = [NSDate date];
+    double deltaSeconds = [date timeIntervalSinceDate:now];
+    double deltaMinutes = deltaSeconds / 60.0f;
+    double deltaHours = deltaMinutes / 60.0f;
+    double deltaDays = deltaHours / 24.0f;
+    
+    if (deltaDays < 0.0f) {
+        _dayLabel.text = [NSString stringWithFormat:@"已过期%d天", -(NSUInteger)deltaDays];
+    }
+    else {
+        _dayLabel.text = [NSString stringWithFormat:@"剩余%d天", (NSUInteger)deltaDays];
+    }
+    _ValidityPeriodLabel.text = [NSString stringWithFormat:@"有效期至 %@", [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.validate]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,8 @@
 
 @interface MyValidityDateViewController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *ValidityPeriodLabel;
+
 @end

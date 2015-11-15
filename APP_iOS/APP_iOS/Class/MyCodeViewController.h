@@ -10,4 +10,8 @@
 
 @interface MyCodeViewController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *shopName;
+
+@property (weak, nonatomic) IBOutlet UIImageView *codeImage;
+
 @end

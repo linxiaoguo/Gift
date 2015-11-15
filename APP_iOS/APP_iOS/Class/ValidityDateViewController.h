@@ -10,6 +10,8 @@
 
 @interface ValidityDateViewController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *ValidityPeriodLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *monthView;
 

@@ -82,8 +82,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
+        cell.textLabel.font = [UIFont systemFontOfSize:14];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
+        cell.detailTextLabel.textColor = [UIColor darkGrayColor];
     }
     
     MessageModel *model = [self.dataSource objectAtIndex:indexPath.row];

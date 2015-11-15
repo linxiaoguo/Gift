@@ -9,6 +9,7 @@
 #import "MyShopViewController.h"
 #import "MyValidityDateViewController.h"
 #import "ModifyViewController.h"
+#import "MyCodeViewController.h"
 
 @interface MyShopViewController ()
 
@@ -24,14 +25,40 @@
     
     [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
     _shopNameLabel.text = [ShareValue instance].shopModel.name;
-    [_validateButton setTitle:[NSString stringWithFormat:@"有效期至%@", [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.validate]] forState:UIControlStateNormal];
+
     [self httpRequest];
 
+    [self performSelector:@selector(addDay) withObject:nil afterDelay:0.1f];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)addDay {
+    double lastactivityInterval = [[ShareValue instance].shopModel.validate doubleValue];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSDate *now = [NSDate date];
+    double deltaSeconds = [date timeIntervalSinceDate:now];
+    double deltaMinutes = deltaSeconds / 60.0f;
+    double deltaHours = deltaMinutes / 60.0f;
+    double deltaDays = deltaHours / 24.0f;
+    
+    UILabel *day = [[UILabel alloc] initWithFrame:CGRectMake(_validateButton.centerX + 30, 0, 100, _validateButton.height)];
+    day.textColor = kRGBCOLOR(164, 31, 38);
+    day.font = [UIFont systemFontOfSize:14];
+    if (deltaDays < 0.0f) {
+        day.text = [NSString stringWithFormat:@"已过期%d天", -(NSUInteger)deltaDays];
+    }
+    else {
+        day.text = [NSString stringWithFormat:@"剩余%d天", (NSUInteger)deltaDays];
+    }
+    [_validateButton addSubview:day];
+
+    [_validateButton setTitle:[NSString stringWithFormat:@"有效期至%@                    ", [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.validate]] forState:UIControlStateNormal];
+
 }
 
 /*
@@ -65,6 +92,8 @@
 }
 
 - (IBAction)scanAction:(id)sender {
+    MyCodeViewController *vc = [[MyCodeViewController alloc] initWithNibName:@"MyCodeViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - http
@@ -75,7 +104,6 @@
             NSLog(@"我的店铺shopid：%@", shop.shopid);
         }
     }];
-
 }
 
 @end
