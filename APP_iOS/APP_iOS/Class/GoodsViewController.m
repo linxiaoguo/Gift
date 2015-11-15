@@ -11,7 +11,14 @@
 #import "AddGoodsViewController.h"
 #import "GoodModel.h"
 
-@interface GoodsViewController ()
+@interface GoodsViewController () {
+    UILabel *_countLabel;
+}
+
+@property (nonatomic, copy) NSString *stat;     //1-出售中 0-已下架
+
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) NSInteger pageSize;
 
 @end
 
@@ -23,20 +30,36 @@
     
     self.title = @"商品管理";
     
-    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
-    }];
+//    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
+//    }];
+    
+    _stat = @"1";
+    _page = 1;
+    _pageSize = 20;
+    
+    UIView *headerView = [UIView new];
+    headerView.frame = CGRectMake(0, 0, kScreenWidth, 20);
+    headerView.backgroundColor = [UIColor clearColor];
+    _countLabel = [UILabel new];
+    _countLabel.frame = CGRectMake(0, 0, kScreenWidth, 12);
+    _countLabel.textAlignment = NSTextAlignmentCenter;
+    _countLabel.textColor = [UIColor darkGrayColor];
+    _countLabel.font = [UIFont systemFontOfSize:12];
+    [headerView addSubview:_countLabel];
+    _tableView.tableHeaderView = headerView;
     
     kWEAKSELF;
     [self.tableView addLegendHeaderWithRefreshingBlock:^{
+        _pageSize = 1;
         [weakSelf goodsListRequest:YES];
     }];
-    [self.tableView addLegendFooterWithRefreshingBlock:^{
-        [weakSelf goodsListRequest:NO];
-    }];
+//    [self.tableView addLegendFooterWithRefreshingBlock:^{
+//        [weakSelf goodsListRequest:NO];
+//    }];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
-
+    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +78,13 @@
 */
 
 - (IBAction)stateAction:(UISegmentedControl *)sender {
-    
+    if (sender.selectedSegmentIndex == 0) {
+        _stat = @"1";
+    }
+    else {
+        _stat = @"0";
+    }
+    [self.tableView.header beginRefreshing];
 }
 
 - (IBAction)addGoodsAction:(id)sender {
@@ -89,56 +118,27 @@
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     
+    cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
 #pragma mark - Request
 
 - (void)goodsListRequest:(BOOL)reload {
-    
-    GoodsListRequest *request = [[GoodsListRequest alloc] init];
-    request.shopid = @"32769";
-    request.stat = @"1";
-    if (reload) {
-        request.page = @"1";
-    }
-    
-    [LHttpRequest getHttpRequest:@"goodsList.htm" parameters:request.keyValues success:^(NSDictionary *responseDic) {
-
-        GoodsListResponse *goodsListModel = [GoodsListResponse objectWithKeyValues:responseDic];
-        NSArray *list = goodsListModel.data;
-
-        if (reload) {
-            [self.dataSource removeAllObjects];
-        }
-        [self.dataSource addObjectsFromArray:list];
-        [self.tableView reloadData];
-        
-        if (self.tableView.header.isRefreshing) {
+    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:_stat.integerValue count:1000 page:1 recommend:YES completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            if (self.page == 1) {
+                [self.dataSource removeAllObjects];
+            }
+            [self.dataSource addObjectsFromArray:dataArray];
+            _countLabel.text = [NSString stringWithFormat:@"共%d个产品", self.dataSource.count];
+            
+            [self.tableView reloadData];
             [self.tableView.header endRefreshing];
-        }
-        if (self.tableView.footer.isRefreshing) {
-            [self.tableView.footer endRefreshing];
-        }
-//        
-//        if (newsListModel.retData.lastPage.intValue == 1) {
-//            self.tableView.footer.hidden = YES;
-//        }
-//        else {
-//            self.offset += self.max;
-//            self.tableView.footer.hidden = NO;
-//        }
-        
-    } failure:^(NSString *descript) {
-        [SVProgressHUD showErrorWithStatus:descript];
-        if (self.tableView.header.isRefreshing) {
-            [self.tableView.header endRefreshing];
-        }
-        if (self.tableView.footer.isRefreshing) {
-            [self.tableView.footer endRefreshing];
+
         }
     }];
-
 }
 
 @end

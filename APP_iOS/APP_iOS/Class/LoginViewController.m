@@ -10,7 +10,6 @@
 #import "KeyboardManager.h"
 #import "AppDelegate.h"
 #import "ShopModel.h"
-#import "Http.h"
 #import "NSDictionary+JSONString.h"
 #import "DES3Util.h"
 
@@ -63,20 +62,13 @@
 //        return;
 //    }
     
-    
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    [param setValue:_nickNameTextField.text forKey:@"username"];
-//    [param setValue:_passwordTextField.text forKey:@"password"];
-//    [param setValue:@"1" forKey:@"applogin"];
-//    
-//    [LHttpRequest getHttpRequest:@"shopping_login.htm" parameters:param success:^(NSDictionary *responseDic) {
-//        NSLog(@"%@", responseDic);
-//        [kAppDelegate showMainViewController];
-//    } failure:^(NSString *descript) {
-//        
-//    }];
-    
-    [kAppDelegate showMainViewController];
+    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, ShopModel *shop) {
+        if (error.code == 0) {
+            NSLog(@"登陆成功，用户名字：%@", shop.name);
+            [ShareValue instance].shopModel = shop;
+            [kAppDelegate showMainViewController];
+        }
+    }];
 }
 
 #pragma mark - UITextFieldDelegate

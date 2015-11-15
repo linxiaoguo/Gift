@@ -10,4 +10,9 @@
 
 @implementation FieldModel
 
+- (NSString *)fileAddr {
+    NSString *file = [_fileAddr stringByReplacingOccurrencesOfString:@"\\" withString:@"/"];
+    return file;
+}
+
 @end

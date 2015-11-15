@@ -10,6 +10,7 @@
 #import "BaseHttpResponse.h"
 
 @interface UserModel : NSObject
+
 @property (nonatomic, strong)NSString *shopid;//商家ID
 @property (nonatomic, strong)NSString *name;//店铺名称
 @property (nonatomic, strong)NSString *validate;//有效时间
@@ -23,7 +24,6 @@
 @property (nonatomic, strong)NSString *isbingingcard;//是否绑定银行卡信息
 
 @end
-
 
 /**
  *  登录Model

@@ -28,4 +28,27 @@
     return self;
 }
 
+- (void)setShopModel:(ShopModel *)shopModel {
+    if (shopModel) {
+        NSDictionary *dic = shopModel.keyValues;
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:dic];
+        [[NSUserDefaults standardUserDefaults] setValue:userData forKey:@"userModelUD"];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userModelUD"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (ShopModel *)shopModel {
+    NSData *mcUserData = [[NSUserDefaults standardUserDefaults] valueForKey:@"userModelUD"];
+    if (mcUserData) {
+        NSDictionary *mcUserDic = [NSKeyedUnarchiver unarchiveObjectWithData:mcUserData];
+        return [ShopModel objectWithKeyValues:mcUserDic];
+    }
+    else {
+        return nil;
+    }
+}
+
 @end

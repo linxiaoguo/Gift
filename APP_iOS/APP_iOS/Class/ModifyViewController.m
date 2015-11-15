@@ -38,79 +38,14 @@
     [self.dataSource addObject:@[@"店铺信息", @"店铺名称", @"店铺实体地址", @"联系人", @"联系电话"]];
     [self.dataSource addObject:@[@"注册时间", @"网址"]];
 
-//    self.nickName = [ShareValue instance].user.nickname;
-//    self.realName = [ShareValue instance].user.realname;
-//    self.sex = [ShareValue instance].user.sex;
-//    self.idCard = [ShareValue instance].user.id_card;
+    self.shopName = [ShareValue instance].shopModel.name;
+    self.shopAddr = [ShareValue instance].shopModel.addr;
+    self.contact = [ShareValue instance].shopModel.linkman;
+    self.phone = [ShareValue instance].shopModel.linkphone;
+    self.regTime = [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.regdate];
+    self.shopURL = [ShareValue instance].shopModel.url;
     
     [self.tableView reloadData];
-
-//    kWEAKSELF;
-//    [self setRightBarButtonWithTitle:@"提交" withBlock:^(NSInteger tag) {
-//        
-//        if ([weakSelf.cityDic[@"provinceID"] length] < 1) {
-//            [SVProgressHUD showErrorWithStatus:@"请选择城市"];
-//            return;
-//        }
-//        
-//        PerfectInfoRequest *request1 = [[PerfectInfoRequest alloc] init];
-//        request1.userid = [ShareValue instance].user.id;
-//        request1.province = weakSelf.cityDic[@"provinceID"];
-//        request1.nickname = weakSelf.nickName;
-//        request1.realname = weakSelf.realName;
-//        request1.sex = weakSelf.sex;
-//        request1.city = weakSelf.cityDic[@"cityID"];
-//        request1.idcard = weakSelf.idCard;
-//
-//        [SVProgressHUD show];
-//        
-//        if (weakSelf.headData) {
-//            [LHttpRequest postHttpRequest:@"/perfectInfo.do" parameters:request1.keyValues data:weakSelf.headData name:@"photo" fileName:@"123.jpg" mimeType:@"image/jpg" success:^(NSDictionary *responseDic) {
-//                
-//                NSString *head_portrait = [responseDic objectForKey:@"head_portrait"];
-//                
-//                UserModel *uerModel = [ShareValue instance].user;
-//                uerModel.nickname = weakSelf.nickName;
-//                uerModel.realname = weakSelf.realName;
-//                uerModel.sex = weakSelf.sex;
-//                uerModel.province = weakSelf.cityDic[@"provinceID"];
-//                uerModel.city = weakSelf.cityDic[@"cityID"];
-//                uerModel.id_card = weakSelf.idCard;
-//                uerModel.head_portrait = head_portrait;
-//                [ShareValue instance].user = uerModel;
-//                
-//                [weakSelf.tableView reloadData];
-//                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-//                [weakSelf.navigationController popViewControllerAnimated:YES];
-//                
-//
-//            } failure:^(NSString *descript) {
-//                [SVProgressHUD showErrorWithStatus:descript];
-//            }];
-//        }
-//        else {
-//            [LHttpRequest postHttpRequest:@"/perfectInfo.do" parameters:request1.keyValues success:^(NSDictionary *responseDic) {
-//                
-//                UserModel *uerModel = [ShareValue instance].user;
-//                uerModel.nickname = weakSelf.nickName;
-//                uerModel.realname = weakSelf.realName;
-//                uerModel.sex = weakSelf.sex;
-//                uerModel.province = weakSelf.cityDic[@"provinceID"];
-//                uerModel.city = weakSelf.cityDic[@"cityID"];
-//                uerModel.id_card = weakSelf.idCard;
-//
-//                [ShareValue instance].user = uerModel;
-//                
-//                [weakSelf.tableView reloadData];
-//                
-//                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-//                [weakSelf.navigationController popViewControllerAnimated:YES];
-//                
-//            } failure:^(NSString *descript) {
-//                [SVProgressHUD showErrorWithStatus:descript];
-//            }];
-//        }
-//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,25 +104,11 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     _headData = UIImageJPEGRepresentation([UIImage fixOrientation:image], 0.3);
     [self.tableView reloadData];
-//    PerfectInfoRequest *request1 = [[PerfectInfoRequest alloc] init];
-//    request1.userid = [ShareValue instance].user.id;
-//    request1.nickname = [ShareValue instance].user.nickname;
-//#warning 目前固定福建省province
-//    request1.province = @"350000";
-//    
-//    [LHttpRequest postHttpRequest:@"/perfectInfo.do" parameters:request1.keyValues data:data name:@"photo" fileName:@"123.jpg" mimeType:@"image/jpg" success:^(NSDictionary *responseDic) {
-//        
-//        NSString *head_portrait = [responseDic objectForKey:@"head_portrait"];
-//        
-//        UserModel *uerModel = [ShareValue instance].user;
-//        uerModel.head_portrait = head_portrait;
-//        [ShareValue instance].user = uerModel;
-//        
-//        [self.tableView reloadData];
-//
-//    } failure:^(NSString *descript) {
-//        [SVProgressHUD showErrorWithStatus:descript];
-//    }];
+    
+    [[Http instance] uploadFile:nil uploadFile:_headData mname:@"123" completion:^(NSError *error, FieldModel *fieldModel) {
+        
+    }];
+
 }
 
 #pragma mark - UITableViewDelegate
@@ -209,6 +130,7 @@
         [t_ac showInView:[UIApplication sharedApplication].keyWindow];
     }
     else if (indexPath.section == 1) {
+        return;
         kWEAKSELF;
         if (indexPath.row == 0) {
             BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
@@ -249,12 +171,12 @@
             vc.defaultContent = self.shopName;
             vc.numberOfWords = 20;
             [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-//                UserModel *uerModel = [ShareValue instance].user;
-//                uerModel.nickname = text;
-//                [ShareValue instance].user = uerModel;
+                ShopModel *shopModel = [ShareValue instance].shopModel;
+                shopModel.name = text;
+                [ShareValue instance].shopModel = shopModel;
                 weakSelf.shopName = text;
                 [weakSelf.tableView reloadData];
-//                [weakSelf perfectUserInfo:text withStr:@"nickname"];
+                [weakSelf modifyShop];
             }];
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -264,12 +186,12 @@
             vc.defaultContent = self.shopAddr;
             vc.numberOfWords = 50;
             [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-//                UserModel *uerModel = [ShareValue instance].user;
-//                uerModel.realname = text;
-//                [ShareValue instance].user = uerModel;
+                ShopModel *shopModel = [ShareValue instance].shopModel;
+                shopModel.addr = text;
+                [ShareValue instance].shopModel = shopModel;
                 weakSelf.shopAddr = text;
                 [weakSelf.tableView reloadData];
-//                [weakSelf perfectUserInfo:text withStr:@"realname"];
+                [weakSelf modifyShop];
             }];
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -279,12 +201,12 @@
             vc.defaultContent = self.contact;
             vc.numberOfWords = 5;
             [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-                //                UserModel *uerModel = [ShareValue instance].user;
-                //                uerModel.idcard = text;
-                //                [ShareValue instance].user = uerModel;
+                ShopModel *shopModel = [ShareValue instance].shopModel;
+                shopModel.linkman = text;
+                [ShareValue instance].shopModel = shopModel;
                 weakSelf.contact = text;
                 [weakSelf.tableView reloadData];
-                //                [weakSelf perfectUserInfo:text withStr:@"idcard"];
+                [weakSelf modifyShop];
             }];
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -295,26 +217,15 @@
             vc.numberOfWords = 20;
             vc.keyboardType = UIKeyboardTypeNamePhonePad;
             [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-                //                UserModel *uerModel = [ShareValue instance].user;
-                //                uerModel.idcard = text;
-                //                [ShareValue instance].user = uerModel;
-                weakSelf.contact = text;
+                ShopModel *shopModel = [ShareValue instance].shopModel;
+                shopModel.linkphone = text;
+                [ShareValue instance].shopModel = shopModel;
+                weakSelf.phone = text;
                 [weakSelf.tableView reloadData];
-                //                [weakSelf perfectUserInfo:text withStr:@"idcard"];
+                [weakSelf modifyShop];
             }];
             [self.navigationController pushViewController:vc animated:YES];
         }
-//        else {
-//            kWEAKSELF;
-//            CityViewController *vc = [[CityViewController alloc] initWithNibName:@"CityViewController" bundle:nil];
-//            vc.fromModify = YES;
-//            [vc setBlock:^(NSDictionary *cityDic) {
-//                weakSelf.cityDic = cityDic;
-//                [weakSelf.tableView reloadData];
-//            }];
-//            [self.navigationController pushViewController:vc animated:YES];
-//
-//        }
     }
 }
 
@@ -325,7 +236,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.dataSource objectAtIndex:section] count];
+    NSArray *arr = [self.dataSource objectAtIndex:section];
+    return [arr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -335,7 +247,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
         
@@ -343,7 +254,7 @@
         headImage.frame = CGRectMake(kScreenWidth-32-30, 6, 32, 32);
         headImage.layer.cornerRadius = 16;
         headImage.layer.masksToBounds = YES;
-        [headImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"wddp_tx"]];
+        [headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
         headImage.tag = 100;
         [cell.contentView addSubview:headImage];
     }
@@ -354,6 +265,9 @@
     cell.textLabel.text = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     if (indexPath.section == 0) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+
         if (indexPath.row == 0) {
             headImage.hidden = NO;
             if (_headData) {
@@ -375,6 +289,9 @@
 
     }
     else if (indexPath.section == 1) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         if (indexPath.row == 0) {
             cell.detailTextLabel.text = self.regTime;
         }
@@ -386,27 +303,16 @@
     return cell;
 }
 
-//#pragma mark - Request
-//
-//- (void)perfectUserInfo:(NSString *)info withStr:(NSString *)str {
-//    
-//    PerfectInfoRequest *request1 = [[PerfectInfoRequest alloc] init];
-//    request1.userid = [ShareValue instance].user.id;
-//    request1.nickname = [ShareValue instance].user.nickname;
-//#warning 目前固定福建省province
-//    request1.province = @"350000";
-//    
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:request1.keyValues];
-//    [dic setValue:info forKey:str];
-//    
-//    [LHttpRequest postHttpRequest:@"/perfectInfo.do" parameters:dic success:^(NSDictionary *responseDic) {
-//
-////        PerfectInfoResponse *response = [PerfectInfoResponse objectWithKeyValues:responseDic];
-//
-//    } failure:^(NSString *descript) {
-//        [SVProgressHUD showErrorWithStatus:descript];
-//    }];
-//
-//}
+#pragma mark - Request
+
+- (void)modifyShop {
+    [[Http instance] modifyMyshop:[ShareValue instance].shopModel.shopid.integerValue name:[ShareValue instance].shopModel.name pic:[NSString stringWithFormat:@"%d", [ShareValue instance].shopModel.pic.fileId] addr:[ShareValue instance].shopModel.addr linkman:[ShareValue instance].shopModel.linkman linkphone:[ShareValue instance].shopModel.linkphone completion:^(NSError *error) {
+        NSLog(@"修改我的店铺：%@", error.domain);
+//        if (error.code == 0) {
+//            [SVProgressHUD showSuccessWithStatus:@""];
+//        }
+    }];
+
+}
 
 @end

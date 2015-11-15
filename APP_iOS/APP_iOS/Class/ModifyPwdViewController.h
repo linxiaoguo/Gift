@@ -8,6 +8,11 @@
 
 #import "BaseViewController.h"
 
-@interface ModifyPwdViewController : BaseViewController
+@interface ModifyPwdViewController : BaseViewController {
+    
+    __weak IBOutlet UITextField *_oldPwd;
+    __weak IBOutlet UITextField *_newPwd0;
+    __weak IBOutlet UITextField *_newPwd1;
+}
 
 @end

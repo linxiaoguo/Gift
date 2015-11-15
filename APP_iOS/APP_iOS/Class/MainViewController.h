@@ -8,7 +8,14 @@
 
 #import "BaseViewController.h"
 
-@interface MainViewController : BaseViewController
+@interface MainViewController : BaseViewController {
+    
+    __weak IBOutlet UIImageView *_headImage;
+    __weak IBOutlet UILabel *_shopNameLabel;
+    __weak IBOutlet UILabel *_incomeLabel;
+    __weak IBOutlet UILabel *_orderLabel;
+    __weak IBOutlet UILabel *_buyerLabel;
+}
 
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;

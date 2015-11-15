@@ -22,7 +22,7 @@ a:hover{text-decoration:none}
 /* CSS Document */
 
 body{ /*max-width:720px;*/ }
-.warp{width:720px !important; margin:0 auto; position:relative}
+.warp{width:720px !important; margin:0 auto; position:relative; min-height:1280px;}
 /*html,body{
 	height:100%;
 }*/

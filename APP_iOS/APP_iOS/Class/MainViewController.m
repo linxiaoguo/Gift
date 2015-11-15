@@ -31,6 +31,10 @@
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
         
     }];
+    
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    _shopNameLabel.text = [ShareValue instance].shopModel.name;
+    [self httpRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,4 +83,18 @@
     MarketViewCtr *vc = [[MarketViewCtr alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+#pragma mark - http
+
+- (void)httpRequest {
+    [[Http instance] main:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, MainModel *main) {
+        NSLog(@"首页接口今日买家：%@", main.buyer);
+        if (error.code == 0) {
+            _orderLabel.text = main.order;
+            _buyerLabel.text = main.buyer;
+            _incomeLabel.text = [NSString stringWithFormat:@"今日收入%@元", main.income];
+        }
+    }];
+}
+
 @end

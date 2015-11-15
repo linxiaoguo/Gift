@@ -12,7 +12,7 @@
 
 
 @property (nonatomic, strong)NSString *pagename;
-@property (nonatomic, assign)NSInteger version;
+@property (nonatomic, copy)NSString *version;
 @property (nonatomic, strong)NSString *downurl;
 @property (nonatomic, assign)NSInteger size;
 @property (nonatomic, strong)NSString *litpic;//app图标
