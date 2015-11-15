@@ -19,6 +19,16 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"店铺二维码";
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    _shopName.text = [ShareValue instance].shopModel.name;
+    
+    [[Http instance] shopQrcode:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, NSString *shopAddr, NSString *qrcodeImg) {
+        qrcodeImg = [qrcodeImg stringByReplacingOccurrencesOfString:@"\\" withString:@"/"];
+        [_codeImage sd_setImageWithURL:[NSURL URLWithString:qrcodeImg] placeholderImage:_codeImage.image];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {

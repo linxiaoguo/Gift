@@ -104,7 +104,6 @@
             NSLog(@"我的店铺shopid：%@", shop.shopid);
         }
     }];
-
 }
 
 @end

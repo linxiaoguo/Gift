@@ -556,6 +556,38 @@
     }];
 }
 
+- (void)shopQrcode:(NSInteger)shopid completion:(void(^)(NSError *error, NSString *shopAddr, NSString *qrcodeImg))completion {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NSNumber numberWithInteger:shopid] forKey:@"shopid"];
+    
+    NSString *jsonString = [dic JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
+    encode = [self encodeToPercentEscapeString:encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/shopQrcode.htm?req=%@", encode];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *decode = [DES3Util decrypt:string];
+        NSLog(@"请求url：%@", urlString);
+        NSLog(@"返回数据：%@", decode);
+        NSDictionary *resDic = [decode objectFromJSONString];
+        NSString *message = [resDic objectForKey:@"message"];
+        NSString *success = [resDic objectForKey:@"success"];
+        if (message == nil)
+            message = @"";
+        if (success == nil)
+            success = @"1";
+        
+        NSDictionary *goodsDic = [resDic objectForKey:@"data"];
+        NSString *shopAddr = [goodsDic objectForKey:@"shopAddr"];
+        NSString *qrcodeImg = [goodsDic objectForKey:@"qrcodeImg"];
+        NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
+        if (completion)
+            completion(error, shopAddr, qrcodeImg);
+    }];
+}
+
 - (void)order:(NSInteger)shopId completion:(void(^)(NSError *error, OrderTotalModel *order))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
@@ -921,7 +953,7 @@
         if (success == nil)
             success = @"1";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
-        NSArray *array = [resDic objectForKey:@"data"];
+        NSArray *array = [[resDic objectForKey:@"data"] objectForKey:@"data"];
         NSMutableArray *messages = [NSMutableArray array];
         for (NSInteger i=0; i<array.count; i++) {
             NSDictionary *dic = [array objectAtIndex:i];

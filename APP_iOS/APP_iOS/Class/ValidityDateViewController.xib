@@ -160,6 +160,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="payAction:" destination="-1" eventType="touchUpInside" id="Axo-Fk-uy4"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

@@ -62,5 +62,13 @@
     _totalLabel.text = [NSString stringWithFormat:@"￥%d", _monthLabel.text.integerValue * 100];
 }
 
+- (IBAction)payAction:(id)sender {
+    [[Http instance] postpone:[ShareValue instance].shopModel.shopid.integerValue month:_monthLabel.text.integerValue completion:^(NSError *error) {
+        NSLog(@"延长店铺时间：%@", error.domain);
+        if (error.code == 0) {
+            [SVProgressHUD showSuccessWithStatus:@"延长有效期成功"];
+        }
+    }];
+}
 
 @end
