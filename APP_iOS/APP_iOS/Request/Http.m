@@ -494,6 +494,38 @@
     }];
 }
 
+- (void)goodsQrcode:(NSInteger)goodsId completion:(void(^)(NSError *error, NSString *goodsAddr, NSString *qrcodeImg))completion {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NSNumber numberWithInteger:goodsId] forKey:@"goodsid"];
+    
+    NSString *jsonString = [dic JSONStringPlain];
+    NSString *encode = [DES3Util encrypt:jsonString];
+    encode = [self encodeToPercentEscapeString:encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/goodsQrcode.htm.htm?req=%@", encode];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *decode = [DES3Util decrypt:string];
+        NSLog(@"请求url：%@", urlString);
+        NSLog(@"返回数据：%@", decode);
+        NSDictionary *resDic = [decode objectFromJSONString];
+        NSString *message = [resDic objectForKey:@"message"];
+        NSString *success = [resDic objectForKey:@"success"];
+        if (message == nil)
+            message = @"";
+        if (success == nil)
+            success = @"1";
+        
+        NSDictionary *goodsDic = [resDic objectForKey:@"data"];
+        NSString *goodsAddr = [goodsDic objectForKey:@"goodsAddr"];
+        NSString *qrcodeImg = [goodsDic objectForKey:@"qrcodeImg"];
+        NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
+        if (completion)
+            completion(error, goodsAddr, qrcodeImg);
+    }];
+}
+
 - (void)order:(NSInteger)shopId completion:(void(^)(NSError *error, OrderTotalModel *order))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
