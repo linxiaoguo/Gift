@@ -95,6 +95,11 @@
 //recommend 0表示不推荐，1 表示推荐
 - (void)recommendGoods:(BOOL)recommend shopId:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error))completion;
 
+//商品二维码
+//goodsAddr商品地址
+//qrcodeImg
+- (void)goodsQrcode:(NSInteger)goodsId completion:(void(^)(NSError *error, NSString *goodsAddr, NSString *qrcodeImg))completion;
+
 //订单管理
 - (void)order:(NSInteger)shopId completion:(void(^)(NSError *error, OrderTotalModel *order))completion;
 

@@ -25,10 +25,6 @@
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.scrollEnabled = NO;
     [self setTitle:@"未提现金额"];
-    kWEAKSELF;
-    [self setLeftBarButtonWithTitle:@"返回" withBlock:^(NSInteger tag) {
-        [weakSelf backAction];
-    }];
     _lblTips1.numberOfLines = 2;
     [_tableView setFullWidthSeparator];
 }
