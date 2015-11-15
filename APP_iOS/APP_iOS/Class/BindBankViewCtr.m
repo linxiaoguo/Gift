@@ -8,6 +8,7 @@
 
 #import "BindBankViewCtr.h"
 #import "BingBankCell.h"
+#import "UITableView+Separator.h"
 
 @implementation BindBankModel
 
@@ -15,6 +16,7 @@
 
 @interface BindBankViewCtr ()
 
+@property (nonatomic, strong)IBOutlet UITableView *tableView;
 @property (nonatomic, strong)IBOutlet UILabel *lblTopTips;
 @property (nonatomic, strong)IBOutlet UIButton *btnConfirm;
 @property (nonatomic, strong)IBOutlet UILabel *lblBottomTips;
@@ -26,13 +28,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"绑定银行卡"];
-    
-    NSString *string = [NSString stringWithFormat:@"%@", @"注意：\r\n- 提现仅支持储蓄卡，不支持信用卡\r\n- 建议绑定62开头的银联卡，提现更及时\r\n- 目前仅支持绑定一张卡，要变更卡号，请删除绑定卡后，重新添加新卡\r\n- 企业用户，请绑定公司账户"];
-    _lblBottomTips.text = string;
+        
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"注意：\r\n- 提现仅支持储蓄卡，不支持信用卡\r\n- 建议绑定62开头的银联卡，提现更及时\r\n- 目前仅支持绑定一张卡，要变更卡号，请删除绑定卡后，重新添加新卡\r\n- 企业用户，请绑定公司账户"];
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:10];
+    [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
+    _lblBottomTips.attributedText = string;
+
     _lblBottomTips.numberOfLines = 0;
     _lblTopTips.numberOfLines = 0;
     _btnConfirm.layer.cornerRadius = 5.0;
     _bindBankModel = [[BindBankModel alloc] init];
+    
+    [_tableView setFullWidthSeparator];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +63,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 44;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -104,6 +112,15 @@
     if (indexPath.section == 1) {
         BindBankViewCtr *vc = [[BindBankViewCtr alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
 
