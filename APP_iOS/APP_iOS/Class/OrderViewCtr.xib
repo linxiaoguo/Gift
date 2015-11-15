@@ -25,7 +25,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os3-JP-J7N">
-                    <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                    <rect key="frame" x="0.0" y="80" width="600" height="520"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="Qej-u3-IkA"/>
                     </connections>
@@ -39,7 +39,7 @@
                 <constraint firstAttribute="trailing" secondItem="os3-JP-J7N" secondAttribute="trailing" id="gil-Mf-06z"/>
                 <constraint firstItem="os3-JP-J7N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ubT-mL-0QI"/>
                 <constraint firstItem="CxR-4a-Zd3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xdo-vK-K4s"/>
-                <constraint firstItem="os3-JP-J7N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="zsX-YT-dhQ"/>
+                <constraint firstItem="os3-JP-J7N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="zsX-YT-dhQ"/>
             </constraints>
         </view>
     </objects>

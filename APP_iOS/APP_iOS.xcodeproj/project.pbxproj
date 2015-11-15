@@ -216,6 +216,18 @@
 		53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */; };
 		53EAC6BE1BF10CD6004560ED /* MarketViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */; };
 		53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */; };
+		53EC63C81BF70C7900EB7D17 /* OrderDetailViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */; };
+		53EC63C91BF70C7900EB7D17 /* OrderDetailViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */; };
+		53EC63CD1BF70D0100EB7D17 /* OrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63CB1BF70D0100EB7D17 /* OrderTitleCell.m */; };
+		53EC63CE1BF70D0100EB7D17 /* OrderTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63CC1BF70D0100EB7D17 /* OrderTitleCell.xib */; };
+		53EC63D21BF70D1200EB7D17 /* OrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63D01BF70D1200EB7D17 /* OrderDetailCell.m */; };
+		53EC63D31BF70D1200EB7D17 /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63D11BF70D1200EB7D17 /* OrderDetailCell.xib */; };
+		53EC63D71BF70D3700EB7D17 /* OrderFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63D51BF70D3700EB7D17 /* OrderFeeCell.m */; };
+		53EC63D81BF70D3700EB7D17 /* OrderFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63D61BF70D3700EB7D17 /* OrderFeeCell.xib */; };
+		53EC63DC1BF70D6500EB7D17 /* OrderDoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63DA1BF70D6500EB7D17 /* OrderDoCell.m */; };
+		53EC63DD1BF70D6500EB7D17 /* OrderDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63DB1BF70D6500EB7D17 /* OrderDoCell.xib */; };
+		53EC63E11BF70D7D00EB7D17 /* OrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */; };
+		53EC63E21BF70D7D00EB7D17 /* OrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -614,6 +626,24 @@
 		53EAC6BB1BF10CD6004560ED /* MarketViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketViewCtr.h; sourceTree = "<group>"; };
 		53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketViewCtr.m; sourceTree = "<group>"; };
 		53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarketViewCtr.xib; sourceTree = "<group>"; };
+		53EC63C51BF70C7900EB7D17 /* OrderDetailViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewCtr.h; sourceTree = "<group>"; };
+		53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewCtr.m; sourceTree = "<group>"; };
+		53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailViewCtr.xib; sourceTree = "<group>"; };
+		53EC63CA1BF70D0100EB7D17 /* OrderTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTitleCell.h; sourceTree = "<group>"; };
+		53EC63CB1BF70D0100EB7D17 /* OrderTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTitleCell.m; sourceTree = "<group>"; };
+		53EC63CC1BF70D0100EB7D17 /* OrderTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTitleCell.xib; sourceTree = "<group>"; };
+		53EC63CF1BF70D1200EB7D17 /* OrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailCell.h; sourceTree = "<group>"; };
+		53EC63D01BF70D1200EB7D17 /* OrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailCell.m; sourceTree = "<group>"; };
+		53EC63D11BF70D1200EB7D17 /* OrderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		53EC63D41BF70D3700EB7D17 /* OrderFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFeeCell.h; sourceTree = "<group>"; };
+		53EC63D51BF70D3700EB7D17 /* OrderFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderFeeCell.m; sourceTree = "<group>"; };
+		53EC63D61BF70D3700EB7D17 /* OrderFeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderFeeCell.xib; sourceTree = "<group>"; };
+		53EC63D91BF70D6500EB7D17 /* OrderDoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDoCell.h; sourceTree = "<group>"; };
+		53EC63DA1BF70D6500EB7D17 /* OrderDoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDoCell.m; sourceTree = "<group>"; };
+		53EC63DB1BF70D6500EB7D17 /* OrderDoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDoCell.xib; sourceTree = "<group>"; };
+		53EC63DE1BF70D7D00EB7D17 /* OrderInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoCell.h; sourceTree = "<group>"; };
+		53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoCell.m; sourceTree = "<group>"; };
+		53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderInfoCell.xib; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1442,6 +1472,9 @@
 				536692911BBF2A2500060A1A /* OrderViewCtr.h */,
 				536692921BBF2A2500060A1A /* OrderViewCtr.m */,
 				536692931BBF2A2500060A1A /* OrderViewCtr.xib */,
+				53EC63C51BF70C7900EB7D17 /* OrderDetailViewCtr.h */,
+				53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */,
+				53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */,
 			);
 			name = "订单";
 			sourceTree = "<group>";
@@ -1589,6 +1622,21 @@
 				53E4857B1BBFC9690064ACE7 /* OrderCell.h */,
 				53E4857C1BBFC9690064ACE7 /* OrderCell.m */,
 				53E4857D1BBFC9690064ACE7 /* OrderCell.xib */,
+				53EC63CA1BF70D0100EB7D17 /* OrderTitleCell.h */,
+				53EC63CB1BF70D0100EB7D17 /* OrderTitleCell.m */,
+				53EC63CC1BF70D0100EB7D17 /* OrderTitleCell.xib */,
+				53EC63CF1BF70D1200EB7D17 /* OrderDetailCell.h */,
+				53EC63D01BF70D1200EB7D17 /* OrderDetailCell.m */,
+				53EC63D11BF70D1200EB7D17 /* OrderDetailCell.xib */,
+				53EC63D41BF70D3700EB7D17 /* OrderFeeCell.h */,
+				53EC63D51BF70D3700EB7D17 /* OrderFeeCell.m */,
+				53EC63D61BF70D3700EB7D17 /* OrderFeeCell.xib */,
+				53EC63D91BF70D6500EB7D17 /* OrderDoCell.h */,
+				53EC63DA1BF70D6500EB7D17 /* OrderDoCell.m */,
+				53EC63DB1BF70D6500EB7D17 /* OrderDoCell.xib */,
+				53EC63DE1BF70D7D00EB7D17 /* OrderInfoCell.h */,
+				53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */,
+				53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */,
 				53E485831BBFFC580064ACE7 /* IncomeCell.h */,
 				53E485841BBFFC580064ACE7 /* IncomeCell.m */,
 				53E485851BBFFC580064ACE7 /* IncomeCell.xib */,
@@ -1696,12 +1744,16 @@
 				53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */,
 				0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */,
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
+				53EC63D81BF70D3700EB7D17 /* OrderFeeCell.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
 				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
 				53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */,
 				0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */,
+				53EC63E21BF70D7D00EB7D17 /* OrderInfoCell.xib in Resources */,
 				0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */,
+				53EC63DD1BF70D6500EB7D17 /* OrderDoCell.xib in Resources */,
+				53EC63C91BF70C7900EB7D17 /* OrderDetailViewCtr.xib in Resources */,
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
@@ -1716,6 +1768,7 @@
 				0B3F9DB71BCF974A00FC8852 /* AddGoodsTableViewCell.xib in Resources */,
 				0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */,
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
+				53EC63D31BF70D1200EB7D17 /* OrderDetailCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
 				0BF6C4F71BCCA0DC00D569C8 /* MyCodeViewController.xib in Resources */,
 				0B42B6251BC90B8E00BEBB90 /* ShopInfoViewController.xib in Resources */,
@@ -1723,6 +1776,7 @@
 				0B3F9DB21BCE365000FC8852 /* AddGoodsViewController.xib in Resources */,
 				0BF6C4ED1BCC8CD300D569C8 /* ValidityDateViewController.xib in Resources */,
 				5366929A1BBF2A3A00060A1A /* IncomeViewCtr.xib in Resources */,
+				53EC63CE1BF70D0100EB7D17 /* OrderTitleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1771,6 +1825,7 @@
 				53DE4F591BC6899400D1ADC5 /* NSString+Base64Additions.m in Sources */,
 				0BB6080E1B799EA200D42A16 /* NSString+Score.m in Sources */,
 				0BB6084B1B799EA300D42A16 /* UIWebView+Canvas.m in Sources */,
+				53EC63DC1BF70D6500EB7D17 /* OrderDoCell.m in Sources */,
 				0BB6081D1B799EA200D42A16 /* UIColor+HEX.m in Sources */,
 				0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */,
 				0BB608411B799EA300D42A16 /* UIView+Find.m in Sources */,
@@ -1790,6 +1845,7 @@
 				0B5E440B1BD87FA4003F7D1F /* NoticeViewController.m in Sources */,
 				0BB6082D1B799EA200D42A16 /* UIImageView+Addition.m in Sources */,
 				53DEAAA11BC162AC0008D6E8 /* BingBankCell.m in Sources */,
+				53EC63D21BF70D1200EB7D17 /* OrderDetailCell.m in Sources */,
 				0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */,
 				0BB607FA1B799EA200D42A16 /* NSManagedObjectContext+Fetching.m in Sources */,
 				0BB608451B799EA300D42A16 /* UIView+Toast.m in Sources */,
@@ -1821,6 +1877,7 @@
 				0BF6C4EC1BCC8CD300D569C8 /* ValidityDateViewController.m in Sources */,
 				0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */,
 				536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */,
+				53EC63CD1BF70D0100EB7D17 /* OrderTitleCell.m in Sources */,
 				0BB608231B799EA200D42A16 /* UIImage+animatedGIF.m in Sources */,
 				0B42B61F1BC90B8200BEBB90 /* MyShopViewController.m in Sources */,
 				537856311BEF900E003F1154 /* BankModel.m in Sources */,
@@ -1863,6 +1920,7 @@
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
 				0BB6082A1B799EA200D42A16 /* UIImage+RemoteSize.m in Sources */,
+				53EC63C81BF70C7900EB7D17 /* OrderDetailViewCtr.m in Sources */,
 				53DEAAB01BC173FB0008D6E8 /* BonusCell.m in Sources */,
 				0BB6085F1B79A8D600D42A16 /* UIView+WZLBadge.m in Sources */,
 				0BB608431B799EA300D42A16 /* UIView+Nib.m in Sources */,
@@ -1878,12 +1936,14 @@
 				0BB608001B799EA200D42A16 /* NSObject+AssociatedObject.m in Sources */,
 				0BB6084C1B799EA300D42A16 /* UIWebView+JS.m in Sources */,
 				0BB608401B799EA300D42A16 /* UIView+Debug.m in Sources */,
+				53EC63E11BF70D7D00EB7D17 /* OrderInfoCell.m in Sources */,
 				0BB608521B79A13000D42A16 /* ShareValue.m in Sources */,
 				0BB607FE1B799EA200D42A16 /* NSObject+Additions.m in Sources */,
 				0BB607F41B799EA200D42A16 /* NSDictionary+JSONString.m in Sources */,
 				0BB608261B799EA200D42A16 /* UIImage+FileName.m in Sources */,
 				0BB6083E1B799EA300D42A16 /* UIView+Animation.m in Sources */,
 				0BB608471B799EA300D42A16 /* UIViewController+RecursiveDescription.m in Sources */,
+				53EC63D71BF70D3700EB7D17 /* OrderFeeCell.m in Sources */,
 				0BB607F31B799EA200D42A16 /* NSDateFormatter+Make.m in Sources */,
 				0BB608011B799EA200D42A16 /* NSObject+AutoCoding.m in Sources */,
 				0BB606ED1B799B6600D42A16 /* NSObject+HXAddtions.m in Sources */,
