@@ -24,6 +24,7 @@
     _titles = [NSMutableArray arrayWithObjects:@"登录", @"首页", @"我的店铺", @"店铺修改", @"店铺延长时间",
                @"店铺修改密码", @"商品列表", @"商品类型列表", @"商品主题列表", @"上传文件(未实现)",
                @"添加商品", @"商品详情", @"商品修改", @"商品上下架", @"推荐商品",
+               @"商品二维码",
                @"订单管理", @"订单列表", @"订单详情", @"订单统计列表", @"订单发货",
                @"收入管理", @"申请提现", @"提现列表", @"银行列表", @"绑定银行卡",
                @"系统公告", @"版本更新", nil];
@@ -31,6 +32,7 @@
     _actions = [NSMutableArray arrayWithObjects:@"login", @"main", @"myShop", @"modifyMyshop", @"postpone",
                 @"modifyPwd", @"goodsList", @"goodsTypeList", @"goodsTopicList", @"uploadFile",
                 @"addGoods", @"goodsDetail", @"goodsModify", @"statusGoods", @"recommendGoods",
+                @"goodsQrcode",
                 @"order", @"orderList", @"orderDetail", @"logisticsList", @"ship",
                 @"income", @"withdraw", @"withdrawList", @"bankList", @"bindBank",
                 @"messageList", @"queryVersion", nil];}
@@ -201,6 +203,12 @@
 - (void)recommendGoods {
     [[Http instance] recommendGoods:YES shopId:32768 goodsId:98524 completion:^(NSError *error) {
        NSLog(@"推荐商品：%@", error.domain);
+    }];
+}
+
+- (void)goodsQrcode {
+    [[Http instance] goodsQrcode:98524 completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+       NSLog(@"商品二维码%@, %@", goodsAddr, qrcodeImg);
     }];
 }
 
