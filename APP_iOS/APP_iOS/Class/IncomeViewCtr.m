@@ -12,6 +12,7 @@
 #import "UITableView+Separator.h"
 #import "BindBankViewCtr.h"
 #import "BonusViewCtr.h"
+#import "BonusHistroyViewCtr.h"
 
 @interface IncomeViewCtr ()
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
@@ -70,9 +71,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0)
-        return 150;
+        return 65;
     else
-        return 60;
+        return 40;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -119,6 +120,9 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             BonusViewCtr *vc = [[BonusViewCtr alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if (indexPath.row == 1) {
+            BonusHistroyViewCtr *vc = [[BonusHistroyViewCtr alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

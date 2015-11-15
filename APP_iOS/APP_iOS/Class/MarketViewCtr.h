@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface MarketViewCtr : UIViewController
-
+@interface MarketViewCtr : BaseViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

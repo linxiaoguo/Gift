@@ -221,6 +221,12 @@
 		53EC63DD1BF70D6500EB7D17 /* OrderDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63DB1BF70D6500EB7D17 /* OrderDoCell.xib */; };
 		53EC63E11BF70D7D00EB7D17 /* OrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */; };
 		53EC63E21BF70D7D00EB7D17 /* OrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */; };
+		53ECB1E51BF8D03F00A8178D /* BonusHistroyViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB1E31BF8D03F00A8178D /* BonusHistroyViewCtr.m */; };
+		53ECB1E61BF8D03F00A8178D /* BonusHistroyViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53ECB1E41BF8D03F00A8178D /* BonusHistroyViewCtr.xib */; };
+		53ECB1EA1BF8D37500A8178D /* BonusHistroyHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB1E81BF8D37500A8178D /* BonusHistroyHeaderCell.m */; };
+		53ECB1EB1BF8D37500A8178D /* BonusHistroyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53ECB1E91BF8D37500A8178D /* BonusHistroyHeaderCell.xib */; };
+		53ECB1EF1BF8D38900A8178D /* BonusHistroyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB1ED1BF8D38900A8178D /* BonusHistroyCell.m */; };
+		53ECB1F01BF8D38900A8178D /* BonusHistroyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53ECB1EE1BF8D38900A8178D /* BonusHistroyCell.xib */; };
 		835DA53BA0900E60C9BDF727 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7965864FFDEC64A3A671C25 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -624,6 +630,15 @@
 		53EC63DE1BF70D7D00EB7D17 /* OrderInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoCell.h; sourceTree = "<group>"; };
 		53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoCell.m; sourceTree = "<group>"; };
 		53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderInfoCell.xib; sourceTree = "<group>"; };
+		53ECB1E21BF8D03F00A8178D /* BonusHistroyViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusHistroyViewCtr.h; sourceTree = "<group>"; };
+		53ECB1E31BF8D03F00A8178D /* BonusHistroyViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusHistroyViewCtr.m; sourceTree = "<group>"; };
+		53ECB1E41BF8D03F00A8178D /* BonusHistroyViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusHistroyViewCtr.xib; sourceTree = "<group>"; };
+		53ECB1E71BF8D37500A8178D /* BonusHistroyHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusHistroyHeaderCell.h; sourceTree = "<group>"; };
+		53ECB1E81BF8D37500A8178D /* BonusHistroyHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusHistroyHeaderCell.m; sourceTree = "<group>"; };
+		53ECB1E91BF8D37500A8178D /* BonusHistroyHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusHistroyHeaderCell.xib; sourceTree = "<group>"; };
+		53ECB1EC1BF8D38900A8178D /* BonusHistroyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusHistroyCell.h; sourceTree = "<group>"; };
+		53ECB1ED1BF8D38900A8178D /* BonusHistroyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusHistroyCell.m; sourceTree = "<group>"; };
+		53ECB1EE1BF8D38900A8178D /* BonusHistroyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusHistroyCell.xib; sourceTree = "<group>"; };
 		E7965864FFDEC64A3A671C25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1486,6 +1501,9 @@
 				53DEAAA81BC171AA0008D6E8 /* BonusViewCtr.h */,
 				53DEAAA91BC171AA0008D6E8 /* BonusViewCtr.m */,
 				53DEAAAA1BC171AA0008D6E8 /* BonusViewCtr.xib */,
+				53ECB1E21BF8D03F00A8178D /* BonusHistroyViewCtr.h */,
+				53ECB1E31BF8D03F00A8178D /* BonusHistroyViewCtr.m */,
+				53ECB1E41BF8D03F00A8178D /* BonusHistroyViewCtr.xib */,
 			);
 			name = "收入";
 			sourceTree = "<group>";
@@ -1606,6 +1624,12 @@
 				53DEAAB21BC1768D0008D6E8 /* BonusTotalCell.h */,
 				53DEAAB31BC1768D0008D6E8 /* BonusTotalCell.m */,
 				53DEAAB41BC1768D0008D6E8 /* BonusTotalCell.xib */,
+				53ECB1E71BF8D37500A8178D /* BonusHistroyHeaderCell.h */,
+				53ECB1E81BF8D37500A8178D /* BonusHistroyHeaderCell.m */,
+				53ECB1E91BF8D37500A8178D /* BonusHistroyHeaderCell.xib */,
+				53ECB1EC1BF8D38900A8178D /* BonusHistroyCell.h */,
+				53ECB1ED1BF8D38900A8178D /* BonusHistroyCell.m */,
+				53ECB1EE1BF8D38900A8178D /* BonusHistroyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1694,7 +1718,9 @@
 				0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */,
 				53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */,
 				0BF6C4F21BCC9E7200D569C8 /* MyValidityDateViewController.xib in Resources */,
+				53ECB1E61BF8D03F00A8178D /* BonusHistroyViewCtr.xib in Resources */,
 				536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */,
+				53ECB1F01BF8D38900A8178D /* BonusHistroyCell.xib in Resources */,
 				53EC63D81BF70D3700EB7D17 /* OrderFeeCell.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
@@ -1709,6 +1735,7 @@
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
 				0BF6C5011BCCAE0D00D569C8 /* BaseTextViewController.xib in Resources */,
+				53ECB1EB1BF8D37500A8178D /* BonusHistroyHeaderCell.xib in Resources */,
 				0B886FBA1BD7880600388F03 /* SettingViewController.xib in Resources */,
 				53DEAAB11BC173FB0008D6E8 /* BonusCell.xib in Resources */,
 				0BB607F21B799EA200D42A16 /* NSDateTimeAgo.bundle in Resources */,
@@ -1801,6 +1828,7 @@
 				0B2D1D8E1B7B261F00F55DD5 /* BaseHttpRequest.m in Sources */,
 				0BB6086B1B79CBBE00D42A16 /* CoreStatus.m in Sources */,
 				0BB6083C1B799EA300D42A16 /* UITextView+margin.m in Sources */,
+				53ECB1EA1BF8D37500A8178D /* BonusHistroyHeaderCell.m in Sources */,
 				5378561C1BEF7C6A003F1154 /* GoodTypeModel.m in Sources */,
 				53E485791BBFC6E80064ACE7 /* OrderHeadCell.m in Sources */,
 				0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */,
@@ -1816,6 +1844,7 @@
 				0BB608161B799EA200D42A16 /* UIBezierPath+BasicShapes.m in Sources */,
 				0BB608301B799EA200D42A16 /* UINavigationBar+Awesome.m in Sources */,
 				53E4857E1BBFC9690064ACE7 /* OrderCell.m in Sources */,
+				53ECB1EF1BF8D38900A8178D /* BonusHistroyCell.m in Sources */,
 				0BB6080F1B799EA200D42A16 /* NSString+Trims.m in Sources */,
 				0BB608441B799EA300D42A16 /* UIView+Screenshot.m in Sources */,
 				5378562B1BEF8ADB003F1154 /* logisticsModel.m in Sources */,
@@ -1887,6 +1916,7 @@
 				0BB607F41B799EA200D42A16 /* NSDictionary+JSONString.m in Sources */,
 				0BB608261B799EA200D42A16 /* UIImage+FileName.m in Sources */,
 				0BB6083E1B799EA300D42A16 /* UIView+Animation.m in Sources */,
+				53ECB1E51BF8D03F00A8178D /* BonusHistroyViewCtr.m in Sources */,
 				0BB608471B799EA300D42A16 /* UIViewController+RecursiveDescription.m in Sources */,
 				53EC63D71BF70D3700EB7D17 /* OrderFeeCell.m in Sources */,
 				0BB607F31B799EA200D42A16 /* NSDateFormatter+Make.m in Sources */,

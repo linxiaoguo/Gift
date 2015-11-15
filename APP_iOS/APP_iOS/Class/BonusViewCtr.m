@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableView.backgroundColor = [UIColor whiteColor];
+    _tableView.backgroundColor = [UIColor clearColor];
     _tableView.scrollEnabled = NO;
     [self setTitle:@"未提现金额"];
     _lblTips1.numberOfLines = 2;
@@ -50,11 +50,13 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    if (indexPath.row != 2)
+    return 60;
+    return 0.5;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,7 +68,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
-    } else {
+    } else if (indexPath.row == 1){
         static NSString *identifier = @"BonusCell";
         BonusCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (cell == nil) {
@@ -74,12 +76,17 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
+    } else {
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        cell.backgroundColor = [UIColor clearColor];
+        return cell;
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];
