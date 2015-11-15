@@ -22,10 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"收入管理"];
-    kWEAKSELF;
-    [self setLeftBarButtonWithTitle:@"返回" withBlock:^(NSInteger tag) {
-        [weakSelf backAction];
-    }];
     [_tableView setNoFooterSeparator];
     [_tableView setFullWidthSeparator];
 }
