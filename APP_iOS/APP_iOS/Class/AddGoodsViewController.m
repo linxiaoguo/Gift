@@ -8,8 +8,14 @@
 
 #import "AddGoodsViewController.h"
 #import "AddGoodsTableViewCell.h"
+#import "GoodsListViewController.h"
+#import "UITextView+PlaceHolder.h"
 
 @interface AddGoodsViewController ()
+
+@property (nonatomic, strong) GoodTypeModel *goodTypeModel;
+@property (nonatomic, strong) GoodsTopicModel *goodsTopicModel;
+@property (nonatomic, assign) BOOL isRecommand;
 
 @end
 
@@ -20,12 +26,16 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"商品管理";
+    
+    _isRecommand = NO;
 
     [self.dataSource addObject:[NSDictionary dictionary]];
     [self.dataSource addObject:[NSDictionary dictionary]];
     
     _tableView.tableHeaderView = _headerView;
     _tableView.tableFooterView = _footerView;
+    
+    [_goodsIntroTextView addPlaceHolder:@"请输入商品简介"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +52,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)typeAction:(UIButton *)sender {
+    kWEAKSELF;
+    
+    GoodsListViewController *vc = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
+    vc.type = 1;
+    [vc setBlock:^(NSObject *model) {
+        weakSelf.goodTypeModel = (GoodTypeModel *)model;
+        [sender setTitle:weakSelf.goodTypeModel.name forState:UIControlStateNormal];
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)topicAction:(UIButton *)sender {
+    kWEAKSELF;
+
+    GoodsListViewController *vc = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
+    vc.type = 2;
+    [vc setBlock:^(NSObject *model) {
+        weakSelf.goodsTopicModel = (GoodsTopicModel *)model;
+        [sender setTitle:weakSelf.goodsTopicModel.name forState:UIControlStateNormal];
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)isRecommandSwitch:(UISwitch *)sender {
+    _isRecommand = sender.on;
+}
 
 - (IBAction)addGoodsAction:(id)sender {
     [self.dataSource addObject:[NSDictionary dictionary]];

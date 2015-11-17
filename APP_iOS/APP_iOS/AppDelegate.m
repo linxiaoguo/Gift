@@ -13,6 +13,8 @@
 #import "KeyboardManager.h"
 #import "LoginViewController.h"
 #import "MainViewController.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
 
 @interface AppDelegate ()
 
@@ -31,10 +33,42 @@
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
 
+    [UMSocialData setAppKey:@"564a844ee0f55ad251008b90"];
+    [UMSocialWechatHandler setWXAppId:@"wx88ed82fea38f73c8" appSecret:@"d4624c36b6795d1d99dcf0547af5443d" url:@"http://www.umeng.com/social"];
+
     [self customizeInterface];
-    [self showLoginViewController];
+    
+    if ([ShareValue instance].shopModel) {
+        [self showMainViewController];
+    }
+    else {
+        [self showLoginViewController];
+    }
 
     return YES;
+}
+
+//NSString *shareText = @"友盟社会化组件可以让移动应用快速具备社会化分享、登录、评论、喜欢等功能，并提供实时、全面的社会化数据统计分析服务。 http://www.umeng.com/social";             //分享内嵌文字
+//UIImage *shareImage = [UIImage imageNamed:@"UMS_social_demo"];          //分享内嵌图片
+//
+////调用快速分享接口
+//[UMSocialSnsService presentSnsIconSheetView:self
+//                                     appKey:UmengAppkey
+//                                  shareText:shareText
+//                                 shareImage:shareImage
+//                            shareToSnsNames:@[UMShareToSina, UMShareToTencent,UMShareToRenren]
+//                                   delegate:self];
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 #pragma mark - Private Methods
