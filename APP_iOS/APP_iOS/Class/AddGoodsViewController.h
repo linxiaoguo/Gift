@@ -8,7 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface AddGoodsViewController : BaseViewController
+@interface AddGoodsViewController : BaseViewController {
+    
+    __weak IBOutlet UITextView *_goodsIntroTextView;
+}
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
