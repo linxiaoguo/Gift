@@ -10,6 +10,9 @@
 
 @interface AddGoodsTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextField *typeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stockTextField;
 
 @property (strong, nonatomic) IBOutlet UIButton *delButton;
 

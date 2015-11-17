@@ -89,6 +89,7 @@
 
 - (IBAction)addGoodsAction:(id)sender {
     AddGoodsViewController *vc = [[AddGoodsViewController alloc] initWithNibName:@"AddGoodsViewController" bundle:nil];
+    vc.addNewGoods = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
