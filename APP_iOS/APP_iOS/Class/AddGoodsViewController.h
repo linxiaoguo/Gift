@@ -8,8 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface AddGoodsViewController : BaseViewController
+@interface AddGoodsViewController : BaseViewController {
+    
+    __weak IBOutlet UITextField *_goodName;
+    __weak IBOutlet UITextView *_goodsIntroTextView;
+}
 
+@property (nonatomic, assign) BOOL addNewGoods;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;

@@ -25,7 +25,7 @@
 
 + (Http *)instance;
 
-//登录接口，error.code == 0代表正确
+//登录接口，error.code == 0代表正确 login:@"admin" pwd:@"heyeah
 - (void)login:(NSString *)userName pwd:(NSString *)pwd completion:(void(^)(NSError *error, ShopModel *shop))completion;
 
 //主页界面接口

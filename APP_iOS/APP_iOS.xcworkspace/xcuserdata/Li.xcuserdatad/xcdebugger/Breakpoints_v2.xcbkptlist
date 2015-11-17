@@ -58,7 +58,7 @@
                   moduleName = "APP_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Li/Bolun/Gift/Gift/APP_iOS/APP_iOS/Request/Http.m"
-                  timestampString = "469291235.537168"
+                  timestampString = "469470463.429296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -73,7 +73,7 @@
                   moduleName = "APP_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Li/Bolun/Gift/Gift/APP_iOS/APP_iOS/Request/Http.m"
-                  timestampString = "469291235.537716"
+                  timestampString = "469470463.429777"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -81,6 +81,22 @@
                   offsetFromSymbolStart = "117">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APP_iOS/Category/UIKit/UITableView/UITableView+Separator.m"
+            timestampString = "469455436.742091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-tableView:willDisplayCell:forRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

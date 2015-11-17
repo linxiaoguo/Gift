@@ -10,6 +10,13 @@
 
 @implementation GoodModel
 
+- (void)setAddtime:(NSString *)addtime {
+    _addtime = addtime;
+    if (addtime.length > 10) {
+        _addtime = [addtime substringToIndex:10];
+    }
+}
+
 @end
 
 @implementation GoodOrderModel

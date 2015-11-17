@@ -53,22 +53,26 @@
 
 - (IBAction)loginAction:(id)sender {
     
-//    if (!_nickNameTextField.text.length) {
-//        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
-//        return;
-//    }
-//    if (!_passwordTextField.text.length) {
-//        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
-//        return;
-//    }
+    if (!_nickNameTextField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入用户名"];
+        return;
+    }
+    if (!_passwordTextField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        return;
+    }
     
-    [[Http instance] login:@"admin" pwd:@"heyeah" completion:^(NSError *error, ShopModel *shop) {
+    [[Http instance] login:_nickNameTextField.text pwd:_passwordTextField.text completion:^(NSError *error, ShopModel *shop) {
         if (error.code == 0) {
             NSLog(@"登陆成功，用户名字：%@", shop.name);
             [ShareValue instance].shopModel = shop;
             [kAppDelegate showMainViewController];
         }
+        else {
+            [SVProgressHUD showErrorWithStatus:error.domain];
+        }
     }];
+
 }
 
 #pragma mark - UITextFieldDelegate
