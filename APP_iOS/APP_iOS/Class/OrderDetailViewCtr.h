@@ -10,4 +10,5 @@
 
 @interface OrderDetailViewCtr : BaseViewController
 
+@property (nonatomic, strong)OrderModel *order;
 @end

@@ -10,6 +10,7 @@
 #import "OrderHeadCell.h"
 #import "OrderCell.h"
 #import "OrderDetailViewCtr.h"
+#import "NSDate+Addition.h"
 
 @interface OrderViewCtr ()
 
@@ -19,6 +20,11 @@
 @property (nonatomic, strong)IBOutlet UITableView *tbvAlreadySend;
 @property (nonatomic, strong)IBOutlet UITableView *tbvAlreadyDone;
 @property (nonatomic, strong)IBOutlet NSMutableArray *tableViewArray;
+@property (nonatomic, strong)IBOutlet NSMutableArray *arrWait;
+@property (nonatomic, strong)IBOutlet NSMutableArray *arrPay;
+@property (nonatomic, strong)IBOutlet NSMutableArray *arrAlreadySend;
+@property (nonatomic, strong)IBOutlet NSMutableArray *arrAlreadyDone;
+@property (nonatomic, strong)IBOutlet NSMutableArray *array;
 
 @property (nonatomic, strong)IBOutlet UIView *vHeader;
 @property (nonatomic, strong)IBOutlet OrderHeadCell *waitSend;
@@ -27,7 +33,7 @@
 @property (nonatomic, strong)IBOutlet OrderHeadCell *alreadyDone;
 @property (nonatomic, strong)UIImageView *selectImageView;
 @property (nonatomic, strong)IBOutlet NSMutableArray *cellArray;
-
+@property (nonatomic, assign)NSInteger index;//10,20,30,60
 @property (nonatomic, assign)BOOL isAnimation;
 
 @end
@@ -93,7 +99,15 @@
         tbv.separatorStyle = UITableViewCellSeparatorStyleNone;
         tbv.showsHorizontalScrollIndicator = NO;
         tbv.showsVerticalScrollIndicator = NO;
+        tbv.backgroundColor = [UIColor clearColor];
     }
+    
+    self.arrWait = [NSMutableArray array];
+    self.arrPay = [NSMutableArray array];
+    self.arrAlreadySend = [NSMutableArray array];
+    self.arrAlreadyDone = [NSMutableArray array];
+    self.array = [NSMutableArray arrayWithObjects:self.arrWait, self.arrPay, self.arrAlreadySend, self.arrAlreadyDone, nil];
+    [self getOrder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,6 +178,7 @@
         if (finished)
             _isAnimation = NO;
     }];
+    _index = index;
 }
 /*
 #pragma mark - Navigation
@@ -198,7 +213,9 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    self.dataSource = [_array objectAtIndex:_index];
+    
+    return self.dataSource.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -206,7 +223,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -215,7 +232,19 @@
     if (cell == nil) {
         cell = [CustomView viewWithNibName:@"OrderCell"];
     }
+    OrderModel *model = [self.dataSource objectAtIndex:indexPath.section];
+    cell.lblOrderNo.text = [NSString stringWithFormat:@"订单号:%@", model.code];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.addTime/1000];
+    cell.lblTime.text = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
+    cell.lblCount.text = [NSString stringWithFormat:@"商品数量：%ld", (long)model.total];
+    cell.lblPay.text = [NSString stringWithFormat:@"商品实付：%ld", (long)model.money];
     
+    NSArray *goods = model.goods;
+    if (goods.count > 0) {
+        GoodModel *good = [goods objectAtIndex:0];
+        cell.lblTitle.text = good.name;
+        cell.lblContent.text = [NSString stringWithFormat:@"费用：%.2f", good.price];
+    }
     return cell;
 }
 
@@ -224,6 +253,10 @@
     
     OrderDetailViewCtr *vc = [[OrderDetailViewCtr alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    
+    self.dataSource = [_array objectAtIndex:_index];
+    OrderModel *model = [self.dataSource objectAtIndex:indexPath.section];
+    vc.order = model;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -240,4 +273,34 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
 }
 
+
+#pragma mark - 获取数据
+- (void)getOrder {
+    kWEAKSELF;
+    NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+    [[Http instance] orderList:shopId stat:10 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            [weakSelf.arrWait addObjectsFromArray:dataArray];
+            [weakSelf.tbvWait reloadData];
+        }
+    }];
+    [[Http instance] orderList:shopId stat:20 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            [weakSelf.arrPay addObjectsFromArray:dataArray];
+            [weakSelf.tbvPay reloadData];
+        }
+    }];
+    [[Http instance] orderList:shopId stat:40 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            [weakSelf.arrAlreadySend addObjectsFromArray:dataArray];
+            [weakSelf.tbvAlreadySend reloadData];
+        }
+    }];
+    [[Http instance] orderList:shopId stat:60 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            [weakSelf.arrAlreadyDone addObjectsFromArray:dataArray];
+            [weakSelf.tbvAlreadyDone reloadData];
+        }
+    }];
+}
 @end
