@@ -17,10 +17,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-KA-9Ad">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-KA-9Ad">
                     <rect key="frame" x="20" y="181" width="280" height="44"/>
                     <animations/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8ym-xQ-8fU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="延长"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
@@ -29,19 +33,25 @@
                         <action selector="longAction:" destination="-1" eventType="touchUpInside" id="wzW-VJ-89h"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-Nl-ABY">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-Nl-ABY">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="剩余天数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaO-FB-131">
-                            <rect key="frame" x="52" y="38" width="217" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余天数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaO-FB-131">
+                            <rect key="frame" x="51" y="38" width="218" height="21"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="6T6-xx-suf"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.64313725489999995" green="0.1215686275" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有效期至：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aa-QG-Gym">
-                            <rect key="frame" x="52" y="92" width="217" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期至：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aa-QG-Gym">
+                            <rect key="frame" x="51" y="92" width="218" height="21"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="tTo-LK-Ers"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -49,10 +59,23 @@
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="2aa-QG-Gym" firstAttribute="top" secondItem="HaO-FB-131" secondAttribute="bottom" constant="33" id="2UU-73-5Rn"/>
+                        <constraint firstAttribute="trailing" secondItem="HaO-FB-131" secondAttribute="trailing" constant="51" id="2gQ-oL-iVo"/>
+                        <constraint firstAttribute="height" constant="164" id="aBa-VX-O9d"/>
+                        <constraint firstItem="HaO-FB-131" firstAttribute="top" secondItem="pPG-Nl-ABY" secondAttribute="top" constant="38" id="dcA-AJ-QRo"/>
+                        <constraint firstItem="2aa-QG-Gym" firstAttribute="leading" secondItem="pPG-Nl-ABY" secondAttribute="leading" constant="51" id="dmE-hw-Xjv"/>
+                        <constraint firstItem="HaO-FB-131" firstAttribute="leading" secondItem="pPG-Nl-ABY" secondAttribute="leading" constant="51" id="ra1-hh-NMK"/>
+                        <constraint firstAttribute="trailing" secondItem="2aa-QG-Gym" secondAttribute="trailing" constant="51" id="yyM-Ri-ePy"/>
+                    </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="按月收取，100元/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Qq-3lr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按月收取，100元/月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Qq-3lr">
                     <rect key="frame" x="90" y="233" width="140" height="21"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3MU-y6-D3n"/>
+                        <constraint firstAttribute="width" constant="140" id="geG-HU-oEd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -60,6 +83,16 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pPG-Nl-ABY" secondAttribute="trailing" id="6af-dN-FZe"/>
+                <constraint firstAttribute="trailing" secondItem="AUT-KA-9Ad" secondAttribute="trailing" constant="20" id="Qbb-KV-J11"/>
+                <constraint firstItem="MT5-Qq-3lr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qgl-Wt-gUl"/>
+                <constraint firstItem="AUT-KA-9Ad" firstAttribute="top" secondItem="pPG-Nl-ABY" secondAttribute="bottom" constant="17" id="Wby-mu-rUi"/>
+                <constraint firstItem="pPG-Nl-ABY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="c8b-F3-0aI"/>
+                <constraint firstItem="pPG-Nl-ABY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jfj-oB-b9F"/>
+                <constraint firstItem="AUT-KA-9Ad" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="k6b-Mk-jt6"/>
+                <constraint firstItem="MT5-Qq-3lr" firstAttribute="top" secondItem="AUT-KA-9Ad" secondAttribute="bottom" constant="8" id="o74-4v-23M"/>
+            </constraints>
             <point key="canvasLocation" x="210" y="239"/>
         </view>
     </objects>
