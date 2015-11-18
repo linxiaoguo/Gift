@@ -14,10 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-1W-O5B">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
-                        <animations/>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cpxqq" translatesAutoresizingMaskIntoConstraints="NO" id="FiW-x9-9BW">
                         <rect key="frame" x="20" y="20" width="90" height="90"/>
                         <animations/>

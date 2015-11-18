@@ -12,9 +12,11 @@
     
     __weak IBOutlet UITextField *_goodName;
     __weak IBOutlet UITextView *_goodsIntroTextView;
+    __weak IBOutlet UISwitch *_recomendSwitch;
 }
 
 @property (nonatomic, assign) BOOL addNewGoods;
+@property (nonatomic, strong) GoodModel *goodModel;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;

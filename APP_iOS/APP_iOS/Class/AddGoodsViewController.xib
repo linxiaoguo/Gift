@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="_goodName" destination="Aiu-vC-13K" id="2Q9-wX-CJI"/>
                 <outlet property="_goodsIntroTextView" destination="QZG-n3-Qw6" id="Yfw-HZ-1yr"/>
+                <outlet property="_recomendSwitch" destination="9vb-pc-pIb" id="fnL-RU-Qbf"/>
                 <outlet property="footerView" destination="0sH-1c-ER5" id="I0D-he-Yrj"/>
                 <outlet property="headerView" destination="6hk-ev-cCI" id="PVQ-CG-uEz"/>
                 <outlet property="tableView" destination="e4R-um-toO" id="nBV-Ok-XFy"/>

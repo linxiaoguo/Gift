@@ -28,16 +28,25 @@
     if (_addNewGoods) {
         self.title = @"添加商品";
         _footerView.height -= 50;
+        _isRecommand = NO;
+        
+        [self.dataSource addObject:[NSMutableDictionary dictionary]];
+        [self.dataSource addObject:[NSMutableDictionary dictionary]];
     }
     else {
         self.title = @"商品管理";
+        _isRecommand = _goodModel.isrecommand;
+        _goodName.text = _goodModel.name;
+        
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//        [dic setValue:_goodModel.typeid forKey:@"type"];
+        [dic setValue:[NSString stringWithFormat:@"%f", _goodModel.price] forKey:@"price"];
+        [dic setValue:[NSString stringWithFormat:@"%d", _goodModel.stock] forKey:@"stock"];
+        [self.dataSource addObject:dic];
+        [self.dataSource addObject:[NSMutableDictionary dictionary]];
     }
     
-    _isRecommand = NO;
-
-    [self.dataSource addObject:[NSMutableDictionary dictionary]];
-    [self.dataSource addObject:[NSMutableDictionary dictionary]];
-    
+    _recomendSwitch.on = _isRecommand;
     _tableView.tableHeaderView = _headerView;
     _tableView.tableFooterView = _footerView;
     
@@ -87,6 +96,16 @@
                 [super backAction];
                 [SVProgressHUD showSuccessWithStatus:@"商品添加成功"];
             }
+        }];
+    }
+    else {
+        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:[[dic objectForKey:@"price"] floatValue] stock:[[dic objectForKey:@"stock"] integerValue] fileids:nil completion:^(NSError *error) {
+            NSLog(@"修改商品：%@", error.domain);
+            if (error.code == 0) {
+                [super backAction];
+                [SVProgressHUD showSuccessWithStatus:@"商品修改成功"];
+            }
+
         }];
     }
 }
