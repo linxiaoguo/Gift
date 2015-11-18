@@ -44,7 +44,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-Jp-R0i">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-nC-kqE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLn-nC-kqE">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -59,6 +59,10 @@
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wLn-nC-kqE" secondAttribute="bottom" id="1iR-P5-dCA"/>
+                        <constraint firstItem="wLn-nC-kqE" firstAttribute="leading" secondItem="Jak-Jp-R0i" secondAttribute="leading" id="Iip-D7-xKd"/>
+                        <constraint firstAttribute="trailing" secondItem="wLn-nC-kqE" secondAttribute="trailing" id="P4m-XX-Wdl"/>
+                        <constraint firstItem="wLn-nC-kqE" firstAttribute="top" secondItem="Jak-Jp-R0i" secondAttribute="top" id="fZr-ZF-lb6"/>
                         <constraint firstAttribute="height" constant="50" id="olm-4a-WFO"/>
                     </constraints>
                 </view>

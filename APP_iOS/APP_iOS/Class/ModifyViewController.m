@@ -306,7 +306,7 @@
 #pragma mark - Request
 
 - (void)modifyShop {
-    [[Http instance] modifyMyshop:[ShareValue instance].shopModel.shopid.integerValue name:[ShareValue instance].shopModel.name pic:[NSString stringWithFormat:@"%d", [ShareValue instance].shopModel.pic.fileId] addr:[ShareValue instance].shopModel.addr linkman:[ShareValue instance].shopModel.linkman linkphone:[ShareValue instance].shopModel.linkphone completion:^(NSError *error) {
+    [[Http instance] modifyMyshop:[ShareValue instance].shopModel.shopid.integerValue name:[ShareValue instance].shopModel.name pic:[NSString stringWithFormat:@"%ld", [ShareValue instance].shopModel.pic.fileId] addr:[ShareValue instance].shopModel.addr linkman:[ShareValue instance].shopModel.linkman linkphone:[ShareValue instance].shopModel.linkphone completion:^(NSError *error) {
         NSLog(@"修改我的店铺：%@", error.domain);
 //        if (error.code == 0) {
 //            [SVProgressHUD showSuccessWithStatus:@""];

@@ -58,12 +58,12 @@
                   moduleName = "APP_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Li/Bolun/Gift/Gift/APP_iOS/APP_iOS/Request/Http.m"
-                  timestampString = "469470463.429296"
+                  timestampString = "469554738.904304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
                   endingLineNumber = "338"
-                  offsetFromSymbolStart = "666">
+                  offsetFromSymbolStart = "613">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -73,12 +73,12 @@
                   moduleName = "APP_iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Li/Bolun/Gift/Gift/APP_iOS/APP_iOS/Request/Http.m"
-                  timestampString = "469470463.429777"
+                  timestampString = "469554738.904812"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
                   endingLineNumber = "338"
-                  offsetFromSymbolStart = "117">
+                  offsetFromSymbolStart = "101">
                </Location>
             </Locations>
          </BreakpointContent>
