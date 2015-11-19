@@ -10,4 +10,5 @@
 
 @interface BonusViewCtr : BaseViewController
 
+@property (nonatomic, strong)IncomeTotalModel2 *incomeTotal;
 @end

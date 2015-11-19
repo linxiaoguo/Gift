@@ -241,7 +241,7 @@
     
     NSArray *goods = model.goods;
     if (goods.count > 0) {
-        GoodModel *good = [goods objectAtIndex:0];
+        GoodOrderModel *good = [goods objectAtIndex:0];
         cell.lblTitle.text = good.name;
         cell.lblContent.text = [NSString stringWithFormat:@"费用：%.2f", good.price];
     }

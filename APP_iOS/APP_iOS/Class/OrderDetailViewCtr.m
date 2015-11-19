@@ -13,6 +13,7 @@
 #import "OrderFeeCell.h"
 #import "OrderInfoCell.h"
 #import "CustomView.h"
+#import "NSDate+Addition.h"
 
 @interface OrderDetailViewCtr ()
 
@@ -91,6 +92,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    OrderModel *model = _order;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             static NSString *identifier=@"OrderTitleCell";
@@ -99,6 +101,7 @@
                 cell = [CustomView viewWithNibName:@"OrderTitleCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            cell.imvIcon.image = [UIImage imageNamed:@"dplogo"];
             return cell;
         } else if (indexPath.row == 1) {
             static NSString *identifier=@"OrderDetailCell";
@@ -106,6 +109,15 @@
             if (cell == nil) {
                 cell = [CustomView viewWithNibName:@"OrderDetailCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.imvIcon.image = [UIImage imageNamed:@"ccccc.jpg"];
+            NSArray *goods = model.goods;
+            if (goods.count > 0) {
+                GoodOrderModel *good = [goods objectAtIndex:0];
+                cell.lblDesc.text = good.name;
+                cell.lblCount.text = [NSString stringWithFormat:@"×%ld", (long)good.sales];
+                cell.lblFee.text = [NSString stringWithFormat:@"¥%.2f", good.price];
+                cell.lblSize.text = good.color;
             }
             return cell;
         } else if (indexPath.row == 2) {
@@ -115,6 +127,8 @@
                 cell = [CustomView viewWithNibName:@"OrderFeeCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            cell.lblYunFee.text = [NSString stringWithFormat:@"¥%.2f", model.freight];
+            cell.lblTotal.text = [NSString stringWithFormat:@"¥%.2f", model.totalPrice];
             return cell;
         } else {
             static NSString *identifier=@"OrderDoCell";
@@ -123,6 +137,13 @@
                 cell = [CustomView viewWithNibName:@"OrderDoCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            [cell setRow:indexPath.row];
+            [cell setShowBlock:^(NSInteger row) {//显示物流
+                
+            }];
+            [cell setConfirmBlock:^(NSInteger row) {//确认收货
+            
+            }];
             return cell;
         }
     } else {
@@ -133,7 +154,14 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"订单编号:20000001111111\n创建时间:2015-11-15\n付款时间:2015-11-15\n发货时间2015-11-15\n成交时间2015-11-15"];
+        NSString *orderNum = [NSString stringWithFormat:@"订单号:%@", model.code];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.addTime/1000];
+        NSString *createTime = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
+        NSString *payTime = @"";
+        NSString *sendTime = @"";
+        NSString *dealTime = @"";
+        NSString *text = [NSString stringWithFormat:@"订单编号:%@\n创建时间:%@\n付款时间:%@\n发货时间:%@\n成交时间:%@", orderNum, createTime, payTime, sendTime, dealTime];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
         NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle setLineSpacing:10];
         [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];

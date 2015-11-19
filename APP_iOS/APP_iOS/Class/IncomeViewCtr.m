@@ -16,6 +16,7 @@
 
 @interface IncomeViewCtr ()
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
+@property (nonatomic, strong)IncomeTotalModel2 *incomeTotal;
 @end
 
 @implementation IncomeViewCtr
@@ -25,6 +26,7 @@
     [self setTitle:@"收入管理"];
     [_tableView setNoFooterSeparator];
     [_tableView setFullWidthSeparator];
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +86,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    IncomeTotalModel2 *model = _incomeTotal;
     if (indexPath.section == 0) {
         static NSString *identifier=@"IncomeCell";
         IncomeCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
@@ -92,13 +95,12 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         if (indexPath.row == 0) {
-            cell.lblFee.text = @"0.00";
             cell.lblTitle.text = @"未提现金额（元）";
-            cell.lblFee.text = @"0.00";
+            cell.lblFee.text = [NSString stringWithFormat:@"%.2f", model.effectiveOutMoney];
         } else if (indexPath.row == 1) {
             cell.imvIcon.image = [UIImage imageNamed:@"sr_ytx"];
             cell.lblTitle.text = @"已提现金额（元）";
-            cell.lblFee.text = @"0.00";
+            cell.lblFee.text = [NSString stringWithFormat:@"%.2f", model.totalOutMoney];
         }
         return cell;
     } else {
@@ -120,9 +122,11 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             BonusViewCtr *vc = [[BonusViewCtr alloc] init];
+            vc.incomeTotal = self.incomeTotal;
             [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.row == 1) {
             BonusHistroyViewCtr *vc = [[BonusHistroyViewCtr alloc] init];
+            vc.incomeTotal = self.incomeTotal;
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
@@ -135,5 +139,14 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+}
+
+- (void)getData {
+    kWEAKSELF;
+    NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+    [[Http instance] income:shopId completion:^(NSError *error, IncomeTotalModel2 *incomeTotal) {
+        weakSelf.incomeTotal = incomeTotal;
+        [weakSelf.tableView reloadData];
+    }];
 }
 @end

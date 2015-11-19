@@ -25,4 +25,8 @@
     [super setSelected:selected animated:animated];
 }
 
+- (IBAction)bonusAction:(id)sender {
+    if (self.block)
+        self.block(self.row);
+}
 @end

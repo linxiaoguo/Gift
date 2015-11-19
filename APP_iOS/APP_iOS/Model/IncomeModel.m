@@ -9,9 +9,23 @@
 #import "IncomeModel.h"
 
 @implementation IncomeModel
-
+- (NSString *)statusString {
+    if (self.status == 1) {
+        return @"申请中";
+    } else if (self.status == 2) {
+        return @"提现成功";
+    } else if (self.status == 3) {
+        return @"提现失败";
+    }
+    
+    return @"";
+}
 @end
 
 @implementation IncomeTotalModel
+
+@end
+
+@implementation IncomeTotalModel2
 
 @end

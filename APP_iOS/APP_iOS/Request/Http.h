@@ -126,7 +126,7 @@
 - (void)ship:(NSInteger)orderId logId:(NSInteger)logId shipCode:(NSString *)shipCode desc:(NSString *)desc completion:(void(^)(NSError *error))completion;
 
 //收入管理
-- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel *incomeTotal))completion;
+- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel2 *incomeTotal))completion;
 
 //申请提现
 - (void)withdraw:(NSInteger)shopId money:(CGFloat)money completion:(void(^)(NSError *error))completion;

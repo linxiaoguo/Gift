@@ -767,7 +767,7 @@
     }];
 }
 
-- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel *incomeTotal))completion {
+- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel2 *incomeTotal))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
@@ -792,7 +792,7 @@
             success = @"1";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         NSDictionary *dic = [resDic objectForKey:@"data"];
-        IncomeTotalModel *incomeTotal = [IncomeTotalModel objectWithKeyValues:dic];
+        IncomeTotalModel2 *incomeTotal = [IncomeTotalModel2 objectWithKeyValues:dic];
         if (completion)
             completion(error, incomeTotal);
     }];

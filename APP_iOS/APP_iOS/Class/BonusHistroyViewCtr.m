@@ -10,12 +10,14 @@
 #import "BonusHistroyCell.h"
 #import "BonusHistroyHeaderCell.h"
 #import "CustomView.h"
+#import "NSDate+Addition.h"
 
 @interface BonusHistroyViewCtr ()
 
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
 @property (nonatomic, strong)IBOutlet UILabel *lblApplyed;
 @property (nonatomic, strong)IBOutlet UILabel *llbApplying;
+@property (nonatomic, strong)IncomeTotalModel *total;
 @end
 
 @implementation BonusHistroyViewCtr
@@ -23,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"已提现金额"];
+    _llbApplying.text = [NSString stringWithFormat:@"¥%.2f", _incomeTotal.totalOutingMoney];
+    _lblApplyed.text = [NSString stringWithFormat:@"¥%.2f", _incomeTotal.totalOutMoney];
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +55,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1+5;
+    return 1+_total.lists.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,6 +74,13 @@
             cell = [CustomView viewWithNibName:@"BonusHistroyCell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        if (indexPath.row - 1 < _total.lists.count) {
+            IncomeModel *model = [_total.lists objectAtIndex:indexPath.row - 1];
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.time/1000];
+            cell.lblTime.text = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
+            cell.lblFee.text = [NSString stringWithFormat:@"%.2f", model.money];
+            cell.lblState.text = [model statusString];
+        }
         return cell;
     }
 }
@@ -77,4 +89,14 @@
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
 
+- (void)getData {
+    kWEAKSELF;
+    NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+    [[Http instance] withdrawList:shopId count:100 page:1 completion:^(NSError *error, IncomeTotalModel *incomeTotal) {
+        if (error.code == 0) {
+            weakSelf.total = incomeTotal;
+            [weakSelf.tableView reloadData];
+        }
+    }];
+}
 @end

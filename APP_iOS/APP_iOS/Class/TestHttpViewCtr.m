@@ -243,8 +243,8 @@
 }
 
 - (void)income {
-    [[Http instance] income:32768 completion:^(NSError *error, IncomeTotalModel *incomeTotal) {
-                   NSLog(@"收入管理：%ld", (long)incomeTotal.total);
+    [[Http instance] income:32768 completion:^(NSError *error, IncomeTotalModel2 *incomeTotal) {
+                   NSLog(@"收入管理：%ld", (long)incomeTotal.totalInMoney);
     }];
 }
 
