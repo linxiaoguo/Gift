@@ -801,7 +801,7 @@
 - (void)withdraw:(NSInteger)shopId money:(CGFloat)money completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithFloat:money] forKey:@"money"];
+    [dic setObject:[NSNumber numberWithFloat:money] forKey:@"outMoney"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
@@ -829,13 +829,13 @@
 - (void)withdrawList:(NSInteger)shopId count:(NSInteger)count page:(NSInteger)page completion:(void(^)(NSError *error, IncomeTotalModel *incomeTotal))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+    [dic setObject:[NSNumber numberWithInteger:count] forKey:@"pageSize"];
     [dic setObject:[NSNumber numberWithInteger:page] forKey:@"page"];
 
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdraw.htm?req=%@", encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdrawList.htm?req=%@", encode];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
