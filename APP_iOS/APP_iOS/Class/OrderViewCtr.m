@@ -66,7 +66,7 @@
     [_vHeader addSubview:_alreadyDone];
     [_waitSend setSelected:YES];
     _waitSend.imvLine.hidden = YES;
-    [_waitPay.lblTitle setText:@"待支付"];
+    [_waitPay.lblTitle setText:@"待付款"];
     [_alreadySend.lblTitle setText:@"已发货"];
     [_alreadyDone.lblTitle setText:@"已完成"];
     [_cellArray addObject:_waitSend];
@@ -125,7 +125,7 @@
         OrderHeadCell *cell = [_cellArray objectAtIndex:i];
         cell.frame = CGRectMake(x + w * i, y, w, h);
     }
-    _selectImageView.frame = CGRectMake(x-1, y, w+2, h);
+    _selectImageView.frame = CGRectMake(x + w * _index - 1, y, w+3, h);
     
     x = 0;
     y = 0;
@@ -165,7 +165,7 @@
     _isAnimation = YES;
     
     [UIView animateWithDuration:0.25 animations:^{
-        _selectImageView.frame = CGRectMake(x + w * index - 1, y, w+2, h);
+        _selectImageView.frame = CGRectMake(x + w * index - 1, y, w+3, h);
         
         for (NSInteger i=0; i<_cellArray.count; i++) {
             OrderHeadCell *cell = [_cellArray objectAtIndex:i];
@@ -213,7 +213,15 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    self.dataSource = [_array objectAtIndex:_index];
+    if (tableView == _tbvWait) {
+        self.dataSource = [_array objectAtIndex:0];
+    } else if (tableView == _tbvPay) {
+        self.dataSource = [_array objectAtIndex:1];
+    } else if (tableView == _tbvAlreadySend) {
+        self.dataSource = [_array objectAtIndex:2];
+    } else {
+        self.dataSource = [_array objectAtIndex:3];
+    }
     
     return self.dataSource.count;
 }
@@ -227,6 +235,19 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger tag = 0;
+    if (tableView == _tbvWait) {
+        tag = 0;
+    } else if (tableView == _tbvPay) {
+        tag = 1;
+    } else if (tableView == _tbvAlreadySend) {
+        tag = 2;
+    } else {
+        tag = 3;
+    }
+    self.dataSource = [_array objectAtIndex:tag];
+    
     static NSString *identifier=@"OrderCell";
     OrderCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
@@ -239,6 +260,9 @@
     cell.lblCount.text = [NSString stringWithFormat:@"商品数量：%ld", (long)model.total];
     cell.lblPay.text = [NSString stringWithFormat:@"商品实付：%ld", (long)model.money];
     
+    OrderHeadCell *head = [_cellArray objectAtIndex:tag];
+    cell.lblState.text = head.lblTitle.text;
+    
     NSArray *goods = model.goods;
     if (goods.count > 0) {
         GoodOrderModel *good = [goods objectAtIndex:0];
@@ -249,14 +273,28 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger tag = 0;
+    if (tableView == _tbvWait) {
+        tag = 0;
+    } else if (tableView == _tbvPay) {
+        tag = 1;
+    } else if (tableView == _tbvAlreadySend) {
+        tag = 2;
+    } else {
+        tag = 3;
+    }
+    self.dataSource = [_array objectAtIndex:tag];
+    
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
     
     OrderDetailViewCtr *vc = [[OrderDetailViewCtr alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     
-    self.dataSource = [_array objectAtIndex:_index];
+    self.dataSource = [_array objectAtIndex:tag];
     OrderModel *model = [self.dataSource objectAtIndex:indexPath.section];
     vc.order = model;
+    vc.tag = tag;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -278,29 +316,66 @@
 - (void)getOrder {
     kWEAKSELF;
     NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
-    [[Http instance] orderList:shopId stat:10 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
-        if (error.code == 0) {
-            [weakSelf.arrWait addObjectsFromArray:dataArray];
-            [weakSelf.tbvWait reloadData];
-        }
-    }];
-    [[Http instance] orderList:shopId stat:20 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:10 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrPay addObjectsFromArray:dataArray];
-            [weakSelf.tbvPay reloadData];
+            [weakSelf refreshView];
+            [weakSelf refreshView:1];
         }
     }];
-    [[Http instance] orderList:shopId stat:40 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:20 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            [weakSelf.arrWait addObjectsFromArray:dataArray];
+            [weakSelf refreshView];
+            [weakSelf refreshView:0];
+        }
+    }];
+    [[Http instance] orderList:shopId stat:40 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrAlreadySend addObjectsFromArray:dataArray];
-            [weakSelf.tbvAlreadySend reloadData];
+            [weakSelf refreshView:2];
         }
     }];
-    [[Http instance] orderList:shopId stat:60 pageSize:20 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:60 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrAlreadyDone addObjectsFromArray:dataArray];
-            [weakSelf.tbvAlreadyDone reloadData];
+            [weakSelf refreshView:3];
         }
     }];
+}
+
+- (void)refreshView {
+    [self.tbvWait reloadData];
+    [self.tbvPay reloadData];
+    [self.tbvAlreadyDone reloadData];
+    [self.tbvAlreadySend reloadData];
+    
+    NSMutableArray *arrCount = [NSMutableArray array];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrWait.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrPay.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrAlreadySend.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrAlreadyDone.count]];
+    for (NSInteger i=0; i<self.cellArray.count; i++) {
+        OrderHeadCell *cell = [self.cellArray objectAtIndex:i];
+        NSInteger count = [[arrCount objectAtIndex:i] integerValue];
+        cell.lblCount.text = [NSString stringWithFormat:@"%ld", (long)count];
+    }
+}
+
+- (void)refreshView:(NSInteger)tag {
+    if (tag < 0 || tag >= self.cellArray.count)
+        return;
+    
+    UITableView *tbv = [_tableViewArray objectAtIndex:tag];
+    [tbv reloadData];
+    
+    NSMutableArray *arrCount = [NSMutableArray array];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrWait.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrPay.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrAlreadySend.count]];
+    [arrCount addObject:[NSNumber numberWithInteger:self.arrAlreadyDone.count]];
+    OrderHeadCell *cell = [self.cellArray objectAtIndex:tag];
+    NSInteger count = [[arrCount objectAtIndex:tag] integerValue];
+    cell.lblCount.text = [NSString stringWithFormat:@"%ld", (long)count];
 }
 @end

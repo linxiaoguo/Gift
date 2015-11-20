@@ -15,6 +15,7 @@ typedef void(^confirmGoods)(NSInteger row);
 
 @property (nonatomic, strong)IBOutlet UIButton *btnShow;
 @property (nonatomic, strong)IBOutlet UIButton *btnConfirm;
+@property (nonatomic, strong)IBOutlet UILabel *lblStat;
 @property (nonatomic, assign)NSInteger row;
 @property (nonatomic, copy)showLogistics showBlock;
 @property (nonatomic, copy)confirmGoods confirmBlock;

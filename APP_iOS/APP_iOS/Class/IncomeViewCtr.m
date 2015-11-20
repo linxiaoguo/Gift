@@ -34,6 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_tableView reloadData];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -43,7 +48,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 #pragma mark -  UITableViewDelegate
 //section头部间距
@@ -109,6 +113,13 @@
         if (cell == nil) {
             cell = [CustomView viewWithNibName:@"IncomeBindCell"];
         }
+        BOOL isBindBank = [ShareValue instance].shopModel.isbingingcard;
+        if (isBindBank) {
+            cell.lblState.text = @"已绑定";
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        } else {
+            cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        }
         return cell;
     }
 }
@@ -116,6 +127,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
     if (indexPath.section == 1) {
+        
+        BOOL isBindBank = [ShareValue instance].shopModel.isbingingcard;
+        if (isBindBank)
+            return;
         BindBankViewCtr *vc = [[BindBankViewCtr alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }

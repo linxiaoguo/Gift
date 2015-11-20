@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BindBankViewCtr">
             <connections>
-                <outlet property="btnConfirm" destination="Ui4-4u-goj" id="MOW-nZ-WJo"/>
+                <outlet property="btnConfirm" destination="Ui4-4u-goj" id="HFS-JR-lKK"/>
                 <outlet property="lblBottomTips" destination="3Ck-ab-BZJ" id="UAU-0m-efJ"/>
                 <outlet property="lblTopTips" destination="nrx-zd-FmC" id="Eor-4N-fRl"/>
                 <outlet property="tableView" destination="Bat-Fg-aVY" id="GK0-9l-HAi"/>
@@ -55,6 +55,9 @@
                                 <state key="normal" title="立即保存">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="MCT-Yr-liW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-ab-BZJ">
                                 <rect key="frame" x="15" y="65" width="570" height="125"/>

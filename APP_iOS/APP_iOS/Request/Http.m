@@ -854,7 +854,7 @@
         
         NSDictionary *dic = [resDic objectForKey:@"data"];
         IncomeTotalModel *incomeTotal = [IncomeTotalModel objectWithKeyValues:dic];
-        NSArray *lists = [dic objectForKey:@"lists"];
+        NSArray *lists = [dic objectForKey:@"data"];
         NSMutableArray *drawList = [NSMutableArray array];
         for (NSInteger i=0; i<lists.count; i++) {
             NSDictionary *draw = [lists objectAtIndex:i];

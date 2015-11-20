@@ -196,6 +196,9 @@
 		0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5041BCCEE6200D569C8 /* GoodsViewController.xib */; };
 		0BF6C50A1BCCEEEF00D569C8 /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6C5081BCCEEEF00D569C8 /* GoodsTableViewCell.m */; };
 		0BF6C50B1BCCEEEF00D569C8 /* GoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */; };
+		536066221BFF5C2600352EFA /* OrderContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 536066201BFF5C2600352EFA /* OrderContactCell.m */; };
+		536066231BFF5C2600352EFA /* OrderContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536066211BFF5C2600352EFA /* OrderContactCell.xib */; };
+		536066261BFF631000352EFA /* UIPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 536066251BFF631000352EFA /* UIPopoverListView.m */; };
 		536692941BBF2A2500060A1A /* OrderViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692921BBF2A2500060A1A /* OrderViewCtr.m */; };
 		536692951BBF2A2500060A1A /* OrderViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536692931BBF2A2500060A1A /* OrderViewCtr.xib */; };
 		536692991BBF2A3A00060A1A /* IncomeViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 536692971BBF2A3A00060A1A /* IncomeViewCtr.m */; };
@@ -616,6 +619,11 @@
 		0BF6C5091BCCEEEF00D569C8 /* GoodsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsTableViewCell.xib; sourceTree = "<group>"; };
 		397606A5325BF093A737C8F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4574C16411636293EF573232 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5360661F1BFF5C2500352EFA /* OrderContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderContactCell.h; sourceTree = "<group>"; };
+		536066201BFF5C2600352EFA /* OrderContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderContactCell.m; sourceTree = "<group>"; };
+		536066211BFF5C2600352EFA /* OrderContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderContactCell.xib; sourceTree = "<group>"; };
+		536066241BFF631000352EFA /* UIPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPopoverListView.h; sourceTree = "<group>"; };
+		536066251BFF631000352EFA /* UIPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopoverListView.m; sourceTree = "<group>"; };
 		536692911BBF2A2500060A1A /* OrderViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewCtr.h; sourceTree = "<group>"; };
 		536692921BBF2A2500060A1A /* OrderViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewCtr.m; sourceTree = "<group>"; };
 		536692931BBF2A2500060A1A /* OrderViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewCtr.xib; sourceTree = "<group>"; };
@@ -1830,6 +1838,9 @@
 				53EC63DE1BF70D7D00EB7D17 /* OrderInfoCell.h */,
 				53EC63DF1BF70D7D00EB7D17 /* OrderInfoCell.m */,
 				53EC63E01BF70D7D00EB7D17 /* OrderInfoCell.xib */,
+				5360661F1BFF5C2500352EFA /* OrderContactCell.h */,
+				536066201BFF5C2600352EFA /* OrderContactCell.m */,
+				536066211BFF5C2600352EFA /* OrderContactCell.xib */,
 				53E485831BBFFC580064ACE7 /* IncomeCell.h */,
 				53E485841BBFFC580064ACE7 /* IncomeCell.m */,
 				53E485851BBFFC580064ACE7 /* IncomeCell.xib */,
@@ -1854,6 +1865,8 @@
 				53ECB1EC1BF8D38900A8178D /* BonusHistroyCell.h */,
 				53ECB1ED1BF8D38900A8178D /* BonusHistroyCell.m */,
 				53ECB1EE1BF8D38900A8178D /* BonusHistroyCell.xib */,
+				536066241BFF631000352EFA /* UIPopoverListView.h */,
+				536066251BFF631000352EFA /* UIPopoverListView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1969,6 +1982,7 @@
 				53E485871BBFFC580064ACE7 /* IncomeCell.xib in Resources */,
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B5531861BFABC6800A1696E /* UMShareEditViewControlleriPad.xib in Resources */,
+				536066231BFF5C2600352EFA /* OrderContactCell.xib in Resources */,
 				0B5531801BFABC6800A1696E /* UMSocialLocalizable.strings in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
 				0B5531891BFABC6800A1696E /* UMSShareListController.xib in Resources */,
@@ -2114,6 +2128,7 @@
 				0B2D1D911B7B292300F55DD5 /* BaseHttpResponse.m in Sources */,
 				0BB606E51B799B5300D42A16 /* InteractivePopNavigationController.m in Sources */,
 				0BF6C4F61BCCA0DC00D569C8 /* MyCodeViewController.m in Sources */,
+				536066261BFF631000352EFA /* UIPopoverListView.m in Sources */,
 				5378562E1BEF8C7A003F1154 /* IncomeModel.m in Sources */,
 				0BB608141B799EA200D42A16 /* NSURL+Param.m in Sources */,
 				0BB6083B1B799EA300D42A16 /* UITextField+Blocks.m in Sources */,
@@ -2200,6 +2215,7 @@
 				0BB608361B799EA300D42A16 /* UIScrollView+Addition.m in Sources */,
 				53E07FAE1BE04F220095F8B7 /* JSONKit.m in Sources */,
 				0BB607FC1B799EA200D42A16 /* NSManagedObjectContext+ObjectClear.m in Sources */,
+				536066221BFF5C2600352EFA /* OrderContactCell.m in Sources */,
 				0BB608021B799EA200D42A16 /* NSObject+Blocks.m in Sources */,
 				0BB607E91B799EA200D42A16 /* NSArray+Block.m in Sources */,
 				0BB6084D1B799EA300D42A16 /* UIWebView+Load.m in Sources */,

@@ -78,7 +78,7 @@
             IncomeModel *model = [_total.lists objectAtIndex:indexPath.row - 1];
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.time/1000];
             cell.lblTime.text = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
-            cell.lblFee.text = [NSString stringWithFormat:@"%.2f", model.money];
+            cell.lblFee.text = [NSString stringWithFormat:@"%.2f", model.outMoney];
             cell.lblState.text = [model statusString];
         }
         return cell;

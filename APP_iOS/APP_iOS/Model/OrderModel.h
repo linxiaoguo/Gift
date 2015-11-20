@@ -28,4 +28,6 @@
 @property (nonatomic, strong)NSArray *goods;//订单商品列表
 @property (nonatomic, strong)NSArray *pic;//图片列表
 @property (nonatomic, assign)NSInteger stat;//订单状态，10：待付款，20：待发货，40：已发货，60：已完成
+
+- (NSString *)statString;
 @end
