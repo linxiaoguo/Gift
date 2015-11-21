@@ -108,6 +108,8 @@
     self.arrAlreadyDone = [NSMutableArray array];
     self.array = [NSMutableArray arrayWithObjects:self.arrWait, self.arrPay, self.arrAlreadySend, self.arrAlreadyDone, nil];
     [self getOrder];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shipSuccess:) name:@"ShipSuccess" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -316,27 +318,27 @@
 - (void)getOrder {
     kWEAKSELF;
     NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
-    [[Http instance] orderList:shopId stat:10 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:10 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrPay addObjectsFromArray:dataArray];
             [weakSelf refreshView];
             [weakSelf refreshView:1];
         }
     }];
-    [[Http instance] orderList:shopId stat:20 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:20 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrWait addObjectsFromArray:dataArray];
             [weakSelf refreshView];
             [weakSelf refreshView:0];
         }
     }];
-    [[Http instance] orderList:shopId stat:40 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:40 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrAlreadySend addObjectsFromArray:dataArray];
             [weakSelf refreshView:2];
         }
     }];
-    [[Http instance] orderList:shopId stat:60 pageSize:50 page:1 completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] orderList:shopId stat:60 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             [weakSelf.arrAlreadyDone addObjectsFromArray:dataArray];
             [weakSelf refreshView:3];
@@ -377,5 +379,9 @@
     OrderHeadCell *cell = [self.cellArray objectAtIndex:tag];
     NSInteger count = [[arrCount objectAtIndex:tag] integerValue];
     cell.lblCount.text = [NSString stringWithFormat:@"%ld", (long)count];
+}
+
+- (void)shipSuccess:(NSNotification *)notify {
+    [self getOrder];
 }
 @end

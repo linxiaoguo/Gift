@@ -17,6 +17,7 @@
     __weak IBOutlet UILabel *_priceLabel;
     __weak IBOutlet UILabel *_saleLabel;
     __weak IBOutlet UILabel *_timeLabel;
+    __weak IBOutlet UIImageView *_accessImageView;
 }
 
 @property (nonatomic, strong) GoodModel *goodModel;
