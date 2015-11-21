@@ -60,6 +60,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    IncomeTotalModel2 *model = self.incomeTotal;
     if (indexPath.row == 0) {
         static NSString *identifier = @"BonusTotalCell";
         BonusTotalCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -67,6 +68,7 @@
             cell = [CustomView viewWithNibName:@"BonusTotalCell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        cell.lblFee.text = [NSString stringWithFormat:@"¥%.2f", model.effectiveOutMoney];
         return cell;
     } else if (indexPath.row == 1){
         static NSString *identifier = @"BonusCell";
@@ -75,6 +77,28 @@
             cell = [CustomView viewWithNibName:@"BonusCell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        cell.lblFee.text = [NSString stringWithFormat:@"¥%.2f", model.effectiveOutMoney];
+        cell.row = indexPath.row;
+        kWEAKSELF;
+        [cell setBlock:^(NSInteger row) {//提现操作
+            UIAlertController *alc = [UIAlertController alertControllerWithTitle:@"天天有礼" message:@"请输入提现金额" preferredStyle:UIAlertControllerStyleAlert];
+            [alc addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSString *money = [[alc textFields] objectAtIndex:0].text;
+                CGFloat m = money.floatValue;
+                NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+                [[Http instance] withdraw:shopId money:m completion:^(NSError *error) {
+                    if (error.code == 0) {
+                        NSLog(@"%@", @"提现成功");
+                    }
+                }];
+            }]];
+            [alc addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+            [alc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.keyboardType = UIKeyboardTypeNumberPad;
+                textField.placeholder = @"输入金额";
+            }];
+            [weakSelf presentViewController:alc animated:YES completion:nil];
+        }];
         return cell;
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] init];

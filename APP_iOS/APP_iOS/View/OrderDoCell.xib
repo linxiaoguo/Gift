@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaR-X5-YNX">
+                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaR-X5-YNX">
                         <rect key="frame" x="146" y="9" width="70" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="1i0-kl-KMU"/>
@@ -29,24 +29,36 @@
                             <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CkW-Az-di9"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-5n-HTo">
+                    <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-5n-HTo">
                         <rect key="frame" x="231" y="9" width="70" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="qAq-cC-f4A"/>
                             <constraint firstAttribute="width" constant="70" id="vDp-1s-jaR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="确认收货">
+                        <state key="normal" title="确认发货">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
                             <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZpK-EN-Maf"/>
                         </connections>
                     </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZc-GJ-ghS">
+                        <rect key="frame" x="247" y="9" width="60" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="EsM-hD-b1a"/>
+                            <constraint firstAttribute="height" constant="25" id="pWx-op-aB2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.90980392156862744" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4Nt-5n-HTo" firstAttribute="leading" secondItem="jaR-X5-YNX" secondAttribute="trailing" constant="15" id="XuC-pJ-G6S"/>
                     <constraint firstItem="4Nt-5n-HTo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bFs-n6-aKv"/>
+                    <constraint firstItem="WZc-GJ-ghS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hrV-0Q-Xx7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WZc-GJ-ghS" secondAttribute="trailing" constant="5" id="nkd-Zo-qeB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4Nt-5n-HTo" secondAttribute="trailing" constant="11" id="rfb-Od-9FU"/>
                     <constraint firstItem="jaR-X5-YNX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vUn-hF-fe4"/>
                 </constraints>
@@ -54,6 +66,7 @@
             <connections>
                 <outlet property="btnConfirm" destination="4Nt-5n-HTo" id="3qs-j3-e27"/>
                 <outlet property="btnShow" destination="jaR-X5-YNX" id="BBe-bS-B3B"/>
+                <outlet property="lblStat" destination="WZc-GJ-ghS" id="AmA-ix-5oc"/>
             </connections>
         </tableViewCell>
     </objects>

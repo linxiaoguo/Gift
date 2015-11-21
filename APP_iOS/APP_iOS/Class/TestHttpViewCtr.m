@@ -225,7 +225,7 @@
 }
 
 - (void)orderDetail {
-    [[Http instance] orderDetail:32768 orderId:1 completion:^(NSError *error, OrderModel *order) {
+    [[Http instance] orderDetail:32768 orderId:1 completion:^(NSError *error, OrderDetailModel *order) {
        NSLog(@"订单详情：%@", error.domain);
     }];
 }
@@ -243,8 +243,8 @@
 }
 
 - (void)income {
-    [[Http instance] income:32768 completion:^(NSError *error, IncomeTotalModel *incomeTotal) {
-                   NSLog(@"收入管理：%ld", (long)incomeTotal.total);
+    [[Http instance] income:32768 completion:^(NSError *error, IncomeTotalModel2 *incomeTotal) {
+                   NSLog(@"收入管理：%ld", (long)incomeTotal.totalInMoney);
     }];
 }
 

@@ -65,6 +65,11 @@
                     <constraint firstItem="dH9-3g-WLk" firstAttribute="leading" secondItem="LaD-H2-Brg" secondAttribute="trailing" id="xMo-v4-PHc"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lblFee" destination="LaD-H2-Brg" id="3Wh-Xg-2Dr"/>
+                <outlet property="lblState" destination="dH9-3g-WLk" id="zS6-uT-mwA"/>
+                <outlet property="lblTime" destination="VuF-hX-sHQ" id="KJk-t6-AAf"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

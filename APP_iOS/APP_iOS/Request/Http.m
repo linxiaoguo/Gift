@@ -323,18 +323,83 @@
     }];
 }
 
-- (void)uploadFile:(NSString *)fileId uploadFile:(NSData *)uploadFile mname:(NSString *)mname completion:(void(^)(NSError *error, FieldModel *fieldModel))completion {
+- (void)uploadFile:(NSString *)fileId uploadFile:(UIImage *)image mname:(NSString *)mname completion:(void(^)(NSError *error, FieldModel *fieldModel))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setValue:fileId forKey:@"fileId"];
-    [dic setValue:uploadFile forKey:@"uploadFile"];
-    [dic setValue:mname forKey:@"mname"];
+    if (fileId)
+        [dic setValue:fileId forKey:@"fileId"];
+    if (mname)
+        [dic setValue:mname forKey:@"mname"];
+    else
+        [dic setValue:@"theme store" forKey:@"mname"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
     NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/addFile.htm?req=%@", encode];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"GET"];
+
+    //字典里面装的是你要上传的内容
+//    NSDictionary *parameters = @{@"content": @"这是刚刚在线的官方网站www.superqq.com"};
+    //分界线的标识符
+    NSString *TWITTERFON_FORM_BOUNDARY = @"AaB03x";
+    //根据url初始化request
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
+                                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                        timeoutInterval:10];
+    //分界线 --AaB03x
+    NSString *MPboundary = [[NSString alloc]initWithFormat:@"--%@",TWITTERFON_FORM_BOUNDARY];
+    //结束符 AaB03x--
+    NSString *endMPboundary = [[NSString alloc]initWithFormat:@"%@--",MPboundary];
+    //	//要上传的图片
+    //	UIImage *image = [params objectForKey:@"pic"];
+    //得到图片的data
+    NSData *data = UIImagePNGRepresentation(image);
+    //http body的字符串
+    NSMutableString *body = [[NSMutableString alloc] init];
+    //参数的集合的所有key的集合
+//    NSArray *keys = [parameters allKeys];
+//    //遍历keys
+//    for(int i=0; i<[keys count]; i++)
+//    {
+//        //得到当前key
+//        NSString *key = [keys objectAtIndex:i];
+//        //如果key不是pic，说明value是字符类型，比如name：Boris
+//        if(![key isEqualToString:@"pic"])
+//        {
+//            //添加分界线，换行
+//            [body appendFormat:@"%@\r\n",MPboundary];
+//            //添加字段名称，换2行
+//            [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key];
+//            //添加字段的值
+//            [body appendFormat:@"%@\r\n",[parameters objectForKey:key]];
+//        }
+//    }
+    ////添加分界线，换行
+    [body appendFormat:@"%@\r\n",MPboundary];
+    //声明pic字段，文件名为boris.png
+    [body appendFormat:@"Content-Disposition: form-data; name=\"uploadFile\"; filename=\"ios.png\"\r\n"];
+    //声明上传文件的格式
+    [body appendFormat:@"Content-Type: image/png\r\n\r\n"];
+    //声明结束符：--AaB03x--
+    NSString *end = [[NSString alloc]initWithFormat:@"\r\n%@",endMPboundary];
+    //声明myRequestData，用来放入http body
+    NSMutableData *myRequestData = [NSMutableData data];
+    //将body字符串转化为UTF8格式的二进制
+    [myRequestData appendData:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    //将image的data加入
+    [myRequestData appendData:data];
+    //加入结束符--AaB03x--
+    [myRequestData appendData:[end dataUsingEncoding:NSUTF8StringEncoding]];
+    //设置HTTPHeader中Content-Type的值
+    NSString *content=[[NSString alloc]initWithFormat:@"multipart/form-data; boundary=%@",TWITTERFON_FORM_BOUNDARY];
+    //设置HTTPHeader
+    [request setValue:content forHTTPHeaderField:@"Content-Type"];
+    //设置Content-Length
+    [request setValue:[NSString stringWithFormat:@"%d", (int)[myRequestData length]] forHTTPHeaderField:@"Content-Length"];
+    //设置http body
+    [request setHTTPBody:myRequestData];
+    //http method
+    [request setHTTPMethod:@"POST"];
+    //建立连接
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSString *decode = [DES3Util decrypt:string];
@@ -355,6 +420,29 @@
         if (completion)
             completion(error, fieldModel);
     }];
+ 
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+//    [request setHTTPMethod:@"POST"];
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSString *decode = [DES3Util decrypt:string];
+//        NSLog(@"请求url：%@", urlString);
+//        NSLog(@"返回数据：%@", decode);
+//        NSDictionary *resDic = [decode objectFromJSONString];
+//        NSString *message = [resDic objectForKey:@"message"];
+//        NSString *success = [resDic objectForKey:@"success"];
+//        if (message == nil)
+//            message = @"";
+//        if (success == nil)
+//            success = @"1";
+//
+//        NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
+//        NSDictionary *body = [resDic objectForKey:@"data"];
+//        FieldModel *fieldModel = [FieldModel objectWithKeyValues:body];
+//
+//        if (completion)
+//            completion(error, fieldModel);
+//    }];
 }
 
 - (void)addGoods:(NSInteger)shopId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids completion:(void(^)(NSError *error))completion {
@@ -665,7 +753,7 @@
     }];
 }
 
-- (void)orderDetail:(NSInteger)shopId orderId:(NSInteger)orderId completion:(void(^)(NSError *error, OrderModel *order))completion {
+- (void)orderDetail:(NSInteger)shopId orderId:(NSInteger)orderId completion:(void(^)(NSError *error, OrderDetailModel *order))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:[NSNumber numberWithInteger:orderId] forKey:@"orderid"];
@@ -691,7 +779,7 @@
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         NSDictionary *dic = [resDic objectForKey:@"data"];
 
-        OrderModel *order = [OrderModel objectWithKeyValues:dic];
+        OrderDetailModel *order = [OrderDetailModel objectWithKeyValues:dic];
         NSArray *goodsArray = [dic objectForKey:@"goods"];
         NSMutableArray *goods = [NSMutableArray array];
         for (NSInteger j=0; j<goodsArray.count; j++) {
@@ -767,7 +855,7 @@
     }];
 }
 
-- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel *incomeTotal))completion {
+- (void)income:(NSInteger)shopId completion:(void(^)(NSError *error, IncomeTotalModel2 *incomeTotal))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
@@ -792,7 +880,7 @@
             success = @"1";
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         NSDictionary *dic = [resDic objectForKey:@"data"];
-        IncomeTotalModel *incomeTotal = [IncomeTotalModel objectWithKeyValues:dic];
+        IncomeTotalModel2 *incomeTotal = [IncomeTotalModel2 objectWithKeyValues:dic];
         if (completion)
             completion(error, incomeTotal);
     }];
@@ -801,7 +889,7 @@
 - (void)withdraw:(NSInteger)shopId money:(CGFloat)money completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithFloat:money] forKey:@"money"];
+    [dic setObject:[NSNumber numberWithFloat:money] forKey:@"outMoney"];
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
@@ -829,13 +917,13 @@
 - (void)withdrawList:(NSInteger)shopId count:(NSInteger)count page:(NSInteger)page completion:(void(^)(NSError *error, IncomeTotalModel *incomeTotal))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+    [dic setObject:[NSNumber numberWithInteger:count] forKey:@"pageSize"];
     [dic setObject:[NSNumber numberWithInteger:page] forKey:@"page"];
 
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdraw.htm?req=%@", encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/withdrawList.htm?req=%@", encode];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -854,7 +942,7 @@
         
         NSDictionary *dic = [resDic objectForKey:@"data"];
         IncomeTotalModel *incomeTotal = [IncomeTotalModel objectWithKeyValues:dic];
-        NSArray *lists = [dic objectForKey:@"lists"];
+        NSArray *lists = [dic objectForKey:@"data"];
         NSMutableArray *drawList = [NSMutableArray array];
         for (NSInteger i=0; i<lists.count; i++) {
             NSDictionary *draw = [lists objectAtIndex:i];

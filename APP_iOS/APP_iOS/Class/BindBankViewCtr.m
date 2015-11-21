@@ -9,18 +9,22 @@
 #import "BindBankViewCtr.h"
 #import "BingBankCell.h"
 #import "UITableView+Separator.h"
+#import "UIView+Toast.h"
+#import "UIPopoverListView.h"
 
 @implementation BindBankModel
 
 @end
 
-@interface BindBankViewCtr ()
+@interface BindBankViewCtr () <UIPopoverListViewDataSource, UIPopoverListViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
 @property (nonatomic, strong)IBOutlet UILabel *lblTopTips;
 @property (nonatomic, strong)IBOutlet UIButton *btnConfirm;
 @property (nonatomic, strong)IBOutlet UILabel *lblBottomTips;
 @property (nonatomic, strong)BindBankModel *bindBankModel;
+@property (nonatomic, strong)NSMutableArray *bankList;
+@property (nonatomic, strong)UIPopoverListView *popListView;
 @end
 
 @implementation BindBankViewCtr
@@ -41,6 +45,7 @@
     _bindBankModel = [[BindBankModel alloc] init];
     
     [_tableView setFullWidthSeparator];
+    [self getBankList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +87,7 @@
     cell.tfContent.placeholder = [placeHolds objectAtIndex:indexPath.row];
     cell.tfContent.tag = indexPath.row + 100;
     [cell.tfContent addTarget:self  action:@selector(valueChanged:)  forControlEvents:UIControlEventAllEditingEvents];
+    cell.tfContent.delegate = self;
     
     switch (indexPath.row) {
         case 0: {
@@ -149,8 +155,99 @@
     }
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
     NSLog(@"进入托管");
+    NSInteger row = textField.tag - 100;
+    if (row == 2) {
+        
+        CGFloat xWidth = self.view.bounds.size.width - 20.0f;
+        
+        CGRect rect = self.view.frame;
+        CGFloat yHeight = rect.size.height - 100;
+        CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
+        UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
+        poplistview.delegate = self;
+        poplistview.datasource = self;
+        poplistview.listView.scrollEnabled = YES;
+        [poplistview setTitle:@"选择银行"];
+        [poplistview show];
+
+        return NO;
+    }
     return YES;
+}
+
+#pragma mark - 按钮事件
+- (IBAction)saveAction:(id)sender {
+    if (_bindBankModel.name.length == 0) {
+        [self.view makeToast:@"请输入真实姓名"];
+         return;
+    }
+    if (_bindBankModel.identify.length == 0) {
+        [self.view makeToast:@"请输入身份证"];
+        return;
+    }
+    if (_bindBankModel.bandNo.length == 0) {
+        [self.view makeToast:@"请输入银行卡号"];
+        return;
+    }
+    if (_bindBankModel.bankName.length == 0) {
+        [self.view makeToast:@"请选择银行"];
+        return;
+    }
+    
+    NSInteger shopId = [ShareValue instance].shopModel.shopid.intValue;
+    [[Http instance] bindBank:shopId name:_bindBankModel.name idcard:_bindBankModel.identify bank:_bindBankModel.bankName card:_bindBankModel.bandNo completion:^(NSError *error) {
+        [self.view makeToast:@"绑定成功！"];
+        
+        ShopModel *shop = [ShareValue instance].shopModel;
+        shop.isbingingcard = YES;
+        [ShareValue instance].shopModel = shop;
+    }];
+}
+
+#pragma mark - 获取银行列表
+- (void)getBankList {
+    kWEAKSELF;
+    [[Http instance] bankList:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            weakSelf.bankList = [NSMutableArray arrayWithArray:dataArray];
+        }
+    }];
+}
+
+#pragma mark - UIPopoverListViewDataSource
+
+- (UITableViewCell *)popoverListView:(UIPopoverListView *)popoverListView
+                    cellForIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                    reuseIdentifier:identifier];
+    
+    NSInteger row = indexPath.row;
+    BankModel *bank = [_bankList objectAtIndex:row];
+    cell.textLabel.text = bank.name;
+    return cell;
+}
+
+- (NSInteger)popoverListView:(UIPopoverListView *)popoverListView
+       numberOfRowsInSection:(NSInteger)section {
+    return _bankList.count;
+}
+
+#pragma mark - UIPopoverListViewDelegate
+- (void)popoverListView:(UIPopoverListView *)popoverListView
+     didSelectIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    BankModel *bank = [_bankList objectAtIndex:row];
+    _bindBankModel.bankName = bank.name;
+    _bindBankModel.bandNo = [NSString stringWithFormat:@"%ld", (long)bank.id];
+    [_tableView reloadData];
+}
+
+- (CGFloat)popoverListView:(UIPopoverListView *)popoverListView
+   heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44.0f;
 }
 @end

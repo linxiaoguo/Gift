@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface BonusHistroyViewCtr : BaseViewController
-
+@property (nonatomic, strong)IncomeTotalModel2 *incomeTotal;
 @end

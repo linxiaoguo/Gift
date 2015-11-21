@@ -10,4 +10,7 @@
 
 @interface BonusHistroyCell : UITableViewCell
 
+@property (nonatomic, strong)IBOutlet UILabel *lblTime;
+@property (nonatomic, strong)IBOutlet UILabel *lblFee;
+@property (nonatomic, strong)IBOutlet UILabel *lblState;
 @end

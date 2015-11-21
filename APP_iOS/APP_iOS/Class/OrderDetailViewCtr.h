@@ -11,4 +11,5 @@
 @interface OrderDetailViewCtr : BaseViewController
 
 @property (nonatomic, strong)OrderModel *order;
+@property (nonatomic, assign)NSInteger tag;
 @end

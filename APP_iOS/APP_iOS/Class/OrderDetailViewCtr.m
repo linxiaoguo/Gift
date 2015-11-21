@@ -12,7 +12,12 @@
 #import "OrderDoCell.h"
 #import "OrderFeeCell.h"
 #import "OrderInfoCell.h"
+#import "OrderContactCell.h"
 #import "CustomView.h"
+#import "NSDate+Addition.h"
+#import "UIView+Toast.h"
+
+#import "ShipViewCtr.h"
 
 @interface OrderDetailViewCtr ()
 
@@ -64,7 +69,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,6 +82,8 @@
             return 60;
         if (indexPath.row == 3)
             return 44;
+    } else if (indexPath.section == 1){
+        return 95;
     } else {
         return 150;
     }
@@ -91,6 +98,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    OrderModel *model = _order;
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             static NSString *identifier=@"OrderTitleCell";
@@ -99,6 +107,11 @@
                 cell = [CustomView viewWithNibName:@"OrderTitleCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+//            cell.imvIcon.image = [UIImage imageNamed:@"dplogo"];
+            NSString *shopImg = [ShareValue instance].shopModel.pic.fileAddr;
+            [cell.imvIcon sd_setImageWithURL:[NSURL URLWithString:shopImg] placeholderImage:nil];
+            NSString *shopName = [ShareValue instance].shopModel.name;
+            cell.lblTitle.text = shopName;
             return cell;
         } else if (indexPath.row == 1) {
             static NSString *identifier=@"OrderDetailCell";
@@ -106,6 +119,15 @@
             if (cell == nil) {
                 cell = [CustomView viewWithNibName:@"OrderDetailCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.imvIcon.image = [UIImage imageNamed:@"cpxqq"];
+            NSArray *goods = model.goods;
+            if (goods.count > 0) {
+                GoodOrderModel *good = [goods objectAtIndex:0];
+                cell.lblDesc.text = good.name;
+                cell.lblCount.text = [NSString stringWithFormat:@"×%ld", (long)good.sales];
+                cell.lblFee.text = [NSString stringWithFormat:@"¥%.2f", good.price];
+                cell.lblSize.text = good.color;
             }
             return cell;
         } else if (indexPath.row == 2) {
@@ -115,6 +137,8 @@
                 cell = [CustomView viewWithNibName:@"OrderFeeCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            cell.lblYunFee.text = [NSString stringWithFormat:@"¥%.2f", model.freight];
+            cell.lblTotal.text = [NSString stringWithFormat:@"¥%.2f", model.totalPrice];
             return cell;
         } else {
             static NSString *identifier=@"OrderDoCell";
@@ -123,8 +147,50 @@
                 cell = [CustomView viewWithNibName:@"OrderDoCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            [cell setRow:indexPath.row];
+            [cell setShowBlock:^(NSInteger row) {//显示物流
+                
+            }];
+            
+            if (_tag == 0) {
+                cell.btnConfirm.hidden = NO;
+                cell.lblStat.hidden = YES;
+                
+                kWEAKSELF;
+                [cell setConfirmBlock:^(NSInteger row) {//确认发货
+                    
+                    
+                }];
+            } else {
+                cell.btnConfirm.hidden = YES;
+                cell.lblStat.hidden = NO;
+                
+                NSArray *arr = @[@"", @"待付款", @"已发货", @"已完成"];
+                if (_tag < arr.count)
+                    cell.lblStat.text = [arr objectAtIndex:_tag];
+            }
+        
             return cell;
         }
+    } else if (indexPath.section == 1){
+        static NSString *identifier=@"OrderContactCell";
+        OrderContactCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
+        if (cell == nil) {
+            cell = [CustomView viewWithNibName:@"OrderContactCell"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        NSString *addr = model.addr;
+        NSString *addrname = model.addrname;
+        NSString *mobile = model.addrmobile;
+        NSString *text = [NSString stringWithFormat:@"收货人:%@\n联系电话:%@\n收获地址:%@", addr, addrname, mobile];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+        NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        [paragraphStyle setLineSpacing:10];
+        [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
+        cell.lblDesc.attributedText = string;
+
+        return cell;
     } else {
         static NSString *identifier=@"OrderInfoCell";
         OrderInfoCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
@@ -133,7 +199,14 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"订单编号:20000001111111\n创建时间:2015-11-15\n付款时间:2015-11-15\n发货时间2015-11-15\n成交时间2015-11-15"];
+        NSString *orderNum = [NSString stringWithFormat:@"订单号:%@", model.code];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.addTime/1000];
+        NSString *createTime = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
+        NSString *payTime = @"";
+        NSString *sendTime = @"";
+        NSString *dealTime = @"";
+        NSString *text = [NSString stringWithFormat:@"订单编号:%@\n创建时间:%@\n付款时间:%@\n发货时间:%@\n成交时间:%@", orderNum, createTime, payTime, sendTime, dealTime];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
         NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle setLineSpacing:10];
         [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string length])];
