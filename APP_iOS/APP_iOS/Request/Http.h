@@ -68,7 +68,8 @@
 //上传文件接口
 //mname：theme store
 //dataArray存储FieldModel
-- (void)uploadFile:(NSString *)fileId uploadFile:(NSData *)uploadFile mname:(NSString *)mname completion:(void(^)(NSError *error, FieldModel *fieldModel))completion;
+//若fileId有传值，代表修改图片，例如商铺的logo
+- (void)uploadFile:(NSString *)fileId uploadFile:(UIImage *)image mname:(NSString *)mname completion:(void(^)(NSError *error, FieldModel *fieldModel))completion;
 
 //添加商品接口
 //shopId 商家id
@@ -115,11 +116,11 @@
 - (void)orderList:(NSInteger)shopId stat:(NSInteger)stat pageSize:(NSInteger)pageSize page:(NSInteger)page completion:(void(^)(NSError *error, NSArray *dataArray))completion;
 
 //订单详情
-- (void)orderDetail:(NSInteger)shopId orderId:(NSInteger)orderId completion:(void(^)(NSError *error, OrderModel *order))completion;
+- (void)orderDetail:(NSInteger)shopId orderId:(NSInteger)orderId completion:(void(^)(NSError *error, OrderDetailModel *order))completion;
 
 
-//订单统计列表
-//dataArray存储
+//物流列表
+//dataArray存储logisticsModel
 - (void)logisticsList:(void(^)(NSError *error, NSArray *dataArray))completion;
 
 //订单发货接口

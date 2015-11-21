@@ -225,7 +225,7 @@
 }
 
 - (void)orderDetail {
-    [[Http instance] orderDetail:32768 orderId:1 completion:^(NSError *error, OrderModel *order) {
+    [[Http instance] orderDetail:32768 orderId:1 completion:^(NSError *error, OrderDetailModel *order) {
        NSLog(@"订单详情：%@", error.domain);
     }];
 }

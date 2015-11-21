@@ -245,6 +245,8 @@
 		53E4858A1BC000CC0064ACE7 /* UITableView+Separator.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E485891BC000CC0064ACE7 /* UITableView+Separator.m */; };
 		53E4858E1BC002AA0064ACE7 /* IncomeBindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */; };
 		53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */; };
+		53E818AE1C000F5500CFA501 /* ShipViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E818AC1C000F5500CFA501 /* ShipViewCtr.m */; };
+		53E818AF1C000F5500CFA501 /* ShipViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E818AD1C000F5500CFA501 /* ShipViewCtr.xib */; };
 		53E90AA91BF0CF4700D28889 /* VersionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E90AA81BF0CF4700D28889 /* VersionModel.m */; };
 		53E90AAD1BF0D17400D28889 /* TestHttpViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E90AAB1BF0D17400D28889 /* TestHttpViewCtr.m */; };
 		53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */; };
@@ -705,6 +707,9 @@
 		53E4858B1BC002AA0064ACE7 /* IncomeBindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeBindCell.h; sourceTree = "<group>"; };
 		53E4858C1BC002AA0064ACE7 /* IncomeBindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBindCell.m; sourceTree = "<group>"; };
 		53E4858D1BC002AA0064ACE7 /* IncomeBindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeBindCell.xib; sourceTree = "<group>"; };
+		53E818AB1C000F5500CFA501 /* ShipViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipViewCtr.h; sourceTree = "<group>"; };
+		53E818AC1C000F5500CFA501 /* ShipViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipViewCtr.m; sourceTree = "<group>"; };
+		53E818AD1C000F5500CFA501 /* ShipViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipViewCtr.xib; sourceTree = "<group>"; };
 		53E90AA71BF0CF4700D28889 /* VersionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionModel.h; sourceTree = "<group>"; };
 		53E90AA81BF0CF4700D28889 /* VersionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionModel.m; sourceTree = "<group>"; };
 		53E90AAA1BF0D17400D28889 /* TestHttpViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHttpViewCtr.h; sourceTree = "<group>"; };
@@ -1673,6 +1678,9 @@
 				53EC63C51BF70C7900EB7D17 /* OrderDetailViewCtr.h */,
 				53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */,
 				53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */,
+				53E818AB1C000F5500CFA501 /* ShipViewCtr.h */,
+				53E818AC1C000F5500CFA501 /* ShipViewCtr.m */,
+				53E818AD1C000F5500CFA501 /* ShipViewCtr.xib */,
 			);
 			name = "订单";
 			sourceTree = "<group>";
@@ -1969,6 +1977,7 @@
 				0B5531911BFABC6800A1696E /* iOS-social-releasenote.html in Resources */,
 				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
 				53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */,
+				53E818AF1C000F5500CFA501 /* ShipViewCtr.xib in Resources */,
 				0B42B6201BC90B8200BEBB90 /* MyShopViewController.xib in Resources */,
 				0B5531941BFABC6800A1696E /* ios-social-sdk-like.html in Resources */,
 				0B55318A1BFABC6800A1696E /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -2223,6 +2232,7 @@
 				5378561F1BEF7D98003F1154 /* GoodsTopicModel.m in Sources */,
 				53DF34931BD04B59003B5DE7 /* GTMBase64.m in Sources */,
 				0BB606B21B7989B400D42A16 /* main.m in Sources */,
+				53E818AE1C000F5500CFA501 /* ShipViewCtr.m in Sources */,
 				0BB6080D1B799EA200D42A16 /* NSString+RemoveEmoji.m in Sources */,
 				0BB607FD1B799EA200D42A16 /* NSNull+OVNatural.m in Sources */,
 				0BB6080B1B799EA200D42A16 /* NSString+Hash.m in Sources */,

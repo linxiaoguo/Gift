@@ -258,7 +258,7 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.addTime/1000];
     cell.lblTime.text = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
     cell.lblCount.text = [NSString stringWithFormat:@"商品数量：%ld", (long)model.total];
-    cell.lblPay.text = [NSString stringWithFormat:@"商品实付：%ld", (long)model.money];
+    cell.lblPay.text = [NSString stringWithFormat:@"商品实付：%ld", (long)model.totalPrice];
     
     OrderHeadCell *head = [_cellArray objectAtIndex:tag];
     cell.lblState.text = head.lblTitle.text;

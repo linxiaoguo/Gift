@@ -15,6 +15,9 @@
 #import "OrderContactCell.h"
 #import "CustomView.h"
 #import "NSDate+Addition.h"
+#import "UIView+Toast.h"
+
+#import "ShipViewCtr.h"
 
 @interface OrderDetailViewCtr ()
 
@@ -153,11 +156,10 @@
                 cell.btnConfirm.hidden = NO;
                 cell.lblStat.hidden = YES;
                 
+                kWEAKSELF;
                 [cell setConfirmBlock:^(NSInteger row) {//确认发货
-                    NSInteger orderId = model.id;
-                    [[Http instance] ship:orderId logId:11 shipCode:@"123" desc:@"123" completion:^(NSError * error) {
-                        
-                    }];
+                    
+                    
                 }];
             } else {
                 cell.btnConfirm.hidden = YES;

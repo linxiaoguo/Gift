@@ -23,3 +23,7 @@
     return @"";
 }
 @end
+
+@implementation OrderDetailModel
+
+@end
