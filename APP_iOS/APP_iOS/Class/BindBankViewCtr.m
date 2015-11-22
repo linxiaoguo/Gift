@@ -242,7 +242,7 @@
     NSInteger row = indexPath.row;
     BankModel *bank = [_bankList objectAtIndex:row];
     _bindBankModel.bankName = bank.name;
-    _bindBankModel.bandNo = [NSString stringWithFormat:@"%ld", (long)bank.id];
+//    _bindBankModel.bandNo = [NSString stringWithFormat:@"%ld", (long)bank.id];
     [_tableView reloadData];
 }
 

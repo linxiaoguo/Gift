@@ -113,7 +113,7 @@
                 }
             }
             else {
-                [SVProgressHUD showErrorWithStatus:error.domain];
+                [SVProgressHUD showErrorWithStatus:@"已经是最新版本"];
             }
         }];
     }

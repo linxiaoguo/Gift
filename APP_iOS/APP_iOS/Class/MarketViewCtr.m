@@ -18,6 +18,8 @@
 @property (nonatomic, assign) NSInteger pageSize;
 
 @property (nonatomic, strong) NSMutableDictionary *selectDic;
+
+@property (nonatomic, strong) IBOutlet UIView *viewAdd;
 @end
 
 @implementation MarketViewCtr
@@ -40,10 +42,7 @@
         _pageSize = 1;
         [weakSelf getData];
     }];
-    //    [self.tableView addLegendFooterWithRefreshingBlock:^{
-    //        [weakSelf goodsListRequest:NO];
-    //    }];
-    
+
     _selectDic = [NSMutableDictionary dictionary];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
@@ -86,8 +85,8 @@
             [self.dataSource addObjectsFromArray:dataArray];
             
             [self.tableView reloadData];
-            [self.tableView.header endRefreshing];
         }
+        [self.tableView.header endRefreshing];
     }];
 
 }
@@ -133,22 +132,28 @@
     
     cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
     
-    NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
-    BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
-    if (isSelect) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    if ([_stat isEqualToString:@"0"]) {
+        NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
+        BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
+        if (isSelect) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }
     return cell;
 }
 
+
+#pragma mark - 切换UISegmentedControl
 - (IBAction)stateAction:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
         _stat = @"1";
+        self.tableView.tableFooterView = [UIView new];
     }
     else {
         _stat = @"0";
+        self.tableView.tableFooterView = _viewAdd;
     }
     [self.tableView.header beginRefreshing];
 }
