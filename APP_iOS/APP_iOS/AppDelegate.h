@@ -15,5 +15,7 @@
 - (void)showLoginViewController;
 - (void)showMainViewController;
 
+- (void)loginAction;
+
 @end
 

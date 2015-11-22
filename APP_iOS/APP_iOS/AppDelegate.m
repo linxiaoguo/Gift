@@ -38,7 +38,7 @@
 
     [self customizeInterface];
     
-    if ([ShareValue instance].shopModel) {
+    if ([ShareValue instance].shopModel && [ShareValue instance].loginName) {
         [self showMainViewController];
     }
     else {
@@ -105,6 +105,14 @@
     
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+}
+
+- (void)loginAction {
+    [[Http instance] login:[ShareValue instance].loginName pwd:[ShareValue instance].loginPwd completion:^(NSError *error, ShopModel *shop) {
+        if (error.code == 0) {
+            [ShareValue instance].shopModel = shop;
+        }
+    }];
 }
 
 @end

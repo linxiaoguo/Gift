@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 
 @interface SettingViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UIView *logoutView;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

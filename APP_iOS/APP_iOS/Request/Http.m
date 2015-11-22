@@ -134,7 +134,7 @@
     if (name)
         [dic setObject:name forKey:@"name"];
     if (pic)
-        [dic setObject:pic forKey:@"pic"];
+        [dic setObject:pic forKey:@"picid"];
     if (addr)
         [dic setObject:addr forKey:@"addr"];
     if (linkman)
@@ -1056,7 +1056,7 @@
 - (void)queryVersion:(NSInteger)version completion:(void(^)(NSError *error, VersionModel *version))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
+//    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
     NSString *boundle = @"com.haisi.liwu";
     [dic setObject:boundle forKey:@"pagename"];
     [dic setObject:[NSNumber numberWithInteger:2] forKey:@"type"];

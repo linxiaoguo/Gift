@@ -11,6 +11,8 @@
 
 #import "NoticeViewController.h"
 #import "ModifyPwdViewController.h"
+#import "AppDelegate.h"
+#import "AboutViewController.h"
 
 @interface SettingViewController ()
 
@@ -33,7 +35,7 @@
                 @{@"image": @"xiconfont-guanyu", @"title": @"关于"},
                 @{@"image": @"xiconfont-ruanjiangengxin", @"title": @"检查更新"},
                 nil];
-    _tableView.tableFooterView = [UIView new];
+    _tableView.tableFooterView = _logoutView;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -69,6 +71,12 @@
 }
 */
 
+- (IBAction)logoutAction:(id)sender {
+    [ShareValue instance].shopModel = nil;
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] showLoginViewController];
+}
+
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,6 +88,10 @@
     }
     else if (indexPath.row == 1) {
         NoticeViewController *vc = [[NoticeViewController alloc] initWithNibName:@"NoticeViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 2) {
+        AboutViewController *vc = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row == 3) {

@@ -26,7 +26,7 @@
     
     [[Http instance] shopQrcode:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, NSString *shopAddr, NSString *qrcodeImg) {
         qrcodeImg = [qrcodeImg stringByReplacingOccurrencesOfString:@"\\" withString:@"/"];
-        [_codeImage sd_setImageWithURL:[NSURL URLWithString:qrcodeImg] placeholderImage:_codeImage.image];
+        [_codeImage sd_setImageWithURL:[NSURL URLWithString:qrcodeImg] placeholderImage:nil];
     }];
 
 }

@@ -36,7 +36,7 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-
+    _nickNameTextField.text = [ShareValue instance].loginName;
 }
 
 /*
@@ -61,6 +61,9 @@
         [SVProgressHUD showErrorWithStatus:@"请输入密码"];
         return;
     }
+    
+    [ShareValue instance].loginName = _nickNameTextField.text;
+    [ShareValue instance].loginPwd = _passwordTextField.text;
     
     [[Http instance] login:_nickNameTextField.text pwd:_passwordTextField.text completion:^(NSError *error, ShopModel *shop) {
         if (error.code == 0) {
