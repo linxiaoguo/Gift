@@ -102,6 +102,11 @@
     [self reloadData];
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"bounds"];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"bounds"]) {
@@ -275,6 +280,10 @@
                 break;
             }
         }
+    }
+    
+    if (self.imagePlayerViewDelegate && [self.imagePlayerViewDelegate respondsToSelector:@selector(imagePlayerView:didScorllIndex:)]) {
+        [self.imagePlayerViewDelegate imagePlayerView:self didScorllIndex:currentIndex];
     }
     
     self.pageControl.currentPage = currentIndex;
