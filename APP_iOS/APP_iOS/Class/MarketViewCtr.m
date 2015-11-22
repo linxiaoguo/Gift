@@ -169,7 +169,7 @@
 
 #pragma mark - 获取数据
 - (void)getData {
-    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:1 count:1000 page:1 recommend:_stat completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:1 count:1000 page:1 recommend:[_stat boolValue] completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             if (self.page == 1) {
                 [self.dataSource removeAllObjects];
