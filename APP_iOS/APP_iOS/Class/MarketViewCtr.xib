@@ -51,42 +51,43 @@
                         <outlet property="delegate" destination="-1" id="dWS-st-hto"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89a-Su-ApT">
+                    <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFP-F7-Oxc">
+                            <rect key="frame" x="120" y="15" width="80" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="加入推荐" image="spgg_Bg2">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="addRecommandAction:" destination="-1" eventType="touchUpInside" id="ClP-Bu-6rM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerY" secondItem="89a-Su-ApT" secondAttribute="centerY" id="Czu-W3-fa6"/>
+                        <constraint firstAttribute="height" constant="50" id="WxY-72-yir"/>
+                        <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerX" secondItem="89a-Su-ApT" secondAttribute="centerX" id="iUD-yQ-fdX"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="7fM-SB-1Cu" secondAttribute="bottom" id="2Mv-n7-rZn"/>
                 <constraint firstItem="Kbf-GY-6z4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Bc-Qm-nl9"/>
+                <constraint firstAttribute="bottom" secondItem="89a-Su-ApT" secondAttribute="bottom" id="7kF-uA-ANW"/>
                 <constraint firstItem="7fM-SB-1Cu" firstAttribute="top" secondItem="Kbf-GY-6z4" secondAttribute="bottom" constant="20" id="9oI-mI-VnS"/>
+                <constraint firstAttribute="trailing" secondItem="89a-Su-ApT" secondAttribute="trailing" id="CMJ-VP-UeW"/>
                 <constraint firstAttribute="trailing" secondItem="7fM-SB-1Cu" secondAttribute="trailing" id="LWB-TB-rUX"/>
                 <constraint firstItem="Rbl-Sw-Qk4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LZS-ME-Zg9"/>
                 <constraint firstItem="7fM-SB-1Cu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XrA-6y-doy"/>
                 <constraint firstItem="Rbl-Sw-Qk4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="neH-ma-E85"/>
                 <constraint firstItem="Kbf-GY-6z4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="qzf-lY-fb7"/>
+                <constraint firstItem="89a-Su-ApT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ze6-tI-8JP"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-        </view>
-        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89a-Su-ApT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFP-F7-Oxc">
-                    <rect key="frame" x="120" y="15" width="80" height="20"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="加入推荐" image="spgg_Bg2">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="addRecommandAction:" destination="-1" eventType="touchUpInside" id="ClP-Bu-6rM"/>
-                    </connections>
-                </button>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerY" secondItem="89a-Su-ApT" secondAttribute="centerY" id="Czu-W3-fa6"/>
-                <constraint firstAttribute="height" constant="50" id="WxY-72-yir"/>
-                <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerX" secondItem="89a-Su-ApT" secondAttribute="centerX" id="iUD-yQ-fdX"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="296" y="608"/>
         </view>
     </objects>
     <resources>

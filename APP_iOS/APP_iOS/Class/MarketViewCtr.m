@@ -18,6 +18,7 @@
 @property (nonatomic, assign) NSInteger pageSize;
 
 @property (nonatomic, strong) NSMutableDictionary *selectDic;
+@property (nonatomic, assign) NSInteger selectRow;
 
 @property (nonatomic, strong) IBOutlet UIView *viewAdd;
 @end
@@ -31,6 +32,7 @@
     _stat = @"1";
     _page = 1;
     _pageSize = 20;
+    _selectRow = -1;
     
     UIView *headerView = [UIView new];
     headerView.frame = CGRectMake(0, 0, kScreenWidth, 20);
@@ -48,6 +50,7 @@
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
     [self.tableView.header beginRefreshing];
+    _viewAdd.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,48 +74,32 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)addRecommandAction:(id)sender {
-
-}
-
-
-- (void)getData {
-    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:1 count:1000 page:1 recommend:_stat completion:^(NSError *error, NSArray *dataArray) {
-        if (error.code == 0) {
-            if (self.page == 1) {
-                [self.dataSource removeAllObjects];
-            }
-            [self.dataSource addObjectsFromArray:dataArray];
-            
-            [self.tableView reloadData];
-        }
-        [self.tableView.header endRefreshing];
-    }];
-
-}
-
 #pragma mark - UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 190.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([_stat isEqualToString:@"0"]) {
+        _selectRow = indexPath.row;
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self.tableView reloadData];
+    }
+    
     
 //    AddGoodsViewController *vc = [[AddGoodsViewController alloc] initWithNibName:@"AddGoodsViewController" bundle:nil];
 //    vc.addNewGoods = NO;
 //    vc.goodModel = [self.dataSource objectAtIndex:indexPath.row];
 //    [self.navigationController pushViewController:vc animated:YES];
-    NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
-    BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
-    if (isSelect) {
-        [_selectDic setObject:[NSNumber numberWithBool:NO] forKey:rowString];
-    } else {
-        [_selectDic setObject:[NSNumber numberWithBool:YES] forKey:rowString];
-    }
-    
-    [self.tableView reloadData];
+//    NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
+//    BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
+//    if (isSelect) {
+//        [_selectDic setObject:[NSNumber numberWithBool:NO] forKey:rowString];
+//    } else {
+//        [_selectDic setObject:[NSNumber numberWithBool:YES] forKey:rowString];
+//    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -130,17 +117,19 @@
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     
+    cell.accessImageView.hidden = NO;
     cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
     
-    if ([_stat isEqualToString:@"0"]) {
-        NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
-        BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
-        if (isSelect) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        } else {
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
-    }
+//    if ([_stat isEqualToString:@"0"]) {
+//        NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
+//        BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
+//        if (isSelect) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        } else {
+//            cell.accessoryType = UITableViewCellAccessoryNone;
+//        }
+//        cell.accessImageView.hidden = YES;
+//    }
     return cell;
 }
 
@@ -149,12 +138,47 @@
 - (IBAction)stateAction:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
         _stat = @"1";
-        self.tableView.tableFooterView = [UIView new];
+        _viewAdd.hidden = YES;
+        _tableView.tableFooterView = nil;
     }
     else {
         _stat = @"0";
-        self.tableView.tableFooterView = _viewAdd;
+        _viewAdd.hidden = NO;
+        
+        UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 50)];
+        _tableView.tableFooterView = aView;
     }
     [self.tableView.header beginRefreshing];
+}
+
+#pragma mark - 按钮事件
+- (IBAction)addRecommandAction:(id)sender {
+    kWEAKSELF;
+    NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+    if (_selectRow < self.dataSource.count && _selectRow >= 0) {
+        GoodModel *goods = [self.dataSource objectAtIndex:_selectRow];
+        [[Http instance] recommendGoods:YES shopId:shopId goodsId:goods.id completion:^(NSError *error) {
+            if (error.code == 0) {
+                [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+                [weakSelf.tableView.header beginRefreshing];
+            }
+            
+        }];
+    }
+}
+
+#pragma mark - 获取数据
+- (void)getData {
+    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:1 count:1000 page:1 recommend:_stat completion:^(NSError *error, NSArray *dataArray) {
+        if (error.code == 0) {
+            if (self.page == 1) {
+                [self.dataSource removeAllObjects];
+            }
+            [self.dataSource addObjectsFromArray:dataArray];
+            
+            [self.tableView reloadData];
+        }
+        [self.tableView.header endRefreshing];
+    }];
 }
 @end
