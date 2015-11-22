@@ -11,4 +11,5 @@
 //发货界面
 @interface ShipViewCtr : BaseViewController
 
+@property (nonatomic, strong)OrderModel *order;
 @end

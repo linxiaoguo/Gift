@@ -9,12 +9,15 @@
 #import "MarketViewCtr.h"
 #import "TestHttpViewCtr.h"
 #import "GoodsTableViewCell.h"
+#import "AddGoodsViewController.h"
 
 @interface MarketViewCtr ()
 @property (nonatomic, copy) NSString *stat;     //1-已推荐 0-未推荐
 
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) NSInteger pageSize;
+
+@property (nonatomic, strong) NSMutableDictionary *selectDic;
 @end
 
 @implementation MarketViewCtr
@@ -40,6 +43,8 @@
     //    [self.tableView addLegendFooterWithRefreshingBlock:^{
     //        [weakSelf goodsListRequest:NO];
     //    }];
+    
+    _selectDic = [NSMutableDictionary dictionary];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
@@ -73,7 +78,7 @@
 
 
 - (void)getData {
-    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:_stat.integerValue count:1000 page:1 recommend:YES completion:^(NSError *error, NSArray *dataArray) {
+    [[Http instance] goodsList:[ShareValue instance].shopModel.shopid.integerValue stat:1 count:1000 page:1 recommend:_stat completion:^(NSError *error, NSArray *dataArray) {
         if (error.code == 0) {
             if (self.page == 1) {
                 [self.dataSource removeAllObjects];
@@ -96,6 +101,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+//    AddGoodsViewController *vc = [[AddGoodsViewController alloc] initWithNibName:@"AddGoodsViewController" bundle:nil];
+//    vc.addNewGoods = NO;
+//    vc.goodModel = [self.dataSource objectAtIndex:indexPath.row];
+//    [self.navigationController pushViewController:vc animated:YES];
+    NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
+    BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
+    if (isSelect) {
+        [_selectDic setObject:[NSNumber numberWithBool:NO] forKey:rowString];
+    } else {
+        [_selectDic setObject:[NSNumber numberWithBool:YES] forKey:rowString];
+    }
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -114,6 +132,24 @@
     }
     
     cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
+    
+    NSString *rowString = [NSString stringWithFormat:@"row-%ld", (long)indexPath.row];
+    BOOL isSelect = [[_selectDic objectForKey:rowString] boolValue];
+    if (isSelect) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
+}
+
+- (IBAction)stateAction:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        _stat = @"1";
+    }
+    else {
+        _stat = @"0";
+    }
+    [self.tableView.header beginRefreshing];
 }
 @end

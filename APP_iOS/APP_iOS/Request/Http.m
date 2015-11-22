@@ -795,7 +795,7 @@
 }
 
 - (void)logisticsList:(void(^)(NSError *error, NSArray *dataArray))completion {
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/orderList.htm"];
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.131.81/shopping/mall/app/logisticsList.htm"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -1057,7 +1057,7 @@
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
 //    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
-    NSString *boundle = @"com.haisi.liwu";
+    NSString *boundle = @"com.haisi.gift";
     [dic setObject:boundle forKey:@"pagename"];
     [dic setObject:[NSNumber numberWithInteger:2] forKey:@"type"];
     NSString *jsonString = [dic JSONStringPlain];

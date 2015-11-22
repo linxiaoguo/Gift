@@ -21,6 +21,7 @@
 
 @interface OrderDetailViewCtr ()
 
+@property (nonatomic, strong)IBOutlet UITableView *tableView;
 @end
 
 @implementation OrderDetailViewCtr
@@ -29,6 +30,8 @@
     [super viewDidLoad];
     [self setTitle:@"订单管理"];
     // Do any additional setup after loading the view from its nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shipSuccess:) name:@"ShipSuccess" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +110,6 @@
                 cell = [CustomView viewWithNibName:@"OrderTitleCell"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-//            cell.imvIcon.image = [UIImage imageNamed:@"dplogo"];
             NSString *shopImg = [ShareValue instance].shopModel.pic.fileAddr;
             [cell.imvIcon sd_setImageWithURL:[NSURL URLWithString:shopImg] placeholderImage:nil];
             NSString *shopName = [ShareValue instance].shopModel.name;
@@ -158,8 +160,9 @@
                 
                 kWEAKSELF;
                 [cell setConfirmBlock:^(NSInteger row) {//确认发货
-                    
-                    
+                    ShipViewCtr *vc = [[ShipViewCtr alloc] init];
+                    vc.order = weakSelf.order;
+                    [weakSelf.navigationController pushViewController:vc animated:YES]; 
                 }];
             } else {
                 cell.btnConfirm.hidden = YES;
@@ -183,7 +186,14 @@
         NSString *addr = model.addr;
         NSString *addrname = model.addrname;
         NSString *mobile = model.addrmobile;
-        NSString *text = [NSString stringWithFormat:@"收货人:%@\n联系电话:%@\n收获地址:%@", addr, addrname, mobile];
+        if (addr == nil)
+            addr = @"";
+        if (addrname == nil)
+            addrname = @"";
+        if (mobile == nil)
+            mobile = @"";
+        
+        NSString *text = [NSString stringWithFormat:@"收货人:%@\n联系电话:%@\n收获地址:%@", addr, mobile, addrname];
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
         NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle setLineSpacing:10];
@@ -199,7 +209,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        NSString *orderNum = [NSString stringWithFormat:@"订单号:%@", model.code];
+        NSString *orderNum = [NSString stringWithFormat:@"%@", model.code];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:model.addTime/1000];
         NSString *createTime = [date dateWithFormat:@"yyyy-MM-dd hh:mm"];
         NSString *payTime = @"";
@@ -219,4 +229,10 @@
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
 
+
+- (void)shipSuccess:(NSNotification *)notify {
+
+    _tag = 2;
+    [self.tableView reloadData];
+}
 @end

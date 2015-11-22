@@ -50,17 +50,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89a-Su-ApT">
                     <rect key="frame" x="1" y="430" width="320" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFP-F7-Oxc">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFP-F7-Oxc">
+                            <rect key="frame" x="120" y="15" width="80" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="加入推荐" image="spgg_Bg2">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="addRecommandAction:" destination="-1" eventType="touchUpInside" id="ClP-Bu-6rM"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerY" secondItem="89a-Su-ApT" secondAttribute="centerY" id="Czu-W3-fa6"/>
                         <constraint firstAttribute="height" constant="50" id="WxY-72-yir"/>
+                        <constraint firstItem="yFP-F7-Oxc" firstAttribute="centerX" secondItem="89a-Su-ApT" secondAttribute="centerX" id="iUD-yQ-fdX"/>
                     </constraints>
                 </view>
             </subviews>

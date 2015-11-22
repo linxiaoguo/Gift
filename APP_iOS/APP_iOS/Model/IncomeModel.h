@@ -11,7 +11,7 @@
 @interface IncomeModel : NSObject
 @property (nonatomic, assign)NSTimeInterval time;
 @property (nonatomic, assign)CGFloat outMoney;
-@property (nonatomic, assign)NSInteger status;//状态，1:申请中，2:提现成功，3：提现失败
+@property (nonatomic, assign)NSInteger status;//状态，0:申请中，1:提现成功，2：提现失败
 
 - (NSString *)statusString;
 @end

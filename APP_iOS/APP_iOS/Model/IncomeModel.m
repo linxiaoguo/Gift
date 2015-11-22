@@ -10,11 +10,11 @@
 
 @implementation IncomeModel
 - (NSString *)statusString {
-    if (self.status == 1) {
+    if (self.status == 0) {
         return @"申请中";
-    } else if (self.status == 2) {
+    } else if (self.status == 1) {
         return @"提现成功";
-    } else if (self.status == 3) {
+    } else if (self.status == 2) {
         return @"提现失败";
     }
     
