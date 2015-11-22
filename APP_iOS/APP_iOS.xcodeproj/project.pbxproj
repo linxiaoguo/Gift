@@ -1943,7 +1943,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = LDTEL8V6Y5;
+						DevelopmentTeam = 9LA2852PZN;
 					};
 				};
 			};
@@ -2405,7 +2405,7 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.gift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2440,7 +2440,7 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.gift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

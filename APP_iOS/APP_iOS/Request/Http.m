@@ -225,7 +225,8 @@
 - (void)goodsList:(NSInteger)shopId stat:(NSInteger)stat count:(NSInteger)count page:(NSInteger)page recommend:(BOOL)recommend completion:(void(^)(NSError *error, NSArray *dataArray))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
-    [dic setObject:[NSNumber numberWithInteger:stat] forKey:@"stat"];
+    if(stat >= 0)
+        [dic setObject:[NSNumber numberWithInteger:stat] forKey:@"stat"];
     [dic setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
     [dic setObject:[NSNumber numberWithInteger:page] forKey:@"page"];
     [dic setObject:[NSNumber numberWithBool:recommend] forKey:@"recommend"];
@@ -1056,7 +1057,7 @@
 - (void)queryVersion:(NSInteger)version completion:(void(^)(NSError *error, VersionModel *version))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
+    [dic setObject:[NSNumber numberWithInteger:version] forKey:@"version"];
     NSString *boundle = @"com.haisi.gift";
     [dic setObject:boundle forKey:@"pagename"];
     [dic setObject:[NSNumber numberWithInteger:2] forKey:@"type"];
