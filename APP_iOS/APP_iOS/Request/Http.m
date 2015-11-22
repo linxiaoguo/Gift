@@ -134,7 +134,7 @@
     if (name)
         [dic setObject:name forKey:@"name"];
     if (pic)
-        [dic setObject:pic forKey:@"pic"];
+        [dic setObject:pic forKey:@"picid"];
     if (addr)
         [dic setObject:addr forKey:@"addr"];
     if (linkman)

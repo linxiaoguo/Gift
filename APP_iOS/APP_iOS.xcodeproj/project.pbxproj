@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A263B231C0169A400BB500B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A263B211C0169A400BB500B /* AboutViewController.m */; };
+		0A263B241C0169A400BB500B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A263B221C0169A400BB500B /* AboutViewController.xib */; };
 		0B04883D1BFB0C9C00A900B4 /* GoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B04883B1BFB0C9C00A900B4 /* GoodsListViewController.m */; };
 		0B04883E1BFB0C9C00A900B4 /* GoodsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B04883C1BFB0C9C00A900B4 /* GoodsListViewController.xib */; };
 		0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E74731BE1F0E5000C99B8 /* BaseModel.m */; };
@@ -274,6 +276,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A263B201C0169A400BB500B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0A263B211C0169A400BB500B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0A263B221C0169A400BB500B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		0B04883A1BFB0C9C00A900B4 /* GoodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListViewController.h; sourceTree = "<group>"; };
 		0B04883B1BFB0C9C00A900B4 /* GoodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListViewController.m; sourceTree = "<group>"; };
 		0B04883C1BFB0C9C00A900B4 /* GoodsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsListViewController.xib; sourceTree = "<group>"; };
@@ -1780,6 +1785,9 @@
 				0B5E44081BD87FA4003F7D1F /* NoticeViewController.h */,
 				0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */,
 				0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */,
+				0A263B201C0169A400BB500B /* AboutViewController.h */,
+				0A263B211C0169A400BB500B /* AboutViewController.m */,
+				0A263B221C0169A400BB500B /* AboutViewController.xib */,
 			);
 			name = "设置";
 			sourceTree = "<group>";
@@ -1973,6 +1981,7 @@
 				0B04883E1BFB0C9C00A900B4 /* GoodsListViewController.xib in Resources */,
 				53EC63D81BF70D3700EB7D17 /* OrderFeeCell.xib in Resources */,
 				0BB6086E1B79CF6800D42A16 /* KeychainAccessGroups.plist in Resources */,
+				0A263B241C0169A400BB500B /* AboutViewController.xib in Resources */,
 				53E4857F1BBFC9690064ACE7 /* OrderCell.xib in Resources */,
 				0B5531911BFABC6800A1696E /* iOS-social-releasenote.html in Resources */,
 				53DEAAA71BC162DE0008D6E8 /* BindBankSelectCell.xib in Resources */,
@@ -2183,6 +2192,7 @@
 				53E07FB11BE051840095F8B7 /* MainModel.m in Sources */,
 				0BB608001B799EA200D42A16 /* NSObject+AssociatedObject.m in Sources */,
 				0BB6084C1B799EA300D42A16 /* UIWebView+JS.m in Sources */,
+				0A263B231C0169A400BB500B /* AboutViewController.m in Sources */,
 				0BB608401B799EA300D42A16 /* UIView+Debug.m in Sources */,
 				53EC63E11BF70D7D00EB7D17 /* OrderInfoCell.m in Sources */,
 				0B04883D1BFB0C9C00A900B4 /* GoodsListViewController.m in Sources */,

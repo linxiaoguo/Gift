@@ -105,8 +105,13 @@
     _headData = UIImageJPEGRepresentation([UIImage fixOrientation:image], 0.3);
     [self.tableView reloadData];
     
-    [[Http instance] uploadFile:nil uploadFile:_headData mname:@"123" completion:^(NSError *error, FieldModel *fieldModel) {
-        
+    [SVProgressHUD show];
+    [[Http instance] uploadFile:nil uploadFile:[UIImage fixOrientation:image] mname:@"123" completion:^(NSError *error, FieldModel *fieldModel) {
+        [SVProgressHUD dismiss];
+        if (error.code == 0) {
+            [ShareValue instance].shopModel.pic.fileId = fieldModel.fileId;
+            [self modifyShop];
+        }
     }];
 
 }
@@ -306,11 +311,13 @@
 #pragma mark - Request
 
 - (void)modifyShop {
-    [[Http instance] modifyMyshop:[ShareValue instance].shopModel.shopid.integerValue name:[ShareValue instance].shopModel.name pic:[NSString stringWithFormat:@"%ld", [ShareValue instance].shopModel.pic.fileId] addr:[ShareValue instance].shopModel.addr linkman:[ShareValue instance].shopModel.linkman linkphone:[ShareValue instance].shopModel.linkphone completion:^(NSError *error) {
+    [[Http instance] modifyMyshop:[ShareValue instance].shopModel.shopid.integerValue name:[ShareValue instance].shopModel.name pic:[NSString stringWithFormat:@"%ld", (long)[ShareValue instance].shopModel.pic.fileId] addr:[ShareValue instance].shopModel.addr linkman:[ShareValue instance].shopModel.linkman linkphone:[ShareValue instance].shopModel.linkphone completion:^(NSError *error) {
+        
         NSLog(@"修改我的店铺：%@", error.domain);
-//        if (error.code == 0) {
+        if (error.code == 0) {
+            [kAppDelegate loginAction];
 //            [SVProgressHUD showSuccessWithStatus:@""];
-//        }
+        }
     }];
 
 }

@@ -16,6 +16,9 @@
 
 + (ShareValue *)instance;
 
+@property (nonatomic, copy) NSString *loginName;
+@property (nonatomic, copy) NSString *loginPwd;
+
 @property (nonatomic, strong) ShopModel *shopModel;
 @property (nonatomic, assign) AFNetworkReachabilityStatus netWorkStatus;
 

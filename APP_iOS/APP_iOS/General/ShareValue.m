@@ -28,6 +28,22 @@
     return self;
 }
 
+- (void)setLoginName:(NSString *)loginName {
+    [[NSUserDefaults standardUserDefaults] setValue:loginName forKey:@"loginName"];
+}
+
+- (NSString *)loginName {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:@"loginName"];
+}
+
+- (void)setLoginPwd:(NSString *)loginPwd {
+    [[NSUserDefaults standardUserDefaults] setValue:loginPwd forKey:@"loginPwd"];
+}
+
+- (NSString *)loginPwd {
+    return [[NSUserDefaults standardUserDefaults] valueForKey:@"loginPwd"];
+}
+
 - (void)setShopModel:(ShopModel *)shopModel {
     if (shopModel) {
         NSDictionary *dic = shopModel.keyValues;
