@@ -69,6 +69,7 @@
 		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; };
 		0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B886FB71BD7880600388F03 /* SettingViewController.m */; };
 		0B886FBA1BD7880600388F03 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B886FB81BD7880600388F03 /* SettingViewController.xib */; };
+		0BACCFDC1C0311870090741E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BACCFD91C0311870090741E /* libMobClickLibrary.a */; };
 		0BB606B21B7989B400D42A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B11B7989B400D42A16 /* main.m */; };
 		0BB606B51B7989B400D42A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB606B41B7989B400D42A16 /* AppDelegate.m */; };
 		0BB606BD1B7989B400D42A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB606BC1B7989B400D42A16 /* Images.xcassets */; };
@@ -370,6 +371,9 @@
 		0B886FB61BD7880600388F03 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		0B886FB71BD7880600388F03 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		0B886FB81BD7880600388F03 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		0BACCFD91C0311870090741E /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		0BACCFDA1C0311870090741E /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		0BACCFDB1C0311870090741E /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		0BB606AC1B7989B400D42A16 /* APP_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APP_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB606B01B7989B400D42A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB606B11B7989B400D42A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -769,6 +773,7 @@
 				0B55319F1BFABCEB00A1696E /* Security.framework in Frameworks */,
 				0B55319D1BFABCC800A1696E /* SystemConfiguration.framework in Frameworks */,
 				0B55318B1BFABC6800A1696E /* libSocialQQ.a in Frameworks */,
+				0BACCFDC1C0311870090741E /* libMobClickLibrary.a in Frameworks */,
 				0B55318E1BFABC6800A1696E /* libSocialWechat.a in Frameworks */,
 				0B55318F1BFABC6800A1696E /* libWeChatSDK.a in Frameworks */,
 				0B55318C1BFABC6800A1696E /* TencentOpenAPI.framework in Frameworks */,
@@ -902,6 +907,16 @@
 				0B55317F1BFABC6800A1696E /* markdown.css */,
 			);
 			path = UMSocial_Sdk_Instructions;
+			sourceTree = "<group>";
+		};
+		0BACCFD81C0311870090741E /* UMAnalytics_Sdk_3.6.4 */ = {
+			isa = PBXGroup;
+			children = (
+				0BACCFD91C0311870090741E /* libMobClickLibrary.a */,
+				0BACCFDA1C0311870090741E /* MobClick.h */,
+				0BACCFDB1C0311870090741E /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.6.4;
 			sourceTree = "<group>";
 		};
 		0BB606A31B7989B400D42A16 = {
@@ -1049,6 +1064,7 @@
 		0BB606DA1B798F8000D42A16 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0BACCFD81C0311870090741E /* UMAnalytics_Sdk_3.6.4 */,
 				0B55314B1BFABC6800A1696E /* umeng_ios_social_sdk_4-1.3_arm64_custom */,
 				53E07FAB1BE04F220095F8B7 /* JSONKit */,
 				53DF34881BD04A20003B5DE7 /* 3Des */,
@@ -2404,6 +2420,7 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_4.3",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2439,6 +2456,7 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_4.3",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

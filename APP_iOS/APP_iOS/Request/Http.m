@@ -639,6 +639,7 @@
         NSDictionary *goodsDic = [resDic objectForKey:@"data"];
         NSString *goodsAddr = [goodsDic objectForKey:@"goodsAddr"];
         NSString *qrcodeImg = [goodsDic objectForKey:@"qrcodeImg"];
+        qrcodeImg = [qrcodeImg stringByReplacingOccurrencesOfString:@"\\" withString:@"/"];
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         if (completion)
             completion(error, goodsAddr, qrcodeImg);

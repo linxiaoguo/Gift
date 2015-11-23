@@ -22,4 +22,10 @@
 @property (nonatomic, strong) GoodModel *goodModel;
 @property (nonatomic, strong) IBOutlet UIImageView *accessImageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *btn0;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+
+
 @end
