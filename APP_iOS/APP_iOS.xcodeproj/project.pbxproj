@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A263B231C0169A400BB500B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A263B211C0169A400BB500B /* AboutViewController.m */; };
 		0A263B241C0169A400BB500B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A263B221C0169A400BB500B /* AboutViewController.xib */; };
+		0A263B281C021FEF00BB500B /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A263B261C021FEF00BB500B /* BaseWebViewController.m */; };
+		0A263B291C021FEF00BB500B /* BaseWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A263B271C021FEF00BB500B /* BaseWebViewController.xib */; };
 		0B04883D1BFB0C9C00A900B4 /* GoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B04883B1BFB0C9C00A900B4 /* GoodsListViewController.m */; };
 		0B04883E1BFB0C9C00A900B4 /* GoodsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B04883C1BFB0C9C00A900B4 /* GoodsListViewController.xib */; };
 		0B1E74741BE1F0E5000C99B8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E74731BE1F0E5000C99B8 /* BaseModel.m */; };
@@ -175,7 +177,6 @@
 		0BB608491B799EA300D42A16 /* UIWebView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607DB1B799EA200D42A16 /* UIWebView+Alert.m */; };
 		0BB6084A1B799EA300D42A16 /* UIWebView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607DD1B799EA200D42A16 /* UIWebView+Blocks.m */; };
 		0BB6084B1B799EA300D42A16 /* UIWebView+Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607DF1B799EA200D42A16 /* UIWebView+Canvas.m */; };
-		0BB6084C1B799EA300D42A16 /* UIWebView+JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607E11B799EA200D42A16 /* UIWebView+JS.m */; };
 		0BB6084D1B799EA300D42A16 /* UIWebView+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607E31B799EA200D42A16 /* UIWebView+Load.m */; };
 		0BB6084E1B799EA300D42A16 /* UIWebView+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607E51B799EA200D42A16 /* UIWebView+Style.m */; };
 		0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB607E81B799EA200D42A16 /* UIWindow+Hierarchy.m */; };
@@ -279,6 +280,9 @@
 		0A263B201C0169A400BB500B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		0A263B211C0169A400BB500B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		0A263B221C0169A400BB500B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		0A263B251C021FEF00BB500B /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		0A263B261C021FEF00BB500B /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		0A263B271C021FEF00BB500B /* BaseWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseWebViewController.xib; sourceTree = "<group>"; };
 		0B04883A1BFB0C9C00A900B4 /* GoodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsListViewController.h; sourceTree = "<group>"; };
 		0B04883B1BFB0C9C00A900B4 /* GoodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsListViewController.m; sourceTree = "<group>"; };
 		0B04883C1BFB0C9C00A900B4 /* GoodsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsListViewController.xib; sourceTree = "<group>"; };
@@ -582,8 +586,6 @@
 		0BB607DD1B799EA200D42A16 /* UIWebView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Blocks.m"; sourceTree = "<group>"; };
 		0BB607DE1B799EA200D42A16 /* UIWebView+Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Canvas.h"; sourceTree = "<group>"; };
 		0BB607DF1B799EA200D42A16 /* UIWebView+Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Canvas.m"; sourceTree = "<group>"; };
-		0BB607E01B799EA200D42A16 /* UIWebView+JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JS.h"; sourceTree = "<group>"; };
-		0BB607E11B799EA200D42A16 /* UIWebView+JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JS.m"; sourceTree = "<group>"; };
 		0BB607E21B799EA200D42A16 /* UIWebView+load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+load.h"; sourceTree = "<group>"; };
 		0BB607E31B799EA200D42A16 /* UIWebView+Load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Load.m"; sourceTree = "<group>"; };
 		0BB607E41B799EA200D42A16 /* UIWebView+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Style.h"; sourceTree = "<group>"; };
@@ -975,6 +977,9 @@
 				53EAC6BA1BF10CA9004560ED /* 营销 */,
 				0BB606DB1B799A5400D42A16 /* BaseViewController.h */,
 				0BB606DC1B799A5400D42A16 /* BaseViewController.m */,
+				0A263B251C021FEF00BB500B /* BaseWebViewController.h */,
+				0A263B261C021FEF00BB500B /* BaseWebViewController.m */,
+				0A263B271C021FEF00BB500B /* BaseWebViewController.xib */,
 				53E90AAA1BF0D17400D28889 /* TestHttpViewCtr.h */,
 				53E90AAB1BF0D17400D28889 /* TestHttpViewCtr.m */,
 				53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */,
@@ -1593,8 +1598,6 @@
 				0BB607DD1B799EA200D42A16 /* UIWebView+Blocks.m */,
 				0BB607DE1B799EA200D42A16 /* UIWebView+Canvas.h */,
 				0BB607DF1B799EA200D42A16 /* UIWebView+Canvas.m */,
-				0BB607E01B799EA200D42A16 /* UIWebView+JS.h */,
-				0BB607E11B799EA200D42A16 /* UIWebView+JS.m */,
 				0BB607E21B799EA200D42A16 /* UIWebView+load.h */,
 				0BB607E31B799EA200D42A16 /* UIWebView+Load.m */,
 				0BB607E41B799EA200D42A16 /* UIWebView+Style.h */,
@@ -1918,6 +1921,7 @@
 				0BB606A91B7989B400D42A16 /* Frameworks */,
 				0BB606AA1B7989B400D42A16 /* Resources */,
 				208D500462C7AA76B94B4FDE /* Copy Pods Resources */,
+				424974F39FC1243D45F1B467 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2023,6 +2027,7 @@
 				0BF6C5061BCCEE6300D569C8 /* GoodsViewController.xib in Resources */,
 				0B5531981BFABC6800A1696E /* ios-social-sdk-share-detail.html in Resources */,
 				53DEAAA21BC162AC0008D6E8 /* BingBankCell.xib in Resources */,
+				0A263B291C021FEF00BB500B /* BaseWebViewController.xib in Resources */,
 				53EC63D31BF70D1200EB7D17 /* OrderDetailCell.xib in Resources */,
 				53E4857A1BBFC6E80064ACE7 /* OrderHeadCell.xib in Resources */,
 				0B5531901BFABC6800A1696E /* iOS-social-analytics-releasenote.html in Resources */,
@@ -2054,6 +2059,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		424974F39FC1243D45F1B467 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52087163AECF4C20D45F9E93 /* Check Pods Manifest.lock */ = {
@@ -2176,6 +2196,7 @@
 				537856281BEF8678003F1154 /* OrderTotalModel.m in Sources */,
 				0BF6C5001BCCAE0D00D569C8 /* BaseTextViewController.m in Sources */,
 				0BB6084F1B799EA300D42A16 /* UIWindow+Hierarchy.m in Sources */,
+				0A263B281C021FEF00BB500B /* BaseWebViewController.m in Sources */,
 				0BB606DD1B799A5400D42A16 /* BaseViewController.m in Sources */,
 				0BB6082A1B799EA200D42A16 /* UIImage+RemoteSize.m in Sources */,
 				53EC63C81BF70C7900EB7D17 /* OrderDetailViewCtr.m in Sources */,
@@ -2191,7 +2212,6 @@
 				0BB608081B799EA200D42A16 /* NSString+DictionaryValue.m in Sources */,
 				53E07FB11BE051840095F8B7 /* MainModel.m in Sources */,
 				0BB608001B799EA200D42A16 /* NSObject+AssociatedObject.m in Sources */,
-				0BB6084C1B799EA300D42A16 /* UIWebView+JS.m in Sources */,
 				0A263B231C0169A400BB500B /* AboutViewController.m in Sources */,
 				0BB608401B799EA300D42A16 /* UIView+Debug.m in Sources */,
 				53EC63E11BF70D7D00EB7D17 /* OrderInfoCell.m in Sources */,

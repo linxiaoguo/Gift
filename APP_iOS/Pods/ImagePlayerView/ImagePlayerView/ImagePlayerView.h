@@ -110,6 +110,13 @@ typedef NS_ENUM(NSInteger, ICPageControlPosition) {
  */
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index;
 
+/**
+ *  Scroll ImageView action
+ *  @param imagePlayerView ImagePlayerView object
+ *  @param index           current index
+ **/
+- (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didScorllIndex:(NSInteger)index;
+
 #pragma mark - deprecated protocol methods
 /**
  *  Tap ImageView action

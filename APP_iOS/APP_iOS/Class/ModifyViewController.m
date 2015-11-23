@@ -11,7 +11,7 @@
 
 #import "UIImage+Orientation.h"
 #import "AppDelegate.h"
-
+#import "BaseWebViewController.h"
 
 @interface ModifyViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -135,37 +135,42 @@
         [t_ac showInView:[UIApplication sharedApplication].keyWindow];
     }
     else if (indexPath.section == 1) {
-        return;
+//        return;
         kWEAKSELF;
         if (indexPath.row == 0) {
-            BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
-            vc.title = @"注册时间";
-            vc.defaultContent = self.regTime;
-            vc.numberOfWords = 20;
-            [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-                //                UserModel *uerModel = [ShareValue instance].user;
-                //                uerModel.nickname = text;
-                //                [ShareValue instance].user = uerModel;
-                weakSelf.regTime = text;
-                [weakSelf.tableView reloadData];
-                //                [weakSelf perfectUserInfo:text withStr:@"nickname"];
-            }];
-            [self.navigationController pushViewController:vc animated:YES];
+//            BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
+//            vc.title = @"注册时间";
+//            vc.defaultContent = self.regTime;
+//            vc.numberOfWords = 20;
+//            [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
+//                //                UserModel *uerModel = [ShareValue instance].user;
+//                //                uerModel.nickname = text;
+//                //                [ShareValue instance].user = uerModel;
+//                weakSelf.regTime = text;
+//                [weakSelf.tableView reloadData];
+//                //                [weakSelf perfectUserInfo:text withStr:@"nickname"];
+//            }];
+//            [self.navigationController pushViewController:vc animated:YES];
         }
         else if (indexPath.row == 1) {
-            BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
-            vc.title = @"网址";
-            vc.defaultContent = self.shopURL;
-            vc.numberOfWords = 50;
-            [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
-                //                UserModel *uerModel = [ShareValue instance].user;
-                //                uerModel.realname = text;
-                //                [ShareValue instance].user = uerModel;
-                weakSelf.shopURL = text;
-                [weakSelf.tableView reloadData];
-                //                [weakSelf perfectUserInfo:text withStr:@"realname"];
-            }];
+            
+            BaseWebViewController *vc = [[BaseWebViewController alloc] initWithNibName:@"BaseWebViewController" bundle:nil];
+            vc.urlStr = self.shopURL;
             [self.navigationController pushViewController:vc animated:YES];
+            
+//            BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
+//            vc.title = @"网址";
+//            vc.defaultContent = self.shopURL;
+//            vc.numberOfWords = 50;
+//            [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
+//                //                UserModel *uerModel = [ShareValue instance].user;
+//                //                uerModel.realname = text;
+//                //                [ShareValue instance].user = uerModel;
+//                weakSelf.shopURL = text;
+//                [weakSelf.tableView reloadData];
+//                //                [weakSelf perfectUserInfo:text withStr:@"realname"];
+//            }];
+//            [self.navigationController pushViewController:vc animated:YES];
         }
     }
     else {
@@ -219,7 +224,7 @@
             BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
             vc.title = @"联系电话";
             vc.defaultContent = self.contact;
-            vc.numberOfWords = 20;
+            vc.numberOfWords = 11;
             vc.keyboardType = UIKeyboardTypeNamePhonePad;
             [vc setBlock:^(BaseTextViewController *VC, NSString *text) {
                 ShopModel *shopModel = [ShareValue instance].shopModel;
