@@ -10,8 +10,10 @@
 #import "GoodsTableViewCell.h"
 #import "AddGoodsViewController.h"
 #import "GoodModel.h"
+#import "BaseWebViewController.h"
+#import "UMSocial.h"
 
-@interface GoodsViewController () {
+@interface GoodsViewController ()<UMSocialUIDelegate> {
     UILabel *_countLabel;
 }
 
@@ -123,9 +125,95 @@
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
+    
+    GoodModel *goodModel = [self.dataSource objectAtIndex:indexPath.row];
+    cell.goodModel = goodModel;
+    
+    [cell.btn0 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                BaseWebViewController *vc = [[BaseWebViewController alloc] initWithNibName:@"BaseWebViewController" bundle:nil];
+                vc.urlStr = goodsAddr;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取店铺详情失败"];
+            }
+            [SVProgressHUD dismiss];
+        }];
+    }];
+    [cell.btn1 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:qrcodeImg] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    
+                    
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+                }];
+                
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取二维码失败"];
+            }
+        }];
+    }];
+    [cell.btn2 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = qrcodeImg;
+                
+                [SVProgressHUD showSuccessWithStatus:@"复制成功"];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取二维码失败"];
+            }
+        }];
+    }];
+    [cell.btn3 addActionHandler:^(NSInteger tag) {
+        NSString *shareText = goodModel.name;             //分享内嵌文字
+        UIImage *shareImage = [UIImage imageNamed:goodModel.pic];          //分享内嵌图片
+        
+        //调用快速分享接口
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"564a844ee0f55ad251008b90"
+                                          shareText:shareText
+                                         shareImage:shareImage
+                                    shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
+                                           delegate:self];
+    }];
     
     return cell;
+}
+
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
+    NSString *msg = nil ;
+    if(error != NULL) {
+        msg = @"下载失败" ;
+        [SVProgressHUD showErrorWithStatus:msg];
+    }
+    else {
+        msg = @"下载成功" ;
+        [SVProgressHUD showSuccessWithStatus:msg];
+    }
+}
+
+//实现回调方法（可选）：
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
 }
 
 #pragma mark - Request
@@ -140,9 +228,8 @@
             _countLabel.text = [NSString stringWithFormat:@"共%d个产品", self.dataSource.count];
             
             [self.tableView reloadData];
-            [self.tableView.header endRefreshing];
-
         }
+        [self.tableView.header endRefreshing];
     }];
 }
 
