@@ -141,6 +141,7 @@
             else {
                 [SVProgressHUD showErrorWithStatus:@"获取店铺详情失败"];
             }
+            [SVProgressHUD dismiss];
         }];
     }];
     [cell.btn1 addActionHandler:^(NSInteger tag) {
@@ -169,7 +170,7 @@
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
                 pasteboard.string = qrcodeImg;
                 
-                [SVProgressHUD showSuccessWithStatus:@"已复制店铺二维码到剪贴板"];
+                [SVProgressHUD showSuccessWithStatus:@"复制成功"];
             }
             else {
                 [SVProgressHUD showErrorWithStatus:@"获取二维码失败"];
@@ -195,11 +196,11 @@
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
     NSString *msg = nil ;
     if(error != NULL) {
-        msg = @"二维码保存失败" ;
+        msg = @"下载失败" ;
         [SVProgressHUD showErrorWithStatus:msg];
     }
     else {
-        msg = @"二维码保存成功" ;
+        msg = @"下载成功" ;
         [SVProgressHUD showSuccessWithStatus:msg];
     }
 }
