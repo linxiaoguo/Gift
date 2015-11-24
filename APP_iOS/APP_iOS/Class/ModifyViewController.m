@@ -135,8 +135,7 @@
         [t_ac showInView:[UIApplication sharedApplication].keyWindow];
     }
     else if (indexPath.section == 1) {
-//        return;
-        kWEAKSELF;
+//        kWEAKSELF;
         if (indexPath.row == 0) {
 //            BaseTextViewController *vc = [[BaseTextViewController alloc] initWithNibName:@"BaseTextViewController" bundle:nil];
 //            vc.title = @"注册时间";
