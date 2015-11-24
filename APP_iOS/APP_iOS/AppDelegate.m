@@ -78,9 +78,11 @@
 - (void)customizeInterface {
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     [navigationBarAppearance setBarTintColor:kRGBCOLOR(254, 84, 0)];
+
     if(kSystemVersion >= 8.0 && [UINavigationBar conformsToProtocol:@protocol(UIAppearanceContainer)]) {
         [[UINavigationBar appearance] setTranslucent:NO];
     }
+    
     if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)]) {
         [navigationBarAppearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
         [navigationBarAppearance setShadowImage:[[UIImage alloc] init]];
