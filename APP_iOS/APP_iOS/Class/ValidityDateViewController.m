@@ -48,7 +48,7 @@
             return;
         }
         else {
-            _monthLabel.text = [NSString stringWithFormat:@"%d", _monthLabel.text.integerValue - 1];
+            _monthLabel.text = [NSString stringWithFormat:@"%ld", _monthLabel.text.integerValue - 1];
         }
     }
     else if (tag == 2) {
@@ -56,10 +56,10 @@
             return;
         }
         else {
-            _monthLabel.text = [NSString stringWithFormat:@"%d", _monthLabel.text.integerValue + 1];
+            _monthLabel.text = [NSString stringWithFormat:@"%ld", _monthLabel.text.integerValue + 1];
         }
     }
-    _totalLabel.text = [NSString stringWithFormat:@"￥%d", _monthLabel.text.integerValue * 100];
+    _totalLabel.text = [NSString stringWithFormat:@"￥%ld", _monthLabel.text.integerValue * 100];
 }
 
 - (IBAction)payAction:(id)sender {

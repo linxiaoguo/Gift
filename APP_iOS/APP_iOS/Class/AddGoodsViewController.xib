@@ -12,6 +12,7 @@
                 <outlet property="_recomendSwitch" destination="9vb-pc-pIb" id="fnL-RU-Qbf"/>
                 <outlet property="footerView" destination="0sH-1c-ER5" id="I0D-he-Yrj"/>
                 <outlet property="headerView" destination="6hk-ev-cCI" id="PVQ-CG-uEz"/>
+                <outlet property="photoView" destination="DIT-xt-Q0a" id="1f7-V3-O5t"/>
                 <outlet property="tableView" destination="e4R-um-toO" id="nBV-Ok-XFy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
