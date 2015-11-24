@@ -51,10 +51,10 @@
     day.textColor = kRGBCOLOR(164, 31, 38);
     day.font = [UIFont systemFontOfSize:14];
     if (deltaDays < 0.0f) {
-        day.text = [NSString stringWithFormat:@"已过期%lu天", (unsigned long)-(NSUInteger)deltaDays];
+        day.text = [NSString stringWithFormat:@"已过期%d天", -(NSUInteger)deltaDays];
     }
     else {
-        day.text = [NSString stringWithFormat:@"剩余%lu天", (unsigned long)deltaDays];
+        day.text = [NSString stringWithFormat:@"剩余%d天", (NSUInteger)deltaDays];
     }
     [_validateButton addSubview:day];
 

@@ -18,7 +18,6 @@
 @property (nonatomic, assign) BOOL addNewGoods;
 @property (nonatomic, strong) GoodModel *goodModel;
 
-@property (weak, nonatomic) IBOutlet UIView *photoView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (strong, nonatomic) IBOutlet UIView *footerView;

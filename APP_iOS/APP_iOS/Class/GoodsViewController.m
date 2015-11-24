@@ -225,7 +225,7 @@
                 [self.dataSource removeAllObjects];
             }
             [self.dataSource addObjectsFromArray:dataArray];
-            _countLabel.text = [NSString stringWithFormat:@"共%lu个产品", (unsigned long)self.dataSource.count];
+            _countLabel.text = [NSString stringWithFormat:@"共%d个产品", self.dataSource.count];
             
             [self.tableView reloadData];
         }

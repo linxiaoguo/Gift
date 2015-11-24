@@ -31,10 +31,10 @@
     double deltaDays = deltaHours / 24.0f;
     
     if (deltaDays < 0.0f) {
-        _dayLabel.text = [NSString stringWithFormat:@"已过期%lu天", (unsigned long)-(NSUInteger)deltaDays];
+        _dayLabel.text = [NSString stringWithFormat:@"已过期%d天", -(NSUInteger)deltaDays];
     }
     else {
-        _dayLabel.text = [NSString stringWithFormat:@"剩余%lu天", (unsigned long)deltaDays];
+        _dayLabel.text = [NSString stringWithFormat:@"剩余%d天", (NSUInteger)deltaDays];
     }
     _ValidityPeriodLabel.text = [NSString stringWithFormat:@"有效期至 %@", [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.validate]];
 }

@@ -41,7 +41,7 @@
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
 //        [dic setValue:_goodModel.typeid forKey:@"type"];
         [dic setValue:[NSString stringWithFormat:@"%f", _goodModel.price] forKey:@"price"];
-        [dic setValue:[NSString stringWithFormat:@"%ld", (long)_goodModel.stock] forKey:@"stock"];
+        [dic setValue:[NSString stringWithFormat:@"%d", _goodModel.stock] forKey:@"stock"];
         [self.dataSource addObject:dic];
         [self.dataSource addObject:[NSMutableDictionary dictionary]];
     }

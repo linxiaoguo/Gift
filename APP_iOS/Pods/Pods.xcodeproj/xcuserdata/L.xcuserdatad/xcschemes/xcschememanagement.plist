@@ -8,61 +8,116 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>ImagePlayerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>MLSelectPhoto.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>NJKWebViewProgress.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>SVWebViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>TMCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A73E11256190D4AA0B7DA6C4E4F1A39</key>
+		<key>036F86CAAFF5448BCA683052447C42A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E02DDA0D47E3B853F6812EA8925F52F</key>
+		<key>0A0E38935890C05B22D948FDDC3D0C9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C592C83FB176317595F16BBED0E1683</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E767C26CC6DB41BB0886516CCB27EF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FFB9F26A5F69596DAED90AA3F9DED8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3728A1D33C734F71BD32BCFDCF125E77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54E4116A78343935974B11ADEC032BAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +132,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7294047543B88D54881AAB05CB70922C</key>
+		<key>6930B4A7A971B1584FC56CD13F32DAA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>712E7D2870BB70D2FD710DC58C35F216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79AA2134B3AE6524359314316A2CDEDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E2DB2E581BCE4276D55A6B4F17B1D4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0A8610C9B3817119E54CA7A35177FCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A49F2CA0F745926B90A1FE603F0E90D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB64F051F76F624D2CC6C1ABDC5D54E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADA6A763003CE22BFB6871CE92438D54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +182,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D76248AF21A222BAF73EEAD6EE6BAA02</key>
+		<key>BD0978EA99EA7AE50CFA9BB3DE1D0028</key>
 		<dict>
 			<key>primary</key>
 			<true/>
