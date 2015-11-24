@@ -71,6 +71,14 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN0-lC-2Vj">
+                            <rect key="frame" x="12" y="52" width="58" height="60"/>
+                            <animations/>
+                            <state key="normal" image="增加成员"/>
+                            <connections>
+                                <action selector="addPhotoAction:" destination="-1" eventType="touchUpInside" id="B4o-Wd-q00"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -383,5 +391,6 @@
     <resources>
         <image name="a_r2" width="12" height="20"/>
         <image name="spgg_Bg2" width="16" height="16"/>
+        <image name="增加成员" width="58" height="60"/>
     </resources>
 </document>

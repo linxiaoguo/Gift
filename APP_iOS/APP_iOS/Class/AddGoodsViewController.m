@@ -10,6 +10,7 @@
 #import "AddGoodsTableViewCell.h"
 #import "GoodsListViewController.h"
 #import "UITextView+PlaceHolder.h"
+#import "MLSelectPhotoPickerViewController.h"
 
 @interface AddGoodsViewController () <UITextFieldDelegate>
 
@@ -108,6 +109,21 @@
 
         }];
     }
+}
+
+- (IBAction)addPhotoAction:(UIButton *)sender {
+    MLSelectPhotoPickerViewController *pickerVc = [[MLSelectPhotoPickerViewController alloc] init];
+    // Default Push CameraRoll
+    pickerVc.status = PickerViewShowStatusCameraRoll;
+    // Limit Count.
+    pickerVc.minCount = 9;
+    // Push
+    [pickerVc show];
+    __weak typeof(self) weakSelf = self;
+    pickerVc.callBack = ^(NSArray *assets){
+        // CallBack or Delegate
+
+    };
 }
 
 - (IBAction)typeAction:(UIButton *)sender {
