@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>MLSelectPhoto.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>NJKWebViewProgress.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -72,7 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0A73E11256190D4AA0B7DA6C4E4F1A39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0C592C83FB176317595F16BBED0E1683</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E02DDA0D47E3B853F6812EA8925F52F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,6 +137,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7294047543B88D54881AAB05CB70922C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79AA2134B3AE6524359314316A2CDEDC</key>
 		<dict>
 			<key>primary</key>
@@ -163,6 +183,11 @@
 			<true/>
 		</dict>
 		<key>BD0978EA99EA7AE50CFA9BB3DE1D0028</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D76248AF21A222BAF73EEAD6EE6BAA02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
