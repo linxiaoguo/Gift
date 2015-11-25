@@ -46,7 +46,6 @@
     else {
         [self showLoginViewController];
     }
-
     return YES;
 }
 

@@ -11,6 +11,7 @@
 #import "MainModel.h"
 #import "GoodModel.h"
 #import "GoodTypeModel.h"
+#import "GoodsClassModel.h"
 #import "GoodsTopicModel.h"
 #import "FieldModel.h"
 #import "OrderModel.h"
@@ -60,6 +61,12 @@
 //商品类型接口
 //dataArray存储GoodTypeModel
 - (void)goodsTypeList:(void(^)(NSError *error, NSArray *dataArray))completion;
+
+//商铺分类接口
+//shopId 商铺id
+//parentId 类型ID，为null查询顶级分类，否则查询parentId下级分类
+//dataArray存储GoodsClassModel
+- (void)goodsClassList:(NSInteger)shopId parentId:(NSInteger)parentId completion:(void (^)(NSError *, NSArray *))completion;
 
 //商品主题馆列表接口
 //dataArray存储GoodsTopicModel
