@@ -42,7 +42,7 @@
     self.shopAddr = [ShareValue instance].shopModel.addr;
     self.contact = [ShareValue instance].shopModel.linkman;
     self.phone = [ShareValue instance].shopModel.linkphone;
-    self.regTime = [ShareFunction stringWithTimestamp:[ShareValue instance].shopModel.regdate];
+    self.regTime = [ShareFunction stringWithTimestamp1:[ShareValue instance].shopModel.regdate];
     self.shopURL = [ShareValue instance].shopModel.url;
     
     [self.tableView reloadData];
@@ -109,7 +109,16 @@
     [[Http instance] uploadFile:nil uploadFile:[UIImage fixOrientation:image] mname:@"123" completion:^(NSError *error, FieldModel *fieldModel) {
         [SVProgressHUD dismiss];
         if (error.code == 0) {
-            [ShareValue instance].shopModel.pic.fileId = fieldModel.fileId;
+            FieldModel *pic = [ShareValue instance].shopModel.pic;
+            pic.fileId = fieldModel.fileId;
+
+            ShopModel *shopModel = [ShareValue instance].shopModel;
+            shopModel.pic = pic;
+            
+            [ShareValue instance].shopModel = shopModel;
+            
+            [ShareValue instance].shopModel.pic = pic;
+
             [self modifyShop];
         }
     }];

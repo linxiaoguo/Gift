@@ -28,30 +28,51 @@
     
     if (_addNewGoods) {
         self.title = @"添加商品";
-        _footerView.height -= 50;
         _isRecommand = NO;
-        
-        [self.dataSource addObject:[NSMutableDictionary dictionary]];
-        [self.dataSource addObject:[NSMutableDictionary dictionary]];
+        _tableView.tableFooterView = _footerView;
     }
     else {
         self.title = @"商品管理";
-        _isRecommand = _goodModel.isrecommand;
-        _goodName.text = _goodModel.name;
         
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//        [dic setValue:_goodModel.typeid forKey:@"type"];
-        [dic setValue:[NSString stringWithFormat:@"%f", _goodModel.price] forKey:@"price"];
-        [dic setValue:[NSString stringWithFormat:@"%ld", (long)_goodModel.stock] forKey:@"stock"];
-        [self.dataSource addObject:dic];
-        [self.dataSource addObject:[NSMutableDictionary dictionary]];
+        [[Http instance] goodsDetail:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id completion:^(NSError *error, GoodModel *goods) {
+            if (error.code == 0) {
+                
+                _isRecommand = goods.isrecommand;
+                _goodName.text = goods.name;
+                _goodPrice.text = goods.price;
+                _goodNum.text = [NSString stringWithFormat:@"%ld", (long)goods.stock];
+                
+                GoodTypeModel *goodTypeModel = [GoodTypeModel new];
+                goodTypeModel.id = goods.typeid;
+                goodTypeModel.name = goods.typename;
+                _goodTypeModel = goodTypeModel;
+                
+                [_typeButton setTitle:goods.typename forState:UIControlStateNormal];
+
+                GoodsTopicModel *goodsTopicModel = [GoodsTopicModel new];
+                goodsTopicModel.id = goods.topicid;
+                goodsTopicModel.name = goods.topicname;
+                _goodsTopicModel = goodsTopicModel;
+                
+                [_topicButton setTitle:goods.topicname forState:UIControlStateNormal];
+                
+                _recomendSwitch.on = _isRecommand;
+                
+                if (goods.goods_status == 1) {
+                    [_downOrUpButton setTitle:@"上架商品" forState:UIControlStateNormal];
+                }
+                else {
+                    [_downOrUpButton setTitle:@"下架商品" forState:UIControlStateNormal];
+                }
+            }
+        }];
+        
+        _tableView.tableFooterView = _footerView1;
     }
     
     _recomendSwitch.on = _isRecommand;
     _tableView.tableHeaderView = _headerView;
-    _tableView.tableFooterView = _footerView;
     
-    [_goodsIntroTextView addPlaceHolder:@"请输入商品简介"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,12 +89,42 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)downOrUpAction:(UIButton *)sender {
+    
+    [SVProgressHUD showWithStatus:@"处理中"];
+    
+    NSInteger status = 1;
+    if ([sender.titleLabel.text isEqualToString:@"上架商品"]) {
+        status = 0;
+    }
+    
+    [[Http instance] statusGoods:status shopId:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id completion:^(NSError *error) {
+        if (error.code == 0) {
+            if (status == 1) {
+                [SVProgressHUD showSuccessWithStatus:@"下架成功"];
+                [_downOrUpButton setTitle:@"上架商品" forState:UIControlStateNormal];
+            }
+            else {
+                [SVProgressHUD showSuccessWithStatus:@"上架成功"];
+                [_downOrUpButton setTitle:@"下架商品" forState:UIControlStateNormal];
+            }
+        }
+    }];
+}
 
 - (IBAction)saveAction:(UIButton *)sender {
     [self.view resignFirstResponder];
 
     if (!_goodName.text) {
         [SVProgressHUD showErrorWithStatus:@"请输入商品名称"];
+        return;
+    }
+    if (!_goodPrice.text) {
+        [SVProgressHUD showErrorWithStatus:@"请输入商品价格"];
+        return;
+    }
+    if (!_goodNum.text) {
+        [SVProgressHUD showErrorWithStatus:@"请输入商品库存"];
         return;
     }
     if (!_goodTypeModel) {
@@ -84,27 +135,22 @@
         [SVProgressHUD showErrorWithStatus:@"请选择商品主题"];
         return;
     }
-    NSMutableDictionary *dic = [self.dataSource objectAtIndex:0];
-    if (![dic objectForKey:@"type"] || ![dic objectForKey:@"price"] || ![dic objectForKey:@"stock"]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入商品属性"];
-        return;
-    }
 
     if (_addNewGoods) {
-        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:[[dic objectForKey:@"price"] floatValue] stock:[[dic objectForKey:@"stock"] integerValue] fileids:nil completion:^(NSError *error) {
+        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
             NSLog(@"添加商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];
-                [SVProgressHUD showSuccessWithStatus:@"商品添加成功"];
+                [SVProgressHUD showSuccessWithStatus:@"添加成功"];
             }
         }];
     }
     else {
-        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:[[dic objectForKey:@"price"] floatValue] stock:[[dic objectForKey:@"stock"] integerValue] fileids:nil completion:^(NSError *error) {
+        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
             NSLog(@"修改商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];
-                [SVProgressHUD showSuccessWithStatus:@"商品修改成功"];
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
             }
 
         }];
@@ -158,14 +204,6 @@
     _isRecommand = sender.on;
 }
 
-- (IBAction)addGoodsAction:(id)sender {
-    [self.view resignFirstResponder];
-
-    [self.dataSource addObject:[NSDictionary dictionary]];
-    
-    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,7 +218,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -191,54 +229,36 @@
         [tableView registerNib:[UINib nibWithNibName:@"AddGoodsTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
-    cell.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.typeTextField.delegate = self;
-    cell.priceTextField.delegate = self;
-    cell.stockTextField.delegate = self;
-
-    kWEAKSELF;
-    [cell.delButton addActionHandler:^(NSInteger tag) {
-        if (weakSelf.dataSource.count > 1) {
-            [weakSelf.dataSource removeObjectAtIndex:indexPath.row];
-            [weakSelf.tableView beginUpdates];
-            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [weakSelf.tableView endUpdates];
-        }
-    }];
-    
-    NSMutableDictionary *dic = [self.dataSource objectAtIndex:indexPath.row];
-    cell.typeTextField.text = dic[@"type"];
-    cell.priceTextField.text = dic[@"price"];
-    cell.stockTextField.text = dic[@"stock"];
-    
-    cell.typeTextField.tag = indexPath.row*10;
-    cell.priceTextField.tag = indexPath.row*10+1;
-    cell.stockTextField.tag = indexPath.row*10+2;
+//    cell.backgroundColor = [UIColor clearColor];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.typeTextField.delegate = self;
+//    cell.priceTextField.delegate = self;
+//    cell.stockTextField.delegate = self;
+//
+//    kWEAKSELF;
+//    [cell.delButton addActionHandler:^(NSInteger tag) {
+//        if (weakSelf.dataSource.count > 1) {
+//            [weakSelf.dataSource removeObjectAtIndex:indexPath.row];
+//            [weakSelf.tableView beginUpdates];
+//            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+//            [weakSelf.tableView endUpdates];
+//        }
+//    }];
+//    
+//    NSMutableDictionary *dic = [self.dataSource objectAtIndex:indexPath.row];
+//    cell.typeTextField.text = dic[@"type"];
+//    cell.priceTextField.text = dic[@"price"];
+//    cell.stockTextField.text = dic[@"stock"];
+//    
+//    cell.typeTextField.tag = indexPath.row*10;
+//    cell.priceTextField.tag = indexPath.row*10+1;
+//    cell.stockTextField.tag = indexPath.row*10+2;
     
     return cell;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSInteger tag = textField.tag;
-    NSInteger tag1 = tag / 10;
-    NSInteger tag2 = tag % 10;
-    
-    NSMutableDictionary *dic = [self.dataSource objectAtIndex:tag1];
-    if (tag2 == 0) {
-        [dic setValue:textField.text forKey:@"type"];
-    }
-    else if (tag2 == 1) {
-        [dic setValue:textField.text forKey:@"price"];
-    }
-    else if (tag2 == 2) {
-        [dic setValue:textField.text forKey:@"stock"];
-    }
-    [self.dataSource replaceObjectAtIndex:tag1 withObject:dic];
 }
 
 @end

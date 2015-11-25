@@ -36,20 +36,14 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    
-    
     float contentH = [ShareFunction heightOfLabel:_contentLabel] + 20.0;
-    contentH > 44 ? (_contentLabel.height = contentH) : (_contentLabel.height = 44);
-
-    _aView.height = _contentLabel.bottom + 44;
-    DLog(@"%@", NSStringFromCGRect(_aView.frame));
-
-    for (UIView *view in _aView.subviews) {
-        if (view.top > _contentLabel.top) {
-            view.top = _contentLabel.bottom;
-        }
+    if (contentH > 44) {
+        _contentLabel.height = contentH;
     }
-    _timeLabel.top = 200;
+    
+    _aView.height = _contentLabel.bottom + 44;
+    _sepLine.top = _aView.bottom - 44;
+    _timeLabel.top = _aView.bottom - 44;
     _aView.hidden = NO;
 }
 

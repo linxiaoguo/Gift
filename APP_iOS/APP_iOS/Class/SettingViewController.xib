@@ -46,11 +46,10 @@
                     <animations/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Nbw-to-NDm"/>
                         <constraint firstAttribute="height" constant="44" id="Zvi-bE-sSn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="退出登陆"/>
+                    <state key="normal" title="注销登陆"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
                     </userDefinedRuntimeAttributes>

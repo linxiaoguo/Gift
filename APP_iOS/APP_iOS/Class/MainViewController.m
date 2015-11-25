@@ -15,6 +15,7 @@
 #import "IncomeViewCtr.h"
 #import "OrderViewCtr.h"
 #import "MarketViewCtr.h"
+#import "NoticeViewController.h"
 
 @interface MainViewController ()
 
@@ -28,8 +29,11 @@
     
     self.title = @"天天好礼";
     
+    kWEAKSELF;
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
-        
+        NoticeViewController *vc = [[NoticeViewController alloc] initWithNibName:@"NoticeViewController" bundle:nil];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
     [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];

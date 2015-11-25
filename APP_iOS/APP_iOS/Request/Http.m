@@ -508,7 +508,9 @@
         NSError *error = [NSError errorWithDomain:message code:success.integerValue userInfo:nil];
         
         NSDictionary *goodsDic = [resDic objectForKey:@"data"];
-        GoodModel *goods = [GoodModel objectWithKeyValues:goodsDic];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:goodsDic];
+        [dic setObject:@"" forKey:@"addtime"];
+        GoodModel *goods = [GoodModel objectWithKeyValues:dic];
 
         if (completion)
             completion(error, goods);
