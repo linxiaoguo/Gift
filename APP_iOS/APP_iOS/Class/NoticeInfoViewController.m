@@ -27,37 +27,35 @@
     
     _timeLabel.text = [ShareFunction stringWithTimestamp1:_messageModel.msgtime];
     
-    _view.hidden = YES;
+    _aView.hidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    _view.height = 300;
+}
 
+- (void)viewDidLayoutSubviews {
+    
+    
     float contentH = [ShareFunction heightOfLabel:_contentLabel] + 20.0;
     contentH > 44 ? (_contentLabel.height = contentH) : (_contentLabel.height = 44);
 
-    for (UIView *view in _view.subviews) {
+    _aView.height = _contentLabel.bottom + 44;
+    DLog(@"%@", NSStringFromCGRect(_aView.frame));
+
+    for (UIView *view in _aView.subviews) {
         if (view.top > _contentLabel.top) {
             view.top = _contentLabel.bottom;
         }
     }
-    
-    [self performSelector:@selector(gogogo) withObject:nil afterDelay:5];
-}
-
-- (void)gogogo {
-    _view.hidden = NO;
+    _timeLabel.top = 200;
+    _aView.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)loadContent {
-    
 }
 
 /*
