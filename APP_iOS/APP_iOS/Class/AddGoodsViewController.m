@@ -14,7 +14,7 @@
 
 @interface AddGoodsViewController () <UITextFieldDelegate>
 
-@property (nonatomic, strong) GoodTypeModel *goodTypeModel;
+@property (nonatomic, strong) GoodsClassModel *goodsClassModel;
 @property (nonatomic, strong) GoodsTopicModel *goodsTopicModel;
 @property (nonatomic, assign) BOOL isRecommand;
 
@@ -42,10 +42,10 @@
                 _goodPrice.text = goods.price;
                 _goodNum.text = [NSString stringWithFormat:@"%ld", (long)goods.stock];
                 
-                GoodTypeModel *goodTypeModel = [GoodTypeModel new];
-                goodTypeModel.id = goods.typeid;
-                goodTypeModel.name = goods.typename;
-                _goodTypeModel = goodTypeModel;
+                GoodsClassModel *goodsClassModel = [GoodsClassModel new];
+                goodsClassModel.id = goods.typeid;
+                goodsClassModel.name = goods.typename;
+                _goodsClassModel = goodsClassModel;
                 
                 [_typeButton setTitle:goods.typename forState:UIControlStateNormal];
 
@@ -127,7 +127,7 @@
         [SVProgressHUD showErrorWithStatus:@"请输入商品库存"];
         return;
     }
-    if (!_goodTypeModel) {
+    if (!_goodsClassModel) {
         [SVProgressHUD showErrorWithStatus:@"请选择商品分类"];
         return;
     }
@@ -137,7 +137,7 @@
     }
 
     if (_addNewGoods) {
-        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
+        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
             NSLog(@"添加商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];
@@ -146,7 +146,7 @@
         }];
     }
     else {
-        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodTypeModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
+        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:nil completion:^(NSError *error) {
             NSLog(@"修改商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];
@@ -180,8 +180,8 @@
     GoodsListViewController *vc = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
     vc.type = 1;
     [vc setBlock:^(NSObject *model) {
-        weakSelf.goodTypeModel = (GoodTypeModel *)model;
-        [sender setTitle:weakSelf.goodTypeModel.name forState:UIControlStateNormal];
+        weakSelf.goodsClassModel = (GoodsClassModel *)model;
+        [sender setTitle:weakSelf.goodsClassModel.name forState:UIControlStateNormal];
     }];
     [self.navigationController pushViewController:vc animated:YES];
 }

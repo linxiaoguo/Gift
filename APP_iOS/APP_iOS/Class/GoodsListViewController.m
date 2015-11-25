@@ -7,7 +7,7 @@
 //
 
 #import "GoodsListViewController.h"
-#import "GoodTypeModel.h"
+#import "GoodsClassModel.h"
 #import "GoodsTopicModel.h"
 
 @interface GoodsListViewController ()
@@ -62,13 +62,20 @@
     if (_type == 1) {
         self.title = @"商品分类";
         
-        [[Http instance] goodsTypeList:^(NSError *error, NSArray *dataArray) {
-            NSLog(@"商品类型：%lu", (unsigned long)dataArray.count);
+        NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
+        [[Http instance] goodsClassList:shopId parentId:0 completion:^(NSError *error, NSArray *dataArray) {
             if (error.code == 0) {
                 [self.dataSource addObjectsFromArray:dataArray];
                 [_tableView reloadData];
             }
         }];
+//        [[Http instance] goodsTypeList:^(NSError *error, NSArray *dataArray) {
+//            NSLog(@"商品类型：%lu", (unsigned long)dataArray.count);
+//            if (error.code == 0) {
+//                [self.dataSource addObjectsFromArray:dataArray];
+//                [_tableView reloadData];
+//            }
+//        }];
     }
     else {
         self.title = @"商品主题";
@@ -116,7 +123,7 @@
     }
     
     if (_type == 1) {
-        GoodTypeModel *model = [self.dataSource objectAtIndex:indexPath.row];
+        GoodsClassModel *model = [self.dataSource objectAtIndex:indexPath.row];
         cell.textLabel.text = model.name;
     }
     else {
