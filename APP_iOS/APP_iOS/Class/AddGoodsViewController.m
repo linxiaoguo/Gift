@@ -122,7 +122,7 @@
     __weak typeof(self) weakSelf = self;
     pickerVc.callBack = ^(NSArray *assets){
         // CallBack or Delegate
-
+        
     };
 }
 

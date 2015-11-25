@@ -8,6 +8,7 @@
 
 #import "NoticeViewController.h"
 #import "MessageModel.h"
+#import "NoticeInfoViewController.h"
 
 @interface NoticeViewController ()
 
@@ -86,6 +87,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    MessageModel *model = [self.dataSource objectAtIndex:indexPath.row];
+
+    NoticeInfoViewController *VC = [[NoticeInfoViewController alloc] initWithNibName:@"NoticeInfoViewController" bundle:nil];
+    VC.messageModel = model;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +117,7 @@
     
     MessageModel *model = [self.dataSource objectAtIndex:indexPath.row];
     cell.textLabel.text = model.msgtitle;
-    cell.detailTextLabel.text = [ShareFunction stringWithTimestamp:model.msgtime];
+    cell.detailTextLabel.text = [ShareFunction stringWithTimestamp1:model.msgtime];
     
     return cell;
 }

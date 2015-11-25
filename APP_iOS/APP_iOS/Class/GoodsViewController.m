@@ -32,8 +32,8 @@
     
     self.title = @"商品管理";
     
-//    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
-//    }];
+    //    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
+    //    }];
     
     _stat = @"1";
     _page = 1;
@@ -55,9 +55,9 @@
         _pageSize = 1;
         [weakSelf goodsListRequest:YES];
     }];
-//    [self.tableView addLegendFooterWithRefreshingBlock:^{
-//        [weakSelf goodsListRequest:NO];
-//    }];
+    //    [self.tableView addLegendFooterWithRefreshingBlock:^{
+    //        [weakSelf goodsListRequest:NO];
+    //    }];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
@@ -70,14 +70,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)stateAction:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
@@ -103,7 +103,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
     AddGoodsViewController *vc = [[AddGoodsViewController alloc] initWithNibName:@"AddGoodsViewController" bundle:nil];
     vc.addNewGoods = NO;
     vc.goodModel = [self.dataSource objectAtIndex:indexPath.row];
@@ -164,7 +164,7 @@
     }];
     [cell.btn2 addActionHandler:^(NSInteger tag) {
         [SVProgressHUD show];
-
+        
         [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
             if (error.code == 0) {
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

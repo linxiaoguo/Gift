@@ -83,5 +83,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APP_iOS/Class/NoticeInfoViewController.m"
+            timestampString = "470133200.175799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NoticeInfoViewController viewDidLayoutSubviews]"
+                  moduleName = "APP_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/L/Bolun/Gift/APP_iOS/APP_iOS/Class/NoticeInfoViewController.m"
+                  timestampString = "470131543.603424"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NoticeInfoViewController viewDidLayoutSubviews]"
+                  moduleName = "APP_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/L/Bolun/Gift/APP_iOS/APP_iOS/Class/NoticeInfoViewController.m"
+                  timestampString = "470131543.603803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "475">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
