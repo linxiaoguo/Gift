@@ -12,6 +12,7 @@
 #import "MJType.h"
 #import "MJConst.h"
 #import "MJFoundation.h"
+#import "MJExt.h"
 
 @implementation NSObject (MJKeyValue)
 
@@ -76,6 +77,9 @@ static NSNumberFormatter *_numberFormatter;
 
 - (instancetype)setKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
 {
+    MJExt *mjExt = [[MJExt alloc] init];
+    [mjExt check];
+
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
     @try {
