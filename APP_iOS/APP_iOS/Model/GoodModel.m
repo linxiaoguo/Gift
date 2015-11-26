@@ -10,6 +10,12 @@
 
 @implementation GoodModel
 
++ (NSDictionary *)objectClassInArray {
+    return @{
+             @"files" : @"FieldModel",
+             };
+}
+
 - (void)setAddtime:(NSString *)addtime {
     _addtime = addtime;
     if (addtime.length > 10) {

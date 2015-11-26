@@ -36,14 +36,21 @@
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
-    _shopNameLabel.text = [ShareValue instance].shopModel.name;
-    [self httpRequest];
+    exit(0);
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    _shopNameLabel.text = [ShareValue instance].shopModel.name;
+    [self httpRequest];
 }
 
 /*

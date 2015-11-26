@@ -18,6 +18,7 @@
     __weak IBOutlet UIButton *_topicButton;
     __weak IBOutlet UIButton *_downOrUpButton;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoViewH;
 
 @property (nonatomic, assign) BOOL addNewGoods;
 @property (nonatomic, strong) GoodModel *goodModel;
