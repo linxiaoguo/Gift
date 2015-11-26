@@ -66,6 +66,8 @@
 		0B5E44071BD87328003F7D1F /* ModifyPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E44051BD87328003F7D1F /* ModifyPwdViewController.xib */; };
 		0B5E440B1BD87FA4003F7D1F /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */; };
 		0B5E440C1BD87FA4003F7D1F /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */; };
+		0B778CE81C05581500360BCB /* NoticeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B778CE61C05581500360BCB /* NoticeInfoViewController.m */; };
+		0B778CE91C05581500360BCB /* NoticeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B778CE71C05581500360BCB /* NoticeInfoViewController.xib */; };
 		0B85945B1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */; };
 		0B886FB91BD7880600388F03 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B886FB71BD7880600388F03 /* SettingViewController.m */; };
 		0B886FBA1BD7880600388F03 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B886FB81BD7880600388F03 /* SettingViewController.xib */; };
@@ -367,6 +369,9 @@
 		0B5E44081BD87FA4003F7D1F /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
 		0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		0B778CE51C05581500360BCB /* NoticeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeInfoViewController.h; sourceTree = "<group>"; };
+		0B778CE61C05581500360BCB /* NoticeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeInfoViewController.m; sourceTree = "<group>"; };
+		0B778CE71C05581500360BCB /* NoticeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeInfoViewController.xib; sourceTree = "<group>"; };
 		0B8594591BC8A2E5002B42B8 /* UINavigationController+StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBar.h"; sourceTree = "<group>"; };
 		0B85945A1BC8A2E5002B42B8 /* UINavigationController+StatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBar.m"; sourceTree = "<group>"; };
 		0B886FB61BD7880600388F03 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -1809,6 +1814,9 @@
 				0B5E44081BD87FA4003F7D1F /* NoticeViewController.h */,
 				0B5E44091BD87FA4003F7D1F /* NoticeViewController.m */,
 				0B5E440A1BD87FA4003F7D1F /* NoticeViewController.xib */,
+				0B778CE51C05581500360BCB /* NoticeInfoViewController.h */,
+				0B778CE61C05581500360BCB /* NoticeInfoViewController.m */,
+				0B778CE71C05581500360BCB /* NoticeInfoViewController.xib */,
 				0A263B201C0169A400BB500B /* AboutViewController.h */,
 				0A263B211C0169A400BB500B /* AboutViewController.m */,
 				0A263B221C0169A400BB500B /* AboutViewController.xib */,
@@ -2026,6 +2034,7 @@
 				53E4858F1BC002AA0064ACE7 /* IncomeBindCell.xib in Resources */,
 				0B5531861BFABC6800A1696E /* UMShareEditViewControlleriPad.xib in Resources */,
 				536066231BFF5C2600352EFA /* OrderContactCell.xib in Resources */,
+				0B778CE91C05581500360BCB /* NoticeInfoViewController.xib in Resources */,
 				0B5531801BFABC6800A1696E /* UMSocialLocalizable.strings in Resources */,
 				0B59A81D1BC6528E008C8CD1 /* LoginViewController.xib in Resources */,
 				0B5531891BFABC6800A1696E /* UMSShareListController.xib in Resources */,
@@ -2205,6 +2214,7 @@
 				0BB608251B799EA200D42A16 /* UIImage+Color.m in Sources */,
 				53E07FAA1BE04BDA0095F8B7 /* ShopModel.m in Sources */,
 				0BB608351B799EA200D42A16 /* UIResponder+UIAdapt.m in Sources */,
+				0B778CE81C05581500360BCB /* NoticeInfoViewController.m in Sources */,
 				0BB608061B799EA200D42A16 /* NSSet+Block.m in Sources */,
 				0BB607F01B799EA200D42A16 /* NSDate+TimeAgo.m in Sources */,
 				0BF6C5051BCCEE6300D569C8 /* GoodsViewController.m in Sources */,

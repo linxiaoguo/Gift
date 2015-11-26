@@ -13,13 +13,15 @@
 
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy)   NSString *name;//商品名称
-@property (nonatomic, assign) CGFloat price;//价格
+@property (nonatomic, copy) NSString *price;//价格
 @property (nonatomic, assign) NSInteger stock;//库存
 @property (nonatomic, assign) NSInteger sales;//销量
 @property (nonatomic, copy)   NSString *pic;//图片地址
 @property (nonatomic, copy)   NSString *addtime;//添加时间
 @property (nonatomic, assign) NSInteger typeid;
+@property (nonatomic, copy) NSString *typename;
 @property (nonatomic, assign) NSInteger topicid;
+@property (nonatomic, copy) NSString *topicname;
 @property (nonatomic, strong) NSArray *fileids;//FieldModel
 @property (nonatomic, assign) BOOL isrecommand;
 @property (nonatomic, assign) BOOL recommend;//是否推荐

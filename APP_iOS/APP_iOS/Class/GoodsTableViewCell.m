@@ -16,19 +16,18 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 - (void)setGoodModel:(GoodModel *)goodModel {
-    _goodModel = goodModel;
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.pic] placeholderImage:[UIImage imageNamed:@"cpxqq"]];
+    _goodModel = goodModel;[_headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.pic] placeholderImage:[UIImage imageNamed:@"cpxqq"]];
     _nameLabel.text = goodModel.name;
     _desLabel.text = goodModel.name;
-    _priceLabel.text = [NSString stringWithFormat:@"￥%.1f", goodModel.price];
-    _saleLabel.text = [NSString stringWithFormat:@"销量 %ld    库存 %ld", (long)goodModel.sales, (long)goodModel.stock];
-    _timeLabel.text = [NSString stringWithFormat:@"添加时间 %@", [ShareFunction stringWithTimestamp:goodModel.addtime]];
-
+    _priceLabel.text = [NSString stringWithFormat:@"￥%@", goodModel.price];
+    _saleLabel.text = [NSString stringWithFormat:@"销量 %ld               库存 %ld", (long)goodModel.sales, (long)goodModel.stock];
+    _timeLabel.text = [NSString stringWithFormat:@"添加时间 %@", [ShareFunction stringWithTimestamp1:goodModel.addtime]];
+    
 }
 
 @end

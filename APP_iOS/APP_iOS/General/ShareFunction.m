@@ -24,7 +24,13 @@
     paragraphStyle.lineBreakMode = label.lineBreakMode;
     NSDictionary *attributes = @{NSFontAttributeName:label.font, NSParagraphStyleAttributeName:paragraphStyle.copy};
     
-    CGSize labelsize = [label.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    CGSize labelsize;
+    if (label.attributedText) {
+        labelsize = [label.attributedText boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    }
+    else {
+        labelsize = [label.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    }
 
     return ceil(labelsize.height);
 }
@@ -56,7 +62,7 @@
 
 
 + (NSString *)stringWithTimestamp:(NSString *)timestamp {
-
+    
     double lastactivityInterval = [timestamp doubleValue];
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
     
@@ -64,6 +70,20 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     [formatter setDateFormat:@"yyyy.MM.dd"];
+    
+    NSString *dateStr = [formatter stringFromDate:date];
+    return dateStr;
+}
+
++ (NSString *)stringWithTimestamp1:(NSString *)timestamp {
+    
+    double lastactivityInterval = [timestamp doubleValue];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSString *dateStr = [formatter stringFromDate:date];
     return dateStr;

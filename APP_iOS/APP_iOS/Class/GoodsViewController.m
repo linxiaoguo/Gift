@@ -32,10 +32,10 @@
     
     self.title = @"商品管理";
     
-//    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
-//    }];
+    //    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
+    //    }];
     
-    _stat = @"1";
+    _stat = @"0";
     _page = 1;
     _pageSize = 20;
     
@@ -48,20 +48,20 @@
     _countLabel.textColor = [UIColor darkGrayColor];
     _countLabel.font = [UIFont systemFontOfSize:12];
     [headerView addSubview:_countLabel];
-    _tableView.tableHeaderView = headerView;
+//    _tableView.tableHeaderView = headerView;
     
     kWEAKSELF;
     [self.tableView addLegendHeaderWithRefreshingBlock:^{
         _pageSize = 1;
         [weakSelf goodsListRequest:YES];
     }];
-//    [self.tableView addLegendFooterWithRefreshingBlock:^{
-//        [weakSelf goodsListRequest:NO];
-//    }];
+    //    [self.tableView addLegendFooterWithRefreshingBlock:^{
+    //        [weakSelf goodsListRequest:NO];
+    //    }];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
-    [self.tableView.header beginRefreshing];
+//    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,22 +69,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _pageSize = 1;
+    [self goodsListRequest:YES];
 }
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)stateAction:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        _stat = @"1";
+        _stat = @"0";
     }
     else {
-        _stat = @"0";
+        _stat = @"1";
     }
     [self.tableView.header beginRefreshing];
 }
@@ -98,12 +105,12 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 190.0f;
+    return 200.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
     AddGoodsViewController *vc = [[AddGoodsViewController alloc] initWithNibName:@"AddGoodsViewController" bundle:nil];
     vc.addNewGoods = NO;
     vc.goodModel = [self.dataSource objectAtIndex:indexPath.row];
@@ -125,6 +132,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor clearColor];
     
     GoodModel *goodModel = [self.dataSource objectAtIndex:indexPath.row];
     cell.goodModel = goodModel;
@@ -164,7 +172,7 @@
     }];
     [cell.btn2 addActionHandler:^(NSInteger tag) {
         [SVProgressHUD show];
-
+        
         [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
             if (error.code == 0) {
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

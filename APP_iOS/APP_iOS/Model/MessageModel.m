@@ -10,4 +10,11 @@
 
 @implementation MessageModel
 
+- (void)setMsgtime:(NSString *)msgtime {
+    _msgtime = msgtime;
+    if (msgtime.length > 10) {
+        _msgtime = [msgtime substringToIndex:10];
+    }
+}
+
 @end
