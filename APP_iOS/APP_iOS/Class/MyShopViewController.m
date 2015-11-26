@@ -23,13 +23,17 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"个人中心";
-    
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
-    _shopNameLabel.text = [ShareValue instance].shopModel.name;
 
     [self httpRequest];
 
     [self performSelector:@selector(addDay) withObject:nil afterDelay:0.1f];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    _shopNameLabel.text = [ShareValue instance].shopModel.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +80,7 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = [ShareValue instance].shopModel.url;
     
-    [SVProgressHUD showSuccessWithStatus:@"已复制店铺链接到剪贴板"];
+    [SVProgressHUD showSuccessWithStatus:@"复制成功"];
 }
 
 - (IBAction)shareAction:(id)sender {

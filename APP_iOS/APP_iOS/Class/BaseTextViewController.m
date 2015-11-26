@@ -30,7 +30,10 @@
 
     __weak BaseTextViewController *weakSelf = self;
     [self setRightBarButtonWithTitle:@"完成" withBlock:^(NSInteger tag) {
-        [weakSelf backAction];
+        if (weakSelf.block) {
+            weakSelf.block(weakSelf, weakSelf.contentTextView.text);
+        }
+        [super backAction];
     }];
     
 }
@@ -50,13 +53,6 @@
 }
 */
 
-- (void)backAction {
-    if (self.block) {
-        self.block(self, self.contentTextView.text);
-    }
-    [super backAction];
-}
-
 - (NSUInteger)numberOfWords {
     if (!_numberOfWords) {
         _numberOfWords = kDefaultNumber;
@@ -72,7 +68,10 @@
         return YES;
     }
     if ([@"\n" isEqualToString:text] == YES) {
-        [self backAction];
+        if (self.block) {
+            self.block(self, self.contentTextView.text);
+        }
+        [super backAction];
         return NO;
     }
     if (willChangeLength > self.numberOfWords) {

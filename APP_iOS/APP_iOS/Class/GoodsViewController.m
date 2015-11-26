@@ -35,7 +35,7 @@
     //    [self setRightBarButtonWithImage:[UIImage imageNamed:@"search-icon"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
     //    }];
     
-    _stat = @"1";
+    _stat = @"0";
     _page = 1;
     _pageSize = 20;
     
@@ -48,7 +48,7 @@
     _countLabel.textColor = [UIColor darkGrayColor];
     _countLabel.font = [UIFont systemFontOfSize:12];
     [headerView addSubview:_countLabel];
-    _tableView.tableHeaderView = headerView;
+//    _tableView.tableHeaderView = headerView;
     
     kWEAKSELF;
     [self.tableView addLegendHeaderWithRefreshingBlock:^{
@@ -61,12 +61,19 @@
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
-    [self.tableView.header beginRefreshing];
+//    [self.tableView.header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _pageSize = 1;
+    [self goodsListRequest:YES];
 }
 
 /*
@@ -81,10 +88,10 @@
 
 - (IBAction)stateAction:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        _stat = @"1";
+        _stat = @"0";
     }
     else {
-        _stat = @"0";
+        _stat = @"1";
     }
     [self.tableView.header beginRefreshing];
 }
@@ -98,7 +105,7 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 190.0f;
+    return 200.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,6 +132,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor clearColor];
     
     GoodModel *goodModel = [self.dataSource objectAtIndex:indexPath.row];
     cell.goodModel = goodModel;

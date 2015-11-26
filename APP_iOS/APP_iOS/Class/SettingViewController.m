@@ -121,7 +121,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        
+        NSURL *url = [NSURL URLWithString:_url];
+        [[UIApplication sharedApplication] openURL:url];
     }
 }
 

@@ -258,6 +258,7 @@
 		53E90AAE1BF0D17400D28889 /* TestHttpViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E90AAC1BF0D17400D28889 /* TestHttpViewCtr.xib */; };
 		53EAC6BE1BF10CD6004560ED /* MarketViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */; };
 		53EAC6BF1BF10CD6004560ED /* MarketViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */; };
+		53EC47E91C05452D009A53CB /* GoodsClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC47E81C05452D009A53CB /* GoodsClassModel.m */; };
 		53EC63C81BF70C7900EB7D17 /* OrderDetailViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */; };
 		53EC63C91BF70C7900EB7D17 /* OrderDetailViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */; };
 		53EC63CD1BF70D0100EB7D17 /* OrderTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EC63CB1BF70D0100EB7D17 /* OrderTitleCell.m */; };
@@ -734,6 +735,8 @@
 		53EAC6BB1BF10CD6004560ED /* MarketViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketViewCtr.h; sourceTree = "<group>"; };
 		53EAC6BC1BF10CD6004560ED /* MarketViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketViewCtr.m; sourceTree = "<group>"; };
 		53EAC6BD1BF10CD6004560ED /* MarketViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarketViewCtr.xib; sourceTree = "<group>"; };
+		53EC47E71C05452D009A53CB /* GoodsClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsClassModel.h; sourceTree = "<group>"; };
+		53EC47E81C05452D009A53CB /* GoodsClassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsClassModel.m; sourceTree = "<group>"; };
 		53EC63C51BF70C7900EB7D17 /* OrderDetailViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewCtr.h; sourceTree = "<group>"; };
 		53EC63C61BF70C7900EB7D17 /* OrderDetailViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewCtr.m; sourceTree = "<group>"; };
 		53EC63C71BF70C7900EB7D17 /* OrderDetailViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailViewCtr.xib; sourceTree = "<group>"; };
@@ -1034,6 +1037,8 @@
 				53E07FB61BE056360095F8B7 /* GoodModel.m */,
 				5378561A1BEF7C6A003F1154 /* GoodTypeModel.h */,
 				5378561B1BEF7C6A003F1154 /* GoodTypeModel.m */,
+				53EC47E71C05452D009A53CB /* GoodsClassModel.h */,
+				53EC47E81C05452D009A53CB /* GoodsClassModel.m */,
 				5378561D1BEF7D98003F1154 /* GoodsTopicModel.h */,
 				5378561E1BEF7D98003F1154 /* GoodsTopicModel.m */,
 				537856201BEF806D003F1154 /* FieldModel.h */,
@@ -2196,6 +2201,7 @@
 				0BB608141B799EA200D42A16 /* NSURL+Param.m in Sources */,
 				0BB6083B1B799EA300D42A16 /* UITextField+Blocks.m in Sources */,
 				0BB6082C1B799EA200D42A16 /* UIImage+RoundedCorner.m in Sources */,
+				53EC47E91C05452D009A53CB /* GoodsClassModel.m in Sources */,
 				0BB607F71B799EA200D42A16 /* NSException+Trace.m in Sources */,
 				0BB6081F1B799EA200D42A16 /* UIColor+Random.m in Sources */,
 				0B3F9DB11BCE365000FC8852 /* AddGoodsViewController.m in Sources */,
