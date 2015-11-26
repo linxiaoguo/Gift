@@ -11,7 +11,6 @@
 
 @interface GoodsTableViewCell : UITableViewCell {
     
-    __weak IBOutlet UIImageView *_headImage;
     __weak IBOutlet UILabel *_nameLabel;
     __weak IBOutlet UILabel *_desLabel;
     __weak IBOutlet UILabel *_priceLabel;
@@ -19,6 +18,7 @@
     __weak IBOutlet UILabel *_timeLabel;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (nonatomic, strong) GoodModel *goodModel;
 @property (nonatomic, strong) IBOutlet UIImageView *accessImageView;
 

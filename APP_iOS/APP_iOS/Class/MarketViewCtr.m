@@ -37,7 +37,7 @@
     UIView *headerView = [UIView new];
     headerView.frame = CGRectMake(0, 0, kScreenWidth, 20);
     headerView.backgroundColor = [UIColor clearColor];
-    _tableView.tableHeaderView = headerView;
+//    _tableView.tableHeaderView = headerView;
     
     kWEAKSELF;
     [self.tableView addLegendHeaderWithRefreshingBlock:^{
@@ -76,7 +76,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 190.0f;
+    return 200.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,7 +116,7 @@
         [tableView registerNib:[UINib nibWithNibName:@"GoodsTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
-    
+    cell.backgroundColor = [UIColor clearColor];
     cell.accessImageView.hidden = NO;
     cell.goodModel = [self.dataSource objectAtIndex:indexPath.row];
     

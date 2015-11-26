@@ -391,7 +391,7 @@
     //	//要上传的图片
     //	UIImage *image = [params objectForKey:@"pic"];
     //得到图片的data
-    NSData *data = UIImageJPEGRepresentation(image, 0.4);
+    NSData *data = UIImageJPEGRepresentation(image, 0.2);
     //http body的字符串
     NSMutableString *body = [[NSMutableString alloc] init];
     //参数的集合的所有key的集合

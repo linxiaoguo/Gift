@@ -37,7 +37,8 @@
     [UMSocialData setAppKey:@"564a844ee0f55ad251008b90"];
     [UMSocialWechatHandler setWXAppId:@"wx88ed82fea38f73c8" appSecret:@"d4624c36b6795d1d99dcf0547af5443d" url:@"http://www.umeng.com/social"];
     [MobClick startWithAppkey:@"564a844ee0f55ad251008b90" reportPolicy:BATCH channelId:@"Web"];
-
+    [UMSocialConfig setFinishToastIsHidden:YES position:UMSocialiToastPositionBottom];
+    
     [self customizeInterface];
     
     if ([ShareValue instance].shopModel && [ShareValue instance].loginName) {

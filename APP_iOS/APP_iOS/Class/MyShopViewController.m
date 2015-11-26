@@ -84,29 +84,24 @@
 }
 
 - (IBAction)shareAction:(id)sender {
-    NSString *shareText = [ShareValue instance].shopModel.name;             //分享内嵌文字
-    UIImage *shareImage = [UIImage imageNamed:[ShareValue instance].shopModel.pic.fileAddr];          //分享内嵌图片
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = [ShareValue instance].shopModel.url;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = [ShareValue instance].shopModel.url;
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"天天好礼商城";
+
+    NSString *shareText = [NSString stringWithFormat:@"发现一家好店：%@\n%@", [ShareValue instance].shopModel.name, [ShareValue instance].shopModel.store_info];             //分享内嵌文字
+//    UIImage *shareImage = [UIImage imageNamed:[ShareValue instance].shopModel.pic.fileAddr];          //分享内嵌图片
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:[ShareValue instance].shopModel.pic.fileAddr];
     
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"564a844ee0f55ad251008b90"
                                       shareText:shareText
-                                     shareImage:shareImage
+                                     shareImage:nil
                                 shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
-                                       delegate:self];
+                                       delegate:nil];
 }
-
-//实现回调方法（可选）：
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
-
 
 - (IBAction)shopInfoAction:(id)sender {
     ModifyViewController *vc = [[ModifyViewController alloc] initWithNibName:@"ModifyViewController" bundle:nil];

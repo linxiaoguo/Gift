@@ -12,6 +12,7 @@
 #import "UITextView+PlaceHolder.h"
 #import "MLSelectPhotoPickerViewController.h"
 #import "UIImage+Orientation.h"
+#import "UIImage+Resize.h"
 
 @interface AddGoodsViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
@@ -31,6 +32,7 @@
         self.title = @"添加商品";
         _isRecommand = NO;
         _tableView.tableFooterView = _footerView;
+        [self refreshPhoto];
     }
     else {
         self.title = @"商品管理";
@@ -40,7 +42,6 @@
     }
     
     _recomendSwitch.on = _isRecommand;
-    _tableView.tableHeaderView = _headerView;
     
 }
 
@@ -129,8 +130,25 @@
         }
         imageButton.adjustsImageWhenHighlighted = NO;
         [_photoView addSubview:imageButton];
+        
+        UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [deleteButton setFrame:CGRectMake(imageButton.right - 10, imageButton.top - 10, 20, 20)];
+        [deleteButton setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+        deleteButton.tag = i;
+        [deleteButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_photoView addSubview:deleteButton];
+        
     }
     _photoViewH.constant =  45+16*(self.dataSource.count/3+1)+(kScreenWidth-16*4)/3*(self.dataSource.count/3 + 1);
+    
+    _headerView.height = _photoViewH.constant - 128 + 393;
+    
+    _tableView.tableHeaderView = _headerView;
+}
+
+- (void)deleteAction:(UIButton *)sender {
+    [self.dataSource removeObjectAtIndex:sender.tag];
+    [self refreshPhoto];
 }
 
 - (IBAction)downOrUpAction:(UIButton *)sender {
@@ -182,7 +200,9 @@
 
     NSMutableArray *fileids = [NSMutableArray array];
     for (FieldModel *fieldMode in self.dataSource) {
-        [fileids addObject:[NSString stringWithFormat:@"%d", fieldMode.fileId]];
+        NSMutableDictionary *fileDic = [NSMutableDictionary dictionary];
+        [fileDic setObject:[NSString stringWithFormat:@"%ld", fieldMode.fileId] forKey:@"fileid"];
+        [fileids addObject:fileDic];
     }
     
     if (_addNewGoods) {
@@ -341,10 +361,10 @@
     }];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    [[Http instance] uploadFile:nil uploadFile:[UIImage fixOrientation:image] mname:@"themeStore" completion:^(NSError *error, FieldModel *fieldModel) {
+    [[Http instance] uploadFile:nil uploadFile:[UIImage fixOrientation:image] mname:@"123" completion:^(NSError *error, FieldModel *fieldModel) {
         [SVProgressHUD dismiss];
         if (error.code == 0) {
-            fieldModel.fileData = UIImageJPEGRepresentation(image, 0.4);
+            fieldModel.fileData = UIImageJPEGRepresentation([UIImage fixOrientation:image], 0.4);
             [self.dataSource addObject:fieldModel];
             [self refreshPhoto];
         }

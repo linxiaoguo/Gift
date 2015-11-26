@@ -77,8 +77,8 @@ static NSNumberFormatter *_numberFormatter;
 
 - (instancetype)setKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
 {
-    MJExt *mjExt = [[MJExt alloc] init];
-    [mjExt check];
+//    MJExt *mjExt = [[MJExt alloc] init];
+//    [mjExt check];
 
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     

@@ -35,9 +35,6 @@
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
-    
-    exit(0);
-
 }
 
 - (void)didReceiveMemoryWarning {
