@@ -51,14 +51,14 @@
     UIImageWriteToSavedPhotosAlbum(_codeImage.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 - (IBAction)shareAction:(id)sender {
-    NSString *shareText = [ShareValue instance].shopModel.name;             //分享内嵌文字
-    UIImage *shareImage = [UIImage imageNamed:[ShareValue instance].shopModel.pic.fileAddr];          //分享内嵌图片
+    
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeImage;
     
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"564a844ee0f55ad251008b90"
-                                      shareText:shareText
-                                     shareImage:shareImage
+                                      shareText:nil
+                                     shareImage:_codeImage.image
                                 shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
                                        delegate:self];
 }

@@ -226,7 +226,6 @@
             <animations/>
             <connections>
                 <outlet property="_accessImageView" destination="uxK-eo-sXr" id="UOD-0q-vBm"/>
-                <outlet property="_headImage" destination="FiW-x9-9BW" id="2Q3-PA-mvr"/>
                 <outlet property="_nameLabel" destination="iPb-fE-dhO" id="YED-Xw-N6Q"/>
                 <outlet property="_priceLabel" destination="Yg6-8m-vhH" id="fE3-qD-6vG"/>
                 <outlet property="_saleLabel" destination="sfF-cs-Z4N" id="V8N-iW-Myz"/>
@@ -235,6 +234,7 @@
                 <outlet property="btn1" destination="CMP-Kv-gtV" id="Kdb-gf-7Ok"/>
                 <outlet property="btn2" destination="Pud-T8-vZ1" id="1el-tG-GOB"/>
                 <outlet property="btn3" destination="hAj-4N-WJw" id="Y1v-Fy-hUs"/>
+                <outlet property="headImage" destination="FiW-x9-9BW" id="lNd-CJ-BNv"/>
             </connections>
             <point key="canvasLocation" x="189" y="337.5"/>
         </tableViewCell>

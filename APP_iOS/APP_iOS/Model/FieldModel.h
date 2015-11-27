@@ -14,5 +14,7 @@
 @property (nonatomic, strong)NSString *fileName;
 
 @property (nonatomic, strong)NSString *fileAddr;//图片地址
+@property (nonatomic, strong) NSData *fileData;
+
 @end
 

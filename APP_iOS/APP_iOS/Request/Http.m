@@ -391,7 +391,7 @@
     //	//要上传的图片
     //	UIImage *image = [params objectForKey:@"pic"];
     //得到图片的data
-    NSData *data = UIImagePNGRepresentation(image);
+    NSData *data = UIImageJPEGRepresentation(image, 0.2);
     //http body的字符串
     NSMutableString *body = [[NSMutableString alloc] init];
     //参数的集合的所有key的集合
@@ -415,9 +415,9 @@
     ////添加分界线，换行
     [body appendFormat:@"%@\r\n",MPboundary];
     //声明pic字段，文件名为boris.png
-    [body appendFormat:@"Content-Disposition: form-data; name=\"uploadFile\"; filename=\"ios.png\"\r\n"];
+    [body appendFormat:@"Content-Disposition: form-data; name=\"uploadFile\"; filename=\"ios.jpg\"\r\n"];
     //声明上传文件的格式
-    [body appendFormat:@"Content-Type: image/png\r\n\r\n"];
+    [body appendFormat:@"Content-Type: image/jpg\r\n\r\n"];
     //声明结束符：--AaB03x--
     NSString *end = [[NSString alloc]initWithFormat:@"\r\n%@",endMPboundary];
     //声明myRequestData，用来放入http body

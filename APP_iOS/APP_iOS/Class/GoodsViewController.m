@@ -186,16 +186,33 @@
         }];
     }];
     [cell.btn3 addActionHandler:^(NSInteger tag) {
-        NSString *shareText = goodModel.name;             //分享内嵌文字
-        UIImage *shareImage = [UIImage imageNamed:goodModel.pic];          //分享内嵌图片
+        [SVProgressHUD show];
         
-        //调用快速分享接口
-        [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:@"564a844ee0f55ad251008b90"
-                                          shareText:shareText
-                                         shareImage:shareImage
-                                    shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
-                                           delegate:self];
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                [SVProgressHUD dismiss];
+                
+                [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+                [UMSocialData defaultData].extConfig.wechatSessionData.title = @"天天好礼商城";
+
+                [UMSocialData defaultData].extConfig.wechatSessionData.url = goodsAddr;
+                [UMSocialData defaultData].extConfig.wechatTimelineData.url = goodsAddr;
+
+                NSString *shareText = goodModel.name;             //分享内嵌文字
+                UIImage *shareImage = cell.headImage.image;          //分享内嵌图片
+                
+                //调用快速分享接口
+                [UMSocialSnsService presentSnsIconSheetView:self
+                                                     appKey:@"564a844ee0f55ad251008b90"
+                                                  shareText:shareText
+                                                 shareImage:shareImage
+                                            shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
+                                                   delegate:self];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取商品失败"];
+            }
+        }];
     }];
     
     return cell;

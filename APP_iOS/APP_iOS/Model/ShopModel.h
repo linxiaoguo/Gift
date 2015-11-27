@@ -12,6 +12,7 @@
 @interface ShopModel : NSObject
 @property (nonatomic, strong)NSString *shopid;//商家ID
 @property (nonatomic, strong)NSString *name;//店铺名称
+@property (nonatomic, strong)NSString *store_info;//店铺介绍
 @property (nonatomic, copy)NSString *validate;//有效时间(Long类型)
 @property (nonatomic, strong)FieldModel *pic;//商家图片地址
 @property (nonatomic, strong)NSString *addr;//店铺实体地址

@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *typename;
 @property (nonatomic, assign) NSInteger topicid;
 @property (nonatomic, copy) NSString *topicname;
-@property (nonatomic, strong) NSArray *fileids;//FieldModel
+@property (nonatomic, strong) NSArray *files;//FieldModel
 @property (nonatomic, assign) BOOL isrecommand;
 @property (nonatomic, assign) BOOL recommend;//是否推荐
 @property (nonatomic, assign) NSInteger goods_status;//商品状态，文档未提供说明

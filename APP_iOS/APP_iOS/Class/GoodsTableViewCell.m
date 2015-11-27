@@ -21,7 +21,8 @@
 }
 
 - (void)setGoodModel:(GoodModel *)goodModel {
-    _goodModel = goodModel;[_headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.pic] placeholderImage:[UIImage imageNamed:@"cpxqq"]];
+    _goodModel = goodModel;
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:goodModel.pic] placeholderImage:[UIImage imageNamed:@"cpxqq"]];
     _nameLabel.text = goodModel.name;
     _desLabel.text = goodModel.name;
     _priceLabel.text = [NSString stringWithFormat:@"￥%@", goodModel.price];
