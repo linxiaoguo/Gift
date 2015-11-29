@@ -42,6 +42,7 @@
     [self customizeInterface];
     
     if ([ShareValue instance].shopModel && [ShareValue instance].loginName) {
+        [self loginAction];
         [self showMainViewController];
     }
     else {

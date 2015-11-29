@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarketViewCtr">
@@ -46,7 +46,7 @@
                     </connections>
                 </segmentedControl>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7fM-SB-1Cu">
-                    <rect key="frame" x="0.0" y="52" width="320" height="466"/>
+                    <rect key="frame" x="0.0" y="52" width="320" height="516"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -81,7 +81,7 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="7fM-SB-1Cu" secondAttribute="bottom" constant="50" id="2Mv-n7-rZn"/>
+                <constraint firstAttribute="bottom" secondItem="7fM-SB-1Cu" secondAttribute="bottom" id="2Mv-n7-rZn"/>
                 <constraint firstItem="Kbf-GY-6z4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Bc-Qm-nl9"/>
                 <constraint firstAttribute="bottom" secondItem="89a-Su-ApT" secondAttribute="bottom" id="7kF-uA-ANW"/>
                 <constraint firstItem="7fM-SB-1Cu" firstAttribute="top" secondItem="Kbf-GY-6z4" secondAttribute="bottom" constant="12" id="9oI-mI-VnS"/>

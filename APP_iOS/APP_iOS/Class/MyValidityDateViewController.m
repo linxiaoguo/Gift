@@ -22,7 +22,10 @@
     self.title = @"有效期";
     
     double lastactivityInterval = [[ShareValue instance].shopModel.validate doubleValue];
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    
+    NSDate* date = [NSDate date];
+    if (lastactivityInterval > 0)
+    date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
 
     NSDate *now = [NSDate date];
     double deltaSeconds = [date timeIntervalSinceDate:now];
