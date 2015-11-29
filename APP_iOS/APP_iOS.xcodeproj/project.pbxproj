@@ -1972,7 +1972,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = ULG72QH3KQ;
+						DevelopmentTeam = 9LA2852PZN;
 					};
 				};
 			};
@@ -2440,7 +2440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66184041-2789-4113-86d8-160406f60600";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -2476,7 +2476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66184041-2789-4113-86d8-160406f60600";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

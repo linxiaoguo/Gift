@@ -57,7 +57,7 @@
     _alreadySend = [CustomView viewWithNibName:@"OrderHeadCell"];
     _alreadyDone = [CustomView viewWithNibName:@"OrderHeadCell"];
     _selectImageView = [[UIImageView alloc] init];
-    _selectImageView.backgroundColor = [UIColor lightGrayColor];
+    _selectImageView.backgroundColor = [UIColor whiteColor];
     
     [_vHeader addSubview:_selectImageView];
     [_vHeader addSubview:_waitSend];
@@ -65,7 +65,7 @@
     [_vHeader addSubview:_alreadySend];
     [_vHeader addSubview:_alreadyDone];
     [_waitSend setSelected:YES];
-    _waitSend.imvLine.hidden = YES;
+    _alreadyDone.imvLine.hidden = YES;
     [_waitPay.lblTitle setText:@"待付款"];
     [_alreadySend.lblTitle setText:@"已发货"];
     [_alreadyDone.lblTitle setText:@"已完成"];
@@ -78,6 +78,12 @@
         OrderHeadCell *cell = [_cellArray objectAtIndex:i];
         [cell.btnBg addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.btnBg setTag:i];
+        
+        UIImageView *imvLine = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [_vHeader addSubview:imvLine];
+        imvLine.backgroundColor = [UIColor lightGrayColor];
+        imvLine.alpha = 0.5;
+        imvLine.tag = 1000+i;
     }
     
     _tbvWait = [[UITableView alloc] init];
@@ -126,8 +132,13 @@
     for (NSInteger i=0; i<_cellArray.count; i++) {
         OrderHeadCell *cell = [_cellArray objectAtIndex:i];
         cell.frame = CGRectMake(x + w * i, y, w, h);
+        
+        UIImageView *imvLine = [_vHeader viewWithTag:1000+i];
+        if (imvLine) {
+            imvLine.frame = CGRectMake(x + w * i + x, 15, 1, h - 30);
+        }
     }
-    _selectImageView.frame = CGRectMake(x + w * _index - 1, y, w+3, h);
+    _selectImageView.frame = CGRectMake(x + w * _index, y, w, h);
     
     x = 0;
     y = 0;
@@ -167,7 +178,14 @@
     _isAnimation = YES;
     
     [UIView animateWithDuration:0.25 animations:^{
-        _selectImageView.frame = CGRectMake(x + w * index - 1, y, w+3, h);
+        
+        if (index == 0) {
+            _selectImageView.frame = CGRectMake(x + w * index, y, w, h);
+        } else if (index == 3) {
+            _selectImageView.frame = CGRectMake(x + w * index + 1, y, w, h);
+        } else {
+            _selectImageView.frame = CGRectMake(x + w * index + 1, y, w - 1, h);
+        }
         
         for (NSInteger i=0; i<_cellArray.count; i++) {
             OrderHeadCell *cell = [_cellArray objectAtIndex:i];
