@@ -12,6 +12,7 @@
 #import "UIImage+Orientation.h"
 #import "AppDelegate.h"
 #import "BaseWebViewController.h"
+#import "UITableView+Separator.h"
 
 @interface ModifyViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -45,6 +46,7 @@
     self.regTime = [ShareFunction stringWithTimestamp1:[ShareValue instance].shopModel.regdate];
     self.shopURL = [ShareValue instance].shopModel.url;
     
+    [self.tableView setFullWidthSeparator];
     [self.tableView reloadData];
 }
 
@@ -132,7 +134,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.1f;
+    return 1.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 1)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -315,10 +323,21 @@
         }
         else if (indexPath.row == 1) {
             cell.detailTextLabel.text = self.shopURL;
+            cell.detailTextLabel.numberOfLines = 2;
+            cell.detailTextLabel.textAlignment = NSTextAlignmentLeft;
         }
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 #pragma mark - Request

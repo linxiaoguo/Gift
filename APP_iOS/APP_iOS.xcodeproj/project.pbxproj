@@ -1972,7 +1972,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = NHFM69V8J8;
+						DevelopmentTeam = ULG72QH3KQ;
 					};
 				};
 			};
@@ -2438,9 +2438,9 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "66184041-2789-4113-86d8-160406f60600";
 			};
 			name = Debug;
 		};
@@ -2474,9 +2474,9 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "66184041-2789-4113-86d8-160406f60600";
 			};
 			name = Release;
 		};

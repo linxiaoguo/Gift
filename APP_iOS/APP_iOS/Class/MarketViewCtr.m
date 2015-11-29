@@ -10,8 +10,12 @@
 #import "TestHttpViewCtr.h"
 #import "GoodsTableViewCell.h"
 #import "AddGoodsViewController.h"
+#import "GoodsTableViewCell.h"
+#import "GoodModel.h"
+#import "BaseWebViewController.h"
+#import "UMSocial.h"
 
-@interface MarketViewCtr ()
+@interface MarketViewCtr () <UMSocialUIDelegate>
 @property (nonatomic, copy) NSString *stat;     //1-已推荐 0-未推荐
 
 @property (nonatomic, assign) NSInteger page;
@@ -29,7 +33,6 @@
     [super viewDidLoad];
     [self setTitle:@"营销管理"];
     
-    _stat = @"1";
     _page = 1;
     _pageSize = 20;
     _selectRow = -1;
@@ -44,13 +47,16 @@
         _pageSize = 1;
         [weakSelf getData];
     }];
-
+    
     _selectDic = [NSMutableDictionary dictionary];
     self.tableView.footer.stateHidden = YES;
     self.tableView.header.updatedTimeHidden = YES;
     self.tableView.tableFooterView = [UIView new];
     [self.tableView.header beginRefreshing];
+    
+    _stat = @"1";
     _viewAdd.hidden = YES;
+    _tableView.tableFooterView = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,6 +136,85 @@
 //        }
 //        cell.accessImageView.hidden = YES;
 //    }
+    GoodModel *goodModel = [self.dataSource objectAtIndex:indexPath.row];
+    [cell.btn0 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                BaseWebViewController *vc = [[BaseWebViewController alloc] initWithNibName:@"BaseWebViewController" bundle:nil];
+                vc.urlStr = goodsAddr;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取店铺详情失败"];
+            }
+            [SVProgressHUD dismiss];
+        }];
+    }];
+    [cell.btn1 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:qrcodeImg] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    
+                    
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+                }];
+                
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取二维码失败"];
+            }
+        }];
+    }];
+    [cell.btn2 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = qrcodeImg;
+                
+                [SVProgressHUD showSuccessWithStatus:@"复制成功"];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取二维码失败"];
+            }
+        }];
+    }];
+    [cell.btn3 addActionHandler:^(NSInteger tag) {
+        [SVProgressHUD show];
+        
+        [[Http instance] goodsQrcode:goodModel.id completion:^(NSError *error, NSString *goodsAddr, NSString *qrcodeImg) {
+            if (error.code == 0) {
+                [SVProgressHUD dismiss];
+                
+                [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+                [UMSocialData defaultData].extConfig.wechatSessionData.title = @"天天好礼商城";
+                
+                [UMSocialData defaultData].extConfig.wechatSessionData.url = goodsAddr;
+                [UMSocialData defaultData].extConfig.wechatTimelineData.url = goodsAddr;
+                
+                NSString *shareText = goodModel.name;             //分享内嵌文字
+                UIImage *shareImage = cell.headImage.image;          //分享内嵌图片
+                
+                //调用快速分享接口
+                [UMSocialSnsService presentSnsIconSheetView:self
+                                                     appKey:@"564a844ee0f55ad251008b90"
+                                                  shareText:shareText
+                                                 shareImage:shareImage
+                                            shareToSnsNames:@[UMShareToWechatSession, UMShareToWechatTimeline]
+                                                   delegate:self];
+            }
+            else {
+                [SVProgressHUD showErrorWithStatus:@"获取商品失败"];
+            }
+        }];
+    }];
+
     return cell;
 }
 
@@ -180,5 +265,28 @@
         }
         [self.tableView.header endRefreshing];
     }];
+}
+
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
+    NSString *msg = nil ;
+    if(error != NULL) {
+        msg = @"下载失败" ;
+        [SVProgressHUD showErrorWithStatus:msg];
+    }
+    else {
+        msg = @"下载成功" ;
+        [SVProgressHUD showSuccessWithStatus:msg];
+    }
+}
+
+//实现回调方法（可选）：
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
 }
 @end

@@ -42,9 +42,12 @@
 }
 
 - (void)addDay {
-    double lastactivityInterval = [[ShareValue instance].shopModel.validate doubleValue];
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
-    
+    ShopModel *shop = [ShareValue instance].shopModel;
+    double lastactivityInterval = [shop.validate doubleValue];
+    NSDate* date = [NSDate date];
+    if (lastactivityInterval > 0) {
+        date = [NSDate dateWithTimeIntervalSince1970:lastactivityInterval];
+    }
     NSDate *now = [NSDate date];
     double deltaSeconds = [date timeIntervalSinceDate:now];
     double deltaMinutes = deltaSeconds / 60.0f;
