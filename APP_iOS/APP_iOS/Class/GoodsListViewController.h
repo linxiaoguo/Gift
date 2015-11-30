@@ -14,6 +14,7 @@ typedef void (^GoodsListBlock)(NSObject *model);
 @interface GoodsListViewController : BaseViewController
 
 @property (nonatomic, assign) NSInteger type;
+@property (nonatomic, assign) NSInteger parentId;
 
 @property (copy) GoodsListBlock block;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

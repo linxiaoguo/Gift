@@ -29,6 +29,8 @@
     
     self.title = @"天天好礼";
     
+    
+
     kWEAKSELF;
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
         NoticeViewController *vc = [[NoticeViewController alloc] initWithNibName:@"NoticeViewController" bundle:nil];
@@ -48,6 +50,15 @@
     [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
     _shopNameLabel.text = [ShareValue instance].shopModel.name;
     [self httpRequest];
+}
+
+- (void)viewDidLayoutSubviews {
+    _headView.layer.cornerRadius = _headView.width/2;
+    _head.layer.cornerRadius = (_headView.width-4)/2;
+    
+    if (kScreenHeight <= 480) {
+        _bottomView.constant = 180;
+    }
 }
 
 /*

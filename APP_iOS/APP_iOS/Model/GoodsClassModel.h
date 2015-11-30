@@ -12,4 +12,6 @@
 @interface GoodsClassModel : NSObject
 @property (nonatomic, assign)NSInteger id;//分类id
 @property (nonatomic, strong)NSString *name;//分类名称
+@property (nonatomic, assign)NSInteger level;//分类名称
+@property (nonatomic, assign)NSInteger subNum;//分类名称
 @end

@@ -63,7 +63,7 @@
         self.title = @"商品分类";
         
         NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
-        [[Http instance] goodsClassList:shopId parentId:0 completion:^(NSError *error, NSArray *dataArray) {
+        [[Http instance] goodsClassList:shopId parentId:_parentId completion:^(NSError *error, NSArray *dataArray) {
             if (error.code == 0) {
                 [self.dataSource addObjectsFromArray:dataArray];
                 [_tableView reloadData];
@@ -100,7 +100,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (self.block) {
+    if (_type == 1) {
+        GoodsClassModel *classModel = [self.dataSource objectAtIndex:indexPath.row];
+        if (classModel.subNum > 0) {
+            kWEAKSELF;
+            GoodsListViewController *vc = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
+            vc.type = 1;
+            vc.parentId = classModel.id;
+            [vc setBlock:^(NSObject *model) {
+                weakSelf.block(model);
+            }];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else {
+            self.block([self.dataSource objectAtIndex:indexPath.row]);
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
+        }
+    }
+    else if (self.block) {
         self.block([self.dataSource objectAtIndex:indexPath.row]);
         [super backAction];
     }

@@ -16,7 +16,11 @@
     __weak IBOutlet UILabel *_orderLabel;
     __weak IBOutlet UILabel *_buyerLabel;
 }
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UIImageView *head;
 
+@property (weak, nonatomic) IBOutlet UIView *_bottomViewV;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomView;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 

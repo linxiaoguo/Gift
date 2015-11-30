@@ -239,6 +239,7 @@
     
     GoodsListViewController *vc = [[GoodsListViewController alloc] initWithNibName:@"GoodsListViewController" bundle:nil];
     vc.type = 1;
+    vc.parentId = 0;
     [vc setBlock:^(NSObject *model) {
         weakSelf.goodsClassModel = (GoodsClassModel *)model;
         [sender setTitle:weakSelf.goodsClassModel.name forState:UIControlStateNormal];
