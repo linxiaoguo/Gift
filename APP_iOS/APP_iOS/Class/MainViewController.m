@@ -37,6 +37,10 @@
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+    
+    if (kScreenHeight <= 480) {
+        _bottomView.constant = 180;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,12 +57,9 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     _headView.layer.cornerRadius = _headView.width/2;
     _head.layer.cornerRadius = (_headView.width-4)/2;
-    
-    if (kScreenHeight <= 480) {
-        _bottomView.constant = 180;
-    }
 }
 
 /*
