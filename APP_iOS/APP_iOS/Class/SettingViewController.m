@@ -33,7 +33,7 @@
                 @{@"image": @"xiconfont-mimaxiugai", @"title": @"密码修改"},
                 @{@"image": @"xiconfont-gonggao", @"title": @"系统公告"},
                 @{@"image": @"xiconfont-guanyu", @"title": @"关于"},
-                @{@"image": @"xiconfont-ruanjiangengxin", @"title": @"检查更新"},
+//                @{@"image": @"xiconfont-ruanjiangengxin", @"title": @"当前版本"},
                 nil];
     _tableView.tableFooterView = _logoutView;
 }
@@ -95,27 +95,27 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row == 3) {
-        [[Http instance] queryVersion:1 completion:^(NSError *error, VersionModel *version) {
-            NSLog(@"版本更新：%@", version.versionname);
-            if (error.code == 0) {
-                if (version.status == 0) {
-                    [SVProgressHUD showSuccessWithStatus:@"已经是最新版本"];
-                    return ;
-                }
-                NSString *iosVersion = version.version;
-                NSString *localVersion = kAppVersion;
-                
-                NSComparisonResult result = [iosVersion compare:localVersion];
-                if (result == NSOrderedDescending) {
-                    _url = version.downurl;
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:version.info delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
-                    [alertView show];
-                }
-            }
-            else {
-                [SVProgressHUD showErrorWithStatus:@"已经是最新版本"];
-            }
-        }];
+//        [[Http instance] queryVersion:1 completion:^(NSError *error, VersionModel *version) {
+//            NSLog(@"版本更新：%@", version.versionname);
+//            if (error.code == 0) {
+//                if (version.status == 0) {
+//                    [SVProgressHUD showSuccessWithStatus:@"已经是最新版本"];
+//                    return ;
+//                }
+//                NSString *iosVersion = version.version;
+//                NSString *localVersion = kAppVersion;
+//                
+//                NSComparisonResult result = [iosVersion compare:localVersion];
+//                if (result == NSOrderedDescending) {
+//                    _url = version.downurl;
+//                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:version.info delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
+//                    [alertView show];
+//                }
+//            }
+//            else {
+//                [SVProgressHUD showErrorWithStatus:@"已经是最新版本"];
+//            }
+//        }];
     }
 }
 
@@ -139,6 +139,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont systemFontOfSize:14];
+    }
+    if (indexPath.row == 3) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        version = [NSString stringWithFormat:@"V%@", version];
+        cell.detailTextLabel.text = version;
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
     }
     
     cell.textLabel.text = [[_dataArr objectAtIndex:indexPath.row] objectForKey:@"title"];
