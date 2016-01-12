@@ -12,7 +12,7 @@
 		086D1575D7C35376E63357269140C6E8 /* MLSelectPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCED90AF3CF4B9A924EFD5FBF69411 /* MLSelectPhotoPickerBrowserPhotoScrollView.m */; };
 		08A21ABCBF8E758BED290C7355DA940A /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C88247F4F488FD75891E76C18E85DF6B /* IQUIViewController+Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		08E6E41E204405912C2B49EC0499007F /* MLSelectPhotoPickerCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E0240D76CA6F2B8EE095A3AF80033D /* MLSelectPhotoPickerCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B7B43CA1C06FBA60062F3BB /* MJExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7B43C91C06FBA60062F3BB /* MJExt.h */; };
+		0B1716491C44DBB900AB1962 /* MJExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B1716481C44DBB900AB1962 /* MJExt.h */; };
 		0B7B43CC1C07E8080062F3BB /* libMJExt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B43CB1C07E8080062F3BB /* libMJExt.a */; };
 		0BC1E9B38370B047D3FAB384B4D972C4 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A68AED2E2EFC95AD0A3D3B448D3A692 /* UIImage+MultiFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		0C4CC72B8AE91F7DCABA60321B7BD79B /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A0A0E72835D269CAAEBC1F430DEAB3E /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -288,8 +288,8 @@
 		057163A9019B7B3C8F5A257571DF3A40 /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefreshExample/MJRefreshExample/MJRefresh/MJRefreshComponent.m; sourceTree = "<group>"; };
 		09170D658F86FDCF9AC9C8F91E6B7068 /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefreshExample/MJRefreshExample/MJRefresh/MJRefreshHeader.h; sourceTree = "<group>"; };
 		0ADEC441134052D6830656A11D7DCC94 /* libNJKWebViewProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNJKWebViewProgress.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B7B43C91C06FBA60062F3BB /* MJExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExt.h; sourceTree = "<group>"; };
-		0B7B43CB1C07E8080062F3BB /* libMJExt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMJExt.a; sourceTree = "<group>"; };
+		0B1716481C44DBB900AB1962 /* MJExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExt.h; sourceTree = "<group>"; };
+		0B7B43CB1C07E8080062F3BB /* libMJExt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExt.a; path = ../../MJExtension/libMJExt.a; sourceTree = "<group>"; };
 		0CB80E20A1CD729853B41D28D24EFD9E /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyBoardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
 		0D00B01E97B88CF48EE51CE022231A43 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "IQKeyBoardManager/Categories/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		0DEDDE013DC95DCBFD97909A89C5E05C /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
@@ -621,6 +621,7 @@
 		0847987E9782ADDE384CF0949AF9FA6F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B7B43CB1C07E8080062F3BB /* libMJExt.a */,
 				011881C7A030A7FCB86060F2622EE735 /* MJExtension.xcconfig */,
 				1EB35FD93CBECAB49E93C55D3F188A79 /* MJExtension-dummy.m */,
 				6F23E802664A5EFFEB7D9FE1056EAE12 /* MJExtension-prefix.pch */,
@@ -782,8 +783,7 @@
 		48FD10D3598C2F62DA2387FA01684A25 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B43C91C06FBA60062F3BB /* MJExt.h */,
-				0B7B43CB1C07E8080062F3BB /* libMJExt.a */,
+				0B1716481C44DBB900AB1962 /* MJExt.h */,
 				BB91AAAC695415FAE48BC63B80CD7840 /* MJConst.h */,
 				D5B4B97E42F0814632C5288A16445DB4 /* MJConst.m */,
 				944A872641F4874283349D8503F35A52 /* MJExtension.h */,
@@ -1244,6 +1244,7 @@
 				F4DCBA2A42A38C6E7A755182DA50DEA2 /* AFNetworkActivityIndicatorManager.h in Headers */,
 				2B8269A87473D9F1259E9BD98E7588D3 /* AFNetworking.h in Headers */,
 				78449FCC01114171AA3CCB45C6666206 /* AFNetworkReachabilityManager.h in Headers */,
+				0B1716491C44DBB900AB1962 /* MJExt.h in Headers */,
 				1CBDB47B210A0C2448C14A610BC6D4D6 /* AFSecurityPolicy.h in Headers */,
 				DB2E92A71137AD2E6993E8B0CE682C89 /* AFURLConnectionOperation.h in Headers */,
 				495F717651B12E6496C72D16BCC28C29 /* AFURLRequestSerialization.h in Headers */,
@@ -1274,7 +1275,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7B43CA1C06FBA60062F3BB /* MJExt.h in Headers */,
 				9F919DD80AF66C5B728FBE0F62A3E717 /* MJConst.h in Headers */,
 				E0525306F2CA9344728F0403F2FF6C2C /* MJExtension.h in Headers */,
 				9B931E5CEFF2565E9BE45DFE94BDF37B /* MJFoundation.h in Headers */,
