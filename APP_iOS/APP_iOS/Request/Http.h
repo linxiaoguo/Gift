@@ -87,13 +87,14 @@
 //price 价格
 //stock 库存
 //fileids 商品图片集
-- (void)addGoods:(NSInteger)shopId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids completion:(void(^)(NSError *error))completion;
+- (void)addGoods:(NSInteger)shopId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids goodsDesc:(NSString *)goodsDesc completion:(void(^)(NSError *error))completion;
 
 //商品详情接口
 - (void)goodsDetail:(NSInteger)shopId goodsId:(NSInteger)goodsId completion:(void(^)(NSError *error, GoodModel *goods))completion;
 
 //商品修改接口
-- (void)goodsModify:(NSInteger)shopId goodsId:(NSInteger)goodsId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids completion:(void(^)(NSError *error))completion;
+- (void)goodsModify:(NSInteger)shopId goodsId:(NSInteger)goodsId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids
+          goodsDesc:(NSString *)goodsDesc completion:(void(^)(NSError *error))completion;
 
 //商品上下架
 //status 0表示下架，1 表示上架

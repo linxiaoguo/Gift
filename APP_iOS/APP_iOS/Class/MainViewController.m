@@ -51,8 +51,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    [_head sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
     _shopNameLabel.text = [ShareValue instance].shopModel.name;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self httpRequest];
 }
 
@@ -107,7 +111,9 @@
 #pragma mark - http
 
 - (void)httpRequest {
+//    [SVProgressHUD showWithStatus:@"加载中"];
     [[Http instance] main:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, MainModel *main) {
+//        [SVProgressHUD dismiss];
         NSLog(@"首页接口今日买家：%@", main.buyer);
         if (error.code == 0) {
             _orderLabel.text = main.order;

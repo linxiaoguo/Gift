@@ -177,7 +177,7 @@
 }
 
 - (void)addGoods {
-    [[Http instance] addGoods:32768 name:@"商品1" typeId:1 topicId:1 isrecommand:YES price:10 stock:10 fileids:nil completion:^(NSError *error) {
+    [[Http instance] addGoods:32768 name:@"商品1" typeId:1 topicId:1 isrecommand:YES price:10 stock:10 fileids:nil goodsDesc:nil completion:^(NSError *error) {
         NSLog(@"添加商品：%@", error.domain);
     }];
 }
@@ -189,7 +189,7 @@
 }
 
 - (void)goodsModify {
-    [[Http instance] goodsModify:32768 goodsId:98524 name:@"商品新名称" typeId:1 topicId:1 isrecommand:YES price:100 stock:10 fileids:nil completion:^(NSError *error) {
+    [[Http instance] goodsModify:32768 goodsId:98524 name:@"商品新名称" typeId:1 topicId:1 isrecommand:YES price:100 stock:10 fileids:nil goodsDesc:nil completion:^(NSError *error) {
         NSLog(@"修改商品：%@", error.domain);
     }];
 }
