@@ -53,6 +53,10 @@
     
     [_head sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
     _shopNameLabel.text = [ShareValue instance].shopModel.name;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self httpRequest];
 }
 

@@ -123,6 +123,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)backAction {
+    [super backAction];
+    [SVProgressHUD dismiss];
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     CGFloat x = 0;
