@@ -28,8 +28,10 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"天天好礼";
-    
-    
+
+    if (kScreenHeight <= 480) {
+        _bottomView.constant = 180;
+    }
 
     kWEAKSELF;
     [self setRightBarButtonWithImage:[UIImage imageNamed:@"gg_bg"] withHighlightedImage:nil withBlock:^(NSInteger tag) {
