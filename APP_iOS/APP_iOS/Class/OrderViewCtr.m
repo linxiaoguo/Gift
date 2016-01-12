@@ -334,6 +334,7 @@
 
 #pragma mark - 获取数据
 - (void)getOrder {
+    [SVProgressHUD showWithStatus:@"加载中"];
     kWEAKSELF;
     NSInteger shopId = [ShareValue instance].shopModel.shopid.integerValue;
     [[Http instance] orderList:shopId stat:10 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
@@ -341,13 +342,6 @@
             [weakSelf.arrPay addObjectsFromArray:dataArray];
             [weakSelf refreshView];
             [weakSelf refreshView:1];
-        }
-    }];
-    [[Http instance] orderList:shopId stat:20 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
-        if (error.code == 0) {
-            [weakSelf.arrWait addObjectsFromArray:dataArray];
-            [weakSelf refreshView];
-            [weakSelf refreshView:0];
         }
     }];
     [[Http instance] orderList:shopId stat:40 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
@@ -360,6 +354,15 @@
         if (error.code == 0) {
             [weakSelf.arrAlreadyDone addObjectsFromArray:dataArray];
             [weakSelf refreshView:3];
+        }
+    }];
+    
+    [[Http instance] orderList:shopId stat:20 pageSize:100 page:1 completion:^(NSError *error, NSArray *dataArray) {
+        [SVProgressHUD dismiss];
+        if (error.code == 0) {
+            [weakSelf.arrWait addObjectsFromArray:dataArray];
+            [weakSelf refreshView];
+            [weakSelf refreshView:0];
         }
     }];
 }

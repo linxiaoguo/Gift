@@ -484,9 +484,10 @@
 //    }];
 }
 
-- (void)addGoods:(NSInteger)shopId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids completion:(void(^)(NSError *error))completion {
+- (void)addGoods:(NSInteger)shopId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids goodsDesc:(NSString *)goodsDesc completion:(void(^)(NSError *error))completion {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:name forKey:@"name"];
+    if (name)
+        [dic setObject:name forKey:@"name"];
     [dic setObject:[NSNumber numberWithInteger:shopId] forKey:@"shopid"];
     [dic setObject:[NSNumber numberWithInteger:typeId] forKey:@"typeid"];
     [dic setObject:[NSNumber numberWithInteger:topicId] forKey:@"topicid"];
@@ -495,6 +496,8 @@
     [dic setObject:[NSNumber numberWithInteger:stock] forKey:@"stock"];
     if (fileids)
         [dic setObject:fileids forKey:@"fileids"];
+    if (goodsDesc)
+        [dic setObject:goodsDesc forKey:@"goods_desc"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
@@ -555,7 +558,8 @@
     }];
 }
 
-- (void)goodsModify:(NSInteger)shopId goodsId:(NSInteger)goodsId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids completion:(void(^)(NSError *error))completion {
+- (void)goodsModify:(NSInteger)shopId goodsId:(NSInteger)goodsId name:(NSString *)name typeId:(NSInteger)typeId topicId:(NSInteger)topicId isrecommand:(BOOL)isrecommand price:(CGFloat)price stock:(NSInteger)stock fileids:(NSArray *)fileids
+        goodsDesc:(NSString *)goodsDesc completion:(void(^)(NSError *error))completion {
 
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:name forKey:@"name"];
@@ -568,6 +572,8 @@
     [dic setObject:[NSNumber numberWithInteger:stock] forKey:@"stock"];
     if (fileids)
         [dic setObject:fileids forKey:@"fileids"];
+    if (goodsDesc)
+        [dic setObject:goodsDesc forKey:@"goods_desc"];
     
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];

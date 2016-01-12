@@ -107,7 +107,9 @@
 #pragma mark - http
 
 - (void)httpRequest {
+//    [SVProgressHUD showWithStatus:@"加载中"];
     [[Http instance] main:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, MainModel *main) {
+//        [SVProgressHUD dismiss];
         NSLog(@"首页接口今日买家：%@", main.buyer);
         if (error.code == 0) {
             _orderLabel.text = main.order;
