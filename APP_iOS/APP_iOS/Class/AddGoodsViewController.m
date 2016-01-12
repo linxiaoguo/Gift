@@ -45,21 +45,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)goodsInfoRequest {
     [[Http instance] goodsDetail:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id completion:^(NSError *error, GoodModel *goods) {
         if (error.code == 0) {
@@ -201,7 +186,7 @@
     NSMutableArray *fileids = [NSMutableArray array];
     for (FieldModel *fieldMode in self.dataSource) {
         NSMutableDictionary *fileDic = [NSMutableDictionary dictionary];
-        [fileDic setObject:[NSString stringWithFormat:@"%ld", fieldMode.fileId] forKey:@"fileid"];
+        [fileDic setObject:[NSString stringWithFormat:@"%ld", (long)fieldMode.fileId] forKey:@"fileid"];
         [fileids addObject:fileDic];
     }
     
