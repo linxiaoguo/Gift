@@ -39,6 +39,10 @@
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+    
+    if (kScreenHeight <= 480) {
+        _bottomView.constant = 180;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,12 +53,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
+    [_head sd_setImageWithURL:[NSURL URLWithString:[ShareValue instance].shopModel.pic.fileAddr] placeholderImage:[UIImage imageNamed:@"tx"]];
     _shopNameLabel.text = [ShareValue instance].shopModel.name;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self httpRequest];
 }
 
 - (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     _headView.layer.cornerRadius = _headView.width/2;
     _head.layer.cornerRadius = (_headView.width-4)/2;
 }
@@ -104,7 +113,9 @@
 #pragma mark - http
 
 - (void)httpRequest {
+//    [SVProgressHUD showWithStatus:@"加载中"];
     [[Http instance] main:[ShareValue instance].shopModel.shopid.integerValue completion:^(NSError *error, MainModel *main) {
+//        [SVProgressHUD dismiss];
         NSLog(@"首页接口今日买家：%@", main.buyer);
         if (error.code == 0) {
             _orderLabel.text = main.order;

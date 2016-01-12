@@ -206,7 +206,7 @@
     }
     
     if (_addNewGoods) {
-        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids completion:^(NSError *error) {
+        [[Http instance] addGoods:[ShareValue instance].shopModel.shopid.integerValue name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids goodsDesc:nil completion:^(NSError *error) {
             NSLog(@"添加商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];
@@ -215,7 +215,7 @@
         }];
     }
     else {
-        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids completion:^(NSError *error) {
+        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids goodsDesc:@"新的描述" completion:^(NSError *error) {
             NSLog(@"修改商品：%@", error.domain);
             if (error.code == 0) {
                 [super backAction];

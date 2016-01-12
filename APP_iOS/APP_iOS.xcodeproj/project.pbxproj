@@ -1972,7 +1972,7 @@
 				TargetAttributes = {
 					0BB606AB1B7989B400D42A16 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 9LA2852PZN;
+						DevelopmentTeam = SP568794X3;
 					};
 				};
 			};
@@ -2369,7 +2369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2406,7 +2406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2419,8 +2419,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian province Haisi interconnected business management co., LTD (SP568794X3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fujian province Haisi interconnected business management co., LTD (SP568794X3)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2438,9 +2438,9 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.ttgift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "356c54d4-34fc-425c-9bf2-9a98d6d96a3e";
 			};
 			name = Debug;
 		};
@@ -2450,8 +2450,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fujian province Haisi interconnected business management co., LTD (SP568794X3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fujian province Haisi interconnected business management co., LTD (SP568794X3)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2474,9 +2474,9 @@
 					"$(PROJECT_DIR)/APP_iOS/Vendors/umeng_ios_social_sdk_4-1.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/APP_iOS/Vendors/UMAnalytics_Sdk_3.6.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ohm.gift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haisi.ttgift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "356c54d4-34fc-425c-9bf2-9a98d6d96a3e";
 			};
 			name = Release;
 		};
