@@ -72,7 +72,7 @@
             [kAppDelegate showMainViewController];
         }
         else {
-            [SVProgressHUD showErrorWithStatus:@"登录失败，请检查网络连接"];
+            [SVProgressHUD showErrorWithStatus:@"登录失败!"];
         }
     }];
 
