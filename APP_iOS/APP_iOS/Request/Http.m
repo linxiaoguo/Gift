@@ -38,7 +38,7 @@
     NSString *jsonString = [dic JSONStringPlain];
     NSString *encode = [DES3Util encrypt:jsonString];
     encode = [self encodeToPercentEscapeString:encode];
-    NSString *urlString = [NSString stringWithFormat:@"http://www.hsshg.com/shopping_login.htm?req=%@", encode];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.hsshg.com/shopping/shopping_login.htm?req=%@", encode];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {

@@ -72,7 +72,11 @@
             [kAppDelegate showMainViewController];
         }
         else {
+<<<<<<< HEAD
             [SVProgressHUD showErrorWithStatus:@"账号或密码错误"];
+=======
+            [SVProgressHUD showErrorWithStatus:@"登录失败!"];
+>>>>>>> linxiaoguo/master
         }
     }];
 

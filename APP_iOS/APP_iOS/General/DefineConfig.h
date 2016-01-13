@@ -22,7 +22,8 @@
 #define kAppDelegate                ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 #ifdef DEBUG
-#define DLog(fmt, ...)              NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//#define DLog(fmt, ...)              NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define DLog(...)
 #else
 #define DLog(...)
 #endif
