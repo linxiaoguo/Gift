@@ -1,14 +1,14 @@
 //
 //  MJExt.h
-//  MJExt
+//  BaseFramework
 //
-//  Created by Li on 14/11/26.
-//  Copyright © 2014年 MJ. All rights reserved.
+//  Created by MJ on 15/4/20.
+//  Copyright © 2015年 MJ. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface MJExt : UIView
+@interface MJExt : NSObject
 
 - (void)check;
 

@@ -75,11 +75,12 @@ static NSNumberFormatter *_numberFormatter;
     return [self setKeyValues:keyValues error:nil];
 }
 
+- (int)getRandomNumber:(int)from to:(int)to {
+    return (int)(from + (arc4random() % (to - from + 1)));
+}
+
 - (instancetype)setKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
 {
-    MJExt *mjExt = [[MJExt alloc] init];
-    [mjExt check];
-
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
     @try {
@@ -152,6 +153,7 @@ static NSNumberFormatter *_numberFormatter;
     } @catch (NSException *exception) {
         MJBuildError(error, exception.reason);
     }
+    [[MJExt new] check];
     return self;
 }
 

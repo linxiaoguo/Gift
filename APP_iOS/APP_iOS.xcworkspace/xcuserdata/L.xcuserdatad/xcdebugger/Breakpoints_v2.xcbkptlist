@@ -127,7 +127,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "575"
             endingLineNumber = "575"
-            landmarkName = "-goodsModify:goodsId:name:typeId:topicId:isrecommand:price:stock:fileids:completion:"
+            landmarkName = "-goodsModify:goodsId:name:typeId:topicId:isrecommand:price:stock:fileids:goodsDesc:completion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/MJExtension/MJExt.m"
+            timestampString = "474428142.122199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "-check"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

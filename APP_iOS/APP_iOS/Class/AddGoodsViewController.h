@@ -17,6 +17,8 @@
     __weak IBOutlet UIButton *_typeButton;
     __weak IBOutlet UIButton *_topicButton;
     __weak IBOutlet UIButton *_downOrUpButton;
+    __weak IBOutlet UITextView *_decTextView;
+    
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoViewH;
 

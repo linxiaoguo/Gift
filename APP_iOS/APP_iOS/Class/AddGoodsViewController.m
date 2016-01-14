@@ -28,6 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+    [_decTextView addPlaceHolder:@"请输入商品简介"];
+
     if (_addNewGoods) {
         self.title = @"添加商品";
         _isRecommand = NO;
@@ -38,27 +40,10 @@
         self.title = @"商品管理";
         [self goodsInfoRequest];
         
-        _tableView.tableFooterView = _footerView1;
     }
     
     _recomendSwitch.on = _isRecommand;
-    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)goodsInfoRequest {
     [[Http instance] goodsDetail:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id completion:^(NSError *error, GoodModel *goods) {
@@ -68,6 +53,8 @@
             _goodName.text = goods.name;
             _goodPrice.text = goods.price;
             _goodNum.text = [NSString stringWithFormat:@"%ld", (long)goods.stock];
+            _decTextView.text = goods.goods_desc;
+            _decTextView.placeHolderTextView.hidden = YES;
             
             GoodsClassModel *goodsClassModel = [GoodsClassModel new];
             goodsClassModel.id = goods.typeid;
@@ -94,6 +81,7 @@
             
             [self.dataSource addObjectsFromArray:goods.files];
             [self refreshPhoto];
+            _tableView.tableFooterView = _footerView1;
         }
     }];
 }
@@ -141,7 +129,7 @@
     }
     _photoViewH.constant =  45+16*(self.dataSource.count/3+1)+(kScreenWidth-16*4)/3*(self.dataSource.count/3 + 1);
     
-    _headerView.height = _photoViewH.constant - 128 + 393;
+    _headerView.height = _photoViewH.constant - 128 + 500;
     
     _tableView.tableHeaderView = _headerView;
 }
@@ -201,7 +189,7 @@
     NSMutableArray *fileids = [NSMutableArray array];
     for (FieldModel *fieldMode in self.dataSource) {
         NSMutableDictionary *fileDic = [NSMutableDictionary dictionary];
-        [fileDic setObject:[NSString stringWithFormat:@"%ld", fieldMode.fileId] forKey:@"fileid"];
+        [fileDic setObject:[NSString stringWithFormat:@"%ld", (long)fieldMode.fileId] forKey:@"fileid"];
         [fileids addObject:fileDic];
     }
     
@@ -215,8 +203,7 @@
         }];
     }
     else {
-        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids goodsDesc:@"新的描述" completion:^(NSError *error) {
-            NSLog(@"修改商品：%@", error.domain);
+        [[Http instance] goodsModify:[ShareValue instance].shopModel.shopid.integerValue goodsId:_goodModel.id name:_goodName.text typeId:_goodsClassModel.id topicId:_goodsTopicModel.id isrecommand:_isRecommand price:_goodPrice.text.integerValue stock:_goodNum.text.integerValue fileids:fileids goodsDesc:_decTextView.text completion:^(NSError *error) {
             if (error.code == 0) {
                 [super backAction];
                 [SVProgressHUD showSuccessWithStatus:@"修改成功"];
